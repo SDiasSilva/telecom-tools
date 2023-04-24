@@ -41,7 +41,7 @@
             this.tabTelecomTools.Location = new System.Drawing.Point(3, 2);
             this.tabTelecomTools.Name = "tabTelecomTools";
             this.tabTelecomTools.SelectedIndex = 0;
-            this.tabTelecomTools.Size = new System.Drawing.Size(797, 447);
+            this.tabTelecomTools.Size = new System.Drawing.Size(1176, 846);
             this.tabTelecomTools.TabIndex = 0;
             // 
             // tbQRGen
@@ -49,7 +49,7 @@
             this.tbQRGen.Location = new System.Drawing.Point(4, 34);
             this.tbQRGen.Name = "tbQRGen";
             this.tbQRGen.Padding = new System.Windows.Forms.Padding(3);
-            this.tbQRGen.Size = new System.Drawing.Size(789, 409);
+            this.tbQRGen.Size = new System.Drawing.Size(1168, 808);
             this.tbQRGen.TabIndex = 0;
             this.tbQRGen.Text = "QR Gen";
             this.tbQRGen.UseVisualStyleBackColor = true;
