@@ -51,7 +51,7 @@
             this.tbQRGen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbQRGen.Name = "tbQRGen";
             this.tbQRGen.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tbQRGen.Size = new System.Drawing.Size(815, 480);
+            this.tbQRGen.Size = new System.Drawing.Size(299, 377);
             this.tbQRGen.TabIndex = 0;
             this.tbQRGen.Text = "QR Gen";
             this.tbQRGen.UseVisualStyleBackColor = true;
