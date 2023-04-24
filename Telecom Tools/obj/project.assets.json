@@ -8,23 +8,23 @@
     "net6.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\juniorsi\\.nuget\\packages\\": {}
+    "C:\\Users\\silvtiag\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\juniorsi\\source\\repos\\Telecom Tools\\Telecom Tools\\Telecom Tools.csproj",
+      "projectUniqueName": "C:\\Users\\silvtiag\\Documents\\02-AuthorialCodes\\Projetos\\telecom-tools\\Telecom Tools\\Telecom Tools.csproj",
       "projectName": "Telecom Tools",
-      "projectPath": "C:\\Users\\juniorsi\\source\\repos\\Telecom Tools\\Telecom Tools\\Telecom Tools.csproj",
-      "packagesPath": "C:\\Users\\juniorsi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\juniorsi\\source\\repos\\Telecom Tools\\Telecom Tools\\obj\\",
+      "projectPath": "C:\\Users\\silvtiag\\Documents\\02-AuthorialCodes\\Projetos\\telecom-tools\\Telecom Tools\\Telecom Tools.csproj",
+      "packagesPath": "C:\\Users\\silvtiag\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\silvtiag\\Documents\\02-AuthorialCodes\\Projetos\\telecom-tools\\Telecom Tools\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\juniorsi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\silvtiag\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net6.0-windows7.0"
+        "net6.0-windows"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -51,7 +51,8 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -63,7 +64,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }
