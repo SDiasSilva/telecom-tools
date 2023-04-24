@@ -1,0 +1,17 @@
+C:\Users\juniorsi\source\repos\Telecom Tools\Telecom Tools\bin\Debug\net6.0-windows\Telecom Tools.exe
+C:\Users\juniorsi\source\repos\Telecom Tools\Telecom Tools\bin\Debug\net6.0-windows\Telecom Tools.deps.json
+C:\Users\juniorsi\source\repos\Telecom Tools\Telecom Tools\bin\Debug\net6.0-windows\Telecom Tools.runtimeconfig.json
+C:\Users\juniorsi\source\repos\Telecom Tools\Telecom Tools\bin\Debug\net6.0-windows\Telecom Tools.dll
+C:\Users\juniorsi\source\repos\Telecom Tools\Telecom Tools\bin\Debug\net6.0-windows\Telecom Tools.pdb
+C:\Users\juniorsi\source\repos\Telecom Tools\Telecom Tools\obj\Debug\net6.0-windows\Telecom Tools.csproj.AssemblyReference.cache
+C:\Users\juniorsi\source\repos\Telecom Tools\Telecom Tools\obj\Debug\net6.0-windows\Telecom_Tools.formTelecomTools.resources
+C:\Users\juniorsi\source\repos\Telecom Tools\Telecom Tools\obj\Debug\net6.0-windows\Telecom Tools.csproj.GenerateResource.cache
+C:\Users\juniorsi\source\repos\Telecom Tools\Telecom Tools\obj\Debug\net6.0-windows\Telecom Tools.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\juniorsi\source\repos\Telecom Tools\Telecom Tools\obj\Debug\net6.0-windows\Telecom Tools.AssemblyInfoInputs.cache
+C:\Users\juniorsi\source\repos\Telecom Tools\Telecom Tools\obj\Debug\net6.0-windows\Telecom Tools.AssemblyInfo.cs
+C:\Users\juniorsi\source\repos\Telecom Tools\Telecom Tools\obj\Debug\net6.0-windows\Telecom Tools.csproj.CoreCompileInputs.cache
+C:\Users\juniorsi\source\repos\Telecom Tools\Telecom Tools\obj\Debug\net6.0-windows\Telecom Tools.dll
+C:\Users\juniorsi\source\repos\Telecom Tools\Telecom Tools\obj\Debug\net6.0-windows\refint\Telecom Tools.dll
+C:\Users\juniorsi\source\repos\Telecom Tools\Telecom Tools\obj\Debug\net6.0-windows\Telecom Tools.pdb
+C:\Users\juniorsi\source\repos\Telecom Tools\Telecom Tools\obj\Debug\net6.0-windows\Telecom Tools.genruntimeconfig.cache
+C:\Users\juniorsi\source\repos\Telecom Tools\Telecom Tools\obj\Debug\net6.0-windows\ref\Telecom Tools.dll
