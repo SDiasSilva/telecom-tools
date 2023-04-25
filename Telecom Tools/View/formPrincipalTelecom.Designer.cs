@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formTelecomTools));
             this.tabTelecomTools = new System.Windows.Forms.TabControl();
             this.tbQRGen = new System.Windows.Forms.TabPage();
             this.tbEFGen = new System.Windows.Forms.TabPage();
@@ -118,7 +117,7 @@
             this.inputTextBox.Name = "inputTextBox";
             this.inputTextBox.Size = new System.Drawing.Size(368, 31);
             this.inputTextBox.TabIndex = 20;
-            this.inputTextBox.TextChanged += new System.EventHandler(this.inputTextBox_TextChanged);
+            this.inputTextBox.TextChanged += new System.EventHandler(this.InputTextBox_TextChanged);
             // 
             // inputLabel
             // 
@@ -176,7 +175,7 @@
             // 
             this.SUMECopyButton.AccessibleDescription = "Copy content in the SUME field.";
             this.SUMECopyButton.AccessibleName = "SUME Copy Button";
-            this.SUMECopyButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("SUMECopyButton.BackgroundImage")));
+            this.SUMECopyButton.BackgroundImage = global::Telecom_Tools.Properties.Resources.Copy;
             this.SUMECopyButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.SUMECopyButton.Enabled = false;
             this.SUMECopyButton.Location = new System.Drawing.Point(374, 6);
@@ -215,11 +214,11 @@
             // SUMEIconLabel
             // 
             this.SUMEIconLabel.AutoSize = true;
-            this.SUMEIconLabel.Location = new System.Drawing.Point(80, 41);
+            this.SUMEIconLabel.Location = new System.Drawing.Point(6, 41);
             this.SUMEIconLabel.Name = "SUMEIconLabel";
-            this.SUMEIconLabel.Size = new System.Drawing.Size(50, 25);
+            this.SUMEIconLabel.Size = new System.Drawing.Size(125, 25);
             this.SUMEIconLabel.TabIndex = 2;
-            this.SUMEIconLabel.Text = "Icon:";
+            this.SUMEIconLabel.Text = "Icon Identifier:";
             // 
             // SUMEIconQualifierComboBox
             // 
@@ -233,6 +232,7 @@
             this.SUMEIconQualifierComboBox.Name = "SUMEIconQualifierComboBox";
             this.SUMEIconQualifierComboBox.Size = new System.Drawing.Size(251, 33);
             this.SUMEIconQualifierComboBox.TabIndex = 1;
+            this.SUMEIconQualifierComboBox.SelectedIndexChanged += new System.EventHandler(this.SUMEIconQualifierComboBox_SelectedIndexChanged);
             // 
             // SUMEIconQualifierLabel
             // 

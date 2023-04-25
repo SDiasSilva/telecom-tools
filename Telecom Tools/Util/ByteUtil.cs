@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EFDatagen;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Telecom_Tools.Util
 {
-    internal class ByteConverter
+    internal class ByteUtil
     {
         private static byte[] HexStringToByteArray(string hexString)
         {
@@ -53,6 +54,17 @@ namespace Telecom_Tools.Util
                 Array.Copy(lastBlock, 0, concat, firstBlock.Length, lastBlock.Length);
                 return concat;
             }
+        }
+        public static int GetIndexSearchedItem(byte[] needle, byte[] source)
+        {
+            int itemIndex = -1;
+            BoyerMoore Searcher = new BoyerMoore(needle);
+            foreach (int index in Searcher.Search(source))
+            {
+                itemIndex = index;
+                break;
+            }
+            return itemIndex;
         }
     }
 }

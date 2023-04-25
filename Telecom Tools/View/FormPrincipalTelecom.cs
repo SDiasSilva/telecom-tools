@@ -10,7 +10,7 @@ namespace Telecom_Tools
             InitializeComponent();
         }
 
-        private void inputTextBox_TextChanged(object sender, EventArgs e)
+        private void InputTextBox_TextChanged(object sender, EventArgs e)
         {
             GenerateAllEFData();
         }
@@ -20,7 +20,7 @@ namespace Telecom_Tools
             {
                 try 
                 {
-                    SetUpMenuElementsController sumeController = new SetUpMenuElementsController();
+                    SetUpMenuElementsController sumeController = new ();
                     sumeController.SetIconProperties(SUMEIconQualifierComboBox.SelectedIndex, SUMEIconNumericUpDown.Value);
                     SUMETextBox.Text = sumeController.GerarEf(inputTextBox.Text);
                 }
@@ -35,6 +35,11 @@ namespace Telecom_Tools
             {
                 SUMETextBox.Text = "";
             }
+        }
+
+        private void SUMEIconQualifierComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GenerateAllEFData();
         }
     }
 }

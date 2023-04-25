@@ -13,7 +13,7 @@ namespace Telecom_Tools.Model.Ef
         {
             { "Self-explanatory", new byte[] { 0x1E, 0x02, 0x00 } },
             { "Not self-explanatory", new byte[] { 0x1E, 0x02, 0x01 } },
-            { "Not present", Array.Empty<byte>() }
+            { "Not present", new byte[] { 0xFF } }
         };
 
         public readonly int ICON_QUALIFIER_LENGTH = 3;

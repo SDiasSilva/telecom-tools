@@ -10,7 +10,7 @@ namespace Telecom_Tools.Controller.Ef
 {
     internal class SetUpMenuElementsController : EfController
     {
-        private SetUpMenuElements sume;
+        private readonly SetUpMenuElements sume;
         private int iconQualifier;
         private byte iconIdentifier;
 
@@ -27,15 +27,15 @@ namespace Telecom_Tools.Controller.Ef
 
         public override string GerarEf(string menuTitle)
         {
-            byte[] menuTitleBArray = ByteConverter.GetBytes(menuTitle);
+            byte[] menuTitleByteArray = ByteUtil.GetBytes(menuTitle);
             byte[] sumeByteArray = new byte[sume.Length];
             FillByteArrayWith0xFF(sumeByteArray);
             sumeByteArray[0] = 0x05;
             sumeByteArray[1] = (byte)menuTitle.Length;
-            Array.Copy(menuTitleBArray, 0, sumeByteArray, 2, menuTitle.Length);
-            int IconQualifierIndex = GetIndexSearchedItem(menuTitleBArray, sumeByteArray) + menuTitle.Length;
-            int IconIndex = IconQualifierIndex + sume.ICON_QUALIFIER_LENGTH;
-            sumeByteArray[IconIndex] = iconIdentifier;
+            Array.Copy(menuTitleByteArray, 0, sumeByteArray, 2, menuTitle.Length);
+            int IconQualifierIndex = ByteUtil.GetIndexSearchedItem(menuTitleByteArray, sumeByteArray) + menuTitle.Length;
+            int IconIdentifierIndex = IconQualifierIndex + sume.ICON_QUALIFIER_LENGTH;
+            sumeByteArray[IconIdentifierIndex] = iconIdentifier;
             switch (iconQualifier)
             {
                 case 0:
@@ -43,6 +43,9 @@ namespace Telecom_Tools.Controller.Ef
                     break;
                 case 1:
                     Array.Copy(sume.ICON_QUALIFIER["Not self-explanatory"], 0, sumeByteArray, IconQualifierIndex, sume.ICON_QUALIFIER_LENGTH);
+                    break;
+                case 2:
+                    Array.Copy(sume.ICON_QUALIFIER["Not present"], 0, sumeByteArray, IconIdentifierIndex, 1);
                     break;
                 default:
                     break;

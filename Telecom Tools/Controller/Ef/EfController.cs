@@ -11,10 +11,5 @@
                 byteArray[i] = 0xFF;
             }
         }
-
-        public static int GetIndexSearchedItem(byte[] pattern, byte[] source)
-        {
-            return Array.IndexOf(source, pattern);
-        }
     }
 }
