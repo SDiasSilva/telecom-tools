@@ -28,36 +28,59 @@
         /// </summary>
         private void InitializeComponent()
         {
-            //-------------------------------------GENERATE QR CODE---------------------------------------------
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formTelecomTools));
+            this.tbEFGen = new System.Windows.Forms.TabPage();
             this.tbQRGen = new System.Windows.Forms.TabPage();
+            this.errorCorrectionLabel = new System.Windows.Forms.Label();
+            this.errorCorrectionDropDown = new System.Windows.Forms.ToolStrip();
+            this.versiongenerateButton = new System.Windows.Forms.ToolStripSplitButton();
+            this.versionLabel = new System.Windows.Forms.Label();
+            this.versionDropDown = new System.Windows.Forms.ToolStrip();
+            this.errorCorrectiongenerateButton = new System.Windows.Forms.ToolStripSplitButton();
+            this.moduleWidthLabel = new System.Windows.Forms.Label();
+            this.moduleDropDown = new System.Windows.Forms.ToolStrip();
+            this.modulegenerateButton = new System.Windows.Forms.ToolStripDropDownButton();
             this.openFile = new System.Windows.Forms.Button();
             this.openFileTextBox = new System.Windows.Forms.TextBox();
             this.pngCheckBox = new System.Windows.Forms.CheckBox();
             this.pdfCheckBox = new System.Windows.Forms.CheckBox();
             this.zipCheckBox = new System.Windows.Forms.CheckBox();
             this.logoCheckBox = new System.Windows.Forms.CheckBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.tbQRGen.SuspendLayout();
-            //-------------------------------------FIM GENERATE QR CODE---------------------------------------------
-
-
             this.tabTelecomTools = new System.Windows.Forms.TabControl();
-            this.tbEFGen = new System.Windows.Forms.TabPage();
+            this.generateButton = new System.Windows.Forms.Button();
+            this.tbQRGen.SuspendLayout();
+            this.errorCorrectionDropDown.SuspendLayout();
+            this.versionDropDown.SuspendLayout();
+            this.moduleDropDown.SuspendLayout();
             this.tabTelecomTools.SuspendLayout();
             this.SuspendLayout();
-
-
-            //-------------------------------------GENERATE QR CODE---------------------------------------------
+            // 
+            // tbEFGen
+            // 
+            this.tbEFGen.Location = new System.Drawing.Point(4, 24);
+            this.tbEFGen.Margin = new System.Windows.Forms.Padding(2);
+            this.tbEFGen.Name = "tbEFGen";
+            this.tbEFGen.Padding = new System.Windows.Forms.Padding(2);
+            this.tbEFGen.Size = new System.Drawing.Size(299, 377);
+            this.tbEFGen.TabIndex = 1;
+            this.tbEFGen.Text = "EF Gen";
+            this.tbEFGen.UseVisualStyleBackColor = true;
             // 
             // tbQRGen
             // 
+            this.tbQRGen.Controls.Add(this.generateButton);
+            this.tbQRGen.Controls.Add(this.errorCorrectionLabel);
+            this.tbQRGen.Controls.Add(this.errorCorrectionDropDown);
+            this.tbQRGen.Controls.Add(this.versionLabel);
+            this.tbQRGen.Controls.Add(this.versionDropDown);
+            this.tbQRGen.Controls.Add(this.moduleWidthLabel);
+            this.tbQRGen.Controls.Add(this.moduleDropDown);
             this.tbQRGen.Controls.Add(this.openFile);
             this.tbQRGen.Controls.Add(this.openFileTextBox);
             this.tbQRGen.Controls.Add(this.pngCheckBox);
             this.tbQRGen.Controls.Add(this.pdfCheckBox);
             this.tbQRGen.Controls.Add(this.zipCheckBox);
             this.tbQRGen.Controls.Add(this.logoCheckBox);
-            this.tbQRGen.Controls.Add(this.comboBox1);
             this.tbQRGen.Location = new System.Drawing.Point(4, 24);
             this.tbQRGen.Margin = new System.Windows.Forms.Padding(2);
             this.tbQRGen.Name = "tbQRGen";
@@ -66,7 +89,111 @@
             this.tbQRGen.TabIndex = 0;
             this.tbQRGen.Text = "QR Gen";
             this.tbQRGen.UseVisualStyleBackColor = true;
-            this.tbQRGen.Click += new System.EventHandler(this.tbQRGen_Click);
+            // 
+            // errorCorrectionLabel
+            // 
+            this.errorCorrectionLabel.AutoSize = true;
+            this.errorCorrectionLabel.Location = new System.Drawing.Point(212, 115);
+            this.errorCorrectionLabel.Name = "errorCorrectionLabel";
+            this.errorCorrectionLabel.Size = new System.Drawing.Size(59, 15);
+            this.errorCorrectionLabel.TabIndex = 1;
+            this.errorCorrectionLabel.Text = "ECC Level";
+            this.errorCorrectionLabel.Click += new System.EventHandler(this.errorCorrectionLabel_Click);
+            // 
+            // errorCorrectionDropDown
+            // 
+            this.errorCorrectionDropDown.Dock = System.Windows.Forms.DockStyle.None;
+            this.errorCorrectionDropDown.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.versiongenerateButton});
+            this.errorCorrectionDropDown.Location = new System.Drawing.Point(212, 130);
+            this.errorCorrectionDropDown.Name = "errorCorrectionDropDown";
+            this.errorCorrectionDropDown.Size = new System.Drawing.Size(76, 25);
+            this.errorCorrectionDropDown.TabIndex = 7;
+            this.errorCorrectionDropDown.Text = "errorCorrectionDropDown";
+            // 
+            // versiongenerateButton
+            // 
+            this.versiongenerateButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.versiongenerateButton.Image = ((System.Drawing.Image)(resources.GetObject("versiongenerateButton.Image")));
+            this.versiongenerateButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.versiongenerateButton.Name = "versiongenerateButton";
+            this.versiongenerateButton.Size = new System.Drawing.Size(64, 22);
+            this.versiongenerateButton.Text = "Level M";
+            // 
+            // versionLabel
+            // 
+            this.versionLabel.AutoSize = true;
+            this.versionLabel.Location = new System.Drawing.Point(95, 115);
+            this.versionLabel.Name = "versionLabel";
+            this.versionLabel.Size = new System.Drawing.Size(45, 15);
+            this.versionLabel.TabIndex = 6;
+            this.versionLabel.Text = "Version";
+            // 
+            // versionDropDown
+            // 
+            this.versionDropDown.Dock = System.Windows.Forms.DockStyle.None;
+            this.versionDropDown.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.errorCorrectiongenerateButton});
+            this.versionDropDown.Location = new System.Drawing.Point(95, 130);
+            this.versionDropDown.Name = "versionDropDown";
+            this.versionDropDown.Size = new System.Drawing.Size(78, 25);
+            this.versionDropDown.TabIndex = 1;
+            this.versionDropDown.Text = "versionDropDown";
+            this.versionDropDown.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.versionDropDown_ItemClicked);
+            // 
+            // errorCorrectiongenerateButton
+            // 
+            this.errorCorrectiongenerateButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.errorCorrectiongenerateButton.Image = ((System.Drawing.Image)(resources.GetObject("errorCorrectiongenerateButton.Image")));
+            this.errorCorrectiongenerateButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.errorCorrectiongenerateButton.Name = "errorCorrectiongenerateButton";
+            this.errorCorrectiongenerateButton.Size = new System.Drawing.Size(66, 22);
+            this.errorCorrectiongenerateButton.Text = "Auto - 0";
+            // 
+            // moduleWidthLabel
+            // 
+            this.moduleWidthLabel.AutoSize = true;
+            this.moduleWidthLabel.Location = new System.Drawing.Point(15, 115);
+            this.moduleWidthLabel.Name = "moduleWidthLabel";
+            this.moduleWidthLabel.Size = new System.Drawing.Size(48, 15);
+            this.moduleWidthLabel.TabIndex = 5;
+            this.moduleWidthLabel.Text = "Module";
+            // 
+            // moduleDropDown
+            // 
+            this.moduleDropDown.Dock = System.Windows.Forms.DockStyle.None;
+            this.moduleDropDown.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.modulegenerateButton});
+            this.moduleDropDown.Location = new System.Drawing.Point(20, 130);
+            this.moduleDropDown.Name = "moduleDropDown";
+            this.moduleDropDown.Size = new System.Drawing.Size(38, 25);
+            this.moduleDropDown.TabIndex = 1;
+            this.moduleDropDown.Text = "moduleDropDown";
+            // 
+            // modulegenerateButton
+            // 
+            this.modulegenerateButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.modulegenerateButton.Image = ((System.Drawing.Image)(resources.GetObject("modulegenerateButton.Image")));
+            this.modulegenerateButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.modulegenerateButton.Name = "modulegenerateButton";
+            this.modulegenerateButton.Size = new System.Drawing.Size(26, 22);
+            this.modulegenerateButton.Text = "1";
+            // 
+            // openFile
+            // 
+            this.openFile.Location = new System.Drawing.Point(36, 28);
+            this.openFile.Name = "openFile";
+            this.openFile.Size = new System.Drawing.Size(53, 23);
+            this.openFile.TabIndex = 1;
+            this.openFile.Text = "File";
+            this.openFile.UseVisualStyleBackColor = true;
+            // 
+            // openFileTextBox
+            // 
+            this.openFileTextBox.Location = new System.Drawing.Point(108, 28);
+            this.openFileTextBox.Name = "openFileTextBox";
+            this.openFileTextBox.Size = new System.Drawing.Size(153, 23);
+            this.openFileTextBox.TabIndex = 4;
             // 
             // pngCheckBox
             // 
@@ -111,31 +238,6 @@
             this.logoCheckBox.UseVisualStyleBackColor = true;
             this.logoCheckBox.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
             // 
-            // openFile
-            // 
-            this.openFile.Location = new System.Drawing.Point(36, 28);
-            this.openFile.Name = "openFile";
-            this.openFile.Size = new System.Drawing.Size(53, 23);
-            this.openFile.TabIndex = 1;
-            this.openFile.Text = "File";
-            this.openFile.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.openFileTextBox.Location = new System.Drawing.Point(108, 28);
-            this.openFileTextBox.Name = "openFileTextBox";
-            this.openFileTextBox.Size = new System.Drawing.Size(153, 23);
-            this.openFileTextBox.TabIndex = 4;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(6, 127);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 23);
-            this.comboBox1.TabIndex = 1;
-            //-------------------------------------FIM GENERATE QR CODE---------------------------------------------
-            // 
             // tabTelecomTools
             // 
             this.tabTelecomTools.Controls.Add(this.tbQRGen);
@@ -147,16 +249,14 @@
             this.tabTelecomTools.Size = new System.Drawing.Size(307, 405);
             this.tabTelecomTools.TabIndex = 0;
             // 
-            // tbEFGen
+            // generateButton
             // 
-            this.tbEFGen.Location = new System.Drawing.Point(4, 24);
-            this.tbEFGen.Margin = new System.Windows.Forms.Padding(2);
-            this.tbEFGen.Name = "tbEFGen";
-            this.tbEFGen.Padding = new System.Windows.Forms.Padding(2);
-            this.tbEFGen.Size = new System.Drawing.Size(299, 377);
-            this.tbEFGen.TabIndex = 1;
-            this.tbEFGen.Text = "EF Gen";
-            this.tbEFGen.UseVisualStyleBackColor = true;
+            this.generateButton.Location = new System.Drawing.Point(95, 222);
+            this.generateButton.Name = "generateButton";
+            this.generateButton.Size = new System.Drawing.Size(112, 39);
+            this.generateButton.TabIndex = 8;
+            this.generateButton.Text = "GENERATE";
+            this.generateButton.UseVisualStyleBackColor = true;
             // 
             // formTelecomTools
             // 
@@ -169,17 +269,18 @@
             this.Text = "Telecom Tools";
             this.tbQRGen.ResumeLayout(false);
             this.tbQRGen.PerformLayout();
+            this.errorCorrectionDropDown.ResumeLayout(false);
+            this.errorCorrectionDropDown.PerformLayout();
+            this.versionDropDown.ResumeLayout(false);
+            this.versionDropDown.PerformLayout();
+            this.moduleDropDown.ResumeLayout(false);
+            this.moduleDropDown.PerformLayout();
             this.tabTelecomTools.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
-        #endregion
-
-        private TabControl tabTelecomTools;
         private TabPage tbEFGen;
-
-        //-------------------------------------GENERATE QR CODE---------------------------------------------
         private TabPage tbQRGen;
         private Button openFile;
         private TextBox openFileTextBox;
@@ -187,8 +288,19 @@
         private CheckBox pdfCheckBox;
         private CheckBox zipCheckBox;
         private CheckBox logoCheckBox;
-        private ComboBox comboBox1;
-        //-------------------------------------FIM GENERATE QR CODE---------------------------------------------
+        private TabControl tabTelecomTools;
+        private ToolStrip moduleDropDown;
+        private ToolStripDropDownButton modulegenerateButton;
+        private Label moduleWidthLabel;
 
+        #endregion
+
+        private ToolStrip versionDropDown;
+        private Label versionLabel;
+        private Label errorCorrectionLabel;
+        private ToolStrip errorCorrectionDropDown;
+        private ToolStripSplitButton errorCorrectiongenerateButton;
+        private ToolStripSplitButton versiongenerateButton;
+        private Button generateButton;
     }
 }
