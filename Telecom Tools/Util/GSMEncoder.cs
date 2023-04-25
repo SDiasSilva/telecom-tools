@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Telecom_Tools.Util
 {
-    internal class GSM7bitEncoder
+    internal class GSMEncoder
     {
         public static string Encode(string PlainText)
 
@@ -85,6 +85,43 @@ namespace Telecom_Tools.Util
 
             return strGSMOutput;
 
+        }
+        public static byte[] EncodeGSM1111v1(string plainText)
+        {
+            byte[] utf32 = System.Text.Encoding.UTF32.GetBytes(plainText);
+            byte[] output = new byte[plainText.Length * 2 + 1];
+            output[0] = 0x80;
+            int outputIndex = 1;
+            for (int i = 0; i < utf32.Length; i += 4)
+            {
+                output[outputIndex] = utf32[i + 1];
+                output[outputIndex + 1] = utf32[i];
+                outputIndex += 2;
+                if (outputIndex == output.Length - 1)
+                {
+                    break;
+                }
+            }
+            return output;
+        }
+        public static byte[] EncodeGSM1111v2(byte[] input)
+        {
+            byte[] output = new Byte[input.Length + 3];
+            output[0] = 0x81;
+            output[1] = (byte)input.Length;
+            output[2] = 0xFF;
+            Array.Copy(input, 0, output, 3, input.Length);
+            return output;
+        }
+        public static byte[] EncodeGSM1111v3(byte[] input)
+        {
+            byte[] output = new Byte[input.Length + 4];
+            output[0] = 0x82;
+            output[1] = (byte)input.Length;
+            output[2] = 0xFF;
+            output[3] = 0xFF;
+            Array.Copy(input, 0, output, 4, input.Length);
+            return output;
         }
     }
 }

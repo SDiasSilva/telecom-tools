@@ -20,7 +20,7 @@ namespace Telecom_Tools.Util
         }
         public static byte[] GetBytes(string plaintext)
         {
-            string hexStringText = GSM7bitEncoder.Encode(plaintext);
+            string hexStringText = GSMEncoder.Encode(plaintext);
             byte[] encoded = HexStringToByteArray(hexStringText);
             return encoded;
         }
