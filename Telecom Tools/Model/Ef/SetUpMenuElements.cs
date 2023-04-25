@@ -16,13 +16,18 @@ namespace Telecom_Tools.Model.Ef
             { "Not present", new byte[] { 0xFF } }
         };
 
+        public int IconQualifier { get; set; }
+        public byte IconIdentifier { get; set; }
+        
         public readonly int ICON_QUALIFIER_LENGTH = 3;
 
-        public SetUpMenuElements()
+        public SetUpMenuElements(int iconQualifier, decimal iconIdentifier)
         {
             Path = "3F00/7F10/6F54";
             SimpleName = "SUME";
             Length = 30;
+            IconQualifier = iconQualifier;
+            IconIdentifier = (byte)iconIdentifier;
         }
     }
 }

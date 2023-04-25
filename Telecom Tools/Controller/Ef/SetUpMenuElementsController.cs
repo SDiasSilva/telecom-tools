@@ -11,18 +11,11 @@ namespace Telecom_Tools.Controller.Ef
     internal class SetUpMenuElementsController : EfController
     {
         private readonly SetUpMenuElements sume;
-        private int iconQualifier;
-        private byte iconIdentifier;
 
-        public SetUpMenuElementsController()
-        {
-            sume = new SetUpMenuElements();
-        }
 
-        public void SetIconProperties(int iconQualifier, decimal iconIdentifier)
+        public SetUpMenuElementsController(int iconQualifier, decimal iconIdentifier)
         {
-            this.iconQualifier = iconQualifier;
-            this.iconIdentifier = (byte)iconIdentifier;
+            sume = new SetUpMenuElements(iconQualifier, iconIdentifier);
         }
 
         public override string GerarEf(string menuTitle)
@@ -35,8 +28,8 @@ namespace Telecom_Tools.Controller.Ef
             Array.Copy(menuTitleByteArray, 0, sumeByteArray, 2, menuTitle.Length);
             int IconQualifierIndex = ByteUtil.GetIndexSearchedItem(menuTitleByteArray, sumeByteArray) + menuTitle.Length;
             int IconIdentifierIndex = IconQualifierIndex + sume.ICON_QUALIFIER_LENGTH;
-            sumeByteArray[IconIdentifierIndex] = iconIdentifier;
-            switch (iconQualifier)
+            sumeByteArray[IconIdentifierIndex] = sume.IconIdentifier;
+            switch (sume.IconQualifier)
             {
                 case 0:
                     Array.Copy(sume.ICON_QUALIFIER["Self-explanatory"], 0, sumeByteArray, IconQualifierIndex, sume.ICON_QUALIFIER_LENGTH);

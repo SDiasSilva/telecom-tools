@@ -2,10 +2,10 @@ using Telecom_Tools.Controller.Ef;
 
 namespace Telecom_Tools
 {
-    public partial class formTelecomTools : Form
+    public partial class FormTelecomTools : Form
     {
 
-        public formTelecomTools()
+        public FormTelecomTools()
         {
             InitializeComponent();
         }
@@ -20,8 +20,7 @@ namespace Telecom_Tools
             {
                 try 
                 {
-                    SetUpMenuElementsController sumeController = new ();
-                    sumeController.SetIconProperties(SUMEIconQualifierComboBox.SelectedIndex, SUMEIconNumericUpDown.Value);
+                    SetUpMenuElementsController sumeController = new (SUMEIconQualifierComboBox.SelectedIndex, SUMEIconNumericUpDown.Value);
                     SUMETextBox.Text = sumeController.GerarEf(inputTextBox.Text);
                 }
                 catch(ArgumentException)

@@ -1,6 +1,6 @@
 ﻿namespace Telecom_Tools
 {
-    partial class formTelecomTools
+    partial class FormTelecomTools
     {
         /// <summary>
         ///  Required designer variable.
@@ -233,6 +233,7 @@
             this.SUMEIconQualifierComboBox.Size = new System.Drawing.Size(251, 33);
             this.SUMEIconQualifierComboBox.TabIndex = 1;
             this.SUMEIconQualifierComboBox.SelectedIndexChanged += new System.EventHandler(this.SUMEIconQualifierComboBox_SelectedIndexChanged);
+            this.SUMEIconQualifierComboBox.SelectedIndex = 2;
             // 
             // SUMEIconQualifierLabel
             // 
