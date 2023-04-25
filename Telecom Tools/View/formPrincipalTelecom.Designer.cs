@@ -28,10 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTelecomTools));
             this.tabTelecomTools = new System.Windows.Forms.TabControl();
             this.tbQRGen = new System.Windows.Forms.TabPage();
             this.tbEFGen = new System.Windows.Forms.TabPage();
+            this.MenuTitleTabControl = new System.Windows.Forms.TabControl();
+            this.MenuTitleDataTab = new System.Windows.Forms.TabPage();
+            this.MenuTitleTextBox = new System.Windows.Forms.TextBox();
+            this.MenuTitleCopyButton = new System.Windows.Forms.Button();
+            this.MenuTitleSettingsTab = new System.Windows.Forms.TabPage();
+            this.MenuTitleEncodingComboBox = new System.Windows.Forms.ComboBox();
+            this.MenuTitleEncodingLabel = new System.Windows.Forms.Label();
+            this.MenuTitleLabel = new System.Windows.Forms.Label();
             this.characterLimitLabel = new System.Windows.Forms.Label();
             this.openFileButton = new System.Windows.Forms.Button();
             this.inputTextBox = new System.Windows.Forms.TextBox();
@@ -46,23 +53,15 @@
             this.SUMEIconLabel = new System.Windows.Forms.Label();
             this.SUMEIconQualifierComboBox = new System.Windows.Forms.ComboBox();
             this.SUMEIconQualifierLabel = new System.Windows.Forms.Label();
-            this.MenuTitleTabControl = new System.Windows.Forms.TabControl();
-            this.MenuTitleDataTab = new System.Windows.Forms.TabPage();
-            this.MenuTitleTextBox = new System.Windows.Forms.TextBox();
-            this.MenuTitleCopyButton = new System.Windows.Forms.Button();
-            this.MenuTitleSettingsTab = new System.Windows.Forms.TabPage();
-            this.MenuTitleEncodingComboBox = new System.Windows.Forms.ComboBox();
-            this.MenuTitleEncodingLabel = new System.Windows.Forms.Label();
-            this.MenuTitleLabel = new System.Windows.Forms.Label();
             this.tabTelecomTools.SuspendLayout();
             this.tbEFGen.SuspendLayout();
+            this.MenuTitleTabControl.SuspendLayout();
+            this.MenuTitleDataTab.SuspendLayout();
+            this.MenuTitleSettingsTab.SuspendLayout();
             this.SUMETabControl.SuspendLayout();
             this.SUMEDataTab.SuspendLayout();
             this.SUMESettingsTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SUMEIconNumericUpDown)).BeginInit();
-            this.MenuTitleTabControl.SuspendLayout();
-            this.MenuTitleDataTab.SuspendLayout();
-            this.MenuTitleSettingsTab.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabTelecomTools
@@ -103,6 +102,98 @@
             this.tbEFGen.Text = "EF Gen";
             this.tbEFGen.UseVisualStyleBackColor = true;
             // 
+            // MenuTitleTabControl
+            // 
+            this.MenuTitleTabControl.Controls.Add(this.MenuTitleDataTab);
+            this.MenuTitleTabControl.Controls.Add(this.MenuTitleSettingsTab);
+            this.MenuTitleTabControl.Location = new System.Drawing.Point(6, 277);
+            this.MenuTitleTabControl.Name = "MenuTitleTabControl";
+            this.MenuTitleTabControl.SelectedIndex = 0;
+            this.MenuTitleTabControl.Size = new System.Drawing.Size(419, 111);
+            this.MenuTitleTabControl.TabIndex = 23;
+            // 
+            // MenuTitleDataTab
+            // 
+            this.MenuTitleDataTab.Controls.Add(this.MenuTitleTextBox);
+            this.MenuTitleDataTab.Controls.Add(this.MenuTitleCopyButton);
+            this.MenuTitleDataTab.Location = new System.Drawing.Point(4, 34);
+            this.MenuTitleDataTab.Name = "MenuTitleDataTab";
+            this.MenuTitleDataTab.Padding = new System.Windows.Forms.Padding(3);
+            this.MenuTitleDataTab.Size = new System.Drawing.Size(411, 73);
+            this.MenuTitleDataTab.TabIndex = 0;
+            this.MenuTitleDataTab.Text = "Data";
+            this.MenuTitleDataTab.UseVisualStyleBackColor = true;
+            // 
+            // MenuTitleTextBox
+            // 
+            this.MenuTitleTextBox.AccessibleDescription = "Menu Title field content";
+            this.MenuTitleTextBox.AccessibleName = "Menu Title";
+            this.MenuTitleTextBox.Location = new System.Drawing.Point(6, 6);
+            this.MenuTitleTextBox.MaxLength = 100;
+            this.MenuTitleTextBox.Multiline = true;
+            this.MenuTitleTextBox.Name = "MenuTitleTextBox";
+            this.MenuTitleTextBox.ReadOnly = true;
+            this.MenuTitleTextBox.Size = new System.Drawing.Size(362, 62);
+            this.MenuTitleTextBox.TabIndex = 8;
+            // 
+            // MenuTitleCopyButton
+            // 
+            this.MenuTitleCopyButton.AccessibleDescription = "Copy content in the Menu Title field.";
+            this.MenuTitleCopyButton.AccessibleName = "Copy Menu Title to clipboard";
+            this.MenuTitleCopyButton.BackgroundImage = global::Telecom_Tools.Properties.Resources.Copy;
+            this.MenuTitleCopyButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.MenuTitleCopyButton.Enabled = false;
+            this.MenuTitleCopyButton.Location = new System.Drawing.Point(374, 3);
+            this.MenuTitleCopyButton.Name = "MenuTitleCopyButton";
+            this.MenuTitleCopyButton.Size = new System.Drawing.Size(31, 31);
+            this.MenuTitleCopyButton.TabIndex = 9;
+            this.MenuTitleCopyButton.Tag = "";
+            this.MenuTitleCopyButton.UseVisualStyleBackColor = true;
+            // 
+            // MenuTitleSettingsTab
+            // 
+            this.MenuTitleSettingsTab.Controls.Add(this.MenuTitleEncodingComboBox);
+            this.MenuTitleSettingsTab.Controls.Add(this.MenuTitleEncodingLabel);
+            this.MenuTitleSettingsTab.Location = new System.Drawing.Point(4, 34);
+            this.MenuTitleSettingsTab.Name = "MenuTitleSettingsTab";
+            this.MenuTitleSettingsTab.Padding = new System.Windows.Forms.Padding(3);
+            this.MenuTitleSettingsTab.Size = new System.Drawing.Size(411, 73);
+            this.MenuTitleSettingsTab.TabIndex = 1;
+            this.MenuTitleSettingsTab.Text = "Encoding Settings";
+            this.MenuTitleSettingsTab.UseVisualStyleBackColor = true;
+            // 
+            // MenuTitleEncodingComboBox
+            // 
+            this.MenuTitleEncodingComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.MenuTitleEncodingComboBox.FormattingEnabled = true;
+            this.MenuTitleEncodingComboBox.Items.AddRange(new object[] {
+            "GSM 03.38 Default",
+            "GSM 11.11/1",
+            "GSM 11.11/2",
+            "GSM 11.11/3"});
+            this.MenuTitleEncodingComboBox.Location = new System.Drawing.Point(129, 20);
+            this.MenuTitleEncodingComboBox.Name = "MenuTitleEncodingComboBox";
+            this.MenuTitleEncodingComboBox.Size = new System.Drawing.Size(251, 33);
+            this.MenuTitleEncodingComboBox.TabIndex = 3;
+            // 
+            // MenuTitleEncodingLabel
+            // 
+            this.MenuTitleEncodingLabel.AutoSize = true;
+            this.MenuTitleEncodingLabel.Location = new System.Drawing.Point(36, 23);
+            this.MenuTitleEncodingLabel.Name = "MenuTitleEncodingLabel";
+            this.MenuTitleEncodingLabel.Size = new System.Drawing.Size(90, 25);
+            this.MenuTitleEncodingLabel.TabIndex = 2;
+            this.MenuTitleEncodingLabel.Text = "Encoding:";
+            // 
+            // MenuTitleLabel
+            // 
+            this.MenuTitleLabel.AutoSize = true;
+            this.MenuTitleLabel.Location = new System.Drawing.Point(6, 249);
+            this.MenuTitleLabel.Name = "MenuTitleLabel";
+            this.MenuTitleLabel.Size = new System.Drawing.Size(243, 25);
+            this.MenuTitleLabel.TabIndex = 24;
+            this.MenuTitleLabel.Text = "3F00/2700/6F1E | Menu Title:";
+            // 
             // characterLimitLabel
             // 
             this.characterLimitLabel.AutoSize = true;
@@ -116,6 +207,7 @@
             // 
             this.openFileButton.AccessibleDescription = "Open a file to get the customer info";
             this.openFileButton.AccessibleName = "Open File Button";
+            this.openFileButton.BackgroundImage = global::Telecom_Tools.Properties.Resources.Open_File;
             this.openFileButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.openFileButton.Location = new System.Drawing.Point(384, 31);
             this.openFileButton.Name = "openFileButton";
@@ -225,6 +317,7 @@
             this.SUMEIconNumericUpDown.Name = "SUMEIconNumericUpDown";
             this.SUMEIconNumericUpDown.Size = new System.Drawing.Size(251, 31);
             this.SUMEIconNumericUpDown.TabIndex = 3;
+            this.SUMEIconNumericUpDown.ValueChanged += new System.EventHandler(this.SUMEIconNumericUpDown_ValueChanged);
             // 
             // SUMEIconLabel
             // 
@@ -258,98 +351,6 @@
             this.SUMEIconQualifierLabel.TabIndex = 0;
             this.SUMEIconQualifierLabel.Text = "Icon Qualifier:";
             // 
-            // MenuTitleTabControl
-            // 
-            this.MenuTitleTabControl.Controls.Add(this.MenuTitleDataTab);
-            this.MenuTitleTabControl.Controls.Add(this.MenuTitleSettingsTab);
-            this.MenuTitleTabControl.Location = new System.Drawing.Point(6, 277);
-            this.MenuTitleTabControl.Name = "MenuTitleTabControl";
-            this.MenuTitleTabControl.SelectedIndex = 0;
-            this.MenuTitleTabControl.Size = new System.Drawing.Size(419, 111);
-            this.MenuTitleTabControl.TabIndex = 23;
-            // 
-            // MenuTitleDataTab
-            // 
-            this.MenuTitleDataTab.Controls.Add(this.MenuTitleTextBox);
-            this.MenuTitleDataTab.Controls.Add(this.MenuTitleCopyButton);
-            this.MenuTitleDataTab.Location = new System.Drawing.Point(4, 34);
-            this.MenuTitleDataTab.Name = "MenuTitleDataTab";
-            this.MenuTitleDataTab.Padding = new System.Windows.Forms.Padding(3);
-            this.MenuTitleDataTab.Size = new System.Drawing.Size(411, 73);
-            this.MenuTitleDataTab.TabIndex = 0;
-            this.MenuTitleDataTab.Text = "Data";
-            this.MenuTitleDataTab.UseVisualStyleBackColor = true;
-            // 
-            // MenuTitleTextBox
-            // 
-            this.MenuTitleTextBox.AccessibleDescription = "Menu Title field content";
-            this.MenuTitleTextBox.AccessibleName = "Menu Title";
-            this.MenuTitleTextBox.Location = new System.Drawing.Point(6, 6);
-            this.MenuTitleTextBox.MaxLength = 100;
-            this.MenuTitleTextBox.Multiline = true;
-            this.MenuTitleTextBox.Name = "MenuTitleTextBox";
-            this.MenuTitleTextBox.ReadOnly = true;
-            this.MenuTitleTextBox.Size = new System.Drawing.Size(362, 62);
-            this.MenuTitleTextBox.TabIndex = 8;
-            // 
-            // MenuTitleCopyButton
-            // 
-            this.MenuTitleCopyButton.AccessibleDescription = "Copy content in the Menu Title field.";
-            this.MenuTitleCopyButton.AccessibleName = "Copy Menu Title to clipboard";
-            this.MenuTitleCopyButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MenuTitleCopyButton.BackgroundImage")));
-            this.MenuTitleCopyButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.MenuTitleCopyButton.Enabled = false;
-            this.MenuTitleCopyButton.Location = new System.Drawing.Point(374, 3);
-            this.MenuTitleCopyButton.Name = "MenuTitleCopyButton";
-            this.MenuTitleCopyButton.Size = new System.Drawing.Size(31, 31);
-            this.MenuTitleCopyButton.TabIndex = 9;
-            this.MenuTitleCopyButton.Tag = "";
-            this.MenuTitleCopyButton.UseVisualStyleBackColor = true;
-            // 
-            // MenuTitleSettingsTab
-            // 
-            this.MenuTitleSettingsTab.Controls.Add(this.MenuTitleEncodingComboBox);
-            this.MenuTitleSettingsTab.Controls.Add(this.MenuTitleEncodingLabel);
-            this.MenuTitleSettingsTab.Location = new System.Drawing.Point(4, 34);
-            this.MenuTitleSettingsTab.Name = "MenuTitleSettingsTab";
-            this.MenuTitleSettingsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.MenuTitleSettingsTab.Size = new System.Drawing.Size(411, 73);
-            this.MenuTitleSettingsTab.TabIndex = 1;
-            this.MenuTitleSettingsTab.Text = "Encoding Settings";
-            this.MenuTitleSettingsTab.UseVisualStyleBackColor = true;
-            // 
-            // MenuTitleEncodingComboBox
-            // 
-            this.MenuTitleEncodingComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.MenuTitleEncodingComboBox.FormattingEnabled = true;
-            this.MenuTitleEncodingComboBox.Items.AddRange(new object[] {
-            "GSM 03.38 Default",
-            "GSM 11.11/1",
-            "GSM 11.11/2",
-            "GSM 11.11/3"});
-            this.MenuTitleEncodingComboBox.Location = new System.Drawing.Point(129, 20);
-            this.MenuTitleEncodingComboBox.Name = "MenuTitleEncodingComboBox";
-            this.MenuTitleEncodingComboBox.Size = new System.Drawing.Size(251, 33);
-            this.MenuTitleEncodingComboBox.TabIndex = 3;
-            // 
-            // MenuTitleEncodingLabel
-            // 
-            this.MenuTitleEncodingLabel.AutoSize = true;
-            this.MenuTitleEncodingLabel.Location = new System.Drawing.Point(36, 23);
-            this.MenuTitleEncodingLabel.Name = "MenuTitleEncodingLabel";
-            this.MenuTitleEncodingLabel.Size = new System.Drawing.Size(90, 25);
-            this.MenuTitleEncodingLabel.TabIndex = 2;
-            this.MenuTitleEncodingLabel.Text = "Encoding:";
-            // 
-            // MenuTitleLabel
-            // 
-            this.MenuTitleLabel.AutoSize = true;
-            this.MenuTitleLabel.Location = new System.Drawing.Point(6, 249);
-            this.MenuTitleLabel.Name = "MenuTitleLabel";
-            this.MenuTitleLabel.Size = new System.Drawing.Size(243, 25);
-            this.MenuTitleLabel.TabIndex = 24;
-            this.MenuTitleLabel.Text = "3F00/2700/6F1E | Menu Title:";
-            // 
             // FormTelecomTools
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -361,17 +362,17 @@
             this.tabTelecomTools.ResumeLayout(false);
             this.tbEFGen.ResumeLayout(false);
             this.tbEFGen.PerformLayout();
+            this.MenuTitleTabControl.ResumeLayout(false);
+            this.MenuTitleDataTab.ResumeLayout(false);
+            this.MenuTitleDataTab.PerformLayout();
+            this.MenuTitleSettingsTab.ResumeLayout(false);
+            this.MenuTitleSettingsTab.PerformLayout();
             this.SUMETabControl.ResumeLayout(false);
             this.SUMEDataTab.ResumeLayout(false);
             this.SUMEDataTab.PerformLayout();
             this.SUMESettingsTab.ResumeLayout(false);
             this.SUMESettingsTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SUMEIconNumericUpDown)).EndInit();
-            this.MenuTitleTabControl.ResumeLayout(false);
-            this.MenuTitleDataTab.ResumeLayout(false);
-            this.MenuTitleDataTab.PerformLayout();
-            this.MenuTitleSettingsTab.ResumeLayout(false);
-            this.MenuTitleSettingsTab.PerformLayout();
             this.ResumeLayout(false);
 
         }

@@ -1,4 +1,5 @@
 using Telecom_Tools.Controller.Ef;
+using Telecom_Tools.Util;
 
 namespace Telecom_Tools
 {
@@ -12,6 +13,7 @@ namespace Telecom_Tools
 
         private void InputTextBox_TextChanged(object sender, EventArgs e)
         {
+            inputLabel.Text = ViewUtil.CountCharacters(inputTextBox.Text, "Input");
             GenerateAllEFData();
         }
         private void GenerateAllEFData()
@@ -47,6 +49,11 @@ namespace Telecom_Tools
         private void inputLabel_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void SUMEIconNumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            GenerateAllEFData();
         }
     }
 }
