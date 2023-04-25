@@ -1,8 +1,8 @@
 namespace Telecom_Tools
 {
-    public partial class formTelecomTools : Form
+    public partial class FormTelecomTools : Form
     {
-        public formTelecomTools()
+        public FormTelecomTools()
         {
             InitializeComponent();
         }

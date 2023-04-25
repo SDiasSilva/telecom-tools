@@ -10,16 +10,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Controller\Ef\**" />
     <Compile Remove="Ef\**" />
+    <Compile Remove="Model\Ef\**" />
+    <EmbeddedResource Remove="Controller\Ef\**" />
     <EmbeddedResource Remove="Ef\**" />
+    <EmbeddedResource Remove="Model\Ef\**" />
+    <None Remove="Controller\Ef\**" />
     <None Remove="Ef\**" />
+    <None Remove="Model\Ef\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controller\Ef\" />
-    <Folder Include="Model\Ef\" />
-    <Folder Include="View\" />
-    <Folder Include="View\" />
+    <Folder Include="Controller\" />
+    <Folder Include="Model\" />
   </ItemGroup>
 
 </Project>

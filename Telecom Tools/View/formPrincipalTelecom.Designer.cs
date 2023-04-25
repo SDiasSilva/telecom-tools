@@ -1,6 +1,6 @@
 ﻿namespace Telecom_Tools
 {
-    partial class formTelecomTools
+    partial class FormTelecomTools
     {
         /// <summary>
         ///  Required designer variable.

@@ -11,7 +11,7 @@ namespace Telecom_Tools
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new formTelecomTools());
+            Application.Run(new FormTelecomTools());
         }
     }
 }
