@@ -58,7 +58,7 @@ namespace Telecom_Tools.Util
         public static int GetIndexSearchedItem(byte[] needle, byte[] source)
         {
             int itemIndex = -1;
-            BoyerMoore Searcher = new BoyerMoore(needle);
+            BoyerMoore Searcher = new (needle);
             foreach (int index in Searcher.Search(source))
             {
                 itemIndex = index;

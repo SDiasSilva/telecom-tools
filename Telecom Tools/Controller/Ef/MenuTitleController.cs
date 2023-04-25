@@ -18,8 +18,7 @@ namespace Telecom_Tools.Controller.Ef
         }
         public override string GerarEf(string mainMenuTitle)
         {
-            byte[] menuTitleByteArray = new byte[menuTitle.Length];
-            FillByteArrayWith0xFF(menuTitleByteArray);
+            byte[] menuTitleByteArray = CreateByteArrayFilledWith0xFF(menuTitle.Length);
             menuTitleByteArray[0] = 0x00;
             menuTitleByteArray[1] = 0x00;
             byte[] gsmEncoded = ByteUtil.GetBytes(mainMenuTitle); //GSM 03.38 Default

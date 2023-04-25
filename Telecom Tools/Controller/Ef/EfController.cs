@@ -4,12 +4,14 @@
     {
         public abstract string GerarEf(string input);
 
-        protected void FillByteArrayWith0xFF(byte[] byteArray)
+        protected static byte[] CreateByteArrayFilledWith0xFF(int length)
         {
+            byte[] byteArray = new byte[length];
             for (int i = 0; i < byteArray.Length; i++)
             {
                 byteArray[i] = 0xFF;
             }
+            return byteArray;
         }
     }
 }

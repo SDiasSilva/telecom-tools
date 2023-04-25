@@ -21,8 +21,7 @@ namespace Telecom_Tools.Controller.Ef
         public override string GerarEf(string menuTitle)
         {
             byte[] menuTitleByteArray = ByteUtil.GetBytes(menuTitle);
-            byte[] sumeByteArray = new byte[sume.Length];
-            FillByteArrayWith0xFF(sumeByteArray);
+            byte[] sumeByteArray = CreateByteArrayFilledWith0xFF(sume.Length);
             sumeByteArray[0] = 0x05;
             sumeByteArray[1] = (byte)menuTitle.Length;
             Array.Copy(menuTitleByteArray, 0, sumeByteArray, 2, menuTitle.Length);
