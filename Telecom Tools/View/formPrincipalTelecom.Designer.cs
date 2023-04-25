@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formTelecomTools));
             this.tbEFGen = new System.Windows.Forms.TabPage();
             this.tbQRGen = new System.Windows.Forms.TabPage();
+            this.generateButton = new System.Windows.Forms.Button();
             this.errorCorrectionLabel = new System.Windows.Forms.Label();
             this.errorCorrectionDropDown = new System.Windows.Forms.ToolStrip();
             this.versiongenerateButton = new System.Windows.Forms.ToolStripSplitButton();
@@ -39,7 +40,7 @@
             this.errorCorrectiongenerateButton = new System.Windows.Forms.ToolStripSplitButton();
             this.moduleWidthLabel = new System.Windows.Forms.Label();
             this.moduleDropDown = new System.Windows.Forms.ToolStrip();
-            this.modulegenerateButton = new System.Windows.Forms.ToolStripDropDownButton();
+            this.toolStripMenuItem = new System.Windows.Forms.ToolStripDropDownButton();
             this.openFile = new System.Windows.Forms.Button();
             this.openFileTextBox = new System.Windows.Forms.TextBox();
             this.pngCheckBox = new System.Windows.Forms.CheckBox();
@@ -47,7 +48,6 @@
             this.zipCheckBox = new System.Windows.Forms.CheckBox();
             this.logoCheckBox = new System.Windows.Forms.CheckBox();
             this.tabTelecomTools = new System.Windows.Forms.TabControl();
-            this.generateButton = new System.Windows.Forms.Button();
             this.tbQRGen.SuspendLayout();
             this.errorCorrectionDropDown.SuspendLayout();
             this.versionDropDown.SuspendLayout();
@@ -89,6 +89,16 @@
             this.tbQRGen.TabIndex = 0;
             this.tbQRGen.Text = "QR Gen";
             this.tbQRGen.UseVisualStyleBackColor = true;
+            // 
+            // generateButton
+            // 
+            this.generateButton.Location = new System.Drawing.Point(95, 222);
+            this.generateButton.Name = "generateButton";
+            this.generateButton.Size = new System.Drawing.Size(112, 39);
+            this.generateButton.TabIndex = 8;
+            this.generateButton.Text = "GENERATE";
+            this.generateButton.UseVisualStyleBackColor = true;
+            this.generateButton.Click += new System.EventHandler(this.generateButton_Click);
             // 
             // errorCorrectionLabel
             // 
@@ -163,21 +173,21 @@
             // 
             this.moduleDropDown.Dock = System.Windows.Forms.DockStyle.None;
             this.moduleDropDown.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.modulegenerateButton});
+            this.toolStripMenuItem});
             this.moduleDropDown.Location = new System.Drawing.Point(20, 130);
             this.moduleDropDown.Name = "moduleDropDown";
-            this.moduleDropDown.Size = new System.Drawing.Size(38, 25);
+            this.moduleDropDown.Size = new System.Drawing.Size(69, 25);
             this.moduleDropDown.TabIndex = 1;
             this.moduleDropDown.Text = "moduleDropDown";
             // 
-            // modulegenerateButton
+            // toolStripMenuItem
             // 
-            this.modulegenerateButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.modulegenerateButton.Image = ((System.Drawing.Image)(resources.GetObject("modulegenerateButton.Image")));
-            this.modulegenerateButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.modulegenerateButton.Name = "modulegenerateButton";
-            this.modulegenerateButton.Size = new System.Drawing.Size(26, 22);
-            this.modulegenerateButton.Text = "1";
+            this.toolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem.Image")));
+            this.toolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripMenuItem.Name = "toolStripMenuItem";
+            this.toolStripMenuItem.Size = new System.Drawing.Size(26, 22);
+            this.toolStripMenuItem.Text = "1";
             // 
             // openFile
             // 
@@ -249,15 +259,6 @@
             this.tabTelecomTools.Size = new System.Drawing.Size(307, 405);
             this.tabTelecomTools.TabIndex = 0;
             // 
-            // generateButton
-            // 
-            this.generateButton.Location = new System.Drawing.Point(95, 222);
-            this.generateButton.Name = "generateButton";
-            this.generateButton.Size = new System.Drawing.Size(112, 39);
-            this.generateButton.TabIndex = 8;
-            this.generateButton.Text = "GENERATE";
-            this.generateButton.UseVisualStyleBackColor = true;
-            // 
             // formTelecomTools
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -290,8 +291,8 @@
         private CheckBox logoCheckBox;
         private TabControl tabTelecomTools;
         private ToolStrip moduleDropDown;
-        private ToolStripDropDownButton modulegenerateButton;
         private Label moduleWidthLabel;
+        private ToolStripDropDownButton toolStripMenuItem;
 
         #endregion
 

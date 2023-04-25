@@ -32,3 +32,4 @@ C:\Users\silvtiag\Documents\02-AuthorialCodes\Projetos\telecom-tools\Telecom Too
 C:\Users\silvtiag\Documents\02-AuthorialCodes\Projetos\telecom-tools\Telecom Tools\obj\Debug\net6.0-windows\Telecom Tools.pdb
 C:\Users\silvtiag\Documents\02-AuthorialCodes\Projetos\telecom-tools\Telecom Tools\obj\Debug\net6.0-windows\Telecom Tools.genruntimeconfig.cache
 C:\Users\silvtiag\Documents\02-AuthorialCodes\Projetos\telecom-tools\Telecom Tools\obj\Debug\net6.0-windows\ref\Telecom Tools.dll
+C:\Users\silvtiag\Documents\02-AuthorialCodes\Projetos\telecom-tools\Telecom Tools\obj\Debug\net6.0-windows\Telecom_Tools.Properties.Resources.resources

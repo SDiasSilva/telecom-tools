@@ -1,10 +1,16 @@
+using Telecom_Tools.Model;
+
 namespace Telecom_Tools
 {
     public partial class formTelecomTools : Form
     {
+
+        Controller.ModuleWidthController moduleWidthController = new Controller.ModuleWidthController();
         public formTelecomTools()
         {
             InitializeComponent();
+
+            moduleWidthController.CriaSplitButtons(toolStripMenuItem);
         }
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
@@ -31,6 +37,11 @@ namespace Telecom_Tools
         {
 
         }
+
+        private void generateButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
-    }
+
 }
