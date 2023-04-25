@@ -6,11 +6,15 @@ namespace Telecom_Tools
     {
 
         Controller.ModuleWidthController moduleWidthController = new Controller.ModuleWidthController();
+        Controller.VersionController versionController = new Controller.VersionController();
+
         public formTelecomTools()
         {
             InitializeComponent();
 
-            moduleWidthController.CriaSplitButtons(toolStripMenuItem);
+            moduleWidthController.CriaSplitButtons(moduleToolStripMenu);
+            versionController.CriaSplitButtons(versionToolStripMenu);
+
         }
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
@@ -39,6 +43,11 @@ namespace Telecom_Tools
         }
 
         private void generateButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void openFile_Click(object sender, EventArgs e)
         {
 
         }

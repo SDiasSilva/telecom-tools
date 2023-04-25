@@ -34,13 +34,13 @@
             this.generateButton = new System.Windows.Forms.Button();
             this.errorCorrectionLabel = new System.Windows.Forms.Label();
             this.errorCorrectionDropDown = new System.Windows.Forms.ToolStrip();
-            this.versiongenerateButton = new System.Windows.Forms.ToolStripSplitButton();
+            this.versionToolStripMenu = new System.Windows.Forms.ToolStripDropDownButton();
             this.versionLabel = new System.Windows.Forms.Label();
             this.versionDropDown = new System.Windows.Forms.ToolStrip();
             this.errorCorrectiongenerateButton = new System.Windows.Forms.ToolStripSplitButton();
             this.moduleWidthLabel = new System.Windows.Forms.Label();
             this.moduleDropDown = new System.Windows.Forms.ToolStrip();
-            this.toolStripMenuItem = new System.Windows.Forms.ToolStripDropDownButton();
+            this.moduleToolStripMenu = new System.Windows.Forms.ToolStripDropDownButton();
             this.openFile = new System.Windows.Forms.Button();
             this.openFileTextBox = new System.Windows.Forms.TextBox();
             this.pngCheckBox = new System.Windows.Forms.CheckBox();
@@ -114,21 +114,21 @@
             // 
             this.errorCorrectionDropDown.Dock = System.Windows.Forms.DockStyle.None;
             this.errorCorrectionDropDown.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.versiongenerateButton});
-            this.errorCorrectionDropDown.Location = new System.Drawing.Point(212, 130);
+            this.versionToolStripMenu});
+            this.errorCorrectionDropDown.Location = new System.Drawing.Point(95, 130);
             this.errorCorrectionDropDown.Name = "errorCorrectionDropDown";
-            this.errorCorrectionDropDown.Size = new System.Drawing.Size(76, 25);
+            this.errorCorrectionDropDown.Size = new System.Drawing.Size(75, 25);
             this.errorCorrectionDropDown.TabIndex = 7;
             this.errorCorrectionDropDown.Text = "errorCorrectionDropDown";
             // 
-            // versiongenerateButton
+            // versionToolStripMenu
             // 
-            this.versiongenerateButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.versiongenerateButton.Image = ((System.Drawing.Image)(resources.GetObject("versiongenerateButton.Image")));
-            this.versiongenerateButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.versiongenerateButton.Name = "versiongenerateButton";
-            this.versiongenerateButton.Size = new System.Drawing.Size(64, 22);
-            this.versiongenerateButton.Text = "Level M";
+            this.versionToolStripMenu.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.versionToolStripMenu.Image = ((System.Drawing.Image)(resources.GetObject("versionToolStripMenu.Image")));
+            this.versionToolStripMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.versionToolStripMenu.Name = "versionToolStripMenu";
+            this.versionToolStripMenu.Size = new System.Drawing.Size(63, 22);
+            this.versionToolStripMenu.Text = "Auto - 0";
             // 
             // versionLabel
             // 
@@ -144,9 +144,9 @@
             this.versionDropDown.Dock = System.Windows.Forms.DockStyle.None;
             this.versionDropDown.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.errorCorrectiongenerateButton});
-            this.versionDropDown.Location = new System.Drawing.Point(95, 130);
+            this.versionDropDown.Location = new System.Drawing.Point(212, 130);
             this.versionDropDown.Name = "versionDropDown";
-            this.versionDropDown.Size = new System.Drawing.Size(78, 25);
+            this.versionDropDown.Size = new System.Drawing.Size(76, 25);
             this.versionDropDown.TabIndex = 1;
             this.versionDropDown.Text = "versionDropDown";
             this.versionDropDown.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.versionDropDown_ItemClicked);
@@ -157,8 +157,8 @@
             this.errorCorrectiongenerateButton.Image = ((System.Drawing.Image)(resources.GetObject("errorCorrectiongenerateButton.Image")));
             this.errorCorrectiongenerateButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.errorCorrectiongenerateButton.Name = "errorCorrectiongenerateButton";
-            this.errorCorrectiongenerateButton.Size = new System.Drawing.Size(66, 22);
-            this.errorCorrectiongenerateButton.Text = "Auto - 0";
+            this.errorCorrectiongenerateButton.Size = new System.Drawing.Size(64, 22);
+            this.errorCorrectiongenerateButton.Text = "Level M";
             // 
             // moduleWidthLabel
             // 
@@ -173,21 +173,21 @@
             // 
             this.moduleDropDown.Dock = System.Windows.Forms.DockStyle.None;
             this.moduleDropDown.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem});
+            this.moduleToolStripMenu});
             this.moduleDropDown.Location = new System.Drawing.Point(20, 130);
             this.moduleDropDown.Name = "moduleDropDown";
-            this.moduleDropDown.Size = new System.Drawing.Size(69, 25);
+            this.moduleDropDown.Size = new System.Drawing.Size(38, 25);
             this.moduleDropDown.TabIndex = 1;
             this.moduleDropDown.Text = "moduleDropDown";
             // 
-            // toolStripMenuItem
+            // moduleToolStripMenu
             // 
-            this.toolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem.Image")));
-            this.toolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripMenuItem.Name = "toolStripMenuItem";
-            this.toolStripMenuItem.Size = new System.Drawing.Size(26, 22);
-            this.toolStripMenuItem.Text = "1";
+            this.moduleToolStripMenu.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.moduleToolStripMenu.Image = ((System.Drawing.Image)(resources.GetObject("moduleToolStripMenu.Image")));
+            this.moduleToolStripMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.moduleToolStripMenu.Name = "moduleToolStripMenu";
+            this.moduleToolStripMenu.Size = new System.Drawing.Size(26, 22);
+            this.moduleToolStripMenu.Text = "1";
             // 
             // openFile
             // 
@@ -197,6 +197,7 @@
             this.openFile.TabIndex = 1;
             this.openFile.Text = "File";
             this.openFile.UseVisualStyleBackColor = true;
+            this.openFile.Click += new System.EventHandler(this.openFile_Click);
             // 
             // openFileTextBox
             // 
@@ -292,7 +293,7 @@
         private TabControl tabTelecomTools;
         private ToolStrip moduleDropDown;
         private Label moduleWidthLabel;
-        private ToolStripDropDownButton toolStripMenuItem;
+        private ToolStripDropDownButton moduleToolStripMenu;
 
         #endregion
 
@@ -301,7 +302,7 @@
         private Label errorCorrectionLabel;
         private ToolStrip errorCorrectionDropDown;
         private ToolStripSplitButton errorCorrectiongenerateButton;
-        private ToolStripSplitButton versiongenerateButton;
+        private ToolStripDropDownButton versionToolStripMenu;
         private Button generateButton;
     }
 }
