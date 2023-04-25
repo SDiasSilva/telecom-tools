@@ -15,8 +15,4 @@
     <None Remove="Ef\**" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Model\Ef\" />
-  </ItemGroup>
-
 </Project>
