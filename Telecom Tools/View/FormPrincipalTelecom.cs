@@ -21,7 +21,9 @@ namespace Telecom_Tools
                 try 
                 {
                     SetUpMenuElementsController sumeController = new (SUMEIconQualifierComboBox.SelectedIndex, SUMEIconNumericUpDown.Value);
+                    MenuTitleController menuTitleController = new (MenuTitleEncodingComboBox.SelectedIndex);
                     SUMETextBox.Text = sumeController.GerarEf(inputTextBox.Text);
+                    MenuTitleTextBox.Text = menuTitleController.GerarEf(inputTextBox.Text);
                 }
                 catch(ArgumentException)
                 {
@@ -33,12 +35,18 @@ namespace Telecom_Tools
             else
             {
                 SUMETextBox.Text = "";
+                MenuTitleTextBox.Text = "";
             }
         }
 
         private void SUMEIconQualifierComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             GenerateAllEFData();
+        }
+
+        private void inputLabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
