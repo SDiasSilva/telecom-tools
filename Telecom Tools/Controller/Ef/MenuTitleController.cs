@@ -16,7 +16,7 @@ namespace Telecom_Tools.Controller.Ef
         {
             menuTitle = new MenuTitle(encoding);
         }
-        public override string GerarEf(string mainMenuTitle)
+        public override string GenerateEf(string mainMenuTitle)
         {
             byte[] menuTitleByteArray = CreateByteArrayFilledWith0xFF(menuTitle.Length);
             menuTitleByteArray[0] = 0x00;

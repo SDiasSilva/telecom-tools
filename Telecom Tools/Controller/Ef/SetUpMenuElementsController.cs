@@ -18,7 +18,7 @@ namespace Telecom_Tools.Controller.Ef
             sume = new SetUpMenuElements(iconQualifier, iconIdentifier);
         }
 
-        public override string GerarEf(string menuTitle)
+        public override string GenerateEf(string menuTitle)
         {
             byte[] menuTitleByteArray = ByteUtil.GetBytes(menuTitle);
             byte[] sumeByteArray = CreateByteArrayFilledWith0xFF(sume.Length);

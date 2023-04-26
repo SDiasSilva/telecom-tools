@@ -15,7 +15,7 @@ namespace Telecom_Tools.Controller.Ef
         {
             pnn = new PLMNNetworkName();
         }
-        public override string GerarEf(string input)
+        public override string GenerateEf(string input)
         {
             byte[] inputByteArray = GSMEncoder.PackInfo(ByteUtil.GetBytes(input));
             byte[] pnnEFContent = CreateByteArrayFilledWith0xFF(pnn.Length);

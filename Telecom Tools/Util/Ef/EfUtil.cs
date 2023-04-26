@@ -36,10 +36,10 @@ namespace Telecom_Tools.Util.Ef
                     MenuTitleController menuTitleController = new(MenuTitleEncodingComboBox.SelectedIndex);
                     ServiceNameProviderController spnController = new(SPNRegisteredPLMNRequiredComboBox.SelectedIndex, SPNamePLMNRequiredComboBox.SelectedIndex);
                     PLMNNetworkNameController pnnController = new PLMNNetworkNameController();
-                    SUMETextBox.Text = sumeController.GerarEf(inputTextBox.Text);
-                    MenuTitleTextBox.Text = menuTitleController.GerarEf(inputTextBox.Text);
-                    SPNTextBox.Text = spnController.GerarEf(inputTextBox.Text);
-                    PNNTextBox.Text = pnnController.GerarEf(inputTextBox.Text);
+                    SUMETextBox.Text = sumeController.GenerateEf(inputTextBox.Text);
+                    MenuTitleTextBox.Text = menuTitleController.GenerateEf(inputTextBox.Text);
+                    SPNTextBox.Text = spnController.GenerateEf(inputTextBox.Text);
+                    PNNTextBox.Text = pnnController.GenerateEf(inputTextBox.Text);
                 }
                 catch (ArgumentException)
                 {

@@ -15,7 +15,7 @@ namespace Telecom_Tools.Controller.Ef
         {
             spn = new ServiceNameProvider(registeredPLMNRequired, sPNPLMNRequired);
         }
-        public override string GerarEf(string input)
+        public override string GenerateEf(string input)
         {
             byte[] inputByteArray = ByteUtil.GetBytes(input);
             byte[] spnEFContent = CreateByteArrayFilledWith0xFF(spn.Length);
