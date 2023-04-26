@@ -279,7 +279,6 @@
             this.SPNPathLabel.Size = new System.Drawing.Size(194, 25);
             this.SPNPathLabel.TabIndex = 25;
             this.SPNPathLabel.Text = "3F00/7F20/6F46 | SPN:";
-            this.SPNPathLabel.Click += new System.EventHandler(this.SPNPathLabel_Click);
             // 
             // MenuTitleTabControl
             // 
@@ -416,7 +415,6 @@
             this.inputLabel.Size = new System.Drawing.Size(58, 25);
             this.inputLabel.TabIndex = 19;
             this.inputLabel.Text = "Input:";
-            this.inputLabel.Click += new System.EventHandler(this.InputLabel_Click);
             // 
             // SUMEPathLabel
             // 
@@ -544,7 +542,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(471, 675);
+            this.ClientSize = new System.Drawing.Size(441, 675);
             this.Controls.Add(this.TelecomToolsTabControl);
             this.Name = "FormTelecomTools";
             this.Text = "Telecom Tools";

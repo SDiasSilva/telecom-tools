@@ -26,11 +26,6 @@ namespace Telecom_Tools
             
         }
 
-        private void InputLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void SUMEIconNumericUpDown_ValueChanged(object sender, EventArgs e)
         {
             EfUtil.GenerateAllEFData(EFDataGenTabPage);
@@ -61,11 +56,6 @@ namespace Telecom_Tools
         private void SPNamePLMNRequiredComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             EfUtil.GenerateAllEFData(EFDataGenTabPage);
-        }
-
-        private void SPNPathLabel_Click(object sender, EventArgs e)
-        {
-            
         }
 
         private void SPNTextBox_TextChanged(object sender, EventArgs e)
