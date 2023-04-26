@@ -54,7 +54,7 @@
             this.MenuTitleEncodingLabel = new System.Windows.Forms.Label();
             this.MenuTitlePathLabel = new System.Windows.Forms.Label();
             this.characterLimitLabel = new System.Windows.Forms.Label();
-            this.openFileButton = new System.Windows.Forms.Button();
+            this.efGenOpenFileButton = new System.Windows.Forms.Button();
             this.inputTextBox = new System.Windows.Forms.TextBox();
             this.inputLabel = new System.Windows.Forms.Label();
             this.SUMEPathLabel = new System.Windows.Forms.Label();
@@ -67,6 +67,7 @@
             this.SUMEIconLabel = new System.Windows.Forms.Label();
             this.SUMEIconQualifierComboBox = new System.Windows.Forms.ComboBox();
             this.SUMEIconQualifierLabel = new System.Windows.Forms.Label();
+            this.efGenOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.TelecomToolsTabControl.SuspendLayout();
             this.EFDataGenTabPage.SuspendLayout();
             this.SPNTabControl.SuspendLayout();
@@ -111,7 +112,7 @@
             this.EFDataGenTabPage.Controls.Add(this.MenuTitleTabControl);
             this.EFDataGenTabPage.Controls.Add(this.MenuTitlePathLabel);
             this.EFDataGenTabPage.Controls.Add(this.characterLimitLabel);
-            this.EFDataGenTabPage.Controls.Add(this.openFileButton);
+            this.EFDataGenTabPage.Controls.Add(this.efGenOpenFileButton);
             this.EFDataGenTabPage.Controls.Add(this.inputTextBox);
             this.EFDataGenTabPage.Controls.Add(this.inputLabel);
             this.EFDataGenTabPage.Controls.Add(this.SUMEPathLabel);
@@ -381,18 +382,19 @@
             this.characterLimitLabel.TabIndex = 22;
             this.characterLimitLabel.Text = "Character Limit: 16";
             // 
-            // openFileButton
+            // efGenOpenFileButton
             // 
-            this.openFileButton.AccessibleDescription = "Open a file to get the customer info";
-            this.openFileButton.AccessibleName = "Open File Button";
-            this.openFileButton.BackgroundImage = global::Telecom_Tools.Properties.Resources.Open_File;
-            this.openFileButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.openFileButton.Location = new System.Drawing.Point(384, 31);
-            this.openFileButton.Name = "openFileButton";
-            this.openFileButton.Size = new System.Drawing.Size(31, 31);
-            this.openFileButton.TabIndex = 21;
-            this.openFileButton.Tag = "";
-            this.openFileButton.UseVisualStyleBackColor = true;
+            this.efGenOpenFileButton.AccessibleDescription = "Open a file to get the customer info";
+            this.efGenOpenFileButton.AccessibleName = "Open File Button";
+            this.efGenOpenFileButton.BackgroundImage = global::Telecom_Tools.Properties.Resources.Open_File;
+            this.efGenOpenFileButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.efGenOpenFileButton.Location = new System.Drawing.Point(384, 31);
+            this.efGenOpenFileButton.Name = "efGenOpenFileButton";
+            this.efGenOpenFileButton.Size = new System.Drawing.Size(31, 31);
+            this.efGenOpenFileButton.TabIndex = 21;
+            this.efGenOpenFileButton.Tag = "";
+            this.efGenOpenFileButton.UseVisualStyleBackColor = true;
+            this.efGenOpenFileButton.Click += new System.EventHandler(this.efGenOpenFileButton_Click);
             // 
             // inputTextBox
             // 
@@ -530,6 +532,10 @@
             this.SUMEIconQualifierLabel.TabIndex = 0;
             this.SUMEIconQualifierLabel.Text = "Icon Qualifier:";
             // 
+            // efGenOpenFileDialog
+            // 
+            this.efGenOpenFileDialog.Filter = "Input Files (INP)|*.INP";
+            // 
             // FormTelecomTools
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -566,7 +572,7 @@
         private TabControl TelecomToolsTabControl;
         private TabPage QRGeneratorTabPage;
         private TabPage EFDataGenTabPage;
-        private Button openFileButton;
+        private Button efGenOpenFileButton;
         private TextBox inputTextBox;
         private Label inputLabel;
         private Label SUMEPathLabel;
@@ -601,5 +607,6 @@
         private Button PNNCopyButton;
         private TextBox PNNTextBox;
         private Label PNNPathLabel;
+        private OpenFileDialog efGenOpenFileDialog;
     }
 }

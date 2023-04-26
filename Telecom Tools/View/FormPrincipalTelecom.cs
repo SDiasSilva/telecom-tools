@@ -79,5 +79,10 @@ namespace Telecom_Tools
             PNNPathLabel.Text = ViewUtil.CountBytes(PNNTextBox.Text, "3F00/7F20/6FC5 | PNN");
             PNNCopyButton.Enabled = ViewUtil.IsButtonEnabled(PNNTextBox.Text);
         }
+
+        private void efGenOpenFileButton_Click(object sender, EventArgs e)
+        {
+            inputTextBox.Text = InputFileUtil.OpenInputFile(efGenOpenFileDialog, this);
+        }
     }
 }
