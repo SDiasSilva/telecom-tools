@@ -30,8 +30,6 @@ namespace Telecom_Tools.Util.Ef
                 catch (ArgumentException)
                 {
                     MessageBox.Show("Special characters limit exceeded!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    //string corrected = inputTextBox.Text.Remove(inputTextBox.Text.Length - 1);
-                    //inputTextBox.Text = corrected;
                     inputTextBox.Text = inputTextBox.Text[..inputTextBox.MaxLength];
                 }
             }
