@@ -84,5 +84,25 @@ namespace Telecom_Tools
         {
             inputTextBox.Text = InputFileUtil.OpenInputFile(efGenOpenFileDialog, this);
         }
+
+        private void SUMECopyButton_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(SUMETextBox.Text);
+        }
+
+        private void MenuTitleCopyButton_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(MenuTitleTextBox.Text);
+        }
+
+        private void SPNCopyButton_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(SPNTextBox.Text);
+        }
+
+        private void PNNCopyButton_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(PNNTextBox.Text);
+        }
     }
 }

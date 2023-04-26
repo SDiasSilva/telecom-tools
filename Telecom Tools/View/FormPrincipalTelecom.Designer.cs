@@ -138,6 +138,7 @@
             this.PNNCopyButton.TabIndex = 29;
             this.PNNCopyButton.Tag = "";
             this.PNNCopyButton.UseVisualStyleBackColor = true;
+            this.PNNCopyButton.Click += new System.EventHandler(this.PNNCopyButton_Click);
             // 
             // PNNTextBox
             // 
@@ -208,6 +209,7 @@
             this.SPNCopyButton.TabIndex = 12;
             this.SPNCopyButton.Tag = "";
             this.SPNCopyButton.UseVisualStyleBackColor = true;
+            this.SPNCopyButton.Click += new System.EventHandler(this.SPNCopyButton_Click);
             // 
             // SPNSettingsTabPage
             // 
@@ -327,6 +329,7 @@
             this.MenuTitleCopyButton.TabIndex = 9;
             this.MenuTitleCopyButton.Tag = "";
             this.MenuTitleCopyButton.UseVisualStyleBackColor = true;
+            this.MenuTitleCopyButton.Click += new System.EventHandler(this.MenuTitleCopyButton_Click);
             // 
             // MenuTitleSettingsTabPage
             // 
@@ -472,6 +475,7 @@
             this.SUMECopyButton.TabIndex = 6;
             this.SUMECopyButton.Tag = "";
             this.SUMECopyButton.UseVisualStyleBackColor = true;
+            this.SUMECopyButton.Click += new System.EventHandler(this.SUMECopyButton_Click);
             // 
             // SUMESettingsTabPage
             // 
