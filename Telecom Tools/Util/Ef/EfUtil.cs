@@ -7,10 +7,14 @@ using Telecom_Tools.Controller.Ef;
 
 namespace Telecom_Tools.Util.Ef
 {
+    // This is a utility class for handling EFs and Isolate from the View
     internal class EfUtil
     {
+        // Generates all the EFs content based on the input text.
+        // eFDataGenTabPage: the tab page containing the EF controls.
         public static void GenerateAllEFData(TabPage eFDataGenTabPage)
         {
+            //Recover all the controls from eFDataGenTabPage
             var inputTextBox = eFDataGenTabPage.Controls.Find("inputTextBox", true).FirstOrDefault() as TextBox;
             var SUMETextBox = eFDataGenTabPage.Controls.Find("SUMETextBox", true).FirstOrDefault() as TextBox;
             var MenuTitleTextBox = eFDataGenTabPage.Controls.Find("MenuTitleTextBox", true).FirstOrDefault() as TextBox;
@@ -22,6 +26,8 @@ namespace Telecom_Tools.Util.Ef
             var SPNamePLMNRequiredComboBox = eFDataGenTabPage.Controls.Find("SPNamePLMNRequiredComboBox", true).FirstOrDefault() as ComboBox;
             var SUMEIconNumericUpDown = eFDataGenTabPage.Controls.Find("SUMEIconNumericUpDown", true).FirstOrDefault() as NumericUpDown;
 
+            /*If input is not empty then it will use the EF controllers to generate the EF contents
+             otherwise it empties all related EF Text boxes*/
             if (inputTextBox.Text.Length != 0)
             {
                 try
@@ -50,6 +56,12 @@ namespace Telecom_Tools.Util.Ef
             }
         }
 
+        /* Sets the maximum length of the inputTextBox based on the selected encoding and updates the 
+           character limit label. If inputTextBox has text, it generates all the EFs content.
+         * selectedEncoding: the index of the selected encoding.
+         * inputTextBox: the text box containing the input text.
+         * lblCharacterLimit: the label displaying the character limit.
+         * eFDataGenTabPage: the tab page containing the EF controls.*/
         public static void MenuTitleEncodingSelect(int selectedEncoding, TextBox inputTextBox, Label lblCharacterLimit, TabPage eFDataGenTabPage)
         {
             switch (selectedEncoding)
