@@ -14,8 +14,11 @@ namespace Telecom_Tools.Util.Ef
             var inputTextBox = eFDataGenTabPage.Controls.Find("inputTextBox", true).FirstOrDefault() as TextBox;
             var SUMETextBox = eFDataGenTabPage.Controls.Find("SUMETextBox", true).FirstOrDefault() as TextBox;
             var MenuTitleTextBox = eFDataGenTabPage.Controls.Find("MenuTitleTextBox", true).FirstOrDefault() as TextBox;
+            var SPNTextBox = eFDataGenTabPage.Controls.Find("SPNTextBox", true).FirstOrDefault() as TextBox;
             var SUMEIconQualifierComboBox = eFDataGenTabPage.Controls.Find("SUMEIconQualifierComboBox", true).FirstOrDefault() as ComboBox;
             var MenuTitleEncodingComboBox = eFDataGenTabPage.Controls.Find("MenuTitleEncodingComboBox", true).FirstOrDefault() as ComboBox;
+            var SPNRegisteredPLMNRequiredComboBox = eFDataGenTabPage.Controls.Find("SPNRegisteredPLMNRequiredComboBox", true).FirstOrDefault() as ComboBox;
+            var SPNamePLMNRequiredComboBox = eFDataGenTabPage.Controls.Find("SPNamePLMNRequiredComboBox", true).FirstOrDefault() as ComboBox;
             var SUMEIconNumericUpDown = eFDataGenTabPage.Controls.Find("SUMEIconNumericUpDown", true).FirstOrDefault() as NumericUpDown;
 
             if (inputTextBox.Text.Length != 0)
@@ -24,8 +27,10 @@ namespace Telecom_Tools.Util.Ef
                 {
                     SetUpMenuElementsController sumeController = new(iconQualifier: SUMEIconQualifierComboBox.SelectedIndex, SUMEIconNumericUpDown.Value);
                     MenuTitleController menuTitleController = new(MenuTitleEncodingComboBox.SelectedIndex);
+                    ServiceNameProviderController spnController = new(SPNRegisteredPLMNRequiredComboBox.SelectedIndex, SPNamePLMNRequiredComboBox.SelectedIndex);
                     SUMETextBox.Text = sumeController.GerarEf(inputTextBox.Text);
                     MenuTitleTextBox.Text = menuTitleController.GerarEf(inputTextBox.Text);
+                    SPNTextBox.Text = spnController.GerarEf(inputTextBox.Text);
                 }
                 catch (ArgumentException)
                 {
@@ -37,6 +42,7 @@ namespace Telecom_Tools.Util.Ef
             {
                 SUMETextBox.Text = "";
                 MenuTitleTextBox.Text = "";
+                SPNTextBox.Text = "";
             }
         }
 

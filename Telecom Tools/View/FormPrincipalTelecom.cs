@@ -22,6 +22,8 @@ namespace Telecom_Tools
         private void SUMEIconQualifierComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             EfUtil.GenerateAllEFData(EFDataGenTabPage);
+
+            
         }
 
         private void InputLabel_Click(object sender, EventArgs e)
@@ -49,6 +51,27 @@ namespace Telecom_Tools
         private void MenuTitleEncodingComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             EfUtil.MenuTitleEncodingSelect(MenuTitleEncodingComboBox.SelectedIndex, inputTextBox, characterLimitLabel, EFDataGenTabPage);
+        }
+
+        private void SPNRegisteredPLMNRequiredComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            EfUtil.GenerateAllEFData(EFDataGenTabPage);
+        }
+
+        private void SPNamePLMNRequiredComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            EfUtil.GenerateAllEFData(EFDataGenTabPage);
+        }
+
+        private void SPNPathLabel_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void SPNTextBox_TextChanged(object sender, EventArgs e)
+        {
+            SPNPathLabel.Text = ViewUtil.CountBytes(SPNTextBox.Text, "3F00/7F20/6F46 | SPN");
+            SPNCopyButton.Enabled = ViewUtil.IsButtonEnabled(SPNTextBox.Text);
         }
     }
 }

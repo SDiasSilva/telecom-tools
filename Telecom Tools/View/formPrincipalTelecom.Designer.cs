@@ -28,10 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTelecomTools));
             this.TelecomToolsTabControl = new System.Windows.Forms.TabControl();
             this.QRGeneratorTabPage = new System.Windows.Forms.TabPage();
             this.EFDataGenTabPage = new System.Windows.Forms.TabPage();
+            this.SPNTabControl = new System.Windows.Forms.TabControl();
+            this.SPNDataTabPage = new System.Windows.Forms.TabPage();
+            this.SPNTextBox = new System.Windows.Forms.TextBox();
+            this.SPNCopyButton = new System.Windows.Forms.Button();
+            this.SPNSettingsTabPage = new System.Windows.Forms.TabPage();
+            this.SPNamePLMNRequiredComboBox = new System.Windows.Forms.ComboBox();
+            this.SPNRequiredLabel = new System.Windows.Forms.Label();
+            this.SPNRegisteredPLMNRequiredComboBox = new System.Windows.Forms.ComboBox();
+            this.SPNRegRequiredLabel = new System.Windows.Forms.Label();
+            this.SPNPathLabel = new System.Windows.Forms.Label();
             this.MenuTitleTabControl = new System.Windows.Forms.TabControl();
             this.MenuTitleDataTabPage = new System.Windows.Forms.TabPage();
             this.MenuTitleTextBox = new System.Windows.Forms.TextBox();
@@ -54,18 +63,11 @@
             this.SUMEIconLabel = new System.Windows.Forms.Label();
             this.SUMEIconQualifierComboBox = new System.Windows.Forms.ComboBox();
             this.SUMEIconQualifierLabel = new System.Windows.Forms.Label();
-            this.SPNTabControl = new System.Windows.Forms.TabControl();
-            this.SPNDataTabPage = new System.Windows.Forms.TabPage();
-            this.SPNTextBox = new System.Windows.Forms.TextBox();
-            this.SPNCopyButton = new System.Windows.Forms.Button();
-            this.SPNSettingsTabPage = new System.Windows.Forms.TabPage();
-            this.SPNrequiredComboBox = new System.Windows.Forms.ComboBox();
-            this.SPNRequiredLabel = new System.Windows.Forms.Label();
-            this.SPNRegRequiredComboBox = new System.Windows.Forms.ComboBox();
-            this.SPNRegRequiredLabel = new System.Windows.Forms.Label();
-            this.SPNPathLabel = new System.Windows.Forms.Label();
             this.TelecomToolsTabControl.SuspendLayout();
             this.EFDataGenTabPage.SuspendLayout();
+            this.SPNTabControl.SuspendLayout();
+            this.SPNDataTabPage.SuspendLayout();
+            this.SPNSettingsTabPage.SuspendLayout();
             this.MenuTitleTabControl.SuspendLayout();
             this.MenuTitleDataTabPage.SuspendLayout();
             this.MenuTitleSettingsTabPage.SuspendLayout();
@@ -73,9 +75,6 @@
             this.SUMEDataTabPage.SuspendLayout();
             this.SUMESettingsTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SUMEIconNumericUpDown)).BeginInit();
-            this.SPNTabControl.SuspendLayout();
-            this.SPNDataTabPage.SuspendLayout();
-            this.SPNSettingsTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // TelecomToolsTabControl
@@ -117,6 +116,124 @@
             this.EFDataGenTabPage.TabIndex = 1;
             this.EFDataGenTabPage.Text = "EF Gen";
             this.EFDataGenTabPage.UseVisualStyleBackColor = true;
+            // 
+            // SPNTabControl
+            // 
+            this.SPNTabControl.Controls.Add(this.SPNDataTabPage);
+            this.SPNTabControl.Controls.Add(this.SPNSettingsTabPage);
+            this.SPNTabControl.Location = new System.Drawing.Point(6, 411);
+            this.SPNTabControl.Name = "SPNTabControl";
+            this.SPNTabControl.SelectedIndex = 0;
+            this.SPNTabControl.Size = new System.Drawing.Size(419, 111);
+            this.SPNTabControl.TabIndex = 26;
+            // 
+            // SPNDataTabPage
+            // 
+            this.SPNDataTabPage.Controls.Add(this.SPNTextBox);
+            this.SPNDataTabPage.Controls.Add(this.SPNCopyButton);
+            this.SPNDataTabPage.Location = new System.Drawing.Point(4, 34);
+            this.SPNDataTabPage.Name = "SPNDataTabPage";
+            this.SPNDataTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.SPNDataTabPage.Size = new System.Drawing.Size(411, 73);
+            this.SPNDataTabPage.TabIndex = 0;
+            this.SPNDataTabPage.Text = "Data";
+            this.SPNDataTabPage.UseVisualStyleBackColor = true;
+            // 
+            // SPNTextBox
+            // 
+            this.SPNTextBox.AccessibleDescription = "SPN field content";
+            this.SPNTextBox.Location = new System.Drawing.Point(6, 6);
+            this.SPNTextBox.MaxLength = 100;
+            this.SPNTextBox.Multiline = true;
+            this.SPNTextBox.Name = "SPNTextBox";
+            this.SPNTextBox.ReadOnly = true;
+            this.SPNTextBox.Size = new System.Drawing.Size(362, 62);
+            this.SPNTextBox.TabIndex = 11;
+            this.SPNTextBox.TextChanged += new System.EventHandler(this.SPNTextBox_TextChanged);
+            // 
+            // SPNCopyButton
+            // 
+            this.SPNCopyButton.AccessibleDescription = "Copy content in the SPN field.";
+            this.SPNCopyButton.AccessibleName = "Copy SPN to clipboard";
+            this.SPNCopyButton.BackgroundImage = global::Telecom_Tools.Properties.Resources.Copy;
+            this.SPNCopyButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.SPNCopyButton.Enabled = false;
+            this.SPNCopyButton.Location = new System.Drawing.Point(374, 6);
+            this.SPNCopyButton.Name = "SPNCopyButton";
+            this.SPNCopyButton.Size = new System.Drawing.Size(31, 31);
+            this.SPNCopyButton.TabIndex = 12;
+            this.SPNCopyButton.Tag = "";
+            this.SPNCopyButton.UseVisualStyleBackColor = true;
+            // 
+            // SPNSettingsTabPage
+            // 
+            this.SPNSettingsTabPage.Controls.Add(this.SPNamePLMNRequiredComboBox);
+            this.SPNSettingsTabPage.Controls.Add(this.SPNRequiredLabel);
+            this.SPNSettingsTabPage.Controls.Add(this.SPNRegisteredPLMNRequiredComboBox);
+            this.SPNSettingsTabPage.Controls.Add(this.SPNRegRequiredLabel);
+            this.SPNSettingsTabPage.Location = new System.Drawing.Point(4, 34);
+            this.SPNSettingsTabPage.Name = "SPNSettingsTabPage";
+            this.SPNSettingsTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.SPNSettingsTabPage.Size = new System.Drawing.Size(411, 73);
+            this.SPNSettingsTabPage.TabIndex = 1;
+            this.SPNSettingsTabPage.Text = "Display Settings";
+            this.SPNSettingsTabPage.UseVisualStyleBackColor = true;
+            // 
+            // SPNamePLMNRequiredComboBox
+            // 
+            this.SPNamePLMNRequiredComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.SPNamePLMNRequiredComboBox.FormattingEnabled = true;
+            this.SPNamePLMNRequiredComboBox.Items.AddRange(new object[] {
+            "True",
+            "False",
+            "Nothing selected"});
+            this.SPNamePLMNRequiredComboBox.Location = new System.Drawing.Point(333, 37);
+            this.SPNamePLMNRequiredComboBox.Name = "SPNamePLMNRequiredComboBox";
+            this.SPNamePLMNRequiredComboBox.Size = new System.Drawing.Size(72, 33);
+            this.SPNamePLMNRequiredComboBox.TabIndex = 7;
+            this.SPNamePLMNRequiredComboBox.SelectedIndexChanged += new System.EventHandler(this.SPNamePLMNRequiredComboBox_SelectedIndexChanged);
+            // 
+            // SPNRequiredLabel
+            // 
+            this.SPNRequiredLabel.AutoSize = true;
+            this.SPNRequiredLabel.Location = new System.Drawing.Point(15, 42);
+            this.SPNRequiredLabel.Name = "SPNRequiredLabel";
+            this.SPNRequiredLabel.Size = new System.Drawing.Size(315, 25);
+            this.SPNRequiredLabel.TabIndex = 6;
+            this.SPNRequiredLabel.Text = "Service provider name PLMN required:";
+            // 
+            // SPNRegisteredPLMNRequiredComboBox
+            // 
+            this.SPNRegisteredPLMNRequiredComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.SPNRegisteredPLMNRequiredComboBox.FormattingEnabled = true;
+            this.SPNRegisteredPLMNRequiredComboBox.Items.AddRange(new object[] {
+            "True",
+            "False",
+            "Nothing selected"});
+            this.SPNRegisteredPLMNRequiredComboBox.Location = new System.Drawing.Point(333, 3);
+            this.SPNRegisteredPLMNRequiredComboBox.Name = "SPNRegisteredPLMNRequiredComboBox";
+            this.SPNRegisteredPLMNRequiredComboBox.Size = new System.Drawing.Size(72, 33);
+            this.SPNRegisteredPLMNRequiredComboBox.TabIndex = 5;
+            this.SPNRegisteredPLMNRequiredComboBox.SelectedIndexChanged += new System.EventHandler(this.SPNRegisteredPLMNRequiredComboBox_SelectedIndexChanged);
+            // 
+            // SPNRegRequiredLabel
+            // 
+            this.SPNRegRequiredLabel.AutoSize = true;
+            this.SPNRegRequiredLabel.Location = new System.Drawing.Point(108, 6);
+            this.SPNRegRequiredLabel.Name = "SPNRegRequiredLabel";
+            this.SPNRegRequiredLabel.Size = new System.Drawing.Size(222, 25);
+            this.SPNRegRequiredLabel.TabIndex = 4;
+            this.SPNRegRequiredLabel.Text = "Registered PLMN required:";
+            // 
+            // SPNPathLabel
+            // 
+            this.SPNPathLabel.AutoSize = true;
+            this.SPNPathLabel.Location = new System.Drawing.Point(6, 383);
+            this.SPNPathLabel.Name = "SPNPathLabel";
+            this.SPNPathLabel.Size = new System.Drawing.Size(194, 25);
+            this.SPNPathLabel.TabIndex = 25;
+            this.SPNPathLabel.Text = "3F00/7F20/6F46 | SPN:";
+            this.SPNPathLabel.Click += new System.EventHandler(this.SPNPathLabel_Click);
             // 
             // MenuTitleTabControl
             // 
@@ -370,120 +487,6 @@
             this.SUMEIconQualifierLabel.TabIndex = 0;
             this.SUMEIconQualifierLabel.Text = "Icon Qualifier:";
             // 
-            // SPNTabControl
-            // 
-            this.SPNTabControl.Controls.Add(this.SPNDataTabPage);
-            this.SPNTabControl.Controls.Add(this.SPNSettingsTabPage);
-            this.SPNTabControl.Location = new System.Drawing.Point(6, 411);
-            this.SPNTabControl.Name = "SPNTabControl";
-            this.SPNTabControl.SelectedIndex = 0;
-            this.SPNTabControl.Size = new System.Drawing.Size(419, 111);
-            this.SPNTabControl.TabIndex = 26;
-            // 
-            // SPNDataTabPage
-            // 
-            this.SPNDataTabPage.Controls.Add(this.SPNTextBox);
-            this.SPNDataTabPage.Controls.Add(this.SPNCopyButton);
-            this.SPNDataTabPage.Location = new System.Drawing.Point(4, 34);
-            this.SPNDataTabPage.Name = "SPNDataTabPage";
-            this.SPNDataTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.SPNDataTabPage.Size = new System.Drawing.Size(411, 73);
-            this.SPNDataTabPage.TabIndex = 0;
-            this.SPNDataTabPage.Text = "Data";
-            this.SPNDataTabPage.UseVisualStyleBackColor = true;
-            // 
-            // SPNTextBox
-            // 
-            this.SPNTextBox.AccessibleDescription = "SPN field content";
-            this.SPNTextBox.Location = new System.Drawing.Point(6, 6);
-            this.SPNTextBox.MaxLength = 100;
-            this.SPNTextBox.Multiline = true;
-            this.SPNTextBox.Name = "SPNTextBox";
-            this.SPNTextBox.ReadOnly = true;
-            this.SPNTextBox.Size = new System.Drawing.Size(362, 62);
-            this.SPNTextBox.TabIndex = 11;
-            // 
-            // SPNCopyButton
-            // 
-            this.SPNCopyButton.AccessibleDescription = "Copy content in the SPN field.";
-            this.SPNCopyButton.AccessibleName = "Copy SPN to clipboard";
-            this.SPNCopyButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("SPNCopyButton.BackgroundImage")));
-            this.SPNCopyButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.SPNCopyButton.Enabled = false;
-            this.SPNCopyButton.Location = new System.Drawing.Point(374, 6);
-            this.SPNCopyButton.Name = "SPNCopyButton";
-            this.SPNCopyButton.Size = new System.Drawing.Size(31, 31);
-            this.SPNCopyButton.TabIndex = 12;
-            this.SPNCopyButton.Tag = "";
-            this.SPNCopyButton.UseVisualStyleBackColor = true;
-            // 
-            // SPNSettingsTabPage
-            // 
-            this.SPNSettingsTabPage.Controls.Add(this.SPNrequiredComboBox);
-            this.SPNSettingsTabPage.Controls.Add(this.SPNRequiredLabel);
-            this.SPNSettingsTabPage.Controls.Add(this.SPNRegRequiredComboBox);
-            this.SPNSettingsTabPage.Controls.Add(this.SPNRegRequiredLabel);
-            this.SPNSettingsTabPage.Location = new System.Drawing.Point(4, 34);
-            this.SPNSettingsTabPage.Name = "SPNSettingsTabPage";
-            this.SPNSettingsTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.SPNSettingsTabPage.Size = new System.Drawing.Size(411, 73);
-            this.SPNSettingsTabPage.TabIndex = 1;
-            this.SPNSettingsTabPage.Text = "Display Settings";
-            this.SPNSettingsTabPage.UseVisualStyleBackColor = true;
-            // 
-            // SPNrequiredComboBox
-            // 
-            this.SPNrequiredComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.SPNrequiredComboBox.FormattingEnabled = true;
-            this.SPNrequiredComboBox.Items.AddRange(new object[] {
-            "True",
-            "False",
-            "Nothing selected"});
-            this.SPNrequiredComboBox.Location = new System.Drawing.Point(333, 37);
-            this.SPNrequiredComboBox.Name = "SPNrequiredComboBox";
-            this.SPNrequiredComboBox.Size = new System.Drawing.Size(72, 33);
-            this.SPNrequiredComboBox.TabIndex = 7;
-            // 
-            // SPNRequiredLabel
-            // 
-            this.SPNRequiredLabel.AutoSize = true;
-            this.SPNRequiredLabel.Location = new System.Drawing.Point(15, 42);
-            this.SPNRequiredLabel.Name = "SPNRequiredLabel";
-            this.SPNRequiredLabel.Size = new System.Drawing.Size(315, 25);
-            this.SPNRequiredLabel.TabIndex = 6;
-            this.SPNRequiredLabel.Text = "Service provider name PLMN required:";
-            // 
-            // SPNRegRequiredComboBox
-            // 
-            this.SPNRegRequiredComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.SPNRegRequiredComboBox.FormattingEnabled = true;
-            this.SPNRegRequiredComboBox.Items.AddRange(new object[] {
-            "True",
-            "False",
-            "Nothing selected"});
-            this.SPNRegRequiredComboBox.Location = new System.Drawing.Point(333, 3);
-            this.SPNRegRequiredComboBox.Name = "SPNRegRequiredComboBox";
-            this.SPNRegRequiredComboBox.Size = new System.Drawing.Size(72, 33);
-            this.SPNRegRequiredComboBox.TabIndex = 5;
-            // 
-            // SPNRegRequiredLabel
-            // 
-            this.SPNRegRequiredLabel.AutoSize = true;
-            this.SPNRegRequiredLabel.Location = new System.Drawing.Point(108, 6);
-            this.SPNRegRequiredLabel.Name = "SPNRegRequiredLabel";
-            this.SPNRegRequiredLabel.Size = new System.Drawing.Size(222, 25);
-            this.SPNRegRequiredLabel.TabIndex = 4;
-            this.SPNRegRequiredLabel.Text = "Registered PLMN required:";
-            // 
-            // SPNPathLabel
-            // 
-            this.SPNPathLabel.AutoSize = true;
-            this.SPNPathLabel.Location = new System.Drawing.Point(6, 383);
-            this.SPNPathLabel.Name = "SPNPathLabel";
-            this.SPNPathLabel.Size = new System.Drawing.Size(194, 25);
-            this.SPNPathLabel.TabIndex = 25;
-            this.SPNPathLabel.Text = "3F00/7F20/6F46 | SPN:";
-            // 
             // FormTelecomTools
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -495,6 +498,11 @@
             this.TelecomToolsTabControl.ResumeLayout(false);
             this.EFDataGenTabPage.ResumeLayout(false);
             this.EFDataGenTabPage.PerformLayout();
+            this.SPNTabControl.ResumeLayout(false);
+            this.SPNDataTabPage.ResumeLayout(false);
+            this.SPNDataTabPage.PerformLayout();
+            this.SPNSettingsTabPage.ResumeLayout(false);
+            this.SPNSettingsTabPage.PerformLayout();
             this.MenuTitleTabControl.ResumeLayout(false);
             this.MenuTitleDataTabPage.ResumeLayout(false);
             this.MenuTitleDataTabPage.PerformLayout();
@@ -506,11 +514,6 @@
             this.SUMESettingsTabPage.ResumeLayout(false);
             this.SUMESettingsTabPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SUMEIconNumericUpDown)).EndInit();
-            this.SPNTabControl.ResumeLayout(false);
-            this.SPNDataTabPage.ResumeLayout(false);
-            this.SPNDataTabPage.PerformLayout();
-            this.SPNSettingsTabPage.ResumeLayout(false);
-            this.SPNSettingsTabPage.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -547,9 +550,9 @@
         private TextBox SPNTextBox;
         private Button SPNCopyButton;
         private TabPage SPNSettingsTabPage;
-        private ComboBox SPNrequiredComboBox;
+        private ComboBox SPNamePLMNRequiredComboBox;
         private Label SPNRequiredLabel;
-        private ComboBox SPNRegRequiredComboBox;
+        private ComboBox SPNRegisteredPLMNRequiredComboBox;
         private Label SPNRegRequiredLabel;
         private Label SPNPathLabel;
     }
