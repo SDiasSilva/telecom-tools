@@ -73,5 +73,11 @@ namespace Telecom_Tools
             SPNPathLabel.Text = ViewUtil.CountBytes(SPNTextBox.Text, "3F00/7F20/6F46 | SPN");
             SPNCopyButton.Enabled = ViewUtil.IsButtonEnabled(SPNTextBox.Text);
         }
+
+        private void PNNTextBox_TextChanged(object sender, EventArgs e)
+        {
+            PNNPathLabel.Text = ViewUtil.CountBytes(PNNTextBox.Text, "3F00/7F20/6FC5 | PNN");
+            PNNCopyButton.Enabled = ViewUtil.IsButtonEnabled(PNNTextBox.Text);
+        }
     }
 }

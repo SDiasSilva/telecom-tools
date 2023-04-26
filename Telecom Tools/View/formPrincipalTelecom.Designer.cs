@@ -32,6 +32,9 @@
             this.TelecomToolsTabControl = new System.Windows.Forms.TabControl();
             this.QRGeneratorTabPage = new System.Windows.Forms.TabPage();
             this.EFDataGenTabPage = new System.Windows.Forms.TabPage();
+            this.PNNCopyButton = new System.Windows.Forms.Button();
+            this.PNNTextBox = new System.Windows.Forms.TextBox();
+            this.PNNPathLabel = new System.Windows.Forms.Label();
             this.SPNTabControl = new System.Windows.Forms.TabControl();
             this.SPNDataTabPage = new System.Windows.Forms.TabPage();
             this.SPNTextBox = new System.Windows.Forms.TextBox();
@@ -64,9 +67,6 @@
             this.SUMEIconLabel = new System.Windows.Forms.Label();
             this.SUMEIconQualifierComboBox = new System.Windows.Forms.ComboBox();
             this.SUMEIconQualifierLabel = new System.Windows.Forms.Label();
-            this.PNNCopyButton = new System.Windows.Forms.Button();
-            this.PNNTextBox = new System.Windows.Forms.TextBox();
-            this.PNNPathLabel = new System.Windows.Forms.Label();
             this.TelecomToolsTabControl.SuspendLayout();
             this.EFDataGenTabPage.SuspendLayout();
             this.SPNTabControl.SuspendLayout();
@@ -123,6 +123,42 @@
             this.EFDataGenTabPage.TabIndex = 1;
             this.EFDataGenTabPage.Text = "EF Gen";
             this.EFDataGenTabPage.UseVisualStyleBackColor = true;
+            // 
+            // PNNCopyButton
+            // 
+            this.PNNCopyButton.AccessibleDescription = "Copy content in the PNN field.";
+            this.PNNCopyButton.AccessibleName = "Copy PNN to clipboard";
+            this.PNNCopyButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PNNCopyButton.BackgroundImage")));
+            this.PNNCopyButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PNNCopyButton.Enabled = false;
+            this.PNNCopyButton.Location = new System.Drawing.Point(384, 553);
+            this.PNNCopyButton.Name = "PNNCopyButton";
+            this.PNNCopyButton.Size = new System.Drawing.Size(31, 31);
+            this.PNNCopyButton.TabIndex = 29;
+            this.PNNCopyButton.Tag = "";
+            this.PNNCopyButton.UseVisualStyleBackColor = true;
+            // 
+            // PNNTextBox
+            // 
+            this.PNNTextBox.AccessibleDescription = "PNN field content";
+            this.PNNTextBox.AccessibleName = "PNN";
+            this.PNNTextBox.Location = new System.Drawing.Point(16, 553);
+            this.PNNTextBox.MaxLength = 100;
+            this.PNNTextBox.Multiline = true;
+            this.PNNTextBox.Name = "PNNTextBox";
+            this.PNNTextBox.ReadOnly = true;
+            this.PNNTextBox.Size = new System.Drawing.Size(362, 62);
+            this.PNNTextBox.TabIndex = 28;
+            this.PNNTextBox.TextChanged += new System.EventHandler(this.PNNTextBox_TextChanged);
+            // 
+            // PNNPathLabel
+            // 
+            this.PNNPathLabel.AutoSize = true;
+            this.PNNPathLabel.Location = new System.Drawing.Point(10, 525);
+            this.PNNPathLabel.Name = "PNNPathLabel";
+            this.PNNPathLabel.Size = new System.Drawing.Size(198, 25);
+            this.PNNPathLabel.TabIndex = 27;
+            this.PNNPathLabel.Text = "3F00/7F20/6FC5 | PNN:";
             // 
             // SPNTabControl
             // 
@@ -493,41 +529,6 @@
             this.SUMEIconQualifierLabel.Size = new System.Drawing.Size(121, 25);
             this.SUMEIconQualifierLabel.TabIndex = 0;
             this.SUMEIconQualifierLabel.Text = "Icon Qualifier:";
-            // 
-            // PNNCopyButton
-            // 
-            this.PNNCopyButton.AccessibleDescription = "Copy content in the PNN field.";
-            this.PNNCopyButton.AccessibleName = "Copy PNN to clipboard";
-            this.PNNCopyButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PNNCopyButton.BackgroundImage")));
-            this.PNNCopyButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PNNCopyButton.Enabled = false;
-            this.PNNCopyButton.Location = new System.Drawing.Point(384, 553);
-            this.PNNCopyButton.Name = "PNNCopyButton";
-            this.PNNCopyButton.Size = new System.Drawing.Size(31, 31);
-            this.PNNCopyButton.TabIndex = 29;
-            this.PNNCopyButton.Tag = "";
-            this.PNNCopyButton.UseVisualStyleBackColor = true;
-            // 
-            // PNNTextBox
-            // 
-            this.PNNTextBox.AccessibleDescription = "PNN field content";
-            this.PNNTextBox.AccessibleName = "PNN";
-            this.PNNTextBox.Location = new System.Drawing.Point(16, 553);
-            this.PNNTextBox.MaxLength = 100;
-            this.PNNTextBox.Multiline = true;
-            this.PNNTextBox.Name = "PNNTextBox";
-            this.PNNTextBox.ReadOnly = true;
-            this.PNNTextBox.Size = new System.Drawing.Size(362, 62);
-            this.PNNTextBox.TabIndex = 28;
-            // 
-            // PNNPathLabel
-            // 
-            this.PNNPathLabel.AutoSize = true;
-            this.PNNPathLabel.Location = new System.Drawing.Point(10, 525);
-            this.PNNPathLabel.Name = "PNNPathLabel";
-            this.PNNPathLabel.Size = new System.Drawing.Size(198, 25);
-            this.PNNPathLabel.TabIndex = 27;
-            this.PNNPathLabel.Text = "3F00/7F20/6FC5 | PNN:";
             // 
             // FormTelecomTools
             // 
