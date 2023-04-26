@@ -129,8 +129,8 @@
             // 
             // PNNCopyButton
             // 
-            this.PNNCopyButton.AccessibleDescription = "Copy content in the PNN field.";
-            this.PNNCopyButton.AccessibleName = "Copy PNN to clipboard";
+            this.PNNCopyButton.AccessibleDescription = "";
+            this.PNNCopyButton.AccessibleName = "";
             this.PNNCopyButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PNNCopyButton.BackgroundImage")));
             this.PNNCopyButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PNNCopyButton.Enabled = false;
@@ -145,8 +145,8 @@
             // 
             // PNNTextBox
             // 
-            this.PNNTextBox.AccessibleDescription = "PNN field content";
-            this.PNNTextBox.AccessibleName = "PNN";
+            this.PNNTextBox.AccessibleDescription = "";
+            this.PNNTextBox.AccessibleName = "";
             this.PNNTextBox.Location = new System.Drawing.Point(16, 553);
             this.PNNTextBox.MaxLength = 100;
             this.PNNTextBox.Multiline = true;
@@ -190,7 +190,7 @@
             // 
             // SPNTextBox
             // 
-            this.SPNTextBox.AccessibleDescription = "SPN field content";
+            this.SPNTextBox.AccessibleDescription = "";
             this.SPNTextBox.Location = new System.Drawing.Point(6, 6);
             this.SPNTextBox.MaxLength = 100;
             this.SPNTextBox.Multiline = true;
@@ -203,8 +203,8 @@
             // 
             // SPNCopyButton
             // 
-            this.SPNCopyButton.AccessibleDescription = "Copy content in the SPN field.";
-            this.SPNCopyButton.AccessibleName = "Copy SPN to clipboard";
+            this.SPNCopyButton.AccessibleDescription = "";
+            this.SPNCopyButton.AccessibleName = "";
             this.SPNCopyButton.BackgroundImage = global::Telecom_Tools.Properties.Resources.Copy;
             this.SPNCopyButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.SPNCopyButton.Enabled = false;
@@ -312,8 +312,8 @@
             // 
             // MenuTitleTextBox
             // 
-            this.MenuTitleTextBox.AccessibleDescription = "Menu Title field content";
-            this.MenuTitleTextBox.AccessibleName = "Menu Title";
+            this.MenuTitleTextBox.AccessibleDescription = "";
+            this.MenuTitleTextBox.AccessibleName = "";
             this.MenuTitleTextBox.Location = new System.Drawing.Point(6, 6);
             this.MenuTitleTextBox.MaxLength = 100;
             this.MenuTitleTextBox.Multiline = true;
@@ -326,8 +326,8 @@
             // 
             // MenuTitleCopyButton
             // 
-            this.MenuTitleCopyButton.AccessibleDescription = "Copy content in the Menu Title field.";
-            this.MenuTitleCopyButton.AccessibleName = "Copy Menu Title to clipboard";
+            this.MenuTitleCopyButton.AccessibleDescription = "";
+            this.MenuTitleCopyButton.AccessibleName = "";
             this.MenuTitleCopyButton.BackgroundImage = global::Telecom_Tools.Properties.Resources.Copy;
             this.MenuTitleCopyButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.MenuTitleCopyButton.Enabled = false;
@@ -397,8 +397,8 @@
             // 
             // efGenOpenFileButton
             // 
-            this.efGenOpenFileButton.AccessibleDescription = "Open a file to get the customer info";
-            this.efGenOpenFileButton.AccessibleName = "Open File Button";
+            this.efGenOpenFileButton.AccessibleDescription = "";
+            this.efGenOpenFileButton.AccessibleName = "";
             this.efGenOpenFileButton.BackgroundImage = global::Telecom_Tools.Properties.Resources.Open_File;
             this.efGenOpenFileButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.efGenOpenFileButton.Location = new System.Drawing.Point(384, 31);
@@ -462,8 +462,8 @@
             // 
             // SUMETextBox
             // 
-            this.SUMETextBox.AccessibleDescription = "SUME Elementary File Content";
-            this.SUMETextBox.AccessibleName = "SUME Text Box";
+            this.SUMETextBox.AccessibleDescription = "";
+            this.SUMETextBox.AccessibleName = "";
             this.SUMETextBox.Location = new System.Drawing.Point(6, 6);
             this.SUMETextBox.MaxLength = 100;
             this.SUMETextBox.Multiline = true;
@@ -476,8 +476,8 @@
             // 
             // SUMECopyButton
             // 
-            this.SUMECopyButton.AccessibleDescription = "Copy content in the SUME field.";
-            this.SUMECopyButton.AccessibleName = "SUME Copy Button";
+            this.SUMECopyButton.AccessibleDescription = "";
+            this.SUMECopyButton.AccessibleName = "";
             this.SUMECopyButton.BackgroundImage = global::Telecom_Tools.Properties.Resources.Copy;
             this.SUMECopyButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.SUMECopyButton.Enabled = false;

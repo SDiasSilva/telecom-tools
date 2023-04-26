@@ -10,6 +10,10 @@ namespace Telecom_Tools
         public FormTelecomTools()
         {
             InitializeComponent();
+            SUMEIconQualifierComboBox.SelectedIndex = 2;
+            MenuTitleEncodingComboBox.SelectedIndex = 0;
+            SPNRegisteredPLMNRequiredComboBox.SelectedIndex = 1;
+            SPNamePLMNRequiredComboBox.SelectedIndex = 0;
         }
 
         private void InputTextBox_TextChanged(object sender, EventArgs e)
