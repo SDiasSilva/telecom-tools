@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabTelecomTools = new System.Windows.Forms.TabControl();
-            this.tbQRGen = new System.Windows.Forms.TabPage();
-            this.tbEFGen = new System.Windows.Forms.TabPage();
+            this.TelecomToolsTabControl = new System.Windows.Forms.TabControl();
+            this.QRGeneratorTabPage = new System.Windows.Forms.TabPage();
+            this.EFDataGenTabPage = new System.Windows.Forms.TabPage();
             this.MenuTitleTabControl = new System.Windows.Forms.TabControl();
             this.MenuTitleDataTab = new System.Windows.Forms.TabPage();
             this.MenuTitleTextBox = new System.Windows.Forms.TextBox();
@@ -38,7 +38,7 @@
             this.MenuTitleSettingsTab = new System.Windows.Forms.TabPage();
             this.MenuTitleEncodingComboBox = new System.Windows.Forms.ComboBox();
             this.MenuTitleEncodingLabel = new System.Windows.Forms.Label();
-            this.MenuTitleLabel = new System.Windows.Forms.Label();
+            this.MenuTitlePathLabel = new System.Windows.Forms.Label();
             this.characterLimitLabel = new System.Windows.Forms.Label();
             this.openFileButton = new System.Windows.Forms.Button();
             this.inputTextBox = new System.Windows.Forms.TextBox();
@@ -53,8 +53,8 @@
             this.SUMEIconLabel = new System.Windows.Forms.Label();
             this.SUMEIconQualifierComboBox = new System.Windows.Forms.ComboBox();
             this.SUMEIconQualifierLabel = new System.Windows.Forms.Label();
-            this.tabTelecomTools.SuspendLayout();
-            this.tbEFGen.SuspendLayout();
+            this.TelecomToolsTabControl.SuspendLayout();
+            this.EFDataGenTabPage.SuspendLayout();
             this.MenuTitleTabControl.SuspendLayout();
             this.MenuTitleDataTab.SuspendLayout();
             this.MenuTitleSettingsTab.SuspendLayout();
@@ -64,43 +64,43 @@
             ((System.ComponentModel.ISupportInitialize)(this.SUMEIconNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
-            // tabTelecomTools
+            // TelecomToolsTabControl
             // 
-            this.tabTelecomTools.Controls.Add(this.tbQRGen);
-            this.tabTelecomTools.Controls.Add(this.tbEFGen);
-            this.tabTelecomTools.Location = new System.Drawing.Point(3, 2);
-            this.tabTelecomTools.Name = "tabTelecomTools";
-            this.tabTelecomTools.SelectedIndex = 0;
-            this.tabTelecomTools.Size = new System.Drawing.Size(439, 675);
-            this.tabTelecomTools.TabIndex = 0;
+            this.TelecomToolsTabControl.Controls.Add(this.QRGeneratorTabPage);
+            this.TelecomToolsTabControl.Controls.Add(this.EFDataGenTabPage);
+            this.TelecomToolsTabControl.Location = new System.Drawing.Point(3, 2);
+            this.TelecomToolsTabControl.Name = "TelecomToolsTabControl";
+            this.TelecomToolsTabControl.SelectedIndex = 0;
+            this.TelecomToolsTabControl.Size = new System.Drawing.Size(439, 675);
+            this.TelecomToolsTabControl.TabIndex = 0;
             // 
-            // tbQRGen
+            // QRGeneratorTabPage
             // 
-            this.tbQRGen.Location = new System.Drawing.Point(4, 34);
-            this.tbQRGen.Name = "tbQRGen";
-            this.tbQRGen.Padding = new System.Windows.Forms.Padding(3);
-            this.tbQRGen.Size = new System.Drawing.Size(431, 637);
-            this.tbQRGen.TabIndex = 0;
-            this.tbQRGen.Text = "QR Gen";
-            this.tbQRGen.UseVisualStyleBackColor = true;
+            this.QRGeneratorTabPage.Location = new System.Drawing.Point(4, 34);
+            this.QRGeneratorTabPage.Name = "QRGeneratorTabPage";
+            this.QRGeneratorTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.QRGeneratorTabPage.Size = new System.Drawing.Size(431, 637);
+            this.QRGeneratorTabPage.TabIndex = 0;
+            this.QRGeneratorTabPage.Text = "QR Gen";
+            this.QRGeneratorTabPage.UseVisualStyleBackColor = true;
             // 
-            // tbEFGen
+            // EFDataGenTabPage
             // 
-            this.tbEFGen.Controls.Add(this.MenuTitleTabControl);
-            this.tbEFGen.Controls.Add(this.MenuTitleLabel);
-            this.tbEFGen.Controls.Add(this.characterLimitLabel);
-            this.tbEFGen.Controls.Add(this.openFileButton);
-            this.tbEFGen.Controls.Add(this.inputTextBox);
-            this.tbEFGen.Controls.Add(this.inputLabel);
-            this.tbEFGen.Controls.Add(this.SUMEPathLabel);
-            this.tbEFGen.Controls.Add(this.SUMETabControl);
-            this.tbEFGen.Location = new System.Drawing.Point(4, 34);
-            this.tbEFGen.Name = "tbEFGen";
-            this.tbEFGen.Padding = new System.Windows.Forms.Padding(3);
-            this.tbEFGen.Size = new System.Drawing.Size(431, 637);
-            this.tbEFGen.TabIndex = 1;
-            this.tbEFGen.Text = "EF Gen";
-            this.tbEFGen.UseVisualStyleBackColor = true;
+            this.EFDataGenTabPage.Controls.Add(this.MenuTitleTabControl);
+            this.EFDataGenTabPage.Controls.Add(this.MenuTitlePathLabel);
+            this.EFDataGenTabPage.Controls.Add(this.characterLimitLabel);
+            this.EFDataGenTabPage.Controls.Add(this.openFileButton);
+            this.EFDataGenTabPage.Controls.Add(this.inputTextBox);
+            this.EFDataGenTabPage.Controls.Add(this.inputLabel);
+            this.EFDataGenTabPage.Controls.Add(this.SUMEPathLabel);
+            this.EFDataGenTabPage.Controls.Add(this.SUMETabControl);
+            this.EFDataGenTabPage.Location = new System.Drawing.Point(4, 34);
+            this.EFDataGenTabPage.Name = "EFDataGenTabPage";
+            this.EFDataGenTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.EFDataGenTabPage.Size = new System.Drawing.Size(431, 637);
+            this.EFDataGenTabPage.TabIndex = 1;
+            this.EFDataGenTabPage.Text = "EF Gen";
+            this.EFDataGenTabPage.UseVisualStyleBackColor = true;
             // 
             // MenuTitleTabControl
             // 
@@ -135,6 +135,7 @@
             this.MenuTitleTextBox.ReadOnly = true;
             this.MenuTitleTextBox.Size = new System.Drawing.Size(362, 62);
             this.MenuTitleTextBox.TabIndex = 8;
+            this.MenuTitleTextBox.TextChanged += new System.EventHandler(this.MenuTitleTextBox_TextChanged);
             // 
             // MenuTitleCopyButton
             // 
@@ -175,6 +176,7 @@
             this.MenuTitleEncodingComboBox.Name = "MenuTitleEncodingComboBox";
             this.MenuTitleEncodingComboBox.Size = new System.Drawing.Size(251, 33);
             this.MenuTitleEncodingComboBox.TabIndex = 3;
+            this.MenuTitleEncodingComboBox.SelectedIndexChanged += new System.EventHandler(this.MenuTitleEncodingComboBox_SelectedIndexChanged);
             // 
             // MenuTitleEncodingLabel
             // 
@@ -185,14 +187,14 @@
             this.MenuTitleEncodingLabel.TabIndex = 2;
             this.MenuTitleEncodingLabel.Text = "Encoding:";
             // 
-            // MenuTitleLabel
+            // MenuTitlePathLabel
             // 
-            this.MenuTitleLabel.AutoSize = true;
-            this.MenuTitleLabel.Location = new System.Drawing.Point(6, 249);
-            this.MenuTitleLabel.Name = "MenuTitleLabel";
-            this.MenuTitleLabel.Size = new System.Drawing.Size(243, 25);
-            this.MenuTitleLabel.TabIndex = 24;
-            this.MenuTitleLabel.Text = "3F00/2700/6F1E | Menu Title:";
+            this.MenuTitlePathLabel.AutoSize = true;
+            this.MenuTitlePathLabel.Location = new System.Drawing.Point(6, 249);
+            this.MenuTitlePathLabel.Name = "MenuTitlePathLabel";
+            this.MenuTitlePathLabel.Size = new System.Drawing.Size(243, 25);
+            this.MenuTitlePathLabel.TabIndex = 24;
+            this.MenuTitlePathLabel.Text = "3F00/2700/6F1E | Menu Title:";
             // 
             // characterLimitLabel
             // 
@@ -233,7 +235,7 @@
             this.inputLabel.Size = new System.Drawing.Size(58, 25);
             this.inputLabel.TabIndex = 19;
             this.inputLabel.Text = "Input:";
-            this.inputLabel.Click += new System.EventHandler(this.inputLabel_Click);
+            this.inputLabel.Click += new System.EventHandler(this.InputLabel_Click);
             // 
             // SUMEPathLabel
             // 
@@ -277,6 +279,7 @@
             this.SUMETextBox.ReadOnly = true;
             this.SUMETextBox.Size = new System.Drawing.Size(362, 62);
             this.SUMETextBox.TabIndex = 5;
+            this.SUMETextBox.TextChanged += new System.EventHandler(this.SUMETextBox_TextChanged);
             // 
             // SUMECopyButton
             // 
@@ -356,12 +359,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(471, 675);
-            this.Controls.Add(this.tabTelecomTools);
+            this.Controls.Add(this.TelecomToolsTabControl);
             this.Name = "FormTelecomTools";
             this.Text = "Telecom Tools";
-            this.tabTelecomTools.ResumeLayout(false);
-            this.tbEFGen.ResumeLayout(false);
-            this.tbEFGen.PerformLayout();
+            this.TelecomToolsTabControl.ResumeLayout(false);
+            this.EFDataGenTabPage.ResumeLayout(false);
+            this.EFDataGenTabPage.PerformLayout();
             this.MenuTitleTabControl.ResumeLayout(false);
             this.MenuTitleDataTab.ResumeLayout(false);
             this.MenuTitleDataTab.PerformLayout();
@@ -379,9 +382,9 @@
 
         #endregion
 
-        private TabControl tabTelecomTools;
-        private TabPage tbQRGen;
-        private TabPage tbEFGen;
+        private TabControl TelecomToolsTabControl;
+        private TabPage QRGeneratorTabPage;
+        private TabPage EFDataGenTabPage;
         private Button openFileButton;
         private TextBox inputTextBox;
         private Label inputLabel;
@@ -403,6 +406,6 @@
         private TabPage MenuTitleSettingsTab;
         private ComboBox MenuTitleEncodingComboBox;
         private Label MenuTitleEncodingLabel;
-        private Label MenuTitleLabel;
+        private Label MenuTitlePathLabel;
     }
 }

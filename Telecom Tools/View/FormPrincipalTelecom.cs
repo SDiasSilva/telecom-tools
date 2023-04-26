@@ -1,5 +1,6 @@
 using Telecom_Tools.Controller.Ef;
 using Telecom_Tools.Util;
+using Telecom_Tools.Util.Ef;
 
 namespace Telecom_Tools
 {
@@ -14,46 +15,40 @@ namespace Telecom_Tools
         private void InputTextBox_TextChanged(object sender, EventArgs e)
         {
             inputLabel.Text = ViewUtil.CountCharacters(inputTextBox.Text, "Input");
-            GenerateAllEFData();
+            EfUtil.GenerateAllEFData(EFDataGenTabPage);
         }
-        private void GenerateAllEFData()
-        {
-            if(inputTextBox.Text.Length != 0)
-            {
-                try 
-                {
-                    SetUpMenuElementsController sumeController = new (SUMEIconQualifierComboBox.SelectedIndex, SUMEIconNumericUpDown.Value);
-                    MenuTitleController menuTitleController = new (MenuTitleEncodingComboBox.SelectedIndex);
-                    SUMETextBox.Text = sumeController.GerarEf(inputTextBox.Text);
-                    MenuTitleTextBox.Text = menuTitleController.GerarEf(inputTextBox.Text);
-                }
-                catch(ArgumentException)
-                {
-                    MessageBox.Show("Special characters limit exceeded!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    string corrected = inputTextBox.Text.Remove(inputTextBox.Text.Length - 1);
-                    inputTextBox.Text = corrected;
-                }
-            }
-            else
-            {
-                SUMETextBox.Text = "";
-                MenuTitleTextBox.Text = "";
-            }
-        }
+
 
         private void SUMEIconQualifierComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            GenerateAllEFData();
+            EfUtil.GenerateAllEFData(EFDataGenTabPage);
         }
 
-        private void inputLabel_Click(object sender, EventArgs e)
+        private void InputLabel_Click(object sender, EventArgs e)
         {
 
         }
 
         private void SUMEIconNumericUpDown_ValueChanged(object sender, EventArgs e)
         {
-            GenerateAllEFData();
+            EfUtil.GenerateAllEFData(EFDataGenTabPage);
+        }
+
+        private void SUMETextBox_TextChanged(object sender, EventArgs e)
+        {
+            SUMEPathLabel.Text = ViewUtil.CountBytes(SUMETextBox.Text, "3F00/7F10/6F54 | SUME");
+            SUMECopyButton.Enabled = ViewUtil.IsButtonEnabled(SUMETextBox.Text);
+        }
+
+        private void MenuTitleTextBox_TextChanged(object sender, EventArgs e)
+        {
+            MenuTitlePathLabel.Text = ViewUtil.CountBytes(MenuTitleTextBox.Text, "3F00/2700/6F1E | Menu Title");
+            MenuTitleCopyButton.Enabled = ViewUtil.IsButtonEnabled(MenuTitleTextBox.Text);
+        }
+
+        private void MenuTitleEncodingComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            EfUtil.MenuTitleEncodingSelect(MenuTitleEncodingComboBox.SelectedIndex, inputTextBox, characterLimitLabel, EFDataGenTabPage);
         }
     }
 }

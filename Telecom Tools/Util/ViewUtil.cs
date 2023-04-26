@@ -25,7 +25,7 @@ namespace Telecom_Tools.Util
                 return labelText + " (" + input.Length / 2 + " bytes):";
             return labelText + ":";
         }
-        public static bool IsButtonEnabled(String txtBoxText)
+        public static bool IsButtonEnabled(string txtBoxText)
         {
             if (txtBoxText.Length > 0)
             {
