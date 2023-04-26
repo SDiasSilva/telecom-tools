@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTelecomTools));
             this.TelecomToolsTabControl = new System.Windows.Forms.TabControl();
             this.QRGeneratorTabPage = new System.Windows.Forms.TabPage();
@@ -68,6 +69,7 @@
             this.SUMEIconQualifierComboBox = new System.Windows.Forms.ComboBox();
             this.SUMEIconQualifierLabel = new System.Windows.Forms.Label();
             this.efGenOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.TelecomToolsTabControl.SuspendLayout();
             this.EFDataGenTabPage.SuspendLayout();
             this.SPNTabControl.SuspendLayout();
@@ -137,6 +139,7 @@
             this.PNNCopyButton.Size = new System.Drawing.Size(31, 31);
             this.PNNCopyButton.TabIndex = 29;
             this.PNNCopyButton.Tag = "";
+            this.toolTip.SetToolTip(this.PNNCopyButton, "Copy PNN Content To Clipboard");
             this.PNNCopyButton.UseVisualStyleBackColor = true;
             this.PNNCopyButton.Click += new System.EventHandler(this.PNNCopyButton_Click);
             // 
@@ -151,6 +154,7 @@
             this.PNNTextBox.ReadOnly = true;
             this.PNNTextBox.Size = new System.Drawing.Size(362, 62);
             this.PNNTextBox.TabIndex = 28;
+            this.toolTip.SetToolTip(this.PNNTextBox, "PNN Content");
             this.PNNTextBox.TextChanged += new System.EventHandler(this.PNNTextBox_TextChanged);
             // 
             // PNNPathLabel
@@ -194,6 +198,7 @@
             this.SPNTextBox.ReadOnly = true;
             this.SPNTextBox.Size = new System.Drawing.Size(362, 62);
             this.SPNTextBox.TabIndex = 11;
+            this.toolTip.SetToolTip(this.SPNTextBox, "SPN Content");
             this.SPNTextBox.TextChanged += new System.EventHandler(this.SPNTextBox_TextChanged);
             // 
             // SPNCopyButton
@@ -208,6 +213,7 @@
             this.SPNCopyButton.Size = new System.Drawing.Size(31, 31);
             this.SPNCopyButton.TabIndex = 12;
             this.SPNCopyButton.Tag = "";
+            this.toolTip.SetToolTip(this.SPNCopyButton, "Copy SPN Content To Clipboard");
             this.SPNCopyButton.UseVisualStyleBackColor = true;
             this.SPNCopyButton.Click += new System.EventHandler(this.SPNCopyButton_Click);
             // 
@@ -237,6 +243,7 @@
             this.SPNamePLMNRequiredComboBox.Name = "SPNamePLMNRequiredComboBox";
             this.SPNamePLMNRequiredComboBox.Size = new System.Drawing.Size(72, 33);
             this.SPNamePLMNRequiredComboBox.TabIndex = 7;
+            this.toolTip.SetToolTip(this.SPNamePLMNRequiredComboBox, "Select whether the Service Provider Name PLMN is required for the SPN content");
             this.SPNamePLMNRequiredComboBox.SelectedIndexChanged += new System.EventHandler(this.SPNamePLMNRequiredComboBox_SelectedIndexChanged);
             // 
             // SPNRequiredLabel
@@ -260,6 +267,7 @@
             this.SPNRegisteredPLMNRequiredComboBox.Name = "SPNRegisteredPLMNRequiredComboBox";
             this.SPNRegisteredPLMNRequiredComboBox.Size = new System.Drawing.Size(72, 33);
             this.SPNRegisteredPLMNRequiredComboBox.TabIndex = 5;
+            this.toolTip.SetToolTip(this.SPNRegisteredPLMNRequiredComboBox, "Select whether the Registered PLMN is required for the SPN content");
             this.SPNRegisteredPLMNRequiredComboBox.SelectedIndexChanged += new System.EventHandler(this.SPNRegisteredPLMNRequiredComboBox_SelectedIndexChanged);
             // 
             // SPNRegRequiredLabel
@@ -313,6 +321,7 @@
             this.MenuTitleTextBox.ReadOnly = true;
             this.MenuTitleTextBox.Size = new System.Drawing.Size(362, 62);
             this.MenuTitleTextBox.TabIndex = 8;
+            this.toolTip.SetToolTip(this.MenuTitleTextBox, "Menu Title Content");
             this.MenuTitleTextBox.TextChanged += new System.EventHandler(this.MenuTitleTextBox_TextChanged);
             // 
             // MenuTitleCopyButton
@@ -327,6 +336,7 @@
             this.MenuTitleCopyButton.Size = new System.Drawing.Size(31, 31);
             this.MenuTitleCopyButton.TabIndex = 9;
             this.MenuTitleCopyButton.Tag = "";
+            this.toolTip.SetToolTip(this.MenuTitleCopyButton, "Copy Menu Title Content To Clipboard");
             this.MenuTitleCopyButton.UseVisualStyleBackColor = true;
             this.MenuTitleCopyButton.Click += new System.EventHandler(this.MenuTitleCopyButton_Click);
             // 
@@ -355,6 +365,7 @@
             this.MenuTitleEncodingComboBox.Name = "MenuTitleEncodingComboBox";
             this.MenuTitleEncodingComboBox.Size = new System.Drawing.Size(251, 33);
             this.MenuTitleEncodingComboBox.TabIndex = 3;
+            this.toolTip.SetToolTip(this.MenuTitleEncodingComboBox, "Select An Encoding For The Menu Title Content");
             this.MenuTitleEncodingComboBox.SelectedIndexChanged += new System.EventHandler(this.MenuTitleEncodingComboBox_SelectedIndexChanged);
             // 
             // MenuTitleEncodingLabel
@@ -395,6 +406,7 @@
             this.efGenOpenFileButton.Size = new System.Drawing.Size(31, 31);
             this.efGenOpenFileButton.TabIndex = 21;
             this.efGenOpenFileButton.Tag = "";
+            this.toolTip.SetToolTip(this.efGenOpenFileButton, "Recover Customer Name From .INP File (Ctrl+O)");
             this.efGenOpenFileButton.UseVisualStyleBackColor = true;
             this.efGenOpenFileButton.Click += new System.EventHandler(this.efGenOpenFileButton_Click);
             // 
@@ -405,6 +417,7 @@
             this.inputTextBox.Name = "inputTextBox";
             this.inputTextBox.Size = new System.Drawing.Size(368, 31);
             this.inputTextBox.TabIndex = 20;
+            this.toolTip.SetToolTip(this.inputTextBox, "Insert Text Or Open a File To Generate All EF\'s data");
             this.inputTextBox.TextChanged += new System.EventHandler(this.InputTextBox_TextChanged);
             // 
             // inputLabel
@@ -458,6 +471,7 @@
             this.SUMETextBox.ReadOnly = true;
             this.SUMETextBox.Size = new System.Drawing.Size(362, 62);
             this.SUMETextBox.TabIndex = 5;
+            this.toolTip.SetToolTip(this.SUMETextBox, "SUME Content");
             this.SUMETextBox.TextChanged += new System.EventHandler(this.SUMETextBox_TextChanged);
             // 
             // SUMECopyButton
@@ -472,6 +486,7 @@
             this.SUMECopyButton.Size = new System.Drawing.Size(31, 31);
             this.SUMECopyButton.TabIndex = 6;
             this.SUMECopyButton.Tag = "";
+            this.toolTip.SetToolTip(this.SUMECopyButton, "Copy SUME Content To Clipboard");
             this.SUMECopyButton.UseVisualStyleBackColor = true;
             this.SUMECopyButton.Click += new System.EventHandler(this.SUMECopyButton_Click);
             // 
@@ -500,6 +515,7 @@
             this.SUMEIconNumericUpDown.Name = "SUMEIconNumericUpDown";
             this.SUMEIconNumericUpDown.Size = new System.Drawing.Size(251, 31);
             this.SUMEIconNumericUpDown.TabIndex = 3;
+            this.toolTip.SetToolTip(this.SUMEIconNumericUpDown, "Choose an icon identifier between 0 and 255 to change the SUME content");
             this.SUMEIconNumericUpDown.ValueChanged += new System.EventHandler(this.SUMEIconNumericUpDown_ValueChanged);
             // 
             // SUMEIconLabel
@@ -523,6 +539,7 @@
             this.SUMEIconQualifierComboBox.Name = "SUMEIconQualifierComboBox";
             this.SUMEIconQualifierComboBox.Size = new System.Drawing.Size(251, 33);
             this.SUMEIconQualifierComboBox.TabIndex = 1;
+            this.toolTip.SetToolTip(this.SUMEIconQualifierComboBox, "Select the icon qualifier setting to apply to the SUME content");
             this.SUMEIconQualifierComboBox.SelectedIndexChanged += new System.EventHandler(this.SUMEIconQualifierComboBox_SelectedIndexChanged);
             // 
             // SUMEIconQualifierLabel
@@ -610,5 +627,6 @@
         private TextBox PNNTextBox;
         private Label PNNPathLabel;
         private OpenFileDialog efGenOpenFileDialog;
+        private ToolTip toolTip;
     }
 }
