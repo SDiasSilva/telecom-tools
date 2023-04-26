@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTelecomTools));
             this.TelecomToolsTabControl = new System.Windows.Forms.TabControl();
             this.QRGeneratorTabPage = new System.Windows.Forms.TabPage();
             this.EFDataGenTabPage = new System.Windows.Forms.TabPage();
             this.MenuTitleTabControl = new System.Windows.Forms.TabControl();
-            this.MenuTitleDataTab = new System.Windows.Forms.TabPage();
+            this.MenuTitleDataTabPage = new System.Windows.Forms.TabPage();
             this.MenuTitleTextBox = new System.Windows.Forms.TextBox();
             this.MenuTitleCopyButton = new System.Windows.Forms.Button();
-            this.MenuTitleSettingsTab = new System.Windows.Forms.TabPage();
+            this.MenuTitleSettingsTabPage = new System.Windows.Forms.TabPage();
             this.MenuTitleEncodingComboBox = new System.Windows.Forms.ComboBox();
             this.MenuTitleEncodingLabel = new System.Windows.Forms.Label();
             this.MenuTitlePathLabel = new System.Windows.Forms.Label();
@@ -45,23 +46,36 @@
             this.inputLabel = new System.Windows.Forms.Label();
             this.SUMEPathLabel = new System.Windows.Forms.Label();
             this.SUMETabControl = new System.Windows.Forms.TabControl();
-            this.SUMEDataTab = new System.Windows.Forms.TabPage();
+            this.SUMEDataTabPage = new System.Windows.Forms.TabPage();
             this.SUMETextBox = new System.Windows.Forms.TextBox();
             this.SUMECopyButton = new System.Windows.Forms.Button();
-            this.SUMESettingsTab = new System.Windows.Forms.TabPage();
+            this.SUMESettingsTabPage = new System.Windows.Forms.TabPage();
             this.SUMEIconNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.SUMEIconLabel = new System.Windows.Forms.Label();
             this.SUMEIconQualifierComboBox = new System.Windows.Forms.ComboBox();
             this.SUMEIconQualifierLabel = new System.Windows.Forms.Label();
+            this.SPNTabControl = new System.Windows.Forms.TabControl();
+            this.SPNDataTabPage = new System.Windows.Forms.TabPage();
+            this.SPNTextBox = new System.Windows.Forms.TextBox();
+            this.SPNCopyButton = new System.Windows.Forms.Button();
+            this.SPNSettingsTabPage = new System.Windows.Forms.TabPage();
+            this.SPNrequiredComboBox = new System.Windows.Forms.ComboBox();
+            this.SPNRequiredLabel = new System.Windows.Forms.Label();
+            this.SPNRegRequiredComboBox = new System.Windows.Forms.ComboBox();
+            this.SPNRegRequiredLabel = new System.Windows.Forms.Label();
+            this.SPNPathLabel = new System.Windows.Forms.Label();
             this.TelecomToolsTabControl.SuspendLayout();
             this.EFDataGenTabPage.SuspendLayout();
             this.MenuTitleTabControl.SuspendLayout();
-            this.MenuTitleDataTab.SuspendLayout();
-            this.MenuTitleSettingsTab.SuspendLayout();
+            this.MenuTitleDataTabPage.SuspendLayout();
+            this.MenuTitleSettingsTabPage.SuspendLayout();
             this.SUMETabControl.SuspendLayout();
-            this.SUMEDataTab.SuspendLayout();
-            this.SUMESettingsTab.SuspendLayout();
+            this.SUMEDataTabPage.SuspendLayout();
+            this.SUMESettingsTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SUMEIconNumericUpDown)).BeginInit();
+            this.SPNTabControl.SuspendLayout();
+            this.SPNDataTabPage.SuspendLayout();
+            this.SPNSettingsTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // TelecomToolsTabControl
@@ -86,6 +100,8 @@
             // 
             // EFDataGenTabPage
             // 
+            this.EFDataGenTabPage.Controls.Add(this.SPNTabControl);
+            this.EFDataGenTabPage.Controls.Add(this.SPNPathLabel);
             this.EFDataGenTabPage.Controls.Add(this.MenuTitleTabControl);
             this.EFDataGenTabPage.Controls.Add(this.MenuTitlePathLabel);
             this.EFDataGenTabPage.Controls.Add(this.characterLimitLabel);
@@ -104,25 +120,25 @@
             // 
             // MenuTitleTabControl
             // 
-            this.MenuTitleTabControl.Controls.Add(this.MenuTitleDataTab);
-            this.MenuTitleTabControl.Controls.Add(this.MenuTitleSettingsTab);
-            this.MenuTitleTabControl.Location = new System.Drawing.Point(6, 277);
+            this.MenuTitleTabControl.Controls.Add(this.MenuTitleDataTabPage);
+            this.MenuTitleTabControl.Controls.Add(this.MenuTitleSettingsTabPage);
+            this.MenuTitleTabControl.Location = new System.Drawing.Point(6, 269);
             this.MenuTitleTabControl.Name = "MenuTitleTabControl";
             this.MenuTitleTabControl.SelectedIndex = 0;
             this.MenuTitleTabControl.Size = new System.Drawing.Size(419, 111);
             this.MenuTitleTabControl.TabIndex = 23;
             // 
-            // MenuTitleDataTab
+            // MenuTitleDataTabPage
             // 
-            this.MenuTitleDataTab.Controls.Add(this.MenuTitleTextBox);
-            this.MenuTitleDataTab.Controls.Add(this.MenuTitleCopyButton);
-            this.MenuTitleDataTab.Location = new System.Drawing.Point(4, 34);
-            this.MenuTitleDataTab.Name = "MenuTitleDataTab";
-            this.MenuTitleDataTab.Padding = new System.Windows.Forms.Padding(3);
-            this.MenuTitleDataTab.Size = new System.Drawing.Size(411, 73);
-            this.MenuTitleDataTab.TabIndex = 0;
-            this.MenuTitleDataTab.Text = "Data";
-            this.MenuTitleDataTab.UseVisualStyleBackColor = true;
+            this.MenuTitleDataTabPage.Controls.Add(this.MenuTitleTextBox);
+            this.MenuTitleDataTabPage.Controls.Add(this.MenuTitleCopyButton);
+            this.MenuTitleDataTabPage.Location = new System.Drawing.Point(4, 34);
+            this.MenuTitleDataTabPage.Name = "MenuTitleDataTabPage";
+            this.MenuTitleDataTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.MenuTitleDataTabPage.Size = new System.Drawing.Size(411, 73);
+            this.MenuTitleDataTabPage.TabIndex = 0;
+            this.MenuTitleDataTabPage.Text = "Data";
+            this.MenuTitleDataTabPage.UseVisualStyleBackColor = true;
             // 
             // MenuTitleTextBox
             // 
@@ -151,17 +167,17 @@
             this.MenuTitleCopyButton.Tag = "";
             this.MenuTitleCopyButton.UseVisualStyleBackColor = true;
             // 
-            // MenuTitleSettingsTab
+            // MenuTitleSettingsTabPage
             // 
-            this.MenuTitleSettingsTab.Controls.Add(this.MenuTitleEncodingComboBox);
-            this.MenuTitleSettingsTab.Controls.Add(this.MenuTitleEncodingLabel);
-            this.MenuTitleSettingsTab.Location = new System.Drawing.Point(4, 34);
-            this.MenuTitleSettingsTab.Name = "MenuTitleSettingsTab";
-            this.MenuTitleSettingsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.MenuTitleSettingsTab.Size = new System.Drawing.Size(411, 73);
-            this.MenuTitleSettingsTab.TabIndex = 1;
-            this.MenuTitleSettingsTab.Text = "Encoding Settings";
-            this.MenuTitleSettingsTab.UseVisualStyleBackColor = true;
+            this.MenuTitleSettingsTabPage.Controls.Add(this.MenuTitleEncodingComboBox);
+            this.MenuTitleSettingsTabPage.Controls.Add(this.MenuTitleEncodingLabel);
+            this.MenuTitleSettingsTabPage.Location = new System.Drawing.Point(4, 34);
+            this.MenuTitleSettingsTabPage.Name = "MenuTitleSettingsTabPage";
+            this.MenuTitleSettingsTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.MenuTitleSettingsTabPage.Size = new System.Drawing.Size(411, 73);
+            this.MenuTitleSettingsTabPage.TabIndex = 1;
+            this.MenuTitleSettingsTabPage.Text = "Encoding Settings";
+            this.MenuTitleSettingsTabPage.UseVisualStyleBackColor = true;
             // 
             // MenuTitleEncodingComboBox
             // 
@@ -190,7 +206,7 @@
             // MenuTitlePathLabel
             // 
             this.MenuTitlePathLabel.AutoSize = true;
-            this.MenuTitlePathLabel.Location = new System.Drawing.Point(6, 249);
+            this.MenuTitlePathLabel.Location = new System.Drawing.Point(6, 241);
             this.MenuTitlePathLabel.Name = "MenuTitlePathLabel";
             this.MenuTitlePathLabel.Size = new System.Drawing.Size(243, 25);
             this.MenuTitlePathLabel.TabIndex = 24;
@@ -248,25 +264,25 @@
             // 
             // SUMETabControl
             // 
-            this.SUMETabControl.Controls.Add(this.SUMEDataTab);
-            this.SUMETabControl.Controls.Add(this.SUMESettingsTab);
+            this.SUMETabControl.Controls.Add(this.SUMEDataTabPage);
+            this.SUMETabControl.Controls.Add(this.SUMESettingsTabPage);
             this.SUMETabControl.Location = new System.Drawing.Point(6, 127);
             this.SUMETabControl.Name = "SUMETabControl";
             this.SUMETabControl.SelectedIndex = 0;
             this.SUMETabControl.Size = new System.Drawing.Size(419, 111);
             this.SUMETabControl.TabIndex = 17;
             // 
-            // SUMEDataTab
+            // SUMEDataTabPage
             // 
-            this.SUMEDataTab.Controls.Add(this.SUMETextBox);
-            this.SUMEDataTab.Controls.Add(this.SUMECopyButton);
-            this.SUMEDataTab.Location = new System.Drawing.Point(4, 34);
-            this.SUMEDataTab.Name = "SUMEDataTab";
-            this.SUMEDataTab.Padding = new System.Windows.Forms.Padding(3);
-            this.SUMEDataTab.Size = new System.Drawing.Size(411, 73);
-            this.SUMEDataTab.TabIndex = 0;
-            this.SUMEDataTab.Text = "Data";
-            this.SUMEDataTab.UseVisualStyleBackColor = true;
+            this.SUMEDataTabPage.Controls.Add(this.SUMETextBox);
+            this.SUMEDataTabPage.Controls.Add(this.SUMECopyButton);
+            this.SUMEDataTabPage.Location = new System.Drawing.Point(4, 34);
+            this.SUMEDataTabPage.Name = "SUMEDataTabPage";
+            this.SUMEDataTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.SUMEDataTabPage.Size = new System.Drawing.Size(411, 73);
+            this.SUMEDataTabPage.TabIndex = 0;
+            this.SUMEDataTabPage.Text = "Data";
+            this.SUMEDataTabPage.UseVisualStyleBackColor = true;
             // 
             // SUMETextBox
             // 
@@ -295,19 +311,19 @@
             this.SUMECopyButton.Tag = "";
             this.SUMECopyButton.UseVisualStyleBackColor = true;
             // 
-            // SUMESettingsTab
+            // SUMESettingsTabPage
             // 
-            this.SUMESettingsTab.Controls.Add(this.SUMEIconNumericUpDown);
-            this.SUMESettingsTab.Controls.Add(this.SUMEIconLabel);
-            this.SUMESettingsTab.Controls.Add(this.SUMEIconQualifierComboBox);
-            this.SUMESettingsTab.Controls.Add(this.SUMEIconQualifierLabel);
-            this.SUMESettingsTab.Location = new System.Drawing.Point(4, 34);
-            this.SUMESettingsTab.Name = "SUMESettingsTab";
-            this.SUMESettingsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.SUMESettingsTab.Size = new System.Drawing.Size(411, 73);
-            this.SUMESettingsTab.TabIndex = 1;
-            this.SUMESettingsTab.Text = "Icon Settings";
-            this.SUMESettingsTab.UseVisualStyleBackColor = true;
+            this.SUMESettingsTabPage.Controls.Add(this.SUMEIconNumericUpDown);
+            this.SUMESettingsTabPage.Controls.Add(this.SUMEIconLabel);
+            this.SUMESettingsTabPage.Controls.Add(this.SUMEIconQualifierComboBox);
+            this.SUMESettingsTabPage.Controls.Add(this.SUMEIconQualifierLabel);
+            this.SUMESettingsTabPage.Location = new System.Drawing.Point(4, 34);
+            this.SUMESettingsTabPage.Name = "SUMESettingsTabPage";
+            this.SUMESettingsTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.SUMESettingsTabPage.Size = new System.Drawing.Size(411, 73);
+            this.SUMESettingsTabPage.TabIndex = 1;
+            this.SUMESettingsTabPage.Text = "Icon Settings";
+            this.SUMESettingsTabPage.UseVisualStyleBackColor = true;
             // 
             // SUMEIconNumericUpDown
             // 
@@ -354,6 +370,120 @@
             this.SUMEIconQualifierLabel.TabIndex = 0;
             this.SUMEIconQualifierLabel.Text = "Icon Qualifier:";
             // 
+            // SPNTabControl
+            // 
+            this.SPNTabControl.Controls.Add(this.SPNDataTabPage);
+            this.SPNTabControl.Controls.Add(this.SPNSettingsTabPage);
+            this.SPNTabControl.Location = new System.Drawing.Point(6, 411);
+            this.SPNTabControl.Name = "SPNTabControl";
+            this.SPNTabControl.SelectedIndex = 0;
+            this.SPNTabControl.Size = new System.Drawing.Size(419, 111);
+            this.SPNTabControl.TabIndex = 26;
+            // 
+            // SPNDataTabPage
+            // 
+            this.SPNDataTabPage.Controls.Add(this.SPNTextBox);
+            this.SPNDataTabPage.Controls.Add(this.SPNCopyButton);
+            this.SPNDataTabPage.Location = new System.Drawing.Point(4, 34);
+            this.SPNDataTabPage.Name = "SPNDataTabPage";
+            this.SPNDataTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.SPNDataTabPage.Size = new System.Drawing.Size(411, 73);
+            this.SPNDataTabPage.TabIndex = 0;
+            this.SPNDataTabPage.Text = "Data";
+            this.SPNDataTabPage.UseVisualStyleBackColor = true;
+            // 
+            // SPNTextBox
+            // 
+            this.SPNTextBox.AccessibleDescription = "SPN field content";
+            this.SPNTextBox.Location = new System.Drawing.Point(6, 6);
+            this.SPNTextBox.MaxLength = 100;
+            this.SPNTextBox.Multiline = true;
+            this.SPNTextBox.Name = "SPNTextBox";
+            this.SPNTextBox.ReadOnly = true;
+            this.SPNTextBox.Size = new System.Drawing.Size(362, 62);
+            this.SPNTextBox.TabIndex = 11;
+            // 
+            // SPNCopyButton
+            // 
+            this.SPNCopyButton.AccessibleDescription = "Copy content in the SPN field.";
+            this.SPNCopyButton.AccessibleName = "Copy SPN to clipboard";
+            this.SPNCopyButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("SPNCopyButton.BackgroundImage")));
+            this.SPNCopyButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.SPNCopyButton.Enabled = false;
+            this.SPNCopyButton.Location = new System.Drawing.Point(374, 6);
+            this.SPNCopyButton.Name = "SPNCopyButton";
+            this.SPNCopyButton.Size = new System.Drawing.Size(31, 31);
+            this.SPNCopyButton.TabIndex = 12;
+            this.SPNCopyButton.Tag = "";
+            this.SPNCopyButton.UseVisualStyleBackColor = true;
+            // 
+            // SPNSettingsTabPage
+            // 
+            this.SPNSettingsTabPage.Controls.Add(this.SPNrequiredComboBox);
+            this.SPNSettingsTabPage.Controls.Add(this.SPNRequiredLabel);
+            this.SPNSettingsTabPage.Controls.Add(this.SPNRegRequiredComboBox);
+            this.SPNSettingsTabPage.Controls.Add(this.SPNRegRequiredLabel);
+            this.SPNSettingsTabPage.Location = new System.Drawing.Point(4, 34);
+            this.SPNSettingsTabPage.Name = "SPNSettingsTabPage";
+            this.SPNSettingsTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.SPNSettingsTabPage.Size = new System.Drawing.Size(411, 73);
+            this.SPNSettingsTabPage.TabIndex = 1;
+            this.SPNSettingsTabPage.Text = "Display Settings";
+            this.SPNSettingsTabPage.UseVisualStyleBackColor = true;
+            // 
+            // SPNrequiredComboBox
+            // 
+            this.SPNrequiredComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.SPNrequiredComboBox.FormattingEnabled = true;
+            this.SPNrequiredComboBox.Items.AddRange(new object[] {
+            "True",
+            "False",
+            "Nothing selected"});
+            this.SPNrequiredComboBox.Location = new System.Drawing.Point(333, 37);
+            this.SPNrequiredComboBox.Name = "SPNrequiredComboBox";
+            this.SPNrequiredComboBox.Size = new System.Drawing.Size(72, 33);
+            this.SPNrequiredComboBox.TabIndex = 7;
+            // 
+            // SPNRequiredLabel
+            // 
+            this.SPNRequiredLabel.AutoSize = true;
+            this.SPNRequiredLabel.Location = new System.Drawing.Point(15, 42);
+            this.SPNRequiredLabel.Name = "SPNRequiredLabel";
+            this.SPNRequiredLabel.Size = new System.Drawing.Size(315, 25);
+            this.SPNRequiredLabel.TabIndex = 6;
+            this.SPNRequiredLabel.Text = "Service provider name PLMN required:";
+            // 
+            // SPNRegRequiredComboBox
+            // 
+            this.SPNRegRequiredComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.SPNRegRequiredComboBox.FormattingEnabled = true;
+            this.SPNRegRequiredComboBox.Items.AddRange(new object[] {
+            "True",
+            "False",
+            "Nothing selected"});
+            this.SPNRegRequiredComboBox.Location = new System.Drawing.Point(333, 3);
+            this.SPNRegRequiredComboBox.Name = "SPNRegRequiredComboBox";
+            this.SPNRegRequiredComboBox.Size = new System.Drawing.Size(72, 33);
+            this.SPNRegRequiredComboBox.TabIndex = 5;
+            // 
+            // SPNRegRequiredLabel
+            // 
+            this.SPNRegRequiredLabel.AutoSize = true;
+            this.SPNRegRequiredLabel.Location = new System.Drawing.Point(108, 6);
+            this.SPNRegRequiredLabel.Name = "SPNRegRequiredLabel";
+            this.SPNRegRequiredLabel.Size = new System.Drawing.Size(222, 25);
+            this.SPNRegRequiredLabel.TabIndex = 4;
+            this.SPNRegRequiredLabel.Text = "Registered PLMN required:";
+            // 
+            // SPNPathLabel
+            // 
+            this.SPNPathLabel.AutoSize = true;
+            this.SPNPathLabel.Location = new System.Drawing.Point(6, 383);
+            this.SPNPathLabel.Name = "SPNPathLabel";
+            this.SPNPathLabel.Size = new System.Drawing.Size(194, 25);
+            this.SPNPathLabel.TabIndex = 25;
+            this.SPNPathLabel.Text = "3F00/7F20/6F46 | SPN:";
+            // 
             // FormTelecomTools
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -366,16 +496,21 @@
             this.EFDataGenTabPage.ResumeLayout(false);
             this.EFDataGenTabPage.PerformLayout();
             this.MenuTitleTabControl.ResumeLayout(false);
-            this.MenuTitleDataTab.ResumeLayout(false);
-            this.MenuTitleDataTab.PerformLayout();
-            this.MenuTitleSettingsTab.ResumeLayout(false);
-            this.MenuTitleSettingsTab.PerformLayout();
+            this.MenuTitleDataTabPage.ResumeLayout(false);
+            this.MenuTitleDataTabPage.PerformLayout();
+            this.MenuTitleSettingsTabPage.ResumeLayout(false);
+            this.MenuTitleSettingsTabPage.PerformLayout();
             this.SUMETabControl.ResumeLayout(false);
-            this.SUMEDataTab.ResumeLayout(false);
-            this.SUMEDataTab.PerformLayout();
-            this.SUMESettingsTab.ResumeLayout(false);
-            this.SUMESettingsTab.PerformLayout();
+            this.SUMEDataTabPage.ResumeLayout(false);
+            this.SUMEDataTabPage.PerformLayout();
+            this.SUMESettingsTabPage.ResumeLayout(false);
+            this.SUMESettingsTabPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SUMEIconNumericUpDown)).EndInit();
+            this.SPNTabControl.ResumeLayout(false);
+            this.SPNDataTabPage.ResumeLayout(false);
+            this.SPNDataTabPage.PerformLayout();
+            this.SPNSettingsTabPage.ResumeLayout(false);
+            this.SPNSettingsTabPage.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -390,22 +525,32 @@
         private Label inputLabel;
         private Label SUMEPathLabel;
         private TabControl SUMETabControl;
-        private TabPage SUMEDataTab;
+        private TabPage SUMEDataTabPage;
         private TextBox SUMETextBox;
         private Button SUMECopyButton;
-        private TabPage SUMESettingsTab;
+        private TabPage SUMESettingsTabPage;
         private NumericUpDown SUMEIconNumericUpDown;
         private Label SUMEIconLabel;
         private ComboBox SUMEIconQualifierComboBox;
         private Label SUMEIconQualifierLabel;
         private Label characterLimitLabel;
         private TabControl MenuTitleTabControl;
-        private TabPage MenuTitleDataTab;
+        private TabPage MenuTitleDataTabPage;
         private TextBox MenuTitleTextBox;
         private Button MenuTitleCopyButton;
-        private TabPage MenuTitleSettingsTab;
+        private TabPage MenuTitleSettingsTabPage;
         private ComboBox MenuTitleEncodingComboBox;
         private Label MenuTitleEncodingLabel;
         private Label MenuTitlePathLabel;
+        private TabControl SPNTabControl;
+        private TabPage SPNDataTabPage;
+        private TextBox SPNTextBox;
+        private Button SPNCopyButton;
+        private TabPage SPNSettingsTabPage;
+        private ComboBox SPNrequiredComboBox;
+        private Label SPNRequiredLabel;
+        private ComboBox SPNRegRequiredComboBox;
+        private Label SPNRegRequiredLabel;
+        private Label SPNPathLabel;
     }
 }
