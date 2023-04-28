@@ -46,8 +46,7 @@ namespace Telecom_Tools.Util
                     Array.Copy(Key, 16, Key3, 0, Key3.Length);
                     break;
                 default:
-                    MessageBox.Show("Tamanho da chave Inválida!");
-                    break;
+                    throw new ArgumentException();
             }
         }
 
