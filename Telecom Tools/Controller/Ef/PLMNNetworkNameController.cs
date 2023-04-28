@@ -17,7 +17,7 @@ namespace Telecom_Tools.Controller.Ef
         }
         public override string GenerateEf(string input)
         {
-            byte[] inputByteArray = GSMEncoder.PackInfo(ByteUtil.GetBytes(input));
+            byte[] inputByteArray = ByteUtil.PackInfo(ByteUtil.GetBytes(input));
             byte[] pnnEFContent = CreateByteArrayFilledWith0xFF(pnn.Length);
             pnnEFContent[0] = 0x43;
             int infoStart = 3;

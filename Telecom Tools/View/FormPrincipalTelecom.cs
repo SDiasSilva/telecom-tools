@@ -1,3 +1,4 @@
+using Telecom_Tools.Controller;
 using Telecom_Tools.Controller.Ef;
 using Telecom_Tools.Util;
 using Telecom_Tools.Util.Ef;
@@ -97,6 +98,28 @@ namespace Telecom_Tools
         private void PNNCopyButton_Click(object sender, EventArgs e)
         {
             Clipboard.SetText(PNNTextBox.Text);
+        }
+
+        private void PSKCalculateButton_Click(object sender, EventArgs e)
+        {
+            PSKTextBox.Text = new PSKController(ICCIDTextBox.Text, masterKeyTextBox.Text).CalculatePSK();
+        }
+
+        private void PSKTextBox_TextChanged(object sender, EventArgs e)
+        {
+            PSKCopyButton.Enabled = ViewUtil.IsButtonEnabled(PSKTextBox.Text);
+        }
+
+        private void PSKClearAllFieldsButton_Click(object sender, EventArgs e)
+        {
+            ICCIDTextBox.Text = "";
+            masterKeyTextBox.Text = "";
+            PSKTextBox.Text = "";
+        }
+
+        private void PSKCopyButton_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(PSKTextBox.Text);
         }
     }
 }

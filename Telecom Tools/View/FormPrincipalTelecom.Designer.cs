@@ -68,9 +68,9 @@
             this.SUMEIconLabel = new System.Windows.Forms.Label();
             this.SUMEIconQualifierComboBox = new System.Windows.Forms.ComboBox();
             this.SUMEIconQualifierLabel = new System.Windows.Forms.Label();
-            this.efGenOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.PSKTabPage = new System.Windows.Forms.TabPage();
+            this.PSKCopyButton = new System.Windows.Forms.Button();
+            this.PSKClearAllFieldsButton = new System.Windows.Forms.Button();
             this.masterKeyLabel = new System.Windows.Forms.Label();
             this.PSKCalculateButton = new System.Windows.Forms.Button();
             this.ICCIDTextBox = new System.Windows.Forms.TextBox();
@@ -78,6 +78,8 @@
             this.ICCIDLabel = new System.Windows.Forms.Label();
             this.PSKTextBox = new System.Windows.Forms.TextBox();
             this.masterKeyTextBox = new System.Windows.Forms.TextBox();
+            this.efGenOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.TelecomToolsTabControl.SuspendLayout();
             this.EFDataGenTabPage.SuspendLayout();
             this.SPNTabControl.SuspendLayout();
@@ -561,12 +563,10 @@
             this.SUMEIconQualifierLabel.TabIndex = 0;
             this.SUMEIconQualifierLabel.Text = "Icon Qualifier:";
             // 
-            // efGenOpenFileDialog
-            // 
-            this.efGenOpenFileDialog.Filter = "Input Files (INP)|*.INP";
-            // 
             // PSKTabPage
             // 
+            this.PSKTabPage.Controls.Add(this.PSKCopyButton);
+            this.PSKTabPage.Controls.Add(this.PSKClearAllFieldsButton);
             this.PSKTabPage.Controls.Add(this.masterKeyLabel);
             this.PSKTabPage.Controls.Add(this.PSKCalculateButton);
             this.PSKTabPage.Controls.Add(this.ICCIDTextBox);
@@ -581,6 +581,37 @@
             this.PSKTabPage.TabIndex = 2;
             this.PSKTabPage.Text = "PSK";
             this.PSKTabPage.UseVisualStyleBackColor = true;
+            // 
+            // PSKCopyButton
+            // 
+            this.PSKCopyButton.AccessibleDescription = "";
+            this.PSKCopyButton.AccessibleName = "";
+            this.PSKCopyButton.BackgroundImage = global::Telecom_Tools.Properties.Resources.Copy;
+            this.PSKCopyButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PSKCopyButton.Enabled = false;
+            this.PSKCopyButton.Location = new System.Drawing.Point(392, 330);
+            this.PSKCopyButton.Name = "PSKCopyButton";
+            this.PSKCopyButton.Size = new System.Drawing.Size(31, 31);
+            this.PSKCopyButton.TabIndex = 24;
+            this.PSKCopyButton.Tag = "";
+            this.toolTip.SetToolTip(this.PSKCopyButton, "Copy PSK To Clipboard");
+            this.PSKCopyButton.UseVisualStyleBackColor = true;
+            this.PSKCopyButton.Click += new System.EventHandler(this.PSKCopyButton_Click);
+            // 
+            // PSKClearAllFieldsButton
+            // 
+            this.PSKClearAllFieldsButton.AccessibleDescription = "";
+            this.PSKClearAllFieldsButton.AccessibleName = "";
+            this.PSKClearAllFieldsButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PSKClearAllFieldsButton.BackgroundImage")));
+            this.PSKClearAllFieldsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PSKClearAllFieldsButton.Location = new System.Drawing.Point(5, 330);
+            this.PSKClearAllFieldsButton.Name = "PSKClearAllFieldsButton";
+            this.PSKClearAllFieldsButton.Size = new System.Drawing.Size(31, 31);
+            this.PSKClearAllFieldsButton.TabIndex = 23;
+            this.PSKClearAllFieldsButton.Tag = "";
+            this.toolTip.SetToolTip(this.PSKClearAllFieldsButton, "Recover Customer Name From .INP File (Ctrl+O)");
+            this.PSKClearAllFieldsButton.UseVisualStyleBackColor = true;
+            this.PSKClearAllFieldsButton.Click += new System.EventHandler(this.PSKClearAllFieldsButton_Click);
             // 
             // masterKeyLabel
             // 
@@ -601,6 +632,7 @@
             this.PSKCalculateButton.TabIndex = 13;
             this.PSKCalculateButton.Text = "Calculate";
             this.PSKCalculateButton.UseVisualStyleBackColor = true;
+            this.PSKCalculateButton.Click += new System.EventHandler(this.PSKCalculateButton_Click);
             // 
             // ICCIDTextBox
             // 
@@ -640,6 +672,7 @@
             this.PSKTextBox.ReadOnly = true;
             this.PSKTextBox.Size = new System.Drawing.Size(418, 93);
             this.PSKTextBox.TabIndex = 11;
+            this.PSKTextBox.TextChanged += new System.EventHandler(this.PSKTextBox_TextChanged);
             // 
             // masterKeyTextBox
             // 
@@ -649,6 +682,10 @@
             this.masterKeyTextBox.Name = "masterKeyTextBox";
             this.masterKeyTextBox.Size = new System.Drawing.Size(418, 31);
             this.masterKeyTextBox.TabIndex = 9;
+            // 
+            // efGenOpenFileDialog
+            // 
+            this.efGenOpenFileDialog.Filter = "Input Files (INP)|*.INP";
             // 
             // FormTelecomTools
             // 
@@ -733,5 +770,7 @@
         private Label ICCIDLabel;
         private TextBox PSKTextBox;
         private TextBox masterKeyTextBox;
+        private Button PSKClearAllFieldsButton;
+        private Button PSKCopyButton;
     }
 }
