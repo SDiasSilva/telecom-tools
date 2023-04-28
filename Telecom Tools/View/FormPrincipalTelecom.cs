@@ -107,6 +107,7 @@ namespace Telecom_Tools
 
         private void PSKTextBox_TextChanged(object sender, EventArgs e)
         {
+            PSKLabel.Text = ViewUtil.CountCharactersAndBytes(PSKTextBox.Text, "PSK");
             PSKCopyButton.Enabled = ViewUtil.IsButtonEnabled(PSKTextBox.Text);
         }
 
@@ -120,6 +121,16 @@ namespace Telecom_Tools
         private void PSKCopyButton_Click(object sender, EventArgs e)
         {
             Clipboard.SetText(PSKTextBox.Text);
+        }
+
+        private void ICCIDTextBox_TextChanged(object sender, EventArgs e)
+        {
+            ICCIDLabel.Text = ViewUtil.CountCharactersAndBytes(ICCIDTextBox.Text, "ICCID");
+        }
+
+        private void masterKeyTextBox_TextChanged(object sender, EventArgs e)
+        {
+            masterKeyLabel.Text = ViewUtil.CountCharactersAndBytes(masterKeyTextBox.Text, "Master Key");
         }
     }
 }

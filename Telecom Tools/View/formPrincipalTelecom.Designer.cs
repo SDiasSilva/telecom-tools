@@ -642,6 +642,7 @@
             this.ICCIDTextBox.Name = "ICCIDTextBox";
             this.ICCIDTextBox.Size = new System.Drawing.Size(418, 31);
             this.ICCIDTextBox.TabIndex = 7;
+            this.ICCIDTextBox.TextChanged += new System.EventHandler(this.ICCIDTextBox_TextChanged);
             // 
             // PSKLabel
             // 
@@ -682,6 +683,7 @@
             this.masterKeyTextBox.Name = "masterKeyTextBox";
             this.masterKeyTextBox.Size = new System.Drawing.Size(418, 31);
             this.masterKeyTextBox.TabIndex = 9;
+            this.masterKeyTextBox.TextChanged += new System.EventHandler(this.masterKeyTextBox_TextChanged);
             // 
             // efGenOpenFileDialog
             // 
