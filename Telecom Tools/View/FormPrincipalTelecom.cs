@@ -75,7 +75,7 @@ namespace Telecom_Tools
             PNNCopyButton.Enabled = ViewUtil.IsButtonEnabled(PNNTextBox.Text);
         }
 
-        private void efGenOpenFileButton_Click(object sender, EventArgs e)
+        private void EfGenOpenFileButton_Click(object sender, EventArgs e)
         {
             inputTextBox.Text = InputFileUtil.OpenInputFile(efGenOpenFileDialog, this);
         }
@@ -128,7 +128,7 @@ namespace Telecom_Tools
             ICCIDLabel.Text = ViewUtil.CountCharactersAndBytes(ICCIDTextBox.Text, "ICCID");
         }
 
-        private void masterKeyTextBox_TextChanged(object sender, EventArgs e)
+        private void MasterKeyTextBox_TextChanged(object sender, EventArgs e)
         {
             masterKeyLabel.Text = ViewUtil.CountCharactersAndBytes(masterKeyTextBox.Text, "Master Key");
         }

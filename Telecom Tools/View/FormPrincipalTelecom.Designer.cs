@@ -420,7 +420,7 @@
             this.efGenOpenFileButton.Tag = "";
             this.toolTip.SetToolTip(this.efGenOpenFileButton, "Recover Customer Name From .INP File (Ctrl+O)");
             this.efGenOpenFileButton.UseVisualStyleBackColor = true;
-            this.efGenOpenFileButton.Click += new System.EventHandler(this.efGenOpenFileButton_Click);
+            this.efGenOpenFileButton.Click += new System.EventHandler(this.EfGenOpenFileButton_Click);
             // 
             // inputTextBox
             // 
@@ -683,7 +683,7 @@
             this.masterKeyTextBox.Name = "masterKeyTextBox";
             this.masterKeyTextBox.Size = new System.Drawing.Size(418, 31);
             this.masterKeyTextBox.TabIndex = 9;
-            this.masterKeyTextBox.TextChanged += new System.EventHandler(this.masterKeyTextBox_TextChanged);
+            this.masterKeyTextBox.TextChanged += new System.EventHandler(this.MasterKeyTextBox_TextChanged);
             // 
             // efGenOpenFileDialog
             // 

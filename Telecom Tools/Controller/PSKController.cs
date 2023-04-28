@@ -10,7 +10,7 @@ namespace Telecom_Tools.Controller
 {
     internal class PSKController
     {
-        private PSK psk;
+        private readonly PSK psk;
 
         public PSKController(string iccid, string masterKey)
         {
@@ -37,9 +37,9 @@ namespace Telecom_Tools.Controller
             return "";
         }
 
-        private byte[] ConvertICCID(string text)
+        private static byte[] ConvertICCID(string text)
         {
-            string last8 = text.Substring(text.Length - 16);
+            string last8 = text[^16..];
             string swapped = "";
             for (var i = 0; i < last8.Length; i += 2)
             {
@@ -47,10 +47,10 @@ namespace Telecom_Tools.Controller
             }
             return ByteUtil.HexStringToByteArray(swapped);
         }
-        private string Swap(string pair)
+        private static string Swap(string pair)
         {
             string first = pair.Substring(pair.Length - 2, 1);
-            string second = pair.Substring(pair.Length - 1);
+            string second = pair[^1..];
             return second + first;
         }
     }

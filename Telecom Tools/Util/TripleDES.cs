@@ -13,7 +13,7 @@ namespace Telecom_Tools.Util
 {
     internal class TripleDES
     {
-        private DesEngine engine;
+        private readonly DesEngine engine;
         private BufferedBlockCipher cipher;
         private byte[] Key1 = new byte[8];
         private byte[] Key2 = new byte[8];
@@ -54,7 +54,7 @@ namespace Telecom_Tools.Util
         private byte[] EncryptBytes(byte[] plainBytes, byte[] key)
         {
             byte[] output;
-            KeyParameter keyParameter = new KeyParameter(key);
+            KeyParameter keyParameter = new(key);
             cipher.Init(true, keyParameter);
             try
             {
@@ -71,7 +71,7 @@ namespace Telecom_Tools.Util
         private byte[] DecryptBytes(byte[] encryptedBytes, byte[] key)
         {
             byte[] output;
-            KeyParameter keyParameter = new KeyParameter(key);
+            KeyParameter keyParameter = new (key);
             cipher.Init(false, keyParameter);
             output = cipher.DoFinal(encryptedBytes);
             return output;

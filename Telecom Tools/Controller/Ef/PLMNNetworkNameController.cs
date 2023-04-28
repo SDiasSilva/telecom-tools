@@ -10,7 +10,7 @@ namespace Telecom_Tools.Controller.Ef
 {
     internal class PLMNNetworkNameController : EfController
     {
-        PLMNNetworkName pnn;
+        private readonly PLMNNetworkName pnn;
         public PLMNNetworkNameController()
         {
             pnn = new PLMNNetworkName();
@@ -26,7 +26,7 @@ namespace Telecom_Tools.Controller.Ef
             Array.Copy(inputByteArray, 0, pnnEFContent, infoStart, inputByteArray.Length);
             return BitConverter.ToString(pnnEFContent).Replace("-", " ");
         }
-        private byte CountSpareBits(string input)
+        private static byte CountSpareBits(string input)
         {
             if (input.Length == 8 || input.Length == 16) return 0x80;
             else if (input.Length < 8) return (byte)(128+input.Length);
