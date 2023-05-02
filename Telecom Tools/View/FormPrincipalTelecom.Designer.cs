@@ -893,6 +893,7 @@
             this.ClearAllKCVFields.Tag = "";
             this.toolTip.SetToolTip(this.ClearAllKCVFields, "Clear all KCV fields");
             this.ClearAllKCVFields.UseVisualStyleBackColor = true;
+            this.ClearAllKCVFields.Click += new System.EventHandler(this.ClearAllKCVFields_Click);
             // 
             // KCVCopyButton
             // 
@@ -928,6 +929,7 @@
             this.KCVTextBox.ReadOnly = true;
             this.KCVTextBox.Size = new System.Drawing.Size(418, 31);
             this.KCVTextBox.TabIndex = 10;
+            this.KCVTextBox.TextChanged += new System.EventHandler(this.KCVTextBox_TextChanged);
             // 
             // KCVLabel
             // 
@@ -947,6 +949,7 @@
             this.keyTextBox.Name = "keyTextBox";
             this.keyTextBox.Size = new System.Drawing.Size(418, 109);
             this.keyTextBox.TabIndex = 8;
+            this.keyTextBox.TextChanged += new System.EventHandler(this.KeyTextBox_TextChanged);
             // 
             // keyLabel
             // 

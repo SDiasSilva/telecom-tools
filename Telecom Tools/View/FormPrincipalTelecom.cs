@@ -166,5 +166,22 @@ namespace Telecom_Tools
         {
             KCVTextBox.Text = new KCVController().SelectCryptoType(cryptoTypeComboBox.SelectedIndex).CalculateKCV(keyTextBox.Text);
         }
+
+        private void KeyTextBox_TextChanged(object sender, EventArgs e)
+        {
+            keyLabel.Text = ViewUtil.CountCharactersAndBytes(keyTextBox.Text, "Key");
+        }
+
+        private void KCVTextBox_TextChanged(object sender, EventArgs e)
+        {
+            KCVLabel.Text = ViewUtil.CountCharactersAndBytes(KCVTextBox.Text, "KCV");
+            KCVCopyButton.Enabled = ViewUtil.IsButtonEnabled(KCVTextBox.Text);
+        }
+
+        private void ClearAllKCVFields_Click(object sender, EventArgs e)
+        {
+            keyTextBox.Text = "";
+            KCVTextBox.Text = "";
+        }
     }
 }
