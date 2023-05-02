@@ -15,8 +15,8 @@ namespace Telecom_Tools.Model.KCV
             try
             {
                 byte[] keyByteArray = ByteUtil.HexStringToByteArray(key);
-                TripleDES encryptor = new TripleDES(keyByteArray);
-                return encryptor.Encrypt(DATA).Substring(0, 6);
+                TripleDES encryptor = new(keyByteArray);
+                return encryptor.Encrypt(DATA)[..6];
             }
             catch (ArgumentException)
             {

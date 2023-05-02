@@ -794,7 +794,7 @@
             this.getHashButton.Text = "Get Hash";
             this.toolTip.SetToolTip(this.getHashButton, "Generate a Hash from Plaintext");
             this.getHashButton.UseVisualStyleBackColor = true;
-            this.getHashButton.Click += new System.EventHandler(this.getHashButton_Click);
+            this.getHashButton.Click += new System.EventHandler(this.GetHashButton_Click);
             // 
             // hashTextBox
             // 
@@ -806,7 +806,7 @@
             this.hashTextBox.Size = new System.Drawing.Size(416, 132);
             this.hashTextBox.TabIndex = 8;
             this.toolTip.SetToolTip(this.hashTextBox, "Hash Content");
-            this.hashTextBox.TextChanged += new System.EventHandler(this.hashTextBox_TextChanged);
+            this.hashTextBox.TextChanged += new System.EventHandler(this.HashTextBox_TextChanged);
             // 
             // plaintextTextBox
             // 
@@ -817,7 +817,7 @@
             this.plaintextTextBox.Size = new System.Drawing.Size(416, 350);
             this.plaintextTextBox.TabIndex = 7;
             this.toolTip.SetToolTip(this.plaintextTextBox, "Insert the Plaintext");
-            this.plaintextTextBox.TextChanged += new System.EventHandler(this.plaintextTextBox_TextChanged);
+            this.plaintextTextBox.TextChanged += new System.EventHandler(this.PlaintextTextBox_TextChanged);
             // 
             // hashLabel
             // 
@@ -918,7 +918,7 @@
             this.calculateKCVButton.TabIndex = 11;
             this.calculateKCVButton.Text = "Calculate";
             this.calculateKCVButton.UseVisualStyleBackColor = true;
-            this.calculateKCVButton.Click += new System.EventHandler(this.calculateKCVButton_Click);
+            this.calculateKCVButton.Click += new System.EventHandler(this.CalculateKCVButton_Click);
             // 
             // KCVTextBox
             // 
