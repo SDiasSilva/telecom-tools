@@ -731,7 +731,7 @@
             this.ClearAllHashFieldsButton.Size = new System.Drawing.Size(31, 31);
             this.ClearAllHashFieldsButton.TabIndex = 26;
             this.ClearAllHashFieldsButton.Tag = "";
-            this.toolTip.SetToolTip(this.ClearAllHashFieldsButton, "Clear all fields");
+            this.toolTip.SetToolTip(this.ClearAllHashFieldsButton, "Clear all hash fields");
             this.ClearAllHashFieldsButton.UseVisualStyleBackColor = true;
             this.ClearAllHashFieldsButton.Click += new System.EventHandler(this.ClearAllHashFieldsButton_Click);
             // 
@@ -747,7 +747,7 @@
             this.HashCopyButton.Size = new System.Drawing.Size(31, 31);
             this.HashCopyButton.TabIndex = 25;
             this.HashCopyButton.Tag = "";
-            this.toolTip.SetToolTip(this.HashCopyButton, "Copy PSK To Clipboard");
+            this.toolTip.SetToolTip(this.HashCopyButton, "Copy Hash To Clipboard");
             this.HashCopyButton.UseVisualStyleBackColor = true;
             this.HashCopyButton.Click += new System.EventHandler(this.HashCopyButton_Click);
             // 
@@ -761,7 +761,7 @@
             this.hashTypeComboBox.Name = "hashTypeComboBox";
             this.hashTypeComboBox.Size = new System.Drawing.Size(311, 33);
             this.hashTypeComboBox.TabIndex = 11;
-            this.toolTip.SetToolTip(this.hashTypeComboBox, "Select the icon qualifier setting to apply to the SUME content");
+            this.toolTip.SetToolTip(this.hashTypeComboBox, "Select the type of hash that will be generated");
             // 
             // hashTypeLabel
             // 
@@ -780,6 +780,7 @@
             this.getHashButton.Size = new System.Drawing.Size(109, 33);
             this.getHashButton.TabIndex = 9;
             this.getHashButton.Text = "Get Hash";
+            this.toolTip.SetToolTip(this.getHashButton, "Generate a Hash from Plaintext");
             this.getHashButton.UseVisualStyleBackColor = true;
             this.getHashButton.Click += new System.EventHandler(this.getHashButton_Click);
             // 
@@ -792,6 +793,7 @@
             this.hashTextBox.ReadOnly = true;
             this.hashTextBox.Size = new System.Drawing.Size(416, 132);
             this.hashTextBox.TabIndex = 8;
+            this.toolTip.SetToolTip(this.hashTextBox, "Hash Content");
             this.hashTextBox.TextChanged += new System.EventHandler(this.hashTextBox_TextChanged);
             // 
             // plaintextTextBox
@@ -802,6 +804,7 @@
             this.plaintextTextBox.Name = "plaintextTextBox";
             this.plaintextTextBox.Size = new System.Drawing.Size(416, 350);
             this.plaintextTextBox.TabIndex = 7;
+            this.toolTip.SetToolTip(this.plaintextTextBox, "Insert the Plaintext");
             this.plaintextTextBox.TextChanged += new System.EventHandler(this.plaintextTextBox_TextChanged);
             // 
             // hashLabel
