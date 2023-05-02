@@ -11,7 +11,8 @@ namespace Telecom_Tools.Controller.Ef
     {
         public readonly Dictionary<int, KCV> CRYPTO_TYPE = new()
         {
-            {0, new DESKCV()}
+            {0, new DESKCV()},
+            {1, new AESKCV()}
         };
 
         public KCV SelectCryptoType(int cryptoType)
