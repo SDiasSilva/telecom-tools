@@ -609,7 +609,7 @@
             this.PSKClearAllFieldsButton.Size = new System.Drawing.Size(31, 31);
             this.PSKClearAllFieldsButton.TabIndex = 23;
             this.PSKClearAllFieldsButton.Tag = "";
-            this.toolTip.SetToolTip(this.PSKClearAllFieldsButton, "Recover Customer Name From .INP File (Ctrl+O)");
+            this.toolTip.SetToolTip(this.PSKClearAllFieldsButton, "Clear all fields");
             this.PSKClearAllFieldsButton.UseVisualStyleBackColor = true;
             this.PSKClearAllFieldsButton.Click += new System.EventHandler(this.PSKClearAllFieldsButton_Click);
             // 
@@ -631,6 +631,7 @@
             this.PSKCalculateButton.Size = new System.Drawing.Size(109, 33);
             this.PSKCalculateButton.TabIndex = 13;
             this.PSKCalculateButton.Text = "Calculate";
+            this.toolTip.SetToolTip(this.PSKCalculateButton, "Calculate the PSK using ICCID and Master Key");
             this.PSKCalculateButton.UseVisualStyleBackColor = true;
             this.PSKCalculateButton.Click += new System.EventHandler(this.PSKCalculateButton_Click);
             // 
@@ -642,6 +643,7 @@
             this.ICCIDTextBox.Name = "ICCIDTextBox";
             this.ICCIDTextBox.Size = new System.Drawing.Size(418, 31);
             this.ICCIDTextBox.TabIndex = 7;
+            this.toolTip.SetToolTip(this.ICCIDTextBox, "Insert the ICCID");
             this.ICCIDTextBox.TextChanged += new System.EventHandler(this.ICCIDTextBox_TextChanged);
             // 
             // PSKLabel
@@ -673,6 +675,7 @@
             this.PSKTextBox.ReadOnly = true;
             this.PSKTextBox.Size = new System.Drawing.Size(418, 93);
             this.PSKTextBox.TabIndex = 11;
+            this.toolTip.SetToolTip(this.PSKTextBox, "PSK Content");
             this.PSKTextBox.TextChanged += new System.EventHandler(this.PSKTextBox_TextChanged);
             // 
             // masterKeyTextBox
@@ -683,6 +686,7 @@
             this.masterKeyTextBox.Name = "masterKeyTextBox";
             this.masterKeyTextBox.Size = new System.Drawing.Size(418, 31);
             this.masterKeyTextBox.TabIndex = 9;
+            this.toolTip.SetToolTip(this.masterKeyTextBox, "Insert the Master Key");
             this.masterKeyTextBox.TextChanged += new System.EventHandler(this.MasterKeyTextBox_TextChanged);
             // 
             // efGenOpenFileDialog
