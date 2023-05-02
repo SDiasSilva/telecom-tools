@@ -869,7 +869,7 @@
             this.cryptoTypeComboBox.Name = "cryptoTypeComboBox";
             this.cryptoTypeComboBox.Size = new System.Drawing.Size(298, 33);
             this.cryptoTypeComboBox.TabIndex = 30;
-            this.toolTip.SetToolTip(this.cryptoTypeComboBox, "Select the type of hash that will be generated");
+            this.toolTip.SetToolTip(this.cryptoTypeComboBox, "Select KCV Encryption Type");
             // 
             // cryptoTypeLabel
             // 
@@ -918,6 +918,7 @@
             this.calculateKCVButton.Size = new System.Drawing.Size(109, 33);
             this.calculateKCVButton.TabIndex = 11;
             this.calculateKCVButton.Text = "Calculate";
+            this.toolTip.SetToolTip(this.calculateKCVButton, "Calculate the KCV encrypting the Key with an Crypto Algorithm");
             this.calculateKCVButton.UseVisualStyleBackColor = true;
             this.calculateKCVButton.Click += new System.EventHandler(this.CalculateKCVButton_Click);
             // 
@@ -929,6 +930,7 @@
             this.KCVTextBox.ReadOnly = true;
             this.KCVTextBox.Size = new System.Drawing.Size(418, 31);
             this.KCVTextBox.TabIndex = 10;
+            this.toolTip.SetToolTip(this.KCVTextBox, "KCV Content");
             this.KCVTextBox.TextChanged += new System.EventHandler(this.KCVTextBox_TextChanged);
             // 
             // KCVLabel
@@ -949,6 +951,7 @@
             this.keyTextBox.Name = "keyTextBox";
             this.keyTextBox.Size = new System.Drawing.Size(418, 109);
             this.keyTextBox.TabIndex = 8;
+            this.toolTip.SetToolTip(this.keyTextBox, "Insert the Key according with Crypto Algorithm");
             this.keyTextBox.TextChanged += new System.EventHandler(this.KeyTextBox_TextChanged);
             // 
             // keyLabel
