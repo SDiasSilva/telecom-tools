@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Telecom_Tools.Util
+namespace Telecom_Tools.Util.Crypto
 {
     internal class TripleDES
     {

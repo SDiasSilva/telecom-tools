@@ -16,6 +16,7 @@ namespace Telecom_Tools
             SPNRegisteredPLMNRequiredComboBox.SelectedIndex = 1;
             SPNamePLMNRequiredComboBox.SelectedIndex = 0;
             hashTypeComboBox.SelectedIndex = 0;
+            cryptoTypeComboBox.SelectedIndex = 0;
         }
 
         private void InputTextBox_TextChanged(object sender, EventArgs e)
@@ -134,17 +135,17 @@ namespace Telecom_Tools
             masterKeyLabel.Text = ViewUtil.CountCharactersAndBytes(masterKeyTextBox.Text, "Master Key");
         }
 
-        private void plaintextTextBox_TextChanged(object sender, EventArgs e)
+        private void PlaintextTextBox_TextChanged(object sender, EventArgs e)
         {
             plaintextLabel.Text = ViewUtil.CountCharacters(plaintextTextBox.Text, "Plaintext");
         }
 
-        private void getHashButton_Click(object sender, EventArgs e)
+        private void GetHashButton_Click(object sender, EventArgs e)
         {
             hashTextBox.Text = new HashController().SelectHashAlgorithm(hashTypeComboBox.SelectedIndex).ComputeHash(plaintextTextBox.Text);
         }
 
-        private void hashTextBox_TextChanged(object sender, EventArgs e)
+        private void HashTextBox_TextChanged(object sender, EventArgs e)
         {
             hashLabel.Text = ViewUtil.CountCharactersAndBytes(hashTextBox.Text, "Hash");
             HashCopyButton.Enabled = ViewUtil.IsButtonEnabled(hashTextBox.Text);
@@ -159,6 +160,28 @@ namespace Telecom_Tools
         {
             plaintextTextBox.Text = "";
             hashTextBox.Text = "";
+        }
+
+        private void CalculateKCVButton_Click(object sender, EventArgs e)
+        {
+            KCVTextBox.Text = new KCVController().SelectCryptoType(cryptoTypeComboBox.SelectedIndex).CalculateKCV(keyTextBox.Text);
+        }
+
+        private void KeyTextBox_TextChanged(object sender, EventArgs e)
+        {
+            keyLabel.Text = ViewUtil.CountCharactersAndBytes(keyTextBox.Text, "Key");
+        }
+
+        private void KCVTextBox_TextChanged(object sender, EventArgs e)
+        {
+            KCVLabel.Text = ViewUtil.CountCharactersAndBytes(KCVTextBox.Text, "KCV");
+            KCVCopyButton.Enabled = ViewUtil.IsButtonEnabled(KCVTextBox.Text);
+        }
+
+        private void ClearAllKCVFields_Click(object sender, EventArgs e)
+        {
+            keyTextBox.Text = "";
+            KCVTextBox.Text = "";
         }
     }
 }
