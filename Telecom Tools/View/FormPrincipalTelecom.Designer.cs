@@ -78,6 +78,16 @@
             this.ICCIDLabel = new System.Windows.Forms.Label();
             this.PSKTextBox = new System.Windows.Forms.TextBox();
             this.masterKeyTextBox = new System.Windows.Forms.TextBox();
+            this.hashTabPage = new System.Windows.Forms.TabPage();
+            this.ClearAllHashFieldsButton = new System.Windows.Forms.Button();
+            this.HashCopyButton = new System.Windows.Forms.Button();
+            this.hashTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.hashTypeLabel = new System.Windows.Forms.Label();
+            this.getHashButton = new System.Windows.Forms.Button();
+            this.hashTextBox = new System.Windows.Forms.TextBox();
+            this.plaintextTextBox = new System.Windows.Forms.TextBox();
+            this.hashLabel = new System.Windows.Forms.Label();
+            this.plaintextLabel = new System.Windows.Forms.Label();
             this.efGenOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.TelecomToolsTabControl.SuspendLayout();
@@ -93,6 +103,7 @@
             this.SUMESettingsTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SUMEIconNumericUpDown)).BeginInit();
             this.PSKTabPage.SuspendLayout();
+            this.hashTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // TelecomToolsTabControl
@@ -100,6 +111,7 @@
             this.TelecomToolsTabControl.Controls.Add(this.QRGeneratorTabPage);
             this.TelecomToolsTabControl.Controls.Add(this.EFDataGenTabPage);
             this.TelecomToolsTabControl.Controls.Add(this.PSKTabPage);
+            this.TelecomToolsTabControl.Controls.Add(this.hashTabPage);
             this.TelecomToolsTabControl.Location = new System.Drawing.Point(3, 2);
             this.TelecomToolsTabControl.Name = "TelecomToolsTabControl";
             this.TelecomToolsTabControl.SelectedIndex = 0;
@@ -689,6 +701,132 @@
             this.toolTip.SetToolTip(this.masterKeyTextBox, "Insert the Master Key");
             this.masterKeyTextBox.TextChanged += new System.EventHandler(this.MasterKeyTextBox_TextChanged);
             // 
+            // hashTabPage
+            // 
+            this.hashTabPage.Controls.Add(this.ClearAllHashFieldsButton);
+            this.hashTabPage.Controls.Add(this.HashCopyButton);
+            this.hashTabPage.Controls.Add(this.hashTypeComboBox);
+            this.hashTabPage.Controls.Add(this.hashTypeLabel);
+            this.hashTabPage.Controls.Add(this.getHashButton);
+            this.hashTabPage.Controls.Add(this.hashTextBox);
+            this.hashTabPage.Controls.Add(this.plaintextTextBox);
+            this.hashTabPage.Controls.Add(this.hashLabel);
+            this.hashTabPage.Controls.Add(this.plaintextLabel);
+            this.hashTabPage.Location = new System.Drawing.Point(4, 34);
+            this.hashTabPage.Name = "hashTabPage";
+            this.hashTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.hashTabPage.Size = new System.Drawing.Size(431, 637);
+            this.hashTabPage.TabIndex = 3;
+            this.hashTabPage.Text = "Hash";
+            this.hashTabPage.UseVisualStyleBackColor = true;
+            // 
+            // ClearAllHashFieldsButton
+            // 
+            this.ClearAllHashFieldsButton.AccessibleDescription = "";
+            this.ClearAllHashFieldsButton.AccessibleName = "";
+            this.ClearAllHashFieldsButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ClearAllHashFieldsButton.BackgroundImage")));
+            this.ClearAllHashFieldsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClearAllHashFieldsButton.Location = new System.Drawing.Point(7, 597);
+            this.ClearAllHashFieldsButton.Name = "ClearAllHashFieldsButton";
+            this.ClearAllHashFieldsButton.Size = new System.Drawing.Size(31, 31);
+            this.ClearAllHashFieldsButton.TabIndex = 26;
+            this.ClearAllHashFieldsButton.Tag = "";
+            this.toolTip.SetToolTip(this.ClearAllHashFieldsButton, "Clear all hash fields");
+            this.ClearAllHashFieldsButton.UseVisualStyleBackColor = true;
+            this.ClearAllHashFieldsButton.Click += new System.EventHandler(this.ClearAllHashFieldsButton_Click);
+            // 
+            // HashCopyButton
+            // 
+            this.HashCopyButton.AccessibleDescription = "";
+            this.HashCopyButton.AccessibleName = "";
+            this.HashCopyButton.BackgroundImage = global::Telecom_Tools.Properties.Resources.Copy;
+            this.HashCopyButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.HashCopyButton.Enabled = false;
+            this.HashCopyButton.Location = new System.Drawing.Point(278, 598);
+            this.HashCopyButton.Name = "HashCopyButton";
+            this.HashCopyButton.Size = new System.Drawing.Size(31, 31);
+            this.HashCopyButton.TabIndex = 25;
+            this.HashCopyButton.Tag = "";
+            this.toolTip.SetToolTip(this.HashCopyButton, "Copy Hash To Clipboard");
+            this.HashCopyButton.UseVisualStyleBackColor = true;
+            this.HashCopyButton.Click += new System.EventHandler(this.HashCopyButton_Click);
+            // 
+            // hashTypeComboBox
+            // 
+            this.hashTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.hashTypeComboBox.FormattingEnabled = true;
+            this.hashTypeComboBox.Items.AddRange(new object[] {
+            "SHA1"});
+            this.hashTypeComboBox.Location = new System.Drawing.Point(111, 386);
+            this.hashTypeComboBox.Name = "hashTypeComboBox";
+            this.hashTypeComboBox.Size = new System.Drawing.Size(311, 33);
+            this.hashTypeComboBox.TabIndex = 11;
+            this.toolTip.SetToolTip(this.hashTypeComboBox, "Select the type of hash that will be generated");
+            // 
+            // hashTypeLabel
+            // 
+            this.hashTypeLabel.AutoSize = true;
+            this.hashTypeLabel.Location = new System.Drawing.Point(6, 386);
+            this.hashTypeLabel.Name = "hashTypeLabel";
+            this.hashTypeLabel.Size = new System.Drawing.Size(98, 25);
+            this.hashTypeLabel.TabIndex = 10;
+            this.hashTypeLabel.Text = "Hash Type:";
+            // 
+            // getHashButton
+            // 
+            this.getHashButton.Location = new System.Drawing.Point(314, 597);
+            this.getHashButton.Margin = new System.Windows.Forms.Padding(2);
+            this.getHashButton.Name = "getHashButton";
+            this.getHashButton.Size = new System.Drawing.Size(109, 33);
+            this.getHashButton.TabIndex = 9;
+            this.getHashButton.Text = "Get Hash";
+            this.toolTip.SetToolTip(this.getHashButton, "Generate a Hash from Plaintext");
+            this.getHashButton.UseVisualStyleBackColor = true;
+            this.getHashButton.Click += new System.EventHandler(this.getHashButton_Click);
+            // 
+            // hashTextBox
+            // 
+            this.hashTextBox.Location = new System.Drawing.Point(7, 461);
+            this.hashTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.hashTextBox.Multiline = true;
+            this.hashTextBox.Name = "hashTextBox";
+            this.hashTextBox.ReadOnly = true;
+            this.hashTextBox.Size = new System.Drawing.Size(416, 132);
+            this.hashTextBox.TabIndex = 8;
+            this.toolTip.SetToolTip(this.hashTextBox, "Hash Content");
+            this.hashTextBox.TextChanged += new System.EventHandler(this.hashTextBox_TextChanged);
+            // 
+            // plaintextTextBox
+            // 
+            this.plaintextTextBox.Location = new System.Drawing.Point(7, 31);
+            this.plaintextTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.plaintextTextBox.Multiline = true;
+            this.plaintextTextBox.Name = "plaintextTextBox";
+            this.plaintextTextBox.Size = new System.Drawing.Size(416, 350);
+            this.plaintextTextBox.TabIndex = 7;
+            this.toolTip.SetToolTip(this.plaintextTextBox, "Insert the Plaintext");
+            this.plaintextTextBox.TextChanged += new System.EventHandler(this.plaintextTextBox_TextChanged);
+            // 
+            // hashLabel
+            // 
+            this.hashLabel.AutoSize = true;
+            this.hashLabel.Location = new System.Drawing.Point(7, 434);
+            this.hashLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.hashLabel.Name = "hashLabel";
+            this.hashLabel.Size = new System.Drawing.Size(56, 25);
+            this.hashLabel.TabIndex = 6;
+            this.hashLabel.Text = "Hash:";
+            // 
+            // plaintextLabel
+            // 
+            this.plaintextLabel.AutoSize = true;
+            this.plaintextLabel.Location = new System.Drawing.Point(7, 3);
+            this.plaintextLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.plaintextLabel.Name = "plaintextLabel";
+            this.plaintextLabel.Size = new System.Drawing.Size(82, 25);
+            this.plaintextLabel.TabIndex = 5;
+            this.plaintextLabel.Text = "Plaintext:";
+            // 
             // efGenOpenFileDialog
             // 
             this.efGenOpenFileDialog.Filter = "Input Files (INP)|*.INP";
@@ -722,6 +860,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.SUMEIconNumericUpDown)).EndInit();
             this.PSKTabPage.ResumeLayout(false);
             this.PSKTabPage.PerformLayout();
+            this.hashTabPage.ResumeLayout(false);
+            this.hashTabPage.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -778,5 +918,15 @@
         private TextBox masterKeyTextBox;
         private Button PSKClearAllFieldsButton;
         private Button PSKCopyButton;
+        private TabPage hashTabPage;
+        private ComboBox hashTypeComboBox;
+        private Label hashTypeLabel;
+        private Button getHashButton;
+        private TextBox hashTextBox;
+        private TextBox plaintextTextBox;
+        private Label hashLabel;
+        private Label plaintextLabel;
+        private Button ClearAllHashFieldsButton;
+        private Button HashCopyButton;
     }
 }
