@@ -16,6 +16,7 @@ namespace Telecom_Tools
             SPNRegisteredPLMNRequiredComboBox.SelectedIndex = 1;
             SPNamePLMNRequiredComboBox.SelectedIndex = 0;
             hashTypeComboBox.SelectedIndex = 0;
+            cryptoTypeComboBox.SelectedIndex = 0;
         }
 
         private void InputTextBox_TextChanged(object sender, EventArgs e)
