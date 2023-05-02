@@ -70,7 +70,7 @@
             this.SUMEIconQualifierLabel = new System.Windows.Forms.Label();
             this.PSKTabPage = new System.Windows.Forms.TabPage();
             this.PSKCopyButton = new System.Windows.Forms.Button();
-            this.PSKClearAllFieldsButton = new System.Windows.Forms.Button();
+            this.ClearAllPSKFieldsButton = new System.Windows.Forms.Button();
             this.masterKeyLabel = new System.Windows.Forms.Label();
             this.PSKCalculateButton = new System.Windows.Forms.Button();
             this.ICCIDTextBox = new System.Windows.Forms.TextBox();
@@ -590,7 +590,7 @@
             // PSKTabPage
             // 
             this.PSKTabPage.Controls.Add(this.PSKCopyButton);
-            this.PSKTabPage.Controls.Add(this.PSKClearAllFieldsButton);
+            this.PSKTabPage.Controls.Add(this.ClearAllPSKFieldsButton);
             this.PSKTabPage.Controls.Add(this.masterKeyLabel);
             this.PSKTabPage.Controls.Add(this.PSKCalculateButton);
             this.PSKTabPage.Controls.Add(this.ICCIDTextBox);
@@ -622,20 +622,20 @@
             this.PSKCopyButton.UseVisualStyleBackColor = true;
             this.PSKCopyButton.Click += new System.EventHandler(this.PSKCopyButton_Click);
             // 
-            // PSKClearAllFieldsButton
+            // ClearAllPSKFieldsButton
             // 
-            this.PSKClearAllFieldsButton.AccessibleDescription = "";
-            this.PSKClearAllFieldsButton.AccessibleName = "";
-            this.PSKClearAllFieldsButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PSKClearAllFieldsButton.BackgroundImage")));
-            this.PSKClearAllFieldsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PSKClearAllFieldsButton.Location = new System.Drawing.Point(5, 330);
-            this.PSKClearAllFieldsButton.Name = "PSKClearAllFieldsButton";
-            this.PSKClearAllFieldsButton.Size = new System.Drawing.Size(31, 31);
-            this.PSKClearAllFieldsButton.TabIndex = 23;
-            this.PSKClearAllFieldsButton.Tag = "";
-            this.toolTip.SetToolTip(this.PSKClearAllFieldsButton, "Clear all fields");
-            this.PSKClearAllFieldsButton.UseVisualStyleBackColor = true;
-            this.PSKClearAllFieldsButton.Click += new System.EventHandler(this.PSKClearAllFieldsButton_Click);
+            this.ClearAllPSKFieldsButton.AccessibleDescription = "";
+            this.ClearAllPSKFieldsButton.AccessibleName = "";
+            this.ClearAllPSKFieldsButton.BackgroundImage = global::Telecom_Tools.Properties.Resources.Clear;
+            this.ClearAllPSKFieldsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClearAllPSKFieldsButton.Location = new System.Drawing.Point(5, 330);
+            this.ClearAllPSKFieldsButton.Name = "ClearAllPSKFieldsButton";
+            this.ClearAllPSKFieldsButton.Size = new System.Drawing.Size(31, 31);
+            this.ClearAllPSKFieldsButton.TabIndex = 23;
+            this.ClearAllPSKFieldsButton.Tag = "";
+            this.toolTip.SetToolTip(this.ClearAllPSKFieldsButton, "Clear all PSK fields");
+            this.ClearAllPSKFieldsButton.UseVisualStyleBackColor = true;
+            this.ClearAllPSKFieldsButton.Click += new System.EventHandler(this.ClearAllPSKFieldsButton_Click);
             // 
             // masterKeyLabel
             // 
@@ -736,7 +736,7 @@
             // 
             this.ClearAllHashFieldsButton.AccessibleDescription = "";
             this.ClearAllHashFieldsButton.AccessibleName = "";
-            this.ClearAllHashFieldsButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ClearAllHashFieldsButton.BackgroundImage")));
+            this.ClearAllHashFieldsButton.BackgroundImage = global::Telecom_Tools.Properties.Resources.Clear;
             this.ClearAllHashFieldsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClearAllHashFieldsButton.Location = new System.Drawing.Point(7, 597);
             this.ClearAllHashFieldsButton.Name = "ClearAllHashFieldsButton";
@@ -884,7 +884,7 @@
             // 
             this.ClearAllKCVFields.AccessibleDescription = "";
             this.ClearAllKCVFields.AccessibleName = "";
-            this.ClearAllKCVFields.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ClearAllKCVFields.BackgroundImage")));
+            this.ClearAllKCVFields.BackgroundImage = global::Telecom_Tools.Properties.Resources.Clear;
             this.ClearAllKCVFields.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClearAllKCVFields.Location = new System.Drawing.Point(5, 321);
             this.ClearAllKCVFields.Name = "ClearAllKCVFields";
@@ -1055,7 +1055,7 @@
         private Label ICCIDLabel;
         private TextBox PSKTextBox;
         private TextBox masterKeyTextBox;
-        private Button PSKClearAllFieldsButton;
+        private Button ClearAllPSKFieldsButton;
         private Button PSKCopyButton;
         private TabPage hashTabPage;
         private ComboBox hashTypeComboBox;

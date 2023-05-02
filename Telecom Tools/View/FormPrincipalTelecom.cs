@@ -113,7 +113,7 @@ namespace Telecom_Tools
             PSKCopyButton.Enabled = ViewUtil.IsButtonEnabled(PSKTextBox.Text);
         }
 
-        private void PSKClearAllFieldsButton_Click(object sender, EventArgs e)
+        private void ClearAllPSKFieldsButton_Click(object sender, EventArgs e)
         {
             ICCIDTextBox.Text = "";
             masterKeyTextBox.Text = "";
