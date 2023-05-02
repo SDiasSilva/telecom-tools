@@ -11,9 +11,22 @@ namespace Telecom_Tools.Model.KCV
     {
         public override string CalculateKCV(string key)
         {
-            byte[] keyByteArray = ByteUtil.HexStringToByteArray(key);
-            TripleDES encryptor = new TripleDES(keyByteArray);
-            return encryptor.Encrypt(DATA).Substring(0, 6);
+            try
+            {
+                byte[] keyByteArray = ByteUtil.HexStringToByteArray(key);
+                TripleDES encryptor = new TripleDES(keyByteArray);
+                return encryptor.Encrypt(DATA).Substring(0, 6);
+            }
+            catch (ArgumentException)
+            {
+                MessageBox.Show("Key with invalid size!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return "";
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Key with invalid characters", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return "";
+            }
         }
     }
 }

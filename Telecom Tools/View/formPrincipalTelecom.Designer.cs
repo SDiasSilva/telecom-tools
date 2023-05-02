@@ -88,18 +88,18 @@
             this.plaintextTextBox = new System.Windows.Forms.TextBox();
             this.hashLabel = new System.Windows.Forms.Label();
             this.plaintextLabel = new System.Windows.Forms.Label();
-            this.efGenOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.KCVTabPage = new System.Windows.Forms.TabPage();
+            this.cryptoTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.cryptoTypeLabel = new System.Windows.Forms.Label();
+            this.ClearAllKCVFields = new System.Windows.Forms.Button();
+            this.KCVCopyButton = new System.Windows.Forms.Button();
             this.calculateKCVButton = new System.Windows.Forms.Button();
             this.KCVTextBox = new System.Windows.Forms.TextBox();
             this.KCVLabel = new System.Windows.Forms.Label();
             this.keyTextBox = new System.Windows.Forms.TextBox();
             this.keyLabel = new System.Windows.Forms.Label();
-            this.ClearAllKCVFields = new System.Windows.Forms.Button();
-            this.KCVCopyButton = new System.Windows.Forms.Button();
-            this.cryptoTypeComboBox = new System.Windows.Forms.ComboBox();
-            this.cryptoTypeLabel = new System.Windows.Forms.Label();
+            this.efGenOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.TelecomToolsTabControl.SuspendLayout();
             this.EFDataGenTabPage.SuspendLayout();
             this.SPNTabControl.SuspendLayout();
@@ -839,10 +839,6 @@
             this.plaintextLabel.TabIndex = 5;
             this.plaintextLabel.Text = "Plaintext:";
             // 
-            // efGenOpenFileDialog
-            // 
-            this.efGenOpenFileDialog.Filter = "Input Files (INP)|*.INP";
-            // 
             // KCVTabPage
             // 
             this.KCVTabPage.Controls.Add(this.cryptoTypeComboBox);
@@ -862,6 +858,57 @@
             this.KCVTabPage.Text = "KCV";
             this.KCVTabPage.UseVisualStyleBackColor = true;
             // 
+            // cryptoTypeComboBox
+            // 
+            this.cryptoTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cryptoTypeComboBox.FormattingEnabled = true;
+            this.cryptoTypeComboBox.Items.AddRange(new object[] {
+            "DES",
+            "AES"});
+            this.cryptoTypeComboBox.Location = new System.Drawing.Point(124, 151);
+            this.cryptoTypeComboBox.Name = "cryptoTypeComboBox";
+            this.cryptoTypeComboBox.Size = new System.Drawing.Size(298, 33);
+            this.cryptoTypeComboBox.TabIndex = 30;
+            this.toolTip.SetToolTip(this.cryptoTypeComboBox, "Select the type of hash that will be generated");
+            // 
+            // cryptoTypeLabel
+            // 
+            this.cryptoTypeLabel.AutoSize = true;
+            this.cryptoTypeLabel.Location = new System.Drawing.Point(6, 151);
+            this.cryptoTypeLabel.Name = "cryptoTypeLabel";
+            this.cryptoTypeLabel.Size = new System.Drawing.Size(112, 25);
+            this.cryptoTypeLabel.TabIndex = 29;
+            this.cryptoTypeLabel.Text = "Crypto Type:";
+            // 
+            // ClearAllKCVFields
+            // 
+            this.ClearAllKCVFields.AccessibleDescription = "";
+            this.ClearAllKCVFields.AccessibleName = "";
+            this.ClearAllKCVFields.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ClearAllKCVFields.BackgroundImage")));
+            this.ClearAllKCVFields.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClearAllKCVFields.Location = new System.Drawing.Point(5, 321);
+            this.ClearAllKCVFields.Name = "ClearAllKCVFields";
+            this.ClearAllKCVFields.Size = new System.Drawing.Size(31, 31);
+            this.ClearAllKCVFields.TabIndex = 28;
+            this.ClearAllKCVFields.Tag = "";
+            this.toolTip.SetToolTip(this.ClearAllKCVFields, "Clear all KCV fields");
+            this.ClearAllKCVFields.UseVisualStyleBackColor = true;
+            // 
+            // KCVCopyButton
+            // 
+            this.KCVCopyButton.AccessibleDescription = "";
+            this.KCVCopyButton.AccessibleName = "";
+            this.KCVCopyButton.BackgroundImage = global::Telecom_Tools.Properties.Resources.Copy;
+            this.KCVCopyButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.KCVCopyButton.Enabled = false;
+            this.KCVCopyButton.Location = new System.Drawing.Point(392, 321);
+            this.KCVCopyButton.Name = "KCVCopyButton";
+            this.KCVCopyButton.Size = new System.Drawing.Size(31, 31);
+            this.KCVCopyButton.TabIndex = 27;
+            this.KCVCopyButton.Tag = "";
+            this.toolTip.SetToolTip(this.KCVCopyButton, "Copy KCV To Clipboard");
+            this.KCVCopyButton.UseVisualStyleBackColor = true;
+            // 
             // calculateKCVButton
             // 
             this.calculateKCVButton.Location = new System.Drawing.Point(314, 218);
@@ -871,6 +918,7 @@
             this.calculateKCVButton.TabIndex = 11;
             this.calculateKCVButton.Text = "Calculate";
             this.calculateKCVButton.UseVisualStyleBackColor = true;
+            this.calculateKCVButton.Click += new System.EventHandler(this.calculateKCVButton_Click);
             // 
             // KCVTextBox
             // 
@@ -910,56 +958,9 @@
             this.keyLabel.TabIndex = 7;
             this.keyLabel.Text = "Key:";
             // 
-            // ClearAllKCVFields
+            // efGenOpenFileDialog
             // 
-            this.ClearAllKCVFields.AccessibleDescription = "";
-            this.ClearAllKCVFields.AccessibleName = "";
-            this.ClearAllKCVFields.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ClearAllKCVFields.BackgroundImage")));
-            this.ClearAllKCVFields.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClearAllKCVFields.Location = new System.Drawing.Point(5, 321);
-            this.ClearAllKCVFields.Name = "ClearAllKCVFields";
-            this.ClearAllKCVFields.Size = new System.Drawing.Size(31, 31);
-            this.ClearAllKCVFields.TabIndex = 28;
-            this.ClearAllKCVFields.Tag = "";
-            this.toolTip.SetToolTip(this.ClearAllKCVFields, "Clear all KCV fields");
-            this.ClearAllKCVFields.UseVisualStyleBackColor = true;
-            // 
-            // KCVCopyButton
-            // 
-            this.KCVCopyButton.AccessibleDescription = "";
-            this.KCVCopyButton.AccessibleName = "";
-            this.KCVCopyButton.BackgroundImage = global::Telecom_Tools.Properties.Resources.Copy;
-            this.KCVCopyButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.KCVCopyButton.Enabled = false;
-            this.KCVCopyButton.Location = new System.Drawing.Point(392, 321);
-            this.KCVCopyButton.Name = "KCVCopyButton";
-            this.KCVCopyButton.Size = new System.Drawing.Size(31, 31);
-            this.KCVCopyButton.TabIndex = 27;
-            this.KCVCopyButton.Tag = "";
-            this.toolTip.SetToolTip(this.KCVCopyButton, "Copy KCV To Clipboard");
-            this.KCVCopyButton.UseVisualStyleBackColor = true;
-            // 
-            // cryptoTypeComboBox
-            // 
-            this.cryptoTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cryptoTypeComboBox.FormattingEnabled = true;
-            this.cryptoTypeComboBox.Items.AddRange(new object[] {
-            "DES",
-            "AES"});
-            this.cryptoTypeComboBox.Location = new System.Drawing.Point(124, 151);
-            this.cryptoTypeComboBox.Name = "cryptoTypeComboBox";
-            this.cryptoTypeComboBox.Size = new System.Drawing.Size(298, 33);
-            this.cryptoTypeComboBox.TabIndex = 30;
-            this.toolTip.SetToolTip(this.cryptoTypeComboBox, "Select the type of hash that will be generated");
-            // 
-            // cryptoTypeLabel
-            // 
-            this.cryptoTypeLabel.AutoSize = true;
-            this.cryptoTypeLabel.Location = new System.Drawing.Point(6, 151);
-            this.cryptoTypeLabel.Name = "cryptoTypeLabel";
-            this.cryptoTypeLabel.Size = new System.Drawing.Size(112, 25);
-            this.cryptoTypeLabel.TabIndex = 29;
-            this.cryptoTypeLabel.Text = "Crypto Type:";
+            this.efGenOpenFileDialog.Filter = "Input Files (INP)|*.INP";
             // 
             // FormTelecomTools
             // 

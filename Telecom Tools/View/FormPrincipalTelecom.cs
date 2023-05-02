@@ -161,5 +161,10 @@ namespace Telecom_Tools
             plaintextTextBox.Text = "";
             hashTextBox.Text = "";
         }
+
+        private void calculateKCVButton_Click(object sender, EventArgs e)
+        {
+            KCVTextBox.Text = new KCVController().SelectCryptoType(cryptoTypeComboBox.SelectedIndex).CalculateKCV(keyTextBox.Text);
+        }
     }
 }
