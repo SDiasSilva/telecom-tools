@@ -136,12 +136,29 @@ namespace Telecom_Tools
 
         private void plaintextTextBox_TextChanged(object sender, EventArgs e)
         {
-
+            plaintextLabel.Text = ViewUtil.CountCharacters(plaintextTextBox.Text, "Plaintext");
         }
 
         private void getHashButton_Click(object sender, EventArgs e)
         {
             hashTextBox.Text = new HashController().SelectHashAlgorithm(hashTypeComboBox.SelectedIndex).ComputeHash(plaintextTextBox.Text);
+        }
+
+        private void hashTextBox_TextChanged(object sender, EventArgs e)
+        {
+            hashLabel.Text = ViewUtil.CountCharactersAndBytes(hashTextBox.Text, "Hash");
+            HashCopyButton.Enabled = ViewUtil.IsButtonEnabled(hashTextBox.Text);
+        }
+
+        private void HashCopyButton_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(hashTextBox.Text);
+        }
+
+        private void ClearAllHashFieldsButton_Click(object sender, EventArgs e)
+        {
+            plaintextTextBox.Text = "";
+            hashTextBox.Text = "";
         }
     }
 }
