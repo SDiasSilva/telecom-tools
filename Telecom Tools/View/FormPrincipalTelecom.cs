@@ -15,6 +15,7 @@ namespace Telecom_Tools
             MenuTitleEncodingComboBox.SelectedIndex = 0;
             SPNRegisteredPLMNRequiredComboBox.SelectedIndex = 1;
             SPNamePLMNRequiredComboBox.SelectedIndex = 0;
+            hashTypeComboBox.SelectedIndex = 0;
         }
 
         private void InputTextBox_TextChanged(object sender, EventArgs e)
@@ -131,6 +132,11 @@ namespace Telecom_Tools
         private void MasterKeyTextBox_TextChanged(object sender, EventArgs e)
         {
             masterKeyLabel.Text = ViewUtil.CountCharactersAndBytes(masterKeyTextBox.Text, "Master Key");
+        }
+
+        private void plaintextTextBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
