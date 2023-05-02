@@ -1,3 +1,4 @@
+using Telecom_Tools.Controller;
 using Telecom_Tools.Controller.Ef;
 using Telecom_Tools.Util;
 using Telecom_Tools.Util.Ef;
@@ -74,7 +75,7 @@ namespace Telecom_Tools
             PNNCopyButton.Enabled = ViewUtil.IsButtonEnabled(PNNTextBox.Text);
         }
 
-        private void efGenOpenFileButton_Click(object sender, EventArgs e)
+        private void EfGenOpenFileButton_Click(object sender, EventArgs e)
         {
             inputTextBox.Text = InputFileUtil.OpenInputFile(efGenOpenFileDialog, this);
         }
@@ -97,6 +98,39 @@ namespace Telecom_Tools
         private void PNNCopyButton_Click(object sender, EventArgs e)
         {
             Clipboard.SetText(PNNTextBox.Text);
+        }
+
+        private void PSKCalculateButton_Click(object sender, EventArgs e)
+        {
+            PSKTextBox.Text = new PSKController(ICCIDTextBox.Text, masterKeyTextBox.Text).CalculatePSK();
+        }
+
+        private void PSKTextBox_TextChanged(object sender, EventArgs e)
+        {
+            PSKLabel.Text = ViewUtil.CountCharactersAndBytes(PSKTextBox.Text, "PSK");
+            PSKCopyButton.Enabled = ViewUtil.IsButtonEnabled(PSKTextBox.Text);
+        }
+
+        private void PSKClearAllFieldsButton_Click(object sender, EventArgs e)
+        {
+            ICCIDTextBox.Text = "";
+            masterKeyTextBox.Text = "";
+            PSKTextBox.Text = "";
+        }
+
+        private void PSKCopyButton_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(PSKTextBox.Text);
+        }
+
+        private void ICCIDTextBox_TextChanged(object sender, EventArgs e)
+        {
+            ICCIDLabel.Text = ViewUtil.CountCharactersAndBytes(ICCIDTextBox.Text, "ICCID");
+        }
+
+        private void MasterKeyTextBox_TextChanged(object sender, EventArgs e)
+        {
+            masterKeyLabel.Text = ViewUtil.CountCharactersAndBytes(masterKeyTextBox.Text, "Master Key");
         }
     }
 }

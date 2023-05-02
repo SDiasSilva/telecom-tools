@@ -68,6 +68,16 @@
             this.SUMEIconLabel = new System.Windows.Forms.Label();
             this.SUMEIconQualifierComboBox = new System.Windows.Forms.ComboBox();
             this.SUMEIconQualifierLabel = new System.Windows.Forms.Label();
+            this.PSKTabPage = new System.Windows.Forms.TabPage();
+            this.PSKCopyButton = new System.Windows.Forms.Button();
+            this.PSKClearAllFieldsButton = new System.Windows.Forms.Button();
+            this.masterKeyLabel = new System.Windows.Forms.Label();
+            this.PSKCalculateButton = new System.Windows.Forms.Button();
+            this.ICCIDTextBox = new System.Windows.Forms.TextBox();
+            this.PSKLabel = new System.Windows.Forms.Label();
+            this.ICCIDLabel = new System.Windows.Forms.Label();
+            this.PSKTextBox = new System.Windows.Forms.TextBox();
+            this.masterKeyTextBox = new System.Windows.Forms.TextBox();
             this.efGenOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.TelecomToolsTabControl.SuspendLayout();
@@ -82,12 +92,14 @@
             this.SUMEDataTabPage.SuspendLayout();
             this.SUMESettingsTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SUMEIconNumericUpDown)).BeginInit();
+            this.PSKTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // TelecomToolsTabControl
             // 
             this.TelecomToolsTabControl.Controls.Add(this.QRGeneratorTabPage);
             this.TelecomToolsTabControl.Controls.Add(this.EFDataGenTabPage);
+            this.TelecomToolsTabControl.Controls.Add(this.PSKTabPage);
             this.TelecomToolsTabControl.Location = new System.Drawing.Point(3, 2);
             this.TelecomToolsTabControl.Name = "TelecomToolsTabControl";
             this.TelecomToolsTabControl.SelectedIndex = 0;
@@ -408,7 +420,7 @@
             this.efGenOpenFileButton.Tag = "";
             this.toolTip.SetToolTip(this.efGenOpenFileButton, "Recover Customer Name From .INP File (Ctrl+O)");
             this.efGenOpenFileButton.UseVisualStyleBackColor = true;
-            this.efGenOpenFileButton.Click += new System.EventHandler(this.efGenOpenFileButton_Click);
+            this.efGenOpenFileButton.Click += new System.EventHandler(this.EfGenOpenFileButton_Click);
             // 
             // inputTextBox
             // 
@@ -551,6 +563,132 @@
             this.SUMEIconQualifierLabel.TabIndex = 0;
             this.SUMEIconQualifierLabel.Text = "Icon Qualifier:";
             // 
+            // PSKTabPage
+            // 
+            this.PSKTabPage.Controls.Add(this.PSKCopyButton);
+            this.PSKTabPage.Controls.Add(this.PSKClearAllFieldsButton);
+            this.PSKTabPage.Controls.Add(this.masterKeyLabel);
+            this.PSKTabPage.Controls.Add(this.PSKCalculateButton);
+            this.PSKTabPage.Controls.Add(this.ICCIDTextBox);
+            this.PSKTabPage.Controls.Add(this.PSKLabel);
+            this.PSKTabPage.Controls.Add(this.ICCIDLabel);
+            this.PSKTabPage.Controls.Add(this.PSKTextBox);
+            this.PSKTabPage.Controls.Add(this.masterKeyTextBox);
+            this.PSKTabPage.Location = new System.Drawing.Point(4, 34);
+            this.PSKTabPage.Name = "PSKTabPage";
+            this.PSKTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.PSKTabPage.Size = new System.Drawing.Size(431, 637);
+            this.PSKTabPage.TabIndex = 2;
+            this.PSKTabPage.Text = "PSK";
+            this.PSKTabPage.UseVisualStyleBackColor = true;
+            // 
+            // PSKCopyButton
+            // 
+            this.PSKCopyButton.AccessibleDescription = "";
+            this.PSKCopyButton.AccessibleName = "";
+            this.PSKCopyButton.BackgroundImage = global::Telecom_Tools.Properties.Resources.Copy;
+            this.PSKCopyButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PSKCopyButton.Enabled = false;
+            this.PSKCopyButton.Location = new System.Drawing.Point(392, 330);
+            this.PSKCopyButton.Name = "PSKCopyButton";
+            this.PSKCopyButton.Size = new System.Drawing.Size(31, 31);
+            this.PSKCopyButton.TabIndex = 24;
+            this.PSKCopyButton.Tag = "";
+            this.toolTip.SetToolTip(this.PSKCopyButton, "Copy PSK To Clipboard");
+            this.PSKCopyButton.UseVisualStyleBackColor = true;
+            this.PSKCopyButton.Click += new System.EventHandler(this.PSKCopyButton_Click);
+            // 
+            // PSKClearAllFieldsButton
+            // 
+            this.PSKClearAllFieldsButton.AccessibleDescription = "";
+            this.PSKClearAllFieldsButton.AccessibleName = "";
+            this.PSKClearAllFieldsButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PSKClearAllFieldsButton.BackgroundImage")));
+            this.PSKClearAllFieldsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PSKClearAllFieldsButton.Location = new System.Drawing.Point(5, 330);
+            this.PSKClearAllFieldsButton.Name = "PSKClearAllFieldsButton";
+            this.PSKClearAllFieldsButton.Size = new System.Drawing.Size(31, 31);
+            this.PSKClearAllFieldsButton.TabIndex = 23;
+            this.PSKClearAllFieldsButton.Tag = "";
+            this.toolTip.SetToolTip(this.PSKClearAllFieldsButton, "Clear all fields");
+            this.PSKClearAllFieldsButton.UseVisualStyleBackColor = true;
+            this.PSKClearAllFieldsButton.Click += new System.EventHandler(this.PSKClearAllFieldsButton_Click);
+            // 
+            // masterKeyLabel
+            // 
+            this.masterKeyLabel.AutoSize = true;
+            this.masterKeyLabel.Location = new System.Drawing.Point(5, 75);
+            this.masterKeyLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.masterKeyLabel.Name = "masterKeyLabel";
+            this.masterKeyLabel.Size = new System.Drawing.Size(103, 25);
+            this.masterKeyLabel.TabIndex = 10;
+            this.masterKeyLabel.Text = "Master Key:";
+            // 
+            // PSKCalculateButton
+            // 
+            this.PSKCalculateButton.Location = new System.Drawing.Point(313, 162);
+            this.PSKCalculateButton.Margin = new System.Windows.Forms.Padding(2);
+            this.PSKCalculateButton.Name = "PSKCalculateButton";
+            this.PSKCalculateButton.Size = new System.Drawing.Size(109, 33);
+            this.PSKCalculateButton.TabIndex = 13;
+            this.PSKCalculateButton.Text = "Calculate";
+            this.toolTip.SetToolTip(this.PSKCalculateButton, "Calculate the PSK using ICCID and Master Key");
+            this.PSKCalculateButton.UseVisualStyleBackColor = true;
+            this.PSKCalculateButton.Click += new System.EventHandler(this.PSKCalculateButton_Click);
+            // 
+            // ICCIDTextBox
+            // 
+            this.ICCIDTextBox.Location = new System.Drawing.Point(5, 31);
+            this.ICCIDTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.ICCIDTextBox.MaxLength = 40;
+            this.ICCIDTextBox.Name = "ICCIDTextBox";
+            this.ICCIDTextBox.Size = new System.Drawing.Size(418, 31);
+            this.ICCIDTextBox.TabIndex = 7;
+            this.toolTip.SetToolTip(this.ICCIDTextBox, "Insert the ICCID");
+            this.ICCIDTextBox.TextChanged += new System.EventHandler(this.ICCIDTextBox_TextChanged);
+            // 
+            // PSKLabel
+            // 
+            this.PSKLabel.AutoSize = true;
+            this.PSKLabel.Location = new System.Drawing.Point(5, 205);
+            this.PSKLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.PSKLabel.Name = "PSKLabel";
+            this.PSKLabel.Size = new System.Drawing.Size(46, 25);
+            this.PSKLabel.TabIndex = 12;
+            this.PSKLabel.Text = "PSK:";
+            // 
+            // ICCIDLabel
+            // 
+            this.ICCIDLabel.AutoSize = true;
+            this.ICCIDLabel.Location = new System.Drawing.Point(5, 3);
+            this.ICCIDLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ICCIDLabel.Name = "ICCIDLabel";
+            this.ICCIDLabel.Size = new System.Drawing.Size(61, 25);
+            this.ICCIDLabel.TabIndex = 8;
+            this.ICCIDLabel.Text = "ICCID:";
+            // 
+            // PSKTextBox
+            // 
+            this.PSKTextBox.Location = new System.Drawing.Point(5, 232);
+            this.PSKTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.PSKTextBox.Multiline = true;
+            this.PSKTextBox.Name = "PSKTextBox";
+            this.PSKTextBox.ReadOnly = true;
+            this.PSKTextBox.Size = new System.Drawing.Size(418, 93);
+            this.PSKTextBox.TabIndex = 11;
+            this.toolTip.SetToolTip(this.PSKTextBox, "PSK Content");
+            this.PSKTextBox.TextChanged += new System.EventHandler(this.PSKTextBox_TextChanged);
+            // 
+            // masterKeyTextBox
+            // 
+            this.masterKeyTextBox.Location = new System.Drawing.Point(5, 102);
+            this.masterKeyTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.masterKeyTextBox.MaxLength = 64;
+            this.masterKeyTextBox.Name = "masterKeyTextBox";
+            this.masterKeyTextBox.Size = new System.Drawing.Size(418, 31);
+            this.masterKeyTextBox.TabIndex = 9;
+            this.toolTip.SetToolTip(this.masterKeyTextBox, "Insert the Master Key");
+            this.masterKeyTextBox.TextChanged += new System.EventHandler(this.MasterKeyTextBox_TextChanged);
+            // 
             // efGenOpenFileDialog
             // 
             this.efGenOpenFileDialog.Filter = "Input Files (INP)|*.INP";
@@ -582,6 +720,8 @@
             this.SUMESettingsTabPage.ResumeLayout(false);
             this.SUMESettingsTabPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SUMEIconNumericUpDown)).EndInit();
+            this.PSKTabPage.ResumeLayout(false);
+            this.PSKTabPage.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -628,5 +768,15 @@
         private Label PNNPathLabel;
         private OpenFileDialog efGenOpenFileDialog;
         private ToolTip toolTip;
+        private TabPage PSKTabPage;
+        private Label masterKeyLabel;
+        private Button PSKCalculateButton;
+        private TextBox ICCIDTextBox;
+        private Label PSKLabel;
+        private Label ICCIDLabel;
+        private TextBox PSKTextBox;
+        private TextBox masterKeyTextBox;
+        private Button PSKClearAllFieldsButton;
+        private Button PSKCopyButton;
     }
 }

@@ -11,7 +11,7 @@ namespace Telecom_Tools.Util
     internal class ByteUtil
     {
         // This method converts a hexadecimal string to a byte array.
-        private static byte[] HexStringToByteArray(string hexString)
+        public static byte[] HexStringToByteArray(string hexString)
         {
             // Remove any spaces or dashes in the input string.
             hexString = hexString.Replace(" ", "").Replace("-", "");

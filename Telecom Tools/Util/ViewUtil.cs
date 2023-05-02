@@ -29,6 +29,15 @@ namespace Telecom_Tools.Util
             return labelText + ":";
         }
 
+        public static string CountCharactersAndBytes(string textBoxText, string labelText)
+        {
+            string input = textBoxText;
+            input = input.Replace(" ", "");
+            if (input.Length > 0)
+                return labelText + " (" + textBoxText.Length + " Characters - " + input.Length / 2 + " bytes):";
+            return labelText + ":";
+        }
+
         // Returns a boolean indicating if a button should be enabled based on the length of a text box input.
         public static bool IsButtonEnabled(string txtBoxText)
         {
