@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Telecom_Tools.Util.Crypto;
 using Telecom_Tools.Util;
 
 namespace Telecom_Tools.Model.KCV
