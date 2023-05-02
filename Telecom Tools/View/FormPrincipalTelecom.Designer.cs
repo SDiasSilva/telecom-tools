@@ -78,16 +78,16 @@
             this.ICCIDLabel = new System.Windows.Forms.Label();
             this.PSKTextBox = new System.Windows.Forms.TextBox();
             this.masterKeyTextBox = new System.Windows.Forms.TextBox();
-            this.efGenOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.hashTabPage = new System.Windows.Forms.TabPage();
+            this.hashTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.hashTypeLabel = new System.Windows.Forms.Label();
             this.getHashButton = new System.Windows.Forms.Button();
             this.hashTextBox = new System.Windows.Forms.TextBox();
             this.plaintextTextBox = new System.Windows.Forms.TextBox();
             this.hashLabel = new System.Windows.Forms.Label();
             this.plaintextLabel = new System.Windows.Forms.Label();
-            this.hashTypeLabel = new System.Windows.Forms.Label();
-            this.hashTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.efGenOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.TelecomToolsTabControl.SuspendLayout();
             this.EFDataGenTabPage.SuspendLayout();
             this.SPNTabControl.SuspendLayout();
@@ -699,10 +699,6 @@
             this.toolTip.SetToolTip(this.masterKeyTextBox, "Insert the Master Key");
             this.masterKeyTextBox.TextChanged += new System.EventHandler(this.MasterKeyTextBox_TextChanged);
             // 
-            // efGenOpenFileDialog
-            // 
-            this.efGenOpenFileDialog.Filter = "Input Files (INP)|*.INP";
-            // 
             // hashTabPage
             // 
             this.hashTabPage.Controls.Add(this.hashTypeComboBox);
@@ -720,6 +716,27 @@
             this.hashTabPage.Text = "Hash";
             this.hashTabPage.UseVisualStyleBackColor = true;
             // 
+            // hashTypeComboBox
+            // 
+            this.hashTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.hashTypeComboBox.FormattingEnabled = true;
+            this.hashTypeComboBox.Items.AddRange(new object[] {
+            "SHA1"});
+            this.hashTypeComboBox.Location = new System.Drawing.Point(111, 269);
+            this.hashTypeComboBox.Name = "hashTypeComboBox";
+            this.hashTypeComboBox.Size = new System.Drawing.Size(311, 33);
+            this.hashTypeComboBox.TabIndex = 11;
+            this.toolTip.SetToolTip(this.hashTypeComboBox, "Select the icon qualifier setting to apply to the SUME content");
+            // 
+            // hashTypeLabel
+            // 
+            this.hashTypeLabel.AutoSize = true;
+            this.hashTypeLabel.Location = new System.Drawing.Point(6, 269);
+            this.hashTypeLabel.Name = "hashTypeLabel";
+            this.hashTypeLabel.Size = new System.Drawing.Size(98, 25);
+            this.hashTypeLabel.TabIndex = 10;
+            this.hashTypeLabel.Text = "Hash Type:";
+            // 
             // getHashButton
             // 
             this.getHashButton.Location = new System.Drawing.Point(314, 480);
@@ -729,6 +746,7 @@
             this.getHashButton.TabIndex = 9;
             this.getHashButton.Text = "Get Hash";
             this.getHashButton.UseVisualStyleBackColor = true;
+            this.getHashButton.Click += new System.EventHandler(this.getHashButton_Click);
             // 
             // hashTextBox
             // 
@@ -770,26 +788,9 @@
             this.plaintextLabel.TabIndex = 5;
             this.plaintextLabel.Text = "Plaintext:";
             // 
-            // hashTypeLabel
+            // efGenOpenFileDialog
             // 
-            this.hashTypeLabel.AutoSize = true;
-            this.hashTypeLabel.Location = new System.Drawing.Point(6, 269);
-            this.hashTypeLabel.Name = "hashTypeLabel";
-            this.hashTypeLabel.Size = new System.Drawing.Size(98, 25);
-            this.hashTypeLabel.TabIndex = 10;
-            this.hashTypeLabel.Text = "Hash Type:";
-            // 
-            // hashTypeComboBox
-            // 
-            this.hashTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.hashTypeComboBox.FormattingEnabled = true;
-            this.hashTypeComboBox.Items.AddRange(new object[] {
-            "SHA1"});
-            this.hashTypeComboBox.Location = new System.Drawing.Point(111, 269);
-            this.hashTypeComboBox.Name = "hashTypeComboBox";
-            this.hashTypeComboBox.Size = new System.Drawing.Size(311, 33);
-            this.hashTypeComboBox.TabIndex = 11;
-            this.toolTip.SetToolTip(this.hashTypeComboBox, "Select the icon qualifier setting to apply to the SUME content");
+            this.efGenOpenFileDialog.Filter = "Input Files (INP)|*.INP";
             // 
             // FormTelecomTools
             // 

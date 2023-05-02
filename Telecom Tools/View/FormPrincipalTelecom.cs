@@ -138,5 +138,10 @@ namespace Telecom_Tools
         {
 
         }
+
+        private void getHashButton_Click(object sender, EventArgs e)
+        {
+            hashTextBox.Text = new HashController().SelectHashAlgorithm(hashTypeComboBox.SelectedIndex).ComputeHash(plaintextTextBox.Text);
+        }
     }
 }
