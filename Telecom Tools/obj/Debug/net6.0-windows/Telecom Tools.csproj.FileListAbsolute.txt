@@ -33,3 +33,8 @@ C:\Users\silvtiag\Documents\02-AuthorialCodes\Projetos\telecom-tools\Telecom Too
 C:\Users\silvtiag\Documents\02-AuthorialCodes\Projetos\telecom-tools\Telecom Tools\obj\Debug\net6.0-windows\Telecom Tools.genruntimeconfig.cache
 C:\Users\silvtiag\Documents\02-AuthorialCodes\Projetos\telecom-tools\Telecom Tools\obj\Debug\net6.0-windows\ref\Telecom Tools.dll
 C:\Users\silvtiag\Documents\02-AuthorialCodes\Projetos\telecom-tools\Telecom Tools\obj\Debug\net6.0-windows\Telecom_Tools.Properties.Resources.resources
+C:\Users\silvtiag\Documents\02-AuthorialCodes\Projetos\telecom-tools\Telecom Tools\obj\Debug\net6.0-windows\Telecom_Tools.Model.ModuleWidth.resources
+C:\Users\silvtiag\Documents\02-AuthorialCodes\Projetos\telecom-tools\Telecom Tools\bin\Debug\net6.0-windows\QRCoder.dll
+C:\Users\silvtiag\Documents\02-AuthorialCodes\Projetos\telecom-tools\Telecom Tools\obj\Debug\net6.0-windows\Telecom Tools.csproj.CopyComplete
+C:\Users\silvtiag\Documents\02-AuthorialCodes\Projetos\telecom-tools\Telecom Tools\bin\Debug\net6.0-windows\BouncyCastle.Crypto.dll
+C:\Users\silvtiag\Documents\02-AuthorialCodes\Projetos\telecom-tools\Telecom Tools\bin\Debug\net6.0-windows\itextsharp.dll
