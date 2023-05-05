@@ -100,6 +100,7 @@
             this.keyLabel = new System.Windows.Forms.Label();
             this.efGenOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.helpProvider = new System.Windows.Forms.HelpProvider();
             this.TelecomToolsTabControl.SuspendLayout();
             this.EFDataGenTabPage.SuspendLayout();
             this.SPNTabControl.SuspendLayout();
@@ -183,11 +184,13 @@
             // 
             this.PNNTextBox.AccessibleDescription = "";
             this.PNNTextBox.AccessibleName = "";
+            this.helpProvider.SetHelpString(this.PNNTextBox, resources.GetString("PNNTextBox.HelpString"));
             this.PNNTextBox.Location = new System.Drawing.Point(16, 553);
             this.PNNTextBox.MaxLength = 100;
             this.PNNTextBox.Multiline = true;
             this.PNNTextBox.Name = "PNNTextBox";
             this.PNNTextBox.ReadOnly = true;
+            this.helpProvider.SetShowHelp(this.PNNTextBox, true);
             this.PNNTextBox.Size = new System.Drawing.Size(362, 62);
             this.PNNTextBox.TabIndex = 28;
             this.toolTip.SetToolTip(this.PNNTextBox, "PNN Content");
@@ -227,11 +230,13 @@
             // SPNTextBox
             // 
             this.SPNTextBox.AccessibleDescription = "";
+            this.helpProvider.SetHelpString(this.SPNTextBox, resources.GetString("SPNTextBox.HelpString"));
             this.SPNTextBox.Location = new System.Drawing.Point(6, 6);
             this.SPNTextBox.MaxLength = 100;
             this.SPNTextBox.Multiline = true;
             this.SPNTextBox.Name = "SPNTextBox";
             this.SPNTextBox.ReadOnly = true;
+            this.helpProvider.SetShowHelp(this.SPNTextBox, true);
             this.SPNTextBox.Size = new System.Drawing.Size(362, 62);
             this.SPNTextBox.TabIndex = 11;
             this.toolTip.SetToolTip(this.SPNTextBox, "SPN Content");
@@ -350,11 +355,13 @@
             // 
             this.MenuTitleTextBox.AccessibleDescription = "";
             this.MenuTitleTextBox.AccessibleName = "";
+            this.helpProvider.SetHelpString(this.MenuTitleTextBox, resources.GetString("MenuTitleTextBox.HelpString"));
             this.MenuTitleTextBox.Location = new System.Drawing.Point(6, 6);
             this.MenuTitleTextBox.MaxLength = 100;
             this.MenuTitleTextBox.Multiline = true;
             this.MenuTitleTextBox.Name = "MenuTitleTextBox";
             this.MenuTitleTextBox.ReadOnly = true;
+            this.helpProvider.SetShowHelp(this.MenuTitleTextBox, true);
             this.MenuTitleTextBox.Size = new System.Drawing.Size(362, 62);
             this.MenuTitleTextBox.TabIndex = 8;
             this.toolTip.SetToolTip(this.MenuTitleTextBox, "Menu Title Content");
@@ -437,8 +444,11 @@
             this.efGenOpenFileButton.AccessibleName = "";
             this.efGenOpenFileButton.BackgroundImage = global::Telecom_Tools.Properties.Resources.Open_File;
             this.efGenOpenFileButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.helpProvider.SetHelpString(this.efGenOpenFileButton, "Extracts Customer\'s info inside the .INP file to use as \"Input\" text and generate" +
+        " EFs data.");
             this.efGenOpenFileButton.Location = new System.Drawing.Point(384, 31);
             this.efGenOpenFileButton.Name = "efGenOpenFileButton";
+            this.helpProvider.SetShowHelp(this.efGenOpenFileButton, true);
             this.efGenOpenFileButton.Size = new System.Drawing.Size(31, 31);
             this.efGenOpenFileButton.TabIndex = 21;
             this.efGenOpenFileButton.Tag = "";
@@ -448,9 +458,11 @@
             // 
             // inputTextBox
             // 
+            this.helpProvider.SetHelpString(this.inputTextBox, resources.GetString("inputTextBox.HelpString"));
             this.inputTextBox.Location = new System.Drawing.Point(10, 31);
             this.inputTextBox.MaxLength = 16;
             this.inputTextBox.Name = "inputTextBox";
+            this.helpProvider.SetShowHelp(this.inputTextBox, true);
             this.inputTextBox.Size = new System.Drawing.Size(368, 31);
             this.inputTextBox.TabIndex = 20;
             this.toolTip.SetToolTip(this.inputTextBox, "Insert Text Or Open a File To Generate All EF\'s data");
@@ -500,11 +512,13 @@
             // 
             this.SUMETextBox.AccessibleDescription = "";
             this.SUMETextBox.AccessibleName = "";
+            this.helpProvider.SetHelpString(this.SUMETextBox, resources.GetString("SUMETextBox.HelpString"));
             this.SUMETextBox.Location = new System.Drawing.Point(6, 6);
             this.SUMETextBox.MaxLength = 100;
             this.SUMETextBox.Multiline = true;
             this.SUMETextBox.Name = "SUMETextBox";
             this.SUMETextBox.ReadOnly = true;
+            this.helpProvider.SetShowHelp(this.SUMETextBox, true);
             this.SUMETextBox.Size = new System.Drawing.Size(362, 62);
             this.SUMETextBox.TabIndex = 5;
             this.toolTip.SetToolTip(this.SUMETextBox, "SUME Content");
@@ -598,9 +612,11 @@
             this.PSKTabPage.Controls.Add(this.ICCIDLabel);
             this.PSKTabPage.Controls.Add(this.PSKTextBox);
             this.PSKTabPage.Controls.Add(this.masterKeyTextBox);
+            this.helpProvider.SetHelpString(this.PSKTabPage, resources.GetString("PSKTabPage.HelpString"));
             this.PSKTabPage.Location = new System.Drawing.Point(4, 34);
             this.PSKTabPage.Name = "PSKTabPage";
             this.PSKTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.helpProvider.SetShowHelp(this.PSKTabPage, true);
             this.PSKTabPage.Size = new System.Drawing.Size(431, 637);
             this.PSKTabPage.TabIndex = 2;
             this.PSKTabPage.Text = "PSK";
@@ -724,9 +740,13 @@
             this.hashTabPage.Controls.Add(this.plaintextTextBox);
             this.hashTabPage.Controls.Add(this.hashLabel);
             this.hashTabPage.Controls.Add(this.plaintextLabel);
+            this.helpProvider.SetHelpString(this.hashTabPage, "Based on\nFIPS 180 - 4: Secure Hash Standard(SHS)\n\nInsert \"plaintext\" (Any Size);\n" +
+        "Click in \"Get Hash\" button.\n\nHash = Produced hash value with \"Text\" using the ch" +
+        "osen Hash Type.");
             this.hashTabPage.Location = new System.Drawing.Point(4, 34);
             this.hashTabPage.Name = "hashTabPage";
             this.hashTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.helpProvider.SetShowHelp(this.hashTabPage, true);
             this.hashTabPage.Size = new System.Drawing.Size(431, 637);
             this.hashTabPage.TabIndex = 3;
             this.hashTabPage.Text = "Hash";
@@ -850,9 +870,11 @@
             this.KCVTabPage.Controls.Add(this.KCVLabel);
             this.KCVTabPage.Controls.Add(this.keyTextBox);
             this.KCVTabPage.Controls.Add(this.keyLabel);
+            this.helpProvider.SetHelpString(this.KCVTabPage, resources.GetString("KCVTabPage.HelpString"));
             this.KCVTabPage.Location = new System.Drawing.Point(4, 34);
             this.KCVTabPage.Name = "KCVTabPage";
             this.KCVTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.helpProvider.SetShowHelp(this.KCVTabPage, true);
             this.KCVTabPage.Size = new System.Drawing.Size(431, 637);
             this.KCVTabPage.TabIndex = 4;
             this.KCVTabPage.Text = "KCV";
@@ -974,7 +996,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(441, 675);
             this.Controls.Add(this.TelecomToolsTabControl);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.HelpButton = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormTelecomTools";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Telecom Tools";
             this.TelecomToolsTabControl.ResumeLayout(false);
             this.EFDataGenTabPage.ResumeLayout(false);
@@ -1077,5 +1105,6 @@
         private Label KCVLabel;
         private TextBox keyTextBox;
         private Label keyLabel;
+        private HelpProvider helpProvider;
     }
 }
