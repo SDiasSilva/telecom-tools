@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tbEFGen = new System.Windows.Forms.TabPage();
-            this.tbQRGen = new System.Windows.Forms.TabPage();
+            this.EFDataGenTabPage = new System.Windows.Forms.TabPage();
+            this.QRGeneratorTabPage = new System.Windows.Forms.TabPage();
             this.errorCorrectionLevelComboBox = new System.Windows.Forms.ComboBox();
             this.versionComboBox = new System.Windows.Forms.ComboBox();
             this.moduleComboBox = new System.Windows.Forms.ComboBox();
@@ -44,42 +44,42 @@
             this.zipCheckBox = new System.Windows.Forms.CheckBox();
             this.logoCheckBox = new System.Windows.Forms.CheckBox();
             this.tabTelecomTools = new System.Windows.Forms.TabControl();
-            this.tbQRGen.SuspendLayout();
+            this.QRGeneratorTabPage.SuspendLayout();
             this.tabTelecomTools.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tbEFGen
+            // EFDataGenTabPage
             // 
-            this.tbEFGen.Location = new System.Drawing.Point(4, 34);
-            this.tbEFGen.Name = "tbEFGen";
-            this.tbEFGen.Padding = new System.Windows.Forms.Padding(3);
-            this.tbEFGen.Size = new System.Drawing.Size(431, 637);
-            this.tbEFGen.TabIndex = 1;
-            this.tbEFGen.Text = "EF Gen";
-            this.tbEFGen.UseVisualStyleBackColor = true;
+            this.EFDataGenTabPage.Location = new System.Drawing.Point(4, 34);
+            this.EFDataGenTabPage.Name = "EFDataGenTabPage";
+            this.EFDataGenTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.EFDataGenTabPage.Size = new System.Drawing.Size(431, 637);
+            this.EFDataGenTabPage.TabIndex = 1;
+            this.EFDataGenTabPage.Text = "EF Gen";
+            this.EFDataGenTabPage.UseVisualStyleBackColor = true;
             // 
-            // tbQRGen
+            // QRGeneratorTabPage
             // 
-            this.tbQRGen.Controls.Add(this.errorCorrectionLevelComboBox);
-            this.tbQRGen.Controls.Add(this.versionComboBox);
-            this.tbQRGen.Controls.Add(this.moduleComboBox);
-            this.tbQRGen.Controls.Add(this.generateButton);
-            this.tbQRGen.Controls.Add(this.errorCorrectionLabel);
-            this.tbQRGen.Controls.Add(this.versionLabel);
-            this.tbQRGen.Controls.Add(this.moduleWidthLabel);
-            this.tbQRGen.Controls.Add(this.openFile);
-            this.tbQRGen.Controls.Add(this.openFileTextBox);
-            this.tbQRGen.Controls.Add(this.pngCheckBox);
-            this.tbQRGen.Controls.Add(this.pdfCheckBox);
-            this.tbQRGen.Controls.Add(this.zipCheckBox);
-            this.tbQRGen.Controls.Add(this.logoCheckBox);
-            this.tbQRGen.Location = new System.Drawing.Point(4, 34);
-            this.tbQRGen.Name = "tbQRGen";
-            this.tbQRGen.Padding = new System.Windows.Forms.Padding(3);
-            this.tbQRGen.Size = new System.Drawing.Size(431, 637);
-            this.tbQRGen.TabIndex = 0;
-            this.tbQRGen.Text = "QR Gen";
-            this.tbQRGen.UseVisualStyleBackColor = true;
+            this.QRGeneratorTabPage.Controls.Add(this.errorCorrectionLevelComboBox);
+            this.QRGeneratorTabPage.Controls.Add(this.versionComboBox);
+            this.QRGeneratorTabPage.Controls.Add(this.moduleComboBox);
+            this.QRGeneratorTabPage.Controls.Add(this.generateButton);
+            this.QRGeneratorTabPage.Controls.Add(this.errorCorrectionLabel);
+            this.QRGeneratorTabPage.Controls.Add(this.versionLabel);
+            this.QRGeneratorTabPage.Controls.Add(this.moduleWidthLabel);
+            this.QRGeneratorTabPage.Controls.Add(this.openFile);
+            this.QRGeneratorTabPage.Controls.Add(this.openFileTextBox);
+            this.QRGeneratorTabPage.Controls.Add(this.pngCheckBox);
+            this.QRGeneratorTabPage.Controls.Add(this.pdfCheckBox);
+            this.QRGeneratorTabPage.Controls.Add(this.zipCheckBox);
+            this.QRGeneratorTabPage.Controls.Add(this.logoCheckBox);
+            this.QRGeneratorTabPage.Location = new System.Drawing.Point(4, 34);
+            this.QRGeneratorTabPage.Name = "QRGeneratorTabPage";
+            this.QRGeneratorTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.QRGeneratorTabPage.Size = new System.Drawing.Size(431, 637);
+            this.QRGeneratorTabPage.TabIndex = 0;
+            this.QRGeneratorTabPage.Text = "QR Gen";
+            this.QRGeneratorTabPage.UseVisualStyleBackColor = true;
             // 
             // errorCorrectionLevelComboBox
             // 
@@ -217,8 +217,8 @@
             // 
             // tabTelecomTools
             // 
-            this.tabTelecomTools.Controls.Add(this.tbQRGen);
-            this.tabTelecomTools.Controls.Add(this.tbEFGen);
+            this.tabTelecomTools.Controls.Add(this.QRGeneratorTabPage);
+            this.tabTelecomTools.Controls.Add(this.EFDataGenTabPage);
             this.tabTelecomTools.Location = new System.Drawing.Point(3, 2);
             this.tabTelecomTools.Name = "tabTelecomTools";
             this.tabTelecomTools.SelectedIndex = 0;
@@ -233,15 +233,15 @@
             this.Controls.Add(this.tabTelecomTools);
             this.Name = "formTelecomTools";
             this.Text = "Telecom Tools";
-            this.tbQRGen.ResumeLayout(false);
-            this.tbQRGen.PerformLayout();
+            this.QRGeneratorTabPage.ResumeLayout(false);
+            this.QRGeneratorTabPage.PerformLayout();
             this.tabTelecomTools.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
-        private TabPage tbEFGen;
-        private TabPage tbQRGen;
+        private TabPage EFDataGenTabPage;
+        private TabPage QRGeneratorTabPage;
         private Button openFile;
         private TextBox openFileTextBox;
         private CheckBox pngCheckBox;
