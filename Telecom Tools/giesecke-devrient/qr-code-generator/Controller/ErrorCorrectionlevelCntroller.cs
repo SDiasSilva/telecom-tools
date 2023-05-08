@@ -7,7 +7,7 @@ namespace Telecom_Tools.Controller
     {
         public void CriaSplitButtons(ComboBox comboBox)
         {
-            StringCollection strings = new StringCollection();
+            StringCollection strings = new();
             string level = "Level - ";
 
             ErrorCorrectionLevel.SetLevelH("H");
@@ -20,8 +20,8 @@ namespace Telecom_Tools.Controller
             strings.Add(level+ErrorCorrectionLevel.GetLevelM());
             strings.Add(level+ErrorCorrectionLevel.GetLevelQ());
 
-                comboBox.SelectedIndexChanged -= comboBox_SelectedIndexChanged;
-                comboBox.SelectedIndexChanged += comboBox_SelectedIndexChanged;
+                comboBox.SelectedIndexChanged -= ComboBox_SelectedIndexChanged;
+                comboBox.SelectedIndexChanged += ComboBox_SelectedIndexChanged;
 
             comboBox.Items.Clear();
             comboBox.Items.AddRange(strings.Cast<object>().ToArray());
@@ -34,7 +34,7 @@ namespace Telecom_Tools.Controller
             else { comboBox.SelectedIndex = -1; }
         }
 
-        private void comboBox_SelectedIndexChanged(object? sender, EventArgs e)
+        private void ComboBox_SelectedIndexChanged(object? sender, EventArgs e)
         {
             ComboBox comboBox = ((ComboBox)sender!);
             int selectedItem = comboBox.SelectedIndex;

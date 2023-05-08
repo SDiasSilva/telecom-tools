@@ -6,7 +6,6 @@ namespace Telecom_Tools.Model
 
         private static int moduleWidth;
         private static string? moduleWidthLabelText;
-        public int itemDropBoxNumber;
 
         public ModuleWidth(int moduleWidth,string moduleWidthLabelText)
         {

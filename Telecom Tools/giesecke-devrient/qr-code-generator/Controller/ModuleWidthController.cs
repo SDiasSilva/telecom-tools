@@ -8,18 +8,18 @@ namespace Telecom_Tools.Controller
     {
         public void CriaSplitButtons(ComboBox comboBox)
         {
-            StringCollection strings = new StringCollection();
+            StringCollection strings = new();
 
             for (int i = 1; i < 5; i++)
             {
-                StringBuilder sb = new StringBuilder();
-                sb.Append(i.ToString());
+                StringBuilder sb = new();
+                sb.Append(i);
                 string novaString = sb.ToString();
 
                 strings.Add(novaString);
 
-                comboBox.SelectedIndexChanged -= comboBox_SelectedIndexChanged;
-                comboBox.SelectedIndexChanged += comboBox_SelectedIndexChanged;
+                comboBox.SelectedIndexChanged -= ComboBox_SelectedIndexChanged;
+                comboBox.SelectedIndexChanged += ComboBox_SelectedIndexChanged;
             }
 
             comboBox.Items.Clear();
@@ -33,7 +33,7 @@ namespace Telecom_Tools.Controller
             else { comboBox.SelectedIndex = -1; }
         }
 
-        private void comboBox_SelectedIndexChanged(object? sender, EventArgs e)
+        private void ComboBox_SelectedIndexChanged(object? sender, EventArgs e)
         {
             int selectedIndex = ((ComboBox)sender!).SelectedIndex;
             int moduleWidth = selectedIndex + 1;
