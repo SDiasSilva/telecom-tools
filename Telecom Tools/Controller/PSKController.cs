@@ -11,18 +11,21 @@ namespace Telecom_Tools.Controller
 {
     internal class PSKController
     {
-        private readonly PSK psk;
+        private string iccid;
+        private string masterKey;
 
         public PSKController(string iccid, string masterKey)
         {
-            psk = new(masterKey);
-            psk.Data = ConvertICCID(iccid);
+            this.masterKey = masterKey;
+            this.iccid = iccid;
         }
 
         public string CalculatePSK()
         {
             try
             {
+                PSK psk = new(masterKey);
+                psk.Data = ConvertICCID(iccid);
                 string r1 = new TripleDES(psk.KM0).Encrypt(psk.Data);
                 string r2 = new TripleDES(psk.KM1).Encrypt(psk.Data);
                 return r1 + r2;
