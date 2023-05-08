@@ -206,5 +206,9 @@ namespace Telecom_Tools
             fileController.Generate(pdfCheckBox, zipCheckBox, pngCheckBox, logoCheckBox); ;
         }
 
+        private void OpenFileTextBox_TextChanged(object sender, EventArgs e)
+        {
+            generateButton.Enabled = ViewUtil.IsButtonEnabled(openFileTextBox.Text);
+        }
     }
 }

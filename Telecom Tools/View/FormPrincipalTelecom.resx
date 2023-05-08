@@ -57,6 +57,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="toolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>253, 17</value>
+  </metadata>
+  <metadata name="helpProvider.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>372, 17</value>
+  </metadata>
+  <data name="QRGeneratorTabPage.HelpString" xml:space="preserve">
+    <value>This tool was raised for create QR codes based in a file with extension txt only. The file must have this format on all your lines:
+ICCID +White space+ LPA. Follow the example below.
+
+
+
+11111111111111111111 LPA:A2A2A2A2A2A2A2A2A2A2A2A2A2A2A2AA2A2A2A2A2A2A2A22A2AA2AA2A2A2A2A2A2.
+
+
+
+Both them need be separated by one white space and, the iccid and lpa must be on the same line, being that the ICCID need be the first, and the LPA the last, i.e. the white space is in the middle of the two.
+
+ 
+
+
+GDBR - Created in: 01/30/2023 by (tsemh)Tiago B. Silva - Intern</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="PNNCopyButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -252,12 +275,6 @@
         jYGPpmYAAAAASUVORK5CYII=
 </value>
   </data>
-  <metadata name="toolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>253, 17</value>
-  </metadata>
-  <metadata name="helpProvider.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>372, 17</value>
-  </metadata>
   <data name="PNNTextBox.HelpString" xml:space="preserve">
     <value>EF PNN (PLMN Network Name) - 17 Bytes: 
 

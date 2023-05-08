@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTelecomTools));
             this.TelecomToolsTabControl = new System.Windows.Forms.TabControl();
             this.QRGeneratorTabPage = new System.Windows.Forms.TabPage();
+            this.filePathLabel = new System.Windows.Forms.Label();
             this.errorCorrectionLevelComboBox = new System.Windows.Forms.ComboBox();
             this.versionComboBox = new System.Windows.Forms.ComboBox();
             this.moduleComboBox = new System.Windows.Forms.ComboBox();
@@ -147,6 +148,7 @@
             // 
             // QRGeneratorTabPage
             // 
+            this.QRGeneratorTabPage.Controls.Add(this.filePathLabel);
             this.QRGeneratorTabPage.Controls.Add(this.errorCorrectionLevelComboBox);
             this.QRGeneratorTabPage.Controls.Add(this.versionComboBox);
             this.QRGeneratorTabPage.Controls.Add(this.moduleComboBox);
@@ -160,13 +162,26 @@
             this.QRGeneratorTabPage.Controls.Add(this.pdfCheckBox);
             this.QRGeneratorTabPage.Controls.Add(this.zipCheckBox);
             this.QRGeneratorTabPage.Controls.Add(this.logoCheckBox);
+            this.helpProvider.SetHelpString(this.QRGeneratorTabPage, resources.GetString("QRGeneratorTabPage.HelpString"));
             this.QRGeneratorTabPage.Location = new System.Drawing.Point(4, 34);
             this.QRGeneratorTabPage.Name = "QRGeneratorTabPage";
             this.QRGeneratorTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.helpProvider.SetShowHelp(this.QRGeneratorTabPage, true);
             this.QRGeneratorTabPage.Size = new System.Drawing.Size(431, 637);
             this.QRGeneratorTabPage.TabIndex = 0;
             this.QRGeneratorTabPage.Text = "QR Gen";
             this.QRGeneratorTabPage.UseVisualStyleBackColor = true;
+            // 
+            // filePathLabel
+            // 
+            this.filePathLabel.AutoSize = true;
+            this.filePathLabel.Location = new System.Drawing.Point(46, 39);
+            this.filePathLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.filePathLabel.Name = "filePathLabel";
+            this.filePathLabel.Size = new System.Drawing.Size(94, 25);
+            this.filePathLabel.TabIndex = 25;
+            this.filePathLabel.Text = "File Name:";
+            this.toolTip.SetToolTip(this.filePathLabel, "File name");
             // 
             // errorCorrectionLevelComboBox
             // 
@@ -176,6 +191,7 @@
             this.errorCorrectionLevelComboBox.Name = "errorCorrectionLevelComboBox";
             this.errorCorrectionLevelComboBox.Size = new System.Drawing.Size(110, 33);
             this.errorCorrectionLevelComboBox.TabIndex = 24;
+            this.toolTip.SetToolTip(this.errorCorrectionLevelComboBox, "Selected the Error Correction Level of the QR Code Generation");
             // 
             // versionComboBox
             // 
@@ -185,18 +201,21 @@
             this.versionComboBox.Name = "versionComboBox";
             this.versionComboBox.Size = new System.Drawing.Size(128, 33);
             this.versionComboBox.TabIndex = 23;
+            this.toolTip.SetToolTip(this.versionComboBox, "Selected the version of the QR Code Generation");
             // 
             // moduleComboBox
             // 
             this.moduleComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.moduleComboBox.FormattingEnabled = true;
-            this.moduleComboBox.Location = new System.Drawing.Point(7, 224);
+            this.moduleComboBox.Location = new System.Drawing.Point(15, 224);
             this.moduleComboBox.Name = "moduleComboBox";
             this.moduleComboBox.Size = new System.Drawing.Size(64, 33);
             this.moduleComboBox.TabIndex = 22;
+            this.toolTip.SetToolTip(this.moduleComboBox, "Selected the module of the QR Code Generation");
             // 
             // generateButton
             // 
+            this.generateButton.Enabled = false;
             this.generateButton.Location = new System.Drawing.Point(128, 314);
             this.generateButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.generateButton.Name = "generateButton";
@@ -229,7 +248,7 @@
             // moduleWidthLabel
             // 
             this.moduleWidthLabel.AutoSize = true;
-            this.moduleWidthLabel.Location = new System.Drawing.Point(-1, 196);
+            this.moduleWidthLabel.Location = new System.Drawing.Point(7, 196);
             this.moduleWidthLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.moduleWidthLabel.Name = "moduleWidthLabel";
             this.moduleWidthLabel.Size = new System.Drawing.Size(73, 25);
@@ -238,23 +257,26 @@
             // 
             // openFile
             // 
-            this.openFile.Location = new System.Drawing.Point(7, 65);
+            this.openFile.BackgroundImage = global::Telecom_Tools.Properties.Resources.Open_File;
+            this.openFile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.openFile.Location = new System.Drawing.Point(7, 69);
             this.openFile.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.openFile.Name = "openFile";
-            this.openFile.Size = new System.Drawing.Size(76, 38);
+            this.openFile.Size = new System.Drawing.Size(31, 31);
             this.openFile.TabIndex = 14;
-            this.openFile.Text = "File";
+            this.toolTip.SetToolTip(this.openFile, "Recover ICCIDs and LPA from a file");
             this.openFile.UseVisualStyleBackColor = true;
             this.openFile.Click += new System.EventHandler(this.OpenFile_Click);
             // 
             // openFileTextBox
             // 
-            this.openFileTextBox.Location = new System.Drawing.Point(106, 69);
+            this.openFileTextBox.Location = new System.Drawing.Point(46, 69);
             this.openFileTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.openFileTextBox.Name = "openFileTextBox";
             this.openFileTextBox.ReadOnly = true;
-            this.openFileTextBox.Size = new System.Drawing.Size(299, 31);
+            this.openFileTextBox.Size = new System.Drawing.Size(359, 31);
             this.openFileTextBox.TabIndex = 18;
+            this.openFileTextBox.TextChanged += new System.EventHandler(this.OpenFileTextBox_TextChanged);
             // 
             // pngCheckBox
             // 
@@ -265,6 +287,7 @@
             this.pngCheckBox.Size = new System.Drawing.Size(77, 29);
             this.pngCheckBox.TabIndex = 12;
             this.pngCheckBox.Text = ".PNG";
+            this.toolTip.SetToolTip(this.pngCheckBox, "Select if you want to generate png QR Codes");
             this.pngCheckBox.UseVisualStyleBackColor = true;
             // 
             // pdfCheckBox
@@ -276,6 +299,7 @@
             this.pdfCheckBox.Size = new System.Drawing.Size(74, 29);
             this.pdfCheckBox.TabIndex = 15;
             this.pdfCheckBox.Text = ".PDF";
+            this.toolTip.SetToolTip(this.pdfCheckBox, "Select if you want to generate a pdf containing all QR Codes");
             this.pdfCheckBox.UseVisualStyleBackColor = true;
             // 
             // zipCheckBox
@@ -287,6 +311,7 @@
             this.zipCheckBox.Size = new System.Drawing.Size(67, 29);
             this.zipCheckBox.TabIndex = 16;
             this.zipCheckBox.Text = ".ZIP";
+            this.toolTip.SetToolTip(this.zipCheckBox, "Select if you want to generate a zip file with all QR Codes");
             this.zipCheckBox.UseVisualStyleBackColor = true;
             // 
             // logoCheckBox
@@ -300,6 +325,7 @@
             this.logoCheckBox.Size = new System.Drawing.Size(85, 29);
             this.logoCheckBox.TabIndex = 17;
             this.logoCheckBox.Text = "LOGO";
+            this.toolTip.SetToolTip(this.logoCheckBox, "Select if you want the QR Code to have the GD Logo");
             this.logoCheckBox.UseVisualStyleBackColor = true;
             // 
             // EFDataGenTabPage
@@ -1282,5 +1308,6 @@
         private CheckBox pdfCheckBox;
         private CheckBox zipCheckBox;
         private CheckBox logoCheckBox;
+        private Label filePathLabel;
     }
 }
