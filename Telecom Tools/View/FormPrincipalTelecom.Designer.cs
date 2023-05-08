@@ -204,7 +204,7 @@
             this.generateButton.TabIndex = 21;
             this.generateButton.Text = "GENERATE";
             this.generateButton.UseVisualStyleBackColor = true;
-            this.generateButton.Click += new System.EventHandler(this.generateButton_Click);
+            this.generateButton.Click += new System.EventHandler(this.GenerateButton_Click);
             // 
             // errorCorrectionLabel
             // 
@@ -245,7 +245,7 @@
             this.openFile.TabIndex = 14;
             this.openFile.Text = "File";
             this.openFile.UseVisualStyleBackColor = true;
-            this.openFile.Click += new System.EventHandler(this.openFile_Click);
+            this.openFile.Click += new System.EventHandler(this.OpenFile_Click);
             // 
             // openFileTextBox
             // 

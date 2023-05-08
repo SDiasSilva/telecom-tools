@@ -2,17 +2,18 @@ using Telecom_Tools.Controller;
 using Telecom_Tools.Controller.Ef;
 using Telecom_Tools.Util;
 using Telecom_Tools.Util.Ef;
+using Telecom_Tools.Model;
 
 namespace Telecom_Tools
 {
     public partial class FormTelecomTools : Form
     {
         //QRCode Attributes
-        Model.ModuleWidth moduleWidthClass = new Model.ModuleWidth();
-        Controller.ModuleWidthController moduleWidthController = new Controller.ModuleWidthController();
-        Controller.VersionController versionController = new Controller.VersionController();
-        Controller.ErrorCorrectionlevelCntroller errorCorrectionLevelController = new Controller.ErrorCorrectionlevelCntroller();
-        Controller.FileController fileController = new Controller.FileController();
+        private readonly ModuleWidth moduleWidthClass = new();
+        private readonly ModuleWidthController moduleWidthController = new();
+        private readonly VersionController versionController = new();
+        private readonly ErrorCorrectionlevelCntroller errorCorrectionLevelController = new();
+        private readonly FileController fileController = new();
 
         public FormTelecomTools()
         {
@@ -195,12 +196,12 @@ namespace Telecom_Tools
             KCVTextBox.Text = "";
         }
 
-        private void openFile_Click(object sender, EventArgs e)
+        private void OpenFile_Click(object sender, EventArgs e)
         {
             fileController.OpenFile(openFileTextBox);
         }
 
-        private void generateButton_Click(object sender, EventArgs e)
+        private void GenerateButton_Click(object sender, EventArgs e)
         {
             fileController.Generate(pdfCheckBox, zipCheckBox, pngCheckBox, logoCheckBox); ;
         }

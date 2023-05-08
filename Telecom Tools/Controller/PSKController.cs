@@ -11,8 +11,8 @@ namespace Telecom_Tools.Controller
 {
     internal class PSKController
     {
-        private string iccid;
-        private string masterKey;
+        private readonly string iccid;
+        private readonly string masterKey;
 
         public PSKController(string iccid, string masterKey)
         {
