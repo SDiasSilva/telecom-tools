@@ -32,6 +32,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTelecomTools));
             this.TelecomToolsTabControl = new System.Windows.Forms.TabControl();
             this.QRGeneratorTabPage = new System.Windows.Forms.TabPage();
+            this.errorCorrectionLevelComboBox = new System.Windows.Forms.ComboBox();
+            this.versionComboBox = new System.Windows.Forms.ComboBox();
+            this.moduleComboBox = new System.Windows.Forms.ComboBox();
+            this.generateButton = new System.Windows.Forms.Button();
+            this.errorCorrectionLabel = new System.Windows.Forms.Label();
+            this.versionLabel = new System.Windows.Forms.Label();
+            this.moduleWidthLabel = new System.Windows.Forms.Label();
+            this.openFile = new System.Windows.Forms.Button();
+            this.openFileTextBox = new System.Windows.Forms.TextBox();
+            this.pngCheckBox = new System.Windows.Forms.CheckBox();
+            this.pdfCheckBox = new System.Windows.Forms.CheckBox();
+            this.zipCheckBox = new System.Windows.Forms.CheckBox();
+            this.logoCheckBox = new System.Windows.Forms.CheckBox();
             this.EFDataGenTabPage = new System.Windows.Forms.TabPage();
             this.PNNCopyButton = new System.Windows.Forms.Button();
             this.PNNTextBox = new System.Windows.Forms.TextBox();
@@ -102,6 +115,7 @@
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.helpProvider = new System.Windows.Forms.HelpProvider();
             this.TelecomToolsTabControl.SuspendLayout();
+            this.QRGeneratorTabPage.SuspendLayout();
             this.EFDataGenTabPage.SuspendLayout();
             this.SPNTabControl.SuspendLayout();
             this.SPNDataTabPage.SuspendLayout();
@@ -133,6 +147,19 @@
             // 
             // QRGeneratorTabPage
             // 
+            this.QRGeneratorTabPage.Controls.Add(this.errorCorrectionLevelComboBox);
+            this.QRGeneratorTabPage.Controls.Add(this.versionComboBox);
+            this.QRGeneratorTabPage.Controls.Add(this.moduleComboBox);
+            this.QRGeneratorTabPage.Controls.Add(this.generateButton);
+            this.QRGeneratorTabPage.Controls.Add(this.errorCorrectionLabel);
+            this.QRGeneratorTabPage.Controls.Add(this.versionLabel);
+            this.QRGeneratorTabPage.Controls.Add(this.moduleWidthLabel);
+            this.QRGeneratorTabPage.Controls.Add(this.openFile);
+            this.QRGeneratorTabPage.Controls.Add(this.openFileTextBox);
+            this.QRGeneratorTabPage.Controls.Add(this.pngCheckBox);
+            this.QRGeneratorTabPage.Controls.Add(this.pdfCheckBox);
+            this.QRGeneratorTabPage.Controls.Add(this.zipCheckBox);
+            this.QRGeneratorTabPage.Controls.Add(this.logoCheckBox);
             this.QRGeneratorTabPage.Location = new System.Drawing.Point(4, 34);
             this.QRGeneratorTabPage.Name = "QRGeneratorTabPage";
             this.QRGeneratorTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -140,6 +167,140 @@
             this.QRGeneratorTabPage.TabIndex = 0;
             this.QRGeneratorTabPage.Text = "QR Gen";
             this.QRGeneratorTabPage.UseVisualStyleBackColor = true;
+            // 
+            // errorCorrectionLevelComboBox
+            // 
+            this.errorCorrectionLevelComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.errorCorrectionLevelComboBox.FormattingEnabled = true;
+            this.errorCorrectionLevelComboBox.Location = new System.Drawing.Point(295, 224);
+            this.errorCorrectionLevelComboBox.Name = "errorCorrectionLevelComboBox";
+            this.errorCorrectionLevelComboBox.Size = new System.Drawing.Size(110, 33);
+            this.errorCorrectionLevelComboBox.TabIndex = 24;
+            // 
+            // versionComboBox
+            // 
+            this.versionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.versionComboBox.FormattingEnabled = true;
+            this.versionComboBox.Location = new System.Drawing.Point(128, 224);
+            this.versionComboBox.Name = "versionComboBox";
+            this.versionComboBox.Size = new System.Drawing.Size(128, 33);
+            this.versionComboBox.TabIndex = 23;
+            // 
+            // moduleComboBox
+            // 
+            this.moduleComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.moduleComboBox.FormattingEnabled = true;
+            this.moduleComboBox.Location = new System.Drawing.Point(7, 224);
+            this.moduleComboBox.Name = "moduleComboBox";
+            this.moduleComboBox.Size = new System.Drawing.Size(64, 33);
+            this.moduleComboBox.TabIndex = 22;
+            // 
+            // generateButton
+            // 
+            this.generateButton.Location = new System.Drawing.Point(128, 314);
+            this.generateButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.generateButton.Name = "generateButton";
+            this.generateButton.Size = new System.Drawing.Size(160, 65);
+            this.generateButton.TabIndex = 21;
+            this.generateButton.Text = "GENERATE";
+            this.generateButton.UseVisualStyleBackColor = true;
+            this.generateButton.Click += new System.EventHandler(this.generateButton_Click);
+            // 
+            // errorCorrectionLabel
+            // 
+            this.errorCorrectionLabel.AutoSize = true;
+            this.errorCorrectionLabel.Location = new System.Drawing.Point(295, 196);
+            this.errorCorrectionLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.errorCorrectionLabel.Name = "errorCorrectionLabel";
+            this.errorCorrectionLabel.Size = new System.Drawing.Size(87, 25);
+            this.errorCorrectionLabel.TabIndex = 13;
+            this.errorCorrectionLabel.Text = "ECC Level";
+            // 
+            // versionLabel
+            // 
+            this.versionLabel.AutoSize = true;
+            this.versionLabel.Location = new System.Drawing.Point(128, 196);
+            this.versionLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.versionLabel.Name = "versionLabel";
+            this.versionLabel.Size = new System.Drawing.Size(70, 25);
+            this.versionLabel.TabIndex = 20;
+            this.versionLabel.Text = "Version";
+            // 
+            // moduleWidthLabel
+            // 
+            this.moduleWidthLabel.AutoSize = true;
+            this.moduleWidthLabel.Location = new System.Drawing.Point(-1, 196);
+            this.moduleWidthLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.moduleWidthLabel.Name = "moduleWidthLabel";
+            this.moduleWidthLabel.Size = new System.Drawing.Size(73, 25);
+            this.moduleWidthLabel.TabIndex = 19;
+            this.moduleWidthLabel.Text = "Module";
+            // 
+            // openFile
+            // 
+            this.openFile.Location = new System.Drawing.Point(7, 65);
+            this.openFile.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.openFile.Name = "openFile";
+            this.openFile.Size = new System.Drawing.Size(76, 38);
+            this.openFile.TabIndex = 14;
+            this.openFile.Text = "File";
+            this.openFile.UseVisualStyleBackColor = true;
+            this.openFile.Click += new System.EventHandler(this.openFile_Click);
+            // 
+            // openFileTextBox
+            // 
+            this.openFileTextBox.Location = new System.Drawing.Point(106, 69);
+            this.openFileTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.openFileTextBox.Name = "openFileTextBox";
+            this.openFileTextBox.ReadOnly = true;
+            this.openFileTextBox.Size = new System.Drawing.Size(299, 31);
+            this.openFileTextBox.TabIndex = 18;
+            // 
+            // pngCheckBox
+            // 
+            this.pngCheckBox.AutoSize = true;
+            this.pngCheckBox.Location = new System.Drawing.Point(43, 141);
+            this.pngCheckBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pngCheckBox.Name = "pngCheckBox";
+            this.pngCheckBox.Size = new System.Drawing.Size(77, 29);
+            this.pngCheckBox.TabIndex = 12;
+            this.pngCheckBox.Text = ".PNG";
+            this.pngCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // pdfCheckBox
+            // 
+            this.pdfCheckBox.AutoSize = true;
+            this.pdfCheckBox.Location = new System.Drawing.Point(128, 141);
+            this.pdfCheckBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pdfCheckBox.Name = "pdfCheckBox";
+            this.pdfCheckBox.Size = new System.Drawing.Size(74, 29);
+            this.pdfCheckBox.TabIndex = 15;
+            this.pdfCheckBox.Text = ".PDF";
+            this.pdfCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // zipCheckBox
+            // 
+            this.zipCheckBox.AutoSize = true;
+            this.zipCheckBox.Location = new System.Drawing.Point(208, 141);
+            this.zipCheckBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.zipCheckBox.Name = "zipCheckBox";
+            this.zipCheckBox.Size = new System.Drawing.Size(67, 29);
+            this.zipCheckBox.TabIndex = 16;
+            this.zipCheckBox.Text = ".ZIP";
+            this.zipCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // logoCheckBox
+            // 
+            this.logoCheckBox.AutoSize = true;
+            this.logoCheckBox.Checked = true;
+            this.logoCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.logoCheckBox.Location = new System.Drawing.Point(282, 141);
+            this.logoCheckBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.logoCheckBox.Name = "logoCheckBox";
+            this.logoCheckBox.Size = new System.Drawing.Size(85, 29);
+            this.logoCheckBox.TabIndex = 17;
+            this.logoCheckBox.Text = "LOGO";
+            this.logoCheckBox.UseVisualStyleBackColor = true;
             // 
             // EFDataGenTabPage
             // 
@@ -1005,6 +1166,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Telecom Tools";
             this.TelecomToolsTabControl.ResumeLayout(false);
+            this.QRGeneratorTabPage.ResumeLayout(false);
+            this.QRGeneratorTabPage.PerformLayout();
             this.EFDataGenTabPage.ResumeLayout(false);
             this.EFDataGenTabPage.PerformLayout();
             this.SPNTabControl.ResumeLayout(false);
@@ -1106,5 +1269,18 @@
         private TextBox keyTextBox;
         private Label keyLabel;
         private HelpProvider helpProvider;
+        private ComboBox errorCorrectionLevelComboBox;
+        private ComboBox versionComboBox;
+        private ComboBox moduleComboBox;
+        private Button generateButton;
+        private Label errorCorrectionLabel;
+        private Label versionLabel;
+        protected Label moduleWidthLabel;
+        private Button openFile;
+        private TextBox openFileTextBox;
+        private CheckBox pngCheckBox;
+        private CheckBox pdfCheckBox;
+        private CheckBox zipCheckBox;
+        private CheckBox logoCheckBox;
     }
 }

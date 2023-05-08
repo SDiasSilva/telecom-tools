@@ -83,9 +83,29 @@ namespace Telecom_Tools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap gieseckedevrient {
+            get {
+                object obj = ResourceManager.GetObject("gieseckedevrient", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Open_File {
             get {
                 object obj = ResourceManager.GetObject("Open File", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Telecom_Icon {
+            get {
+                object obj = ResourceManager.GetObject("Telecom Icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

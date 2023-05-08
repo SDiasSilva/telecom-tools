@@ -7,6 +7,12 @@ namespace Telecom_Tools
 {
     public partial class FormTelecomTools : Form
     {
+        //QRCode Attributes
+        Model.ModuleWidth moduleWidthClass = new Model.ModuleWidth();
+        Controller.ModuleWidthController moduleWidthController = new Controller.ModuleWidthController();
+        Controller.VersionController versionController = new Controller.VersionController();
+        Controller.ErrorCorrectionlevelCntroller errorCorrectionLevelController = new Controller.ErrorCorrectionlevelCntroller();
+        Controller.FileController fileController = new Controller.FileController();
 
         public FormTelecomTools()
         {
@@ -17,6 +23,11 @@ namespace Telecom_Tools
             SPNamePLMNRequiredComboBox.SelectedIndex = 0;
             hashTypeComboBox.SelectedIndex = 0;
             cryptoTypeComboBox.SelectedIndex = 0;
+            
+            //QRCodeGenerator
+            moduleWidthController.CriaSplitButtons(moduleComboBox);
+            versionController.CriaSplitButtons(versionComboBox);
+            errorCorrectionLevelController.CriaSplitButtons(errorCorrectionLevelComboBox);
         }
 
         private void InputTextBox_TextChanged(object sender, EventArgs e)
@@ -183,5 +194,16 @@ namespace Telecom_Tools
             keyTextBox.Text = "";
             KCVTextBox.Text = "";
         }
+
+        private void openFile_Click(object sender, EventArgs e)
+        {
+            fileController.OpenFile(openFileTextBox);
+        }
+
+        private void generateButton_Click(object sender, EventArgs e)
+        {
+            fileController.Generate(pdfCheckBox, zipCheckBox, pngCheckBox, logoCheckBox); ;
+        }
+
     }
 }
