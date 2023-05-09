@@ -16,11 +16,18 @@
 
     <main style="display: flex;">
         <div class="menu" style="display: flex; flex-direction: column; position: fixed; height: 100vh;">
-            <a href="#qr-code-generator" style="text-decoration: none;">QR Code Generator</a>
-            <a>Ferramenta 2</a>
-            <a>Ferramenta 3</a>
-            <a>Ferramenta 4</a>
-            <a>Ferramenta 5</a>
+            <div class="qr-code-generator-menu">
+                <p>QR Code generator</p>
+                <li><a href="#about"style="text-decoration: none;">About</a></li>
+                <li><a href="#ErrorCorrectionlevelCntroller" style="text-decoration: none;">ErrorCorrectionlevel</a></li>
+                <li><a href="#ModuleWidthController"style="text-decoration: none;">ModuleWidth</a></li>
+                <li><a href="#fileController"style="text-decoration: none;">fileController</a></li>
+            </div>
+            <div>
+                <p></p>
+                <li><a href=""style="text-decoration: none;"></a></li>
+                <li><a href=""style="text-decoration: none;"></a></li>
+            </div>
         </div>
 
         <div class="content" style="margin: 0 200px 0 200px;">
@@ -31,7 +38,7 @@
             <section class="qr-code-generator">
                 <h2>QR Code Generator</h2>
 
-                <div class="about">
+                <div id="about">
                     <h3>About</h3>
 
                     <p>This tool was raised for create QR codes based in a file with extension txt only. The file must
@@ -47,7 +54,7 @@
                 </div>
                 <br><br>
 
-                <div class="ErrorCorrectionlevelCntroller">
+                <div id="ErrorCorrectionlevelCntroller">
                     <h3>ErrorCorrectionlevelCntroller</h3>
                     <p>
                         The class "ErrorCorrectionlevelCntroller" is located in the namespace "Telecom_Tools.Controller"
@@ -94,7 +101,7 @@
                 </div>
                 <br><br>
 
-                <div class="ModuleWidthController">
+                <div id="ModuleWidthController">
                     <h3> ModuleWidthController</h3>
                     <P>
                         The class ModuleWidthController is located in the namespace "Telecom_tools.Controller"
@@ -135,7 +142,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="fileController">
+                <div id="fileController">
                     <h3>FileController</h3>
                     <p>The class FileController is located in the namespace "Telecom_tools.Controller"
                         and depends on the "File class", "ModuleWidth class", "ErrorCorrection class", "Version class"
