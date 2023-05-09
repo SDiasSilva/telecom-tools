@@ -181,7 +181,6 @@
             this.filePathLabel.Size = new System.Drawing.Size(94, 25);
             this.filePathLabel.TabIndex = 25;
             this.filePathLabel.Text = "File Name:";
-            this.toolTip.SetToolTip(this.filePathLabel, "File name");
             // 
             // errorCorrectionLevelComboBox
             // 
@@ -191,7 +190,7 @@
             this.errorCorrectionLevelComboBox.Name = "errorCorrectionLevelComboBox";
             this.errorCorrectionLevelComboBox.Size = new System.Drawing.Size(110, 33);
             this.errorCorrectionLevelComboBox.TabIndex = 24;
-            this.toolTip.SetToolTip(this.errorCorrectionLevelComboBox, "Selected the Error Correction Level of the QR Code Generation");
+            this.toolTip.SetToolTip(this.errorCorrectionLevelComboBox, "Select the Error Correction Level of the QR Code Generation");
             // 
             // versionComboBox
             // 
@@ -201,7 +200,7 @@
             this.versionComboBox.Name = "versionComboBox";
             this.versionComboBox.Size = new System.Drawing.Size(128, 33);
             this.versionComboBox.TabIndex = 23;
-            this.toolTip.SetToolTip(this.versionComboBox, "Selected the version of the QR Code Generation");
+            this.toolTip.SetToolTip(this.versionComboBox, "Select the version of the QR Code Generation");
             // 
             // moduleComboBox
             // 
@@ -211,7 +210,7 @@
             this.moduleComboBox.Name = "moduleComboBox";
             this.moduleComboBox.Size = new System.Drawing.Size(64, 33);
             this.moduleComboBox.TabIndex = 22;
-            this.toolTip.SetToolTip(this.moduleComboBox, "Selected the module of the QR Code Generation");
+            this.toolTip.SetToolTip(this.moduleComboBox, "Select the module of the QR Code Generation");
             // 
             // generateButton
             // 
@@ -276,6 +275,7 @@
             this.openFileTextBox.ReadOnly = true;
             this.openFileTextBox.Size = new System.Drawing.Size(359, 31);
             this.openFileTextBox.TabIndex = 18;
+            this.toolTip.SetToolTip(this.openFileTextBox, "File name");
             this.openFileTextBox.TextChanged += new System.EventHandler(this.OpenFileTextBox_TextChanged);
             // 
             // pngCheckBox
