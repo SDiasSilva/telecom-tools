@@ -112,6 +112,20 @@
             this.KCVLabel = new System.Windows.Forms.Label();
             this.keyTextBox = new System.Windows.Forms.TextBox();
             this.keyLabel = new System.Windows.Forms.Label();
+            this.keyGeneratorTabPage = new System.Windows.Forms.TabPage();
+            this.generateKeyButton = new System.Windows.Forms.Button();
+            this.keySettingsLabel = new System.Windows.Forms.Label();
+            this.clearKeyGenFieldsButton = new System.Windows.Forms.Button();
+            this.keyCopyButton = new System.Windows.Forms.Button();
+            this.keySettingsPanel = new System.Windows.Forms.Panel();
+            this.keySizeComboBox = new System.Windows.Forms.ComboBox();
+            this.DESRadioButton = new System.Windows.Forms.RadioButton();
+            this.keySizeLabel = new System.Windows.Forms.Label();
+            this.AESRadioButton = new System.Windows.Forms.RadioButton();
+            this.generatedKeyLabel = new System.Windows.Forms.Label();
+            this.saltLabel = new System.Windows.Forms.Label();
+            this.generatedKeyTextBox = new System.Windows.Forms.TextBox();
+            this.saltTextBox = new System.Windows.Forms.TextBox();
             this.efGenOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.helpProvider = new System.Windows.Forms.HelpProvider();
@@ -131,6 +145,8 @@
             this.PSKTabPage.SuspendLayout();
             this.hashTabPage.SuspendLayout();
             this.KCVTabPage.SuspendLayout();
+            this.keyGeneratorTabPage.SuspendLayout();
+            this.keySettingsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // TelecomToolsTabControl
@@ -140,6 +156,7 @@
             this.TelecomToolsTabControl.Controls.Add(this.PSKTabPage);
             this.TelecomToolsTabControl.Controls.Add(this.hashTabPage);
             this.TelecomToolsTabControl.Controls.Add(this.KCVTabPage);
+            this.TelecomToolsTabControl.Controls.Add(this.keyGeneratorTabPage);
             this.TelecomToolsTabControl.Location = new System.Drawing.Point(3, 2);
             this.TelecomToolsTabControl.Name = "TelecomToolsTabControl";
             this.TelecomToolsTabControl.SelectedIndex = 0;
@@ -222,7 +239,6 @@
             this.generateButton.TabIndex = 21;
             this.generateButton.Text = "GENERATE";
             this.generateButton.UseVisualStyleBackColor = true;
-            this.generateButton.Click += new System.EventHandler(this.GenerateButton_Click);
             // 
             // errorCorrectionLabel
             // 
@@ -276,7 +292,6 @@
             this.openFileTextBox.Size = new System.Drawing.Size(359, 31);
             this.openFileTextBox.TabIndex = 18;
             this.toolTip.SetToolTip(this.openFileTextBox, "File name");
-            this.openFileTextBox.TextChanged += new System.EventHandler(this.OpenFileTextBox_TextChanged);
             // 
             // pngCheckBox
             // 
@@ -1173,6 +1188,161 @@
             this.keyLabel.TabIndex = 7;
             this.keyLabel.Text = "Key:";
             // 
+            // keyGeneratorTabPage
+            // 
+            this.keyGeneratorTabPage.Controls.Add(this.generateKeyButton);
+            this.keyGeneratorTabPage.Controls.Add(this.keySettingsLabel);
+            this.keyGeneratorTabPage.Controls.Add(this.clearKeyGenFieldsButton);
+            this.keyGeneratorTabPage.Controls.Add(this.keyCopyButton);
+            this.keyGeneratorTabPage.Controls.Add(this.keySettingsPanel);
+            this.keyGeneratorTabPage.Controls.Add(this.generatedKeyLabel);
+            this.keyGeneratorTabPage.Controls.Add(this.saltLabel);
+            this.keyGeneratorTabPage.Controls.Add(this.generatedKeyTextBox);
+            this.keyGeneratorTabPage.Controls.Add(this.saltTextBox);
+            this.keyGeneratorTabPage.Location = new System.Drawing.Point(4, 34);
+            this.keyGeneratorTabPage.Name = "keyGeneratorTabPage";
+            this.keyGeneratorTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.keyGeneratorTabPage.Size = new System.Drawing.Size(431, 637);
+            this.keyGeneratorTabPage.TabIndex = 5;
+            this.keyGeneratorTabPage.Text = "Key Gen";
+            this.keyGeneratorTabPage.UseVisualStyleBackColor = true;
+            // 
+            // generateKeyButton
+            // 
+            this.generateKeyButton.Location = new System.Drawing.Point(286, 258);
+            this.generateKeyButton.Name = "generateKeyButton";
+            this.generateKeyButton.Size = new System.Drawing.Size(137, 34);
+            this.generateKeyButton.TabIndex = 32;
+            this.generateKeyButton.Text = "Generate Key";
+            this.generateKeyButton.UseVisualStyleBackColor = true;
+            // 
+            // keySettingsLabel
+            // 
+            this.keySettingsLabel.AutoSize = true;
+            this.keySettingsLabel.Location = new System.Drawing.Point(7, 138);
+            this.keySettingsLabel.Name = "keySettingsLabel";
+            this.keySettingsLabel.Size = new System.Drawing.Size(109, 25);
+            this.keySettingsLabel.TabIndex = 31;
+            this.keySettingsLabel.Text = "Key Settings";
+            // 
+            // clearKeyGenFieldsButton
+            // 
+            this.clearKeyGenFieldsButton.AccessibleDescription = "";
+            this.clearKeyGenFieldsButton.AccessibleName = "";
+            this.clearKeyGenFieldsButton.BackgroundImage = global::Telecom_Tools.Properties.Resources.Clear;
+            this.clearKeyGenFieldsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.clearKeyGenFieldsButton.Location = new System.Drawing.Point(7, 461);
+            this.clearKeyGenFieldsButton.Name = "clearKeyGenFieldsButton";
+            this.clearKeyGenFieldsButton.Size = new System.Drawing.Size(31, 31);
+            this.clearKeyGenFieldsButton.TabIndex = 30;
+            this.clearKeyGenFieldsButton.Tag = "";
+            this.toolTip.SetToolTip(this.clearKeyGenFieldsButton, "Clear all Key Gen fields");
+            this.clearKeyGenFieldsButton.UseVisualStyleBackColor = true;
+            // 
+            // keyCopyButton
+            // 
+            this.keyCopyButton.AccessibleDescription = "";
+            this.keyCopyButton.AccessibleName = "";
+            this.keyCopyButton.BackgroundImage = global::Telecom_Tools.Properties.Resources.Copy;
+            this.keyCopyButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.keyCopyButton.Enabled = false;
+            this.keyCopyButton.Location = new System.Drawing.Point(394, 461);
+            this.keyCopyButton.Name = "keyCopyButton";
+            this.keyCopyButton.Size = new System.Drawing.Size(31, 31);
+            this.keyCopyButton.TabIndex = 29;
+            this.keyCopyButton.Tag = "";
+            this.toolTip.SetToolTip(this.keyCopyButton, "Copy Key To Clipboard");
+            this.keyCopyButton.UseVisualStyleBackColor = true;
+            // 
+            // keySettingsPanel
+            // 
+            this.keySettingsPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.keySettingsPanel.Controls.Add(this.keySizeComboBox);
+            this.keySettingsPanel.Controls.Add(this.DESRadioButton);
+            this.keySettingsPanel.Controls.Add(this.keySizeLabel);
+            this.keySettingsPanel.Controls.Add(this.AESRadioButton);
+            this.keySettingsPanel.Location = new System.Drawing.Point(7, 166);
+            this.keySettingsPanel.Name = "keySettingsPanel";
+            this.keySettingsPanel.Size = new System.Drawing.Size(416, 86);
+            this.keySettingsPanel.TabIndex = 23;
+            // 
+            // keySizeComboBox
+            // 
+            this.keySizeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.keySizeComboBox.FormattingEnabled = true;
+            this.keySizeComboBox.Location = new System.Drawing.Point(194, 27);
+            this.keySizeComboBox.Name = "keySizeComboBox";
+            this.keySizeComboBox.Size = new System.Drawing.Size(210, 33);
+            this.keySizeComboBox.TabIndex = 31;
+            // 
+            // DESRadioButton
+            // 
+            this.DESRadioButton.AutoSize = true;
+            this.DESRadioButton.Location = new System.Drawing.Point(3, 3);
+            this.DESRadioButton.Name = "DESRadioButton";
+            this.DESRadioButton.Size = new System.Drawing.Size(69, 29);
+            this.DESRadioButton.TabIndex = 3;
+            this.DESRadioButton.Text = "DES";
+            this.DESRadioButton.UseVisualStyleBackColor = true;
+            this.DESRadioButton.CheckedChanged += new System.EventHandler(this.RadioButton_CheckedChanged);
+            // 
+            // keySizeLabel
+            // 
+            this.keySizeLabel.AutoSize = true;
+            this.keySizeLabel.Location = new System.Drawing.Point(108, 30);
+            this.keySizeLabel.Name = "keySizeLabel";
+            this.keySizeLabel.Size = new System.Drawing.Size(80, 25);
+            this.keySizeLabel.TabIndex = 22;
+            this.keySizeLabel.Text = "Key Size:";
+            // 
+            // AESRadioButton
+            // 
+            this.AESRadioButton.AutoSize = true;
+            this.AESRadioButton.Location = new System.Drawing.Point(4, 54);
+            this.AESRadioButton.Name = "AESRadioButton";
+            this.AESRadioButton.Size = new System.Drawing.Size(68, 29);
+            this.AESRadioButton.TabIndex = 4;
+            this.AESRadioButton.Text = "AES";
+            this.AESRadioButton.UseVisualStyleBackColor = true;
+            this.AESRadioButton.CheckedChanged += new System.EventHandler(this.RadioButton_CheckedChanged);
+            // 
+            // generatedKeyLabel
+            // 
+            this.generatedKeyLabel.AutoSize = true;
+            this.generatedKeyLabel.Location = new System.Drawing.Point(7, 300);
+            this.generatedKeyLabel.Name = "generatedKeyLabel";
+            this.generatedKeyLabel.Size = new System.Drawing.Size(130, 25);
+            this.generatedKeyLabel.TabIndex = 21;
+            this.generatedKeyLabel.Text = "Generated Key:";
+            // 
+            // saltLabel
+            // 
+            this.saltLabel.AutoSize = true;
+            this.saltLabel.Location = new System.Drawing.Point(6, 3);
+            this.saltLabel.Name = "saltLabel";
+            this.saltLabel.Size = new System.Drawing.Size(45, 25);
+            this.saltLabel.TabIndex = 20;
+            this.saltLabel.Text = "Salt:";
+            // 
+            // generatedKeyTextBox
+            // 
+            this.generatedKeyTextBox.Location = new System.Drawing.Point(7, 328);
+            this.generatedKeyTextBox.Multiline = true;
+            this.generatedKeyTextBox.Name = "generatedKeyTextBox";
+            this.generatedKeyTextBox.ReadOnly = true;
+            this.generatedKeyTextBox.Size = new System.Drawing.Size(416, 127);
+            this.generatedKeyTextBox.TabIndex = 1;
+            this.generatedKeyTextBox.TextChanged += new System.EventHandler(this.generatedKeyTextBox_TextChanged);
+            // 
+            // saltTextBox
+            // 
+            this.saltTextBox.Location = new System.Drawing.Point(6, 31);
+            this.saltTextBox.Multiline = true;
+            this.saltTextBox.Name = "saltTextBox";
+            this.saltTextBox.Size = new System.Drawing.Size(416, 104);
+            this.saltTextBox.TabIndex = 0;
+            this.saltTextBox.TextChanged += new System.EventHandler(this.saltTextBox_TextChanged);
+            // 
             // efGenOpenFileDialog
             // 
             this.efGenOpenFileDialog.Filter = "Input Files (INP)|*.INP";
@@ -1218,6 +1388,10 @@
             this.hashTabPage.PerformLayout();
             this.KCVTabPage.ResumeLayout(false);
             this.KCVTabPage.PerformLayout();
+            this.keyGeneratorTabPage.ResumeLayout(false);
+            this.keyGeneratorTabPage.PerformLayout();
+            this.keySettingsPanel.ResumeLayout(false);
+            this.keySettingsPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1309,5 +1483,19 @@
         private CheckBox zipCheckBox;
         private CheckBox logoCheckBox;
         private Label filePathLabel;
+        private TabPage keyGeneratorTabPage;
+        private Label generatedKeyLabel;
+        private Label saltLabel;
+        private RadioButton AESRadioButton;
+        private RadioButton DESRadioButton;
+        private TextBox generatedKeyTextBox;
+        private TextBox saltTextBox;
+        private Panel keySettingsPanel;
+        private Label keySizeLabel;
+        private Button generateKeyButton;
+        private Label keySettingsLabel;
+        private Button clearKeyGenFieldsButton;
+        private Button keyCopyButton;
+        private ComboBox keySizeComboBox;
     }
 }

@@ -24,6 +24,7 @@ namespace Telecom_Tools
             SPNamePLMNRequiredComboBox.SelectedIndex = 0;
             hashTypeComboBox.SelectedIndex = 0;
             cryptoTypeComboBox.SelectedIndex = 0;
+            DESRadioButton.Checked = true;
             
             //QRCodeGenerator
             moduleWidthController.CriaSplitButtons(moduleComboBox);
@@ -200,15 +201,29 @@ namespace Telecom_Tools
         {
             fileController.OpenFile(openFileTextBox);
         }
-
-        private void GenerateButton_Click(object sender, EventArgs e)
+        private void RadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            fileController.Generate(pdfCheckBox, zipCheckBox, pngCheckBox, logoCheckBox); ;
+            keySizeComboBox.Items.Clear();
+            if (DESRadioButton.Checked)
+            {
+                keySizeComboBox.Items.AddRange(new object[] { "8 Bytes", "16 Bytes", "24 Bytes" });
+                
+            }
+            else if (AESRadioButton.Checked)
+            {
+                keySizeComboBox.Items.AddRange(new object[] { "16 Bytes", "24 Bytes", "32 Bytes" });
+            }
+            keySizeComboBox.SelectedIndex = 0;
         }
 
-        private void OpenFileTextBox_TextChanged(object sender, EventArgs e)
+        private void generatedKeyTextBox_TextChanged(object sender, EventArgs e)
         {
-            generateButton.Enabled = ViewUtil.IsButtonEnabled(openFileTextBox.Text);
+            generatedKeyLabel.Text = ViewUtil.CountBytes(generatedKeyTextBox.Text, "Generated Key");
+        }
+
+        private void saltTextBox_TextChanged(object sender, EventArgs e)
+        {
+            saltLabel.Text = ViewUtil.CountCharacters(saltTextBox.Text, "Salt");
         }
     }
 }
