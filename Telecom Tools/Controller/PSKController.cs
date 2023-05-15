@@ -41,9 +41,9 @@ namespace Telecom_Tools.Controller
             return "";
         }
 
-        private static byte[] ConvertICCID(string text)
+        private static byte[] ConvertICCID(string iccid)
         {
-            string last8 = text[^16..];
+            string last8 = iccid[^16..];
             string swapped = "";
             for (var i = 0; i < last8.Length; i += 2)
             {
