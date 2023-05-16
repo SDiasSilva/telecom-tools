@@ -46,7 +46,7 @@ namespace Telecom_Tools.Util.Crypto
                     Array.Copy(Key, 16, Key3, 0, Key3.Length);
                     break;
                 default:
-                    throw new ArgumentException();
+                    throw new ArgumentException("Invalid length!");
             }
         }
 

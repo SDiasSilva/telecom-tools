@@ -113,18 +113,24 @@
             this.keyTextBox = new System.Windows.Forms.TextBox();
             this.keyLabel = new System.Windows.Forms.Label();
             this.keyGeneratorTabPage = new System.Windows.Forms.TabPage();
+            this.privateKeyCopyButton = new System.Windows.Forms.Button();
+            this.publicKeyLabel = new System.Windows.Forms.Label();
+            this.publicKeyTextBox = new System.Windows.Forms.TextBox();
             this.generateKeyButton = new System.Windows.Forms.Button();
             this.keySettingsLabel = new System.Windows.Forms.Label();
             this.clearKeyGenFieldsButton = new System.Windows.Forms.Button();
-            this.keyCopyButton = new System.Windows.Forms.Button();
+            this.publicKeyCopyButton = new System.Windows.Forms.Button();
             this.keySettingsPanel = new System.Windows.Forms.Panel();
+            this.typeLabel = new System.Windows.Forms.Label();
+            this.asymmetricRadioButton = new System.Windows.Forms.RadioButton();
+            this.symmetricRadioButton = new System.Windows.Forms.RadioButton();
+            this.algorithmComboBox = new System.Windows.Forms.ComboBox();
+            this.algorithmLabel = new System.Windows.Forms.Label();
             this.keySizeComboBox = new System.Windows.Forms.ComboBox();
-            this.DESRadioButton = new System.Windows.Forms.RadioButton();
             this.keySizeLabel = new System.Windows.Forms.Label();
-            this.AESRadioButton = new System.Windows.Forms.RadioButton();
-            this.generatedKeyLabel = new System.Windows.Forms.Label();
+            this.privateKeyLabel = new System.Windows.Forms.Label();
             this.saltLabel = new System.Windows.Forms.Label();
-            this.generatedKeyTextBox = new System.Windows.Forms.TextBox();
+            this.privateKeyTextBox = new System.Windows.Forms.TextBox();
             this.saltTextBox = new System.Windows.Forms.TextBox();
             this.efGenOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
@@ -1190,14 +1196,17 @@
             // 
             // keyGeneratorTabPage
             // 
+            this.keyGeneratorTabPage.Controls.Add(this.privateKeyCopyButton);
+            this.keyGeneratorTabPage.Controls.Add(this.publicKeyLabel);
+            this.keyGeneratorTabPage.Controls.Add(this.publicKeyTextBox);
             this.keyGeneratorTabPage.Controls.Add(this.generateKeyButton);
             this.keyGeneratorTabPage.Controls.Add(this.keySettingsLabel);
             this.keyGeneratorTabPage.Controls.Add(this.clearKeyGenFieldsButton);
-            this.keyGeneratorTabPage.Controls.Add(this.keyCopyButton);
+            this.keyGeneratorTabPage.Controls.Add(this.publicKeyCopyButton);
             this.keyGeneratorTabPage.Controls.Add(this.keySettingsPanel);
-            this.keyGeneratorTabPage.Controls.Add(this.generatedKeyLabel);
+            this.keyGeneratorTabPage.Controls.Add(this.privateKeyLabel);
             this.keyGeneratorTabPage.Controls.Add(this.saltLabel);
-            this.keyGeneratorTabPage.Controls.Add(this.generatedKeyTextBox);
+            this.keyGeneratorTabPage.Controls.Add(this.privateKeyTextBox);
             this.keyGeneratorTabPage.Controls.Add(this.saltTextBox);
             this.keyGeneratorTabPage.Location = new System.Drawing.Point(4, 34);
             this.keyGeneratorTabPage.Name = "keyGeneratorTabPage";
@@ -1207,19 +1216,56 @@
             this.keyGeneratorTabPage.Text = "Key Gen";
             this.keyGeneratorTabPage.UseVisualStyleBackColor = true;
             // 
+            // privateKeyCopyButton
+            // 
+            this.privateKeyCopyButton.AccessibleDescription = "";
+            this.privateKeyCopyButton.AccessibleName = "";
+            this.privateKeyCopyButton.BackgroundImage = global::Telecom_Tools.Properties.Resources.Copy;
+            this.privateKeyCopyButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.privateKeyCopyButton.Enabled = false;
+            this.privateKeyCopyButton.Location = new System.Drawing.Point(392, 443);
+            this.privateKeyCopyButton.Name = "privateKeyCopyButton";
+            this.privateKeyCopyButton.Size = new System.Drawing.Size(31, 31);
+            this.privateKeyCopyButton.TabIndex = 35;
+            this.privateKeyCopyButton.Tag = "";
+            this.toolTip.SetToolTip(this.privateKeyCopyButton, "Copy Key To Clipboard");
+            this.privateKeyCopyButton.UseVisualStyleBackColor = true;
+            this.privateKeyCopyButton.Click += new System.EventHandler(this.PrivateKeyCopyButton_Click);
+            // 
+            // publicKeyLabel
+            // 
+            this.publicKeyLabel.AutoSize = true;
+            this.publicKeyLabel.Location = new System.Drawing.Point(7, 466);
+            this.publicKeyLabel.Name = "publicKeyLabel";
+            this.publicKeyLabel.Size = new System.Drawing.Size(96, 25);
+            this.publicKeyLabel.TabIndex = 34;
+            this.publicKeyLabel.Text = "Public Key:";
+            // 
+            // publicKeyTextBox
+            // 
+            this.publicKeyTextBox.Location = new System.Drawing.Point(7, 494);
+            this.publicKeyTextBox.Multiline = true;
+            this.publicKeyTextBox.Name = "publicKeyTextBox";
+            this.publicKeyTextBox.ReadOnly = true;
+            this.publicKeyTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.publicKeyTextBox.Size = new System.Drawing.Size(416, 105);
+            this.publicKeyTextBox.TabIndex = 33;
+            this.publicKeyTextBox.TextChanged += new System.EventHandler(this.PublicKeyTextBox_TextChanged);
+            // 
             // generateKeyButton
             // 
-            this.generateKeyButton.Location = new System.Drawing.Point(286, 258);
+            this.generateKeyButton.Location = new System.Drawing.Point(285, 269);
             this.generateKeyButton.Name = "generateKeyButton";
             this.generateKeyButton.Size = new System.Drawing.Size(137, 34);
             this.generateKeyButton.TabIndex = 32;
             this.generateKeyButton.Text = "Generate Key";
             this.generateKeyButton.UseVisualStyleBackColor = true;
+            this.generateKeyButton.Click += new System.EventHandler(this.GenerateKeyButton_Click);
             // 
             // keySettingsLabel
             // 
             this.keySettingsLabel.AutoSize = true;
-            this.keySettingsLabel.Location = new System.Drawing.Point(7, 138);
+            this.keySettingsLabel.Location = new System.Drawing.Point(7, 114);
             this.keySettingsLabel.Name = "keySettingsLabel";
             this.keySettingsLabel.Size = new System.Drawing.Size(109, 25);
             this.keySettingsLabel.TabIndex = 31;
@@ -1231,89 +1277,128 @@
             this.clearKeyGenFieldsButton.AccessibleName = "";
             this.clearKeyGenFieldsButton.BackgroundImage = global::Telecom_Tools.Properties.Resources.Clear;
             this.clearKeyGenFieldsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.clearKeyGenFieldsButton.Location = new System.Drawing.Point(7, 461);
+            this.clearKeyGenFieldsButton.Location = new System.Drawing.Point(5, 269);
             this.clearKeyGenFieldsButton.Name = "clearKeyGenFieldsButton";
             this.clearKeyGenFieldsButton.Size = new System.Drawing.Size(31, 31);
             this.clearKeyGenFieldsButton.TabIndex = 30;
             this.clearKeyGenFieldsButton.Tag = "";
             this.toolTip.SetToolTip(this.clearKeyGenFieldsButton, "Clear all Key Gen fields");
             this.clearKeyGenFieldsButton.UseVisualStyleBackColor = true;
+            this.clearKeyGenFieldsButton.Click += new System.EventHandler(this.ClearKeyGenFields);
             // 
-            // keyCopyButton
+            // publicKeyCopyButton
             // 
-            this.keyCopyButton.AccessibleDescription = "";
-            this.keyCopyButton.AccessibleName = "";
-            this.keyCopyButton.BackgroundImage = global::Telecom_Tools.Properties.Resources.Copy;
-            this.keyCopyButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.keyCopyButton.Enabled = false;
-            this.keyCopyButton.Location = new System.Drawing.Point(394, 461);
-            this.keyCopyButton.Name = "keyCopyButton";
-            this.keyCopyButton.Size = new System.Drawing.Size(31, 31);
-            this.keyCopyButton.TabIndex = 29;
-            this.keyCopyButton.Tag = "";
-            this.toolTip.SetToolTip(this.keyCopyButton, "Copy Key To Clipboard");
-            this.keyCopyButton.UseVisualStyleBackColor = true;
+            this.publicKeyCopyButton.AccessibleDescription = "";
+            this.publicKeyCopyButton.AccessibleName = "";
+            this.publicKeyCopyButton.BackgroundImage = global::Telecom_Tools.Properties.Resources.Copy;
+            this.publicKeyCopyButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.publicKeyCopyButton.Enabled = false;
+            this.publicKeyCopyButton.Location = new System.Drawing.Point(392, 603);
+            this.publicKeyCopyButton.Name = "publicKeyCopyButton";
+            this.publicKeyCopyButton.Size = new System.Drawing.Size(31, 31);
+            this.publicKeyCopyButton.TabIndex = 29;
+            this.publicKeyCopyButton.Tag = "";
+            this.toolTip.SetToolTip(this.publicKeyCopyButton, "Copy Key To Clipboard");
+            this.publicKeyCopyButton.UseVisualStyleBackColor = true;
+            this.publicKeyCopyButton.Click += new System.EventHandler(this.PublicKeyCopyButton_Click);
             // 
             // keySettingsPanel
             // 
             this.keySettingsPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.keySettingsPanel.Controls.Add(this.typeLabel);
+            this.keySettingsPanel.Controls.Add(this.asymmetricRadioButton);
+            this.keySettingsPanel.Controls.Add(this.symmetricRadioButton);
+            this.keySettingsPanel.Controls.Add(this.algorithmComboBox);
+            this.keySettingsPanel.Controls.Add(this.algorithmLabel);
             this.keySettingsPanel.Controls.Add(this.keySizeComboBox);
-            this.keySettingsPanel.Controls.Add(this.DESRadioButton);
             this.keySettingsPanel.Controls.Add(this.keySizeLabel);
-            this.keySettingsPanel.Controls.Add(this.AESRadioButton);
-            this.keySettingsPanel.Location = new System.Drawing.Point(7, 166);
+            this.keySettingsPanel.Location = new System.Drawing.Point(5, 142);
             this.keySettingsPanel.Name = "keySettingsPanel";
-            this.keySettingsPanel.Size = new System.Drawing.Size(416, 86);
+            this.keySettingsPanel.Size = new System.Drawing.Size(416, 121);
             this.keySettingsPanel.TabIndex = 23;
+            // 
+            // typeLabel
+            // 
+            this.typeLabel.AutoSize = true;
+            this.typeLabel.Location = new System.Drawing.Point(51, 12);
+            this.typeLabel.Name = "typeLabel";
+            this.typeLabel.Size = new System.Drawing.Size(53, 25);
+            this.typeLabel.TabIndex = 36;
+            this.typeLabel.Text = "Type:";
+            // 
+            // asymmetricRadioButton
+            // 
+            this.asymmetricRadioButton.AutoSize = true;
+            this.asymmetricRadioButton.Location = new System.Drawing.Point(279, 10);
+            this.asymmetricRadioButton.Name = "asymmetricRadioButton";
+            this.asymmetricRadioButton.Size = new System.Drawing.Size(131, 29);
+            this.asymmetricRadioButton.TabIndex = 35;
+            this.asymmetricRadioButton.TabStop = true;
+            this.asymmetricRadioButton.Text = "Asymmetric";
+            this.asymmetricRadioButton.UseVisualStyleBackColor = true;
+            this.asymmetricRadioButton.CheckedChanged += new System.EventHandler(this.TypeRadioButton_CheckedChanged);
+            // 
+            // symmetricRadioButton
+            // 
+            this.symmetricRadioButton.AutoSize = true;
+            this.symmetricRadioButton.Location = new System.Drawing.Point(110, 10);
+            this.symmetricRadioButton.Name = "symmetricRadioButton";
+            this.symmetricRadioButton.Size = new System.Drawing.Size(120, 29);
+            this.symmetricRadioButton.TabIndex = 34;
+            this.symmetricRadioButton.TabStop = true;
+            this.symmetricRadioButton.Text = "Symmetric";
+            this.symmetricRadioButton.UseVisualStyleBackColor = true;
+            this.symmetricRadioButton.CheckedChanged += new System.EventHandler(this.TypeRadioButton_CheckedChanged);
+            // 
+            // algorithmComboBox
+            // 
+            this.algorithmComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.algorithmComboBox.FormattingEnabled = true;
+            this.algorithmComboBox.Items.AddRange(new object[] {
+            "DES",
+            "AES",
+            "RSA"});
+            this.algorithmComboBox.Location = new System.Drawing.Point(110, 45);
+            this.algorithmComboBox.Name = "algorithmComboBox";
+            this.algorithmComboBox.Size = new System.Drawing.Size(301, 33);
+            this.algorithmComboBox.TabIndex = 33;
+            this.algorithmComboBox.SelectedIndexChanged += new System.EventHandler(this.AlgorithmComboBox_SelectedIndexChanged);
+            // 
+            // algorithmLabel
+            // 
+            this.algorithmLabel.AutoSize = true;
+            this.algorithmLabel.Location = new System.Drawing.Point(8, 48);
+            this.algorithmLabel.Name = "algorithmLabel";
+            this.algorithmLabel.Size = new System.Drawing.Size(96, 25);
+            this.algorithmLabel.TabIndex = 32;
+            this.algorithmLabel.Text = "Algorithm:";
             // 
             // keySizeComboBox
             // 
             this.keySizeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.keySizeComboBox.FormattingEnabled = true;
-            this.keySizeComboBox.Location = new System.Drawing.Point(194, 27);
+            this.keySizeComboBox.Location = new System.Drawing.Point(110, 83);
             this.keySizeComboBox.Name = "keySizeComboBox";
-            this.keySizeComboBox.Size = new System.Drawing.Size(210, 33);
+            this.keySizeComboBox.Size = new System.Drawing.Size(301, 33);
             this.keySizeComboBox.TabIndex = 31;
-            // 
-            // DESRadioButton
-            // 
-            this.DESRadioButton.AutoSize = true;
-            this.DESRadioButton.Location = new System.Drawing.Point(3, 3);
-            this.DESRadioButton.Name = "DESRadioButton";
-            this.DESRadioButton.Size = new System.Drawing.Size(69, 29);
-            this.DESRadioButton.TabIndex = 3;
-            this.DESRadioButton.Text = "DES";
-            this.DESRadioButton.UseVisualStyleBackColor = true;
-            this.DESRadioButton.CheckedChanged += new System.EventHandler(this.RadioButton_CheckedChanged);
             // 
             // keySizeLabel
             // 
             this.keySizeLabel.AutoSize = true;
-            this.keySizeLabel.Location = new System.Drawing.Point(108, 30);
+            this.keySizeLabel.Location = new System.Drawing.Point(24, 86);
             this.keySizeLabel.Name = "keySizeLabel";
             this.keySizeLabel.Size = new System.Drawing.Size(80, 25);
             this.keySizeLabel.TabIndex = 22;
             this.keySizeLabel.Text = "Key Size:";
             // 
-            // AESRadioButton
+            // privateKeyLabel
             // 
-            this.AESRadioButton.AutoSize = true;
-            this.AESRadioButton.Location = new System.Drawing.Point(4, 54);
-            this.AESRadioButton.Name = "AESRadioButton";
-            this.AESRadioButton.Size = new System.Drawing.Size(68, 29);
-            this.AESRadioButton.TabIndex = 4;
-            this.AESRadioButton.Text = "AES";
-            this.AESRadioButton.UseVisualStyleBackColor = true;
-            this.AESRadioButton.CheckedChanged += new System.EventHandler(this.RadioButton_CheckedChanged);
-            // 
-            // generatedKeyLabel
-            // 
-            this.generatedKeyLabel.AutoSize = true;
-            this.generatedKeyLabel.Location = new System.Drawing.Point(7, 300);
-            this.generatedKeyLabel.Name = "generatedKeyLabel";
-            this.generatedKeyLabel.Size = new System.Drawing.Size(130, 25);
-            this.generatedKeyLabel.TabIndex = 21;
-            this.generatedKeyLabel.Text = "Generated Key:";
+            this.privateKeyLabel.AutoSize = true;
+            this.privateKeyLabel.Location = new System.Drawing.Point(7, 304);
+            this.privateKeyLabel.Name = "privateKeyLabel";
+            this.privateKeyLabel.Size = new System.Drawing.Size(102, 25);
+            this.privateKeyLabel.TabIndex = 21;
+            this.privateKeyLabel.Text = "Private Key:";
             // 
             // saltLabel
             // 
@@ -1324,24 +1409,25 @@
             this.saltLabel.TabIndex = 20;
             this.saltLabel.Text = "Salt:";
             // 
-            // generatedKeyTextBox
+            // privateKeyTextBox
             // 
-            this.generatedKeyTextBox.Location = new System.Drawing.Point(7, 328);
-            this.generatedKeyTextBox.Multiline = true;
-            this.generatedKeyTextBox.Name = "generatedKeyTextBox";
-            this.generatedKeyTextBox.ReadOnly = true;
-            this.generatedKeyTextBox.Size = new System.Drawing.Size(416, 127);
-            this.generatedKeyTextBox.TabIndex = 1;
-            this.generatedKeyTextBox.TextChanged += new System.EventHandler(this.generatedKeyTextBox_TextChanged);
+            this.privateKeyTextBox.Location = new System.Drawing.Point(7, 332);
+            this.privateKeyTextBox.Multiline = true;
+            this.privateKeyTextBox.Name = "privateKeyTextBox";
+            this.privateKeyTextBox.ReadOnly = true;
+            this.privateKeyTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.privateKeyTextBox.Size = new System.Drawing.Size(416, 105);
+            this.privateKeyTextBox.TabIndex = 1;
+            this.privateKeyTextBox.TextChanged += new System.EventHandler(this.GeneratedKeyTextBox_TextChanged);
             // 
             // saltTextBox
             // 
             this.saltTextBox.Location = new System.Drawing.Point(6, 31);
             this.saltTextBox.Multiline = true;
             this.saltTextBox.Name = "saltTextBox";
-            this.saltTextBox.Size = new System.Drawing.Size(416, 104);
+            this.saltTextBox.Size = new System.Drawing.Size(416, 80);
             this.saltTextBox.TabIndex = 0;
-            this.saltTextBox.TextChanged += new System.EventHandler(this.saltTextBox_TextChanged);
+            this.saltTextBox.TextChanged += new System.EventHandler(this.SaltTextBox_TextChanged);
             // 
             // efGenOpenFileDialog
             // 
@@ -1484,18 +1570,24 @@
         private CheckBox logoCheckBox;
         private Label filePathLabel;
         private TabPage keyGeneratorTabPage;
-        private Label generatedKeyLabel;
+        private Label privateKeyLabel;
         private Label saltLabel;
-        private RadioButton AESRadioButton;
-        private RadioButton DESRadioButton;
-        private TextBox generatedKeyTextBox;
+        private TextBox privateKeyTextBox;
         private TextBox saltTextBox;
         private Panel keySettingsPanel;
         private Label keySizeLabel;
         private Button generateKeyButton;
         private Label keySettingsLabel;
         private Button clearKeyGenFieldsButton;
-        private Button keyCopyButton;
+        private Button publicKeyCopyButton;
         private ComboBox keySizeComboBox;
+        private Label publicKeyLabel;
+        private TextBox publicKeyTextBox;
+        private ComboBox algorithmComboBox;
+        private Label algorithmLabel;
+        private Label typeLabel;
+        private RadioButton asymmetricRadioButton;
+        private RadioButton symmetricRadioButton;
+        private Button privateKeyCopyButton;
     }
 }

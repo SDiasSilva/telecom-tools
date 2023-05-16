@@ -3,18 +3,18 @@ using Telecom_Tools.Controller.Ef;
 using Telecom_Tools.Util;
 using Telecom_Tools.Util.Ef;
 using Telecom_Tools.Model;
+using Telecom_Tools.Controller.Keygen;
 
 namespace Telecom_Tools
 {
     public partial class FormTelecomTools : Form
     {
         //QRCode Attributes
-        private readonly ModuleWidth moduleWidthClass = new();
         private readonly ModuleWidthController moduleWidthController = new();
         private readonly VersionController versionController = new();
         private readonly ErrorCorrectionlevelCntroller errorCorrectionLevelController = new();
         private readonly FileController fileController = new();
-
+        private string keyLabelText = "";
         public FormTelecomTools()
         {
             InitializeComponent();
@@ -24,7 +24,9 @@ namespace Telecom_Tools
             SPNamePLMNRequiredComboBox.SelectedIndex = 0;
             hashTypeComboBox.SelectedIndex = 0;
             cryptoTypeComboBox.SelectedIndex = 0;
-            DESRadioButton.Checked = true;
+            algorithmComboBox.SelectedIndex = 0;
+            symmetricRadioButton.Checked = true;
+
             
             //QRCodeGenerator
             moduleWidthController.CriaSplitButtons(moduleComboBox);
@@ -201,29 +203,62 @@ namespace Telecom_Tools
         {
             fileController.OpenFile(openFileTextBox);
         }
-        private void RadioButton_CheckedChanged(object sender, EventArgs e)
+        private void TypeRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            keySizeComboBox.Items.Clear();
-            if (DESRadioButton.Checked)
-            {
-                keySizeComboBox.Items.AddRange(new object[] { "8 Bytes", "16 Bytes", "24 Bytes" });
-                
-            }
-            else if (AESRadioButton.Checked)
-            {
-                keySizeComboBox.Items.AddRange(new object[] { "16 Bytes", "24 Bytes", "32 Bytes" });
-            }
-            keySizeComboBox.SelectedIndex = 0;
+            keyLabelText = KeyGenController.VerifyKeyLabel(symmetricRadioButton.Checked);
+            new KeyGenController().SetAlgorithmTypeInterface(
+            symmetricRadioButton.Checked,
+            algorithmComboBox,
+            publicKeyTextBox,
+            publicKeyLabel,
+            publicKeyCopyButton,
+            generateKeyButton);
+            ClearKeyGenFields(sender, e);
+        }
+        private void GeneratedKeyTextBox_TextChanged(object sender, EventArgs e)
+        {
+            privateKeyLabel.Text = ViewUtil.CountBytes(privateKeyTextBox.Text, keyLabelText);
+            privateKeyCopyButton.Enabled = ViewUtil.IsButtonEnabled(privateKeyTextBox.Text);
         }
 
-        private void generatedKeyTextBox_TextChanged(object sender, EventArgs e)
-        {
-            generatedKeyLabel.Text = ViewUtil.CountBytes(generatedKeyTextBox.Text, "Generated Key");
-        }
-
-        private void saltTextBox_TextChanged(object sender, EventArgs e)
+        private void SaltTextBox_TextChanged(object sender, EventArgs e)
         {
             saltLabel.Text = ViewUtil.CountCharacters(saltTextBox.Text, "Salt");
+        }
+
+        private void PublicKeyTextBox_TextChanged(object sender, EventArgs e)
+        {
+            publicKeyLabel.Text = ViewUtil.CountBytes(publicKeyTextBox.Text, "Public Key");
+            publicKeyCopyButton.Enabled = ViewUtil.IsButtonEnabled(publicKeyTextBox.Text);
+        }
+
+        private void AlgorithmComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            new KeyGenController().RecoverAlgorithmKeySizes(symmetricRadioButton.Checked, algorithmComboBox.SelectedIndex, keySizeComboBox);
+        }
+
+        private void GenerateKeyButton_Click(object sender, EventArgs e)
+        {
+            List<string> keys = new KeyGenController().GenerateKeys(saltTextBox.Text, symmetricRadioButton.Checked, algorithmComboBox.SelectedIndex, keySizeComboBox.SelectedItem);
+            privateKeyTextBox.Text = keys[0];
+            publicKeyTextBox.Text = keys[1];
+        }
+
+        private void PrivateKeyCopyButton_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(privateKeyTextBox.Text);
+        }
+
+        private void PublicKeyCopyButton_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(publicKeyTextBox.Text);
+        }
+
+        private void ClearKeyGenFields(object sender, EventArgs e)
+        {
+            privateKeyTextBox.Text = "";
+            publicKeyTextBox.Text = "";
+            saltTextBox.Text = "";
         }
     }
 }
