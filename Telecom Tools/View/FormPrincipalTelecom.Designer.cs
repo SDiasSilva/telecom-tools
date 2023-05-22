@@ -36,7 +36,7 @@
             this.errorCorrectionLevelComboBox = new System.Windows.Forms.ComboBox();
             this.versionComboBox = new System.Windows.Forms.ComboBox();
             this.moduleComboBox = new System.Windows.Forms.ComboBox();
-            this.generateButton = new System.Windows.Forms.Button();
+            this.generateQRCodesButton = new System.Windows.Forms.Button();
             this.errorCorrectionLabel = new System.Windows.Forms.Label();
             this.versionLabel = new System.Windows.Forms.Label();
             this.moduleWidthLabel = new System.Windows.Forms.Label();
@@ -175,7 +175,7 @@
             this.QRGeneratorTabPage.Controls.Add(this.errorCorrectionLevelComboBox);
             this.QRGeneratorTabPage.Controls.Add(this.versionComboBox);
             this.QRGeneratorTabPage.Controls.Add(this.moduleComboBox);
-            this.QRGeneratorTabPage.Controls.Add(this.generateButton);
+            this.QRGeneratorTabPage.Controls.Add(this.generateQRCodesButton);
             this.QRGeneratorTabPage.Controls.Add(this.errorCorrectionLabel);
             this.QRGeneratorTabPage.Controls.Add(this.versionLabel);
             this.QRGeneratorTabPage.Controls.Add(this.moduleWidthLabel);
@@ -194,12 +194,11 @@
             this.QRGeneratorTabPage.TabIndex = 0;
             this.QRGeneratorTabPage.Text = "QR Gen";
             this.QRGeneratorTabPage.UseVisualStyleBackColor = true;
-            this.helpProvider.SetHelpString(this.keyGeneratorTabPage, "Symmetric Type Instructions:\n\n- Insert the password;\n- Select Algorithm;\n- Select Key Size;\n- Click on \"Generate Key\".\n\nA Key will be generated derivating the \"password\".\n\n\n\nAsymmetric Type Instructions:\n\n- Select Algorithm;\n- Select Key Size;\n- Click on \"Generate Pair\".\n\nA Private and Public Key will be generated randomly.");
             // 
             // filePathLabel
             // 
             this.filePathLabel.AutoSize = true;
-            this.filePathLabel.Location = new System.Drawing.Point(46, 39);
+            this.filePathLabel.Location = new System.Drawing.Point(7, 40);
             this.filePathLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.filePathLabel.Name = "filePathLabel";
             this.filePathLabel.Size = new System.Drawing.Size(94, 25);
@@ -210,9 +209,9 @@
             // 
             this.errorCorrectionLevelComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.errorCorrectionLevelComboBox.FormattingEnabled = true;
-            this.errorCorrectionLevelComboBox.Location = new System.Drawing.Point(295, 224);
+            this.errorCorrectionLevelComboBox.Location = new System.Drawing.Point(184, 289);
             this.errorCorrectionLevelComboBox.Name = "errorCorrectionLevelComboBox";
-            this.errorCorrectionLevelComboBox.Size = new System.Drawing.Size(110, 33);
+            this.errorCorrectionLevelComboBox.Size = new System.Drawing.Size(154, 33);
             this.errorCorrectionLevelComboBox.TabIndex = 24;
             this.toolTip.SetToolTip(this.errorCorrectionLevelComboBox, "Select the Error Correction Level of the QR Code Generation");
             // 
@@ -220,9 +219,9 @@
             // 
             this.versionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.versionComboBox.FormattingEnabled = true;
-            this.versionComboBox.Location = new System.Drawing.Point(128, 224);
+            this.versionComboBox.Location = new System.Drawing.Point(184, 241);
             this.versionComboBox.Name = "versionComboBox";
-            this.versionComboBox.Size = new System.Drawing.Size(128, 33);
+            this.versionComboBox.Size = new System.Drawing.Size(154, 33);
             this.versionComboBox.TabIndex = 23;
             this.toolTip.SetToolTip(this.versionComboBox, "Select the version of the QR Code Generation");
             // 
@@ -230,58 +229,59 @@
             // 
             this.moduleComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.moduleComboBox.FormattingEnabled = true;
-            this.moduleComboBox.Location = new System.Drawing.Point(15, 224);
+            this.moduleComboBox.Location = new System.Drawing.Point(184, 193);
             this.moduleComboBox.Name = "moduleComboBox";
-            this.moduleComboBox.Size = new System.Drawing.Size(64, 33);
+            this.moduleComboBox.Size = new System.Drawing.Size(154, 33);
             this.moduleComboBox.TabIndex = 22;
             this.toolTip.SetToolTip(this.moduleComboBox, "Select the module of the QR Code Generation");
             // 
-            // generateButton
+            // generateQRCodesButton
             // 
-            this.generateButton.Enabled = false;
-            this.generateButton.Location = new System.Drawing.Point(128, 314);
-            this.generateButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.generateButton.Name = "generateButton";
-            this.generateButton.Size = new System.Drawing.Size(160, 65);
-            this.generateButton.TabIndex = 21;
-            this.generateButton.Text = "GENERATE";
-            this.generateButton.UseVisualStyleBackColor = true;
+            this.generateQRCodesButton.Enabled = false;
+            this.generateQRCodesButton.Location = new System.Drawing.Point(119, 370);
+            this.generateQRCodesButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.generateQRCodesButton.Name = "generateQRCodesButton";
+            this.generateQRCodesButton.Size = new System.Drawing.Size(192, 33);
+            this.generateQRCodesButton.TabIndex = 21;
+            this.generateQRCodesButton.Text = "Generate QR Codes";
+            this.generateQRCodesButton.UseVisualStyleBackColor = true;
+            this.generateQRCodesButton.Click += new System.EventHandler(this.GenerateQRCodesButton_Click);
             // 
             // errorCorrectionLabel
             // 
             this.errorCorrectionLabel.AutoSize = true;
-            this.errorCorrectionLabel.Location = new System.Drawing.Point(295, 196);
+            this.errorCorrectionLabel.Location = new System.Drawing.Point(86, 292);
             this.errorCorrectionLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.errorCorrectionLabel.Name = "errorCorrectionLabel";
-            this.errorCorrectionLabel.Size = new System.Drawing.Size(87, 25);
+            this.errorCorrectionLabel.Size = new System.Drawing.Size(91, 25);
             this.errorCorrectionLabel.TabIndex = 13;
-            this.errorCorrectionLabel.Text = "ECC Level";
+            this.errorCorrectionLabel.Text = "ECC Level:";
             // 
             // versionLabel
             // 
             this.versionLabel.AutoSize = true;
-            this.versionLabel.Location = new System.Drawing.Point(128, 196);
+            this.versionLabel.Location = new System.Drawing.Point(86, 244);
             this.versionLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.versionLabel.Name = "versionLabel";
-            this.versionLabel.Size = new System.Drawing.Size(70, 25);
+            this.versionLabel.Size = new System.Drawing.Size(74, 25);
             this.versionLabel.TabIndex = 20;
-            this.versionLabel.Text = "Version";
+            this.versionLabel.Text = "Version:";
             // 
             // moduleWidthLabel
             // 
             this.moduleWidthLabel.AutoSize = true;
-            this.moduleWidthLabel.Location = new System.Drawing.Point(7, 196);
+            this.moduleWidthLabel.Location = new System.Drawing.Point(86, 196);
             this.moduleWidthLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.moduleWidthLabel.Name = "moduleWidthLabel";
-            this.moduleWidthLabel.Size = new System.Drawing.Size(73, 25);
+            this.moduleWidthLabel.Size = new System.Drawing.Size(77, 25);
             this.moduleWidthLabel.TabIndex = 19;
-            this.moduleWidthLabel.Text = "Module";
+            this.moduleWidthLabel.Text = "Module:";
             // 
             // openFile
             // 
             this.openFile.BackgroundImage = global::Telecom_Tools.Properties.Resources.Open_File;
             this.openFile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.openFile.Location = new System.Drawing.Point(7, 69);
+            this.openFile.Location = new System.Drawing.Point(384, 70);
             this.openFile.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.openFile.Name = "openFile";
             this.openFile.Size = new System.Drawing.Size(31, 31);
@@ -292,18 +292,19 @@
             // 
             // openFileTextBox
             // 
-            this.openFileTextBox.Location = new System.Drawing.Point(46, 69);
+            this.openFileTextBox.Location = new System.Drawing.Point(7, 70);
             this.openFileTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.openFileTextBox.Name = "openFileTextBox";
             this.openFileTextBox.ReadOnly = true;
-            this.openFileTextBox.Size = new System.Drawing.Size(359, 31);
+            this.openFileTextBox.Size = new System.Drawing.Size(369, 31);
             this.openFileTextBox.TabIndex = 18;
             this.toolTip.SetToolTip(this.openFileTextBox, "File name");
+            this.openFileTextBox.TextChanged += new System.EventHandler(this.OpenFileTextBox_TextChanged);
             // 
             // pngCheckBox
             // 
             this.pngCheckBox.AutoSize = true;
-            this.pngCheckBox.Location = new System.Drawing.Point(43, 141);
+            this.pngCheckBox.Location = new System.Drawing.Point(52, 141);
             this.pngCheckBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pngCheckBox.Name = "pngCheckBox";
             this.pngCheckBox.Size = new System.Drawing.Size(77, 29);
@@ -315,7 +316,7 @@
             // pdfCheckBox
             // 
             this.pdfCheckBox.AutoSize = true;
-            this.pdfCheckBox.Location = new System.Drawing.Point(128, 141);
+            this.pdfCheckBox.Location = new System.Drawing.Point(137, 141);
             this.pdfCheckBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pdfCheckBox.Name = "pdfCheckBox";
             this.pdfCheckBox.Size = new System.Drawing.Size(74, 29);
@@ -327,7 +328,7 @@
             // zipCheckBox
             // 
             this.zipCheckBox.AutoSize = true;
-            this.zipCheckBox.Location = new System.Drawing.Point(208, 141);
+            this.zipCheckBox.Location = new System.Drawing.Point(217, 141);
             this.zipCheckBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.zipCheckBox.Name = "zipCheckBox";
             this.zipCheckBox.Size = new System.Drawing.Size(67, 29);
@@ -341,7 +342,7 @@
             this.logoCheckBox.AutoSize = true;
             this.logoCheckBox.Checked = true;
             this.logoCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.logoCheckBox.Location = new System.Drawing.Point(282, 141);
+            this.logoCheckBox.Location = new System.Drawing.Point(291, 141);
             this.logoCheckBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.logoCheckBox.Name = "logoCheckBox";
             this.logoCheckBox.Size = new System.Drawing.Size(85, 29);
@@ -1209,9 +1210,11 @@
             this.keyGeneratorTabPage.Controls.Add(this.passwordLabel);
             this.keyGeneratorTabPage.Controls.Add(this.privateKeyTextBox);
             this.keyGeneratorTabPage.Controls.Add(this.passwordTextBox);
+            this.helpProvider.SetHelpString(this.keyGeneratorTabPage, resources.GetString("keyGeneratorTabPage.HelpString"));
             this.keyGeneratorTabPage.Location = new System.Drawing.Point(4, 34);
             this.keyGeneratorTabPage.Name = "keyGeneratorTabPage";
             this.keyGeneratorTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.helpProvider.SetShowHelp(this.keyGeneratorTabPage, true);
             this.keyGeneratorTabPage.Size = new System.Drawing.Size(431, 637);
             this.keyGeneratorTabPage.TabIndex = 5;
             this.keyGeneratorTabPage.Text = "Key Gen";
@@ -1568,7 +1571,7 @@
         private ComboBox errorCorrectionLevelComboBox;
         private ComboBox versionComboBox;
         private ComboBox moduleComboBox;
-        private Button generateButton;
+        private Button generateQRCodesButton;
         private Label errorCorrectionLabel;
         private Label versionLabel;
         protected Label moduleWidthLabel;

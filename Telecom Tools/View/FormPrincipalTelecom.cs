@@ -220,7 +220,7 @@ namespace Telecom_Tools
         }
         private void GeneratedKeyTextBox_TextChanged(object sender, EventArgs e)
         {
-            privateKeyLabel.Text = ViewUtil.CountBytes(privateKeyTextBox.Text, privateKeyLabelText);
+            privateKeyLabel.Text = ViewUtil.CountCharactersAndBytes(privateKeyTextBox.Text, privateKeyLabelText);
             privateKeyCopyButton.Enabled = ViewUtil.IsButtonEnabled(privateKeyTextBox.Text);
         }
 
@@ -231,7 +231,7 @@ namespace Telecom_Tools
 
         private void PublicKeyTextBox_TextChanged(object sender, EventArgs e)
         {
-            publicKeyLabel.Text = ViewUtil.CountBytes(publicKeyTextBox.Text, "Public Key");
+            publicKeyLabel.Text = ViewUtil.CountCharactersAndBytes(publicKeyTextBox.Text, "Public Key");
             publicKeyCopyButton.Enabled = ViewUtil.IsButtonEnabled(publicKeyTextBox.Text);
         }
 
@@ -262,6 +262,16 @@ namespace Telecom_Tools
             privateKeyTextBox.Text = "";
             publicKeyTextBox.Text = "";
             passwordTextBox.Text = "";
+        }
+
+        private void OpenFileTextBox_TextChanged(object sender, EventArgs e)
+        {
+            generateQRCodesButton.Enabled = ViewUtil.IsButtonEnabled(openFileTextBox.Text);
+        }
+
+        private void GenerateQRCodesButton_Click(object sender, EventArgs e)
+        {
+            fileController.Generate(pdfCheckBox, zipCheckBox, pngCheckBox, logoCheckBox);
         }
     }
 }
