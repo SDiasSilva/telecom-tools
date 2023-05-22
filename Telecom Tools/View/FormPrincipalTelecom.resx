@@ -80,6 +80,43 @@ Both them need be separated by one white space and, the iccid and lpa must be on
 
 GDBR - Created in: 01/30/2023 by (tsemh)Tiago B. Silva - Intern</value>
   </data>
+  <data name="PSKTabPage.HelpString" xml:space="preserve">
+    <value>Based on Gemalto TLS Key Derivation - Operation Guide
+
+How PSK / TLS Key is Calculated:
+
+Insert "ICCID"(20 Characters - 10 bytes);
+Insert "Master Key"(32 Characters - 16 bytes);
+Click in "Calculate" button.
+
+data(20 Characters - 10 bytes) = swapped ICCID e.g ABCDEFGHIJ -&gt; BADCFEHGJI;
+KM0(32 Characters - 16 bytes) = First 8 bytes(Master Key) + Last 8 bytes(Master Key);
+KM1(32 Characters - 16 bytes) = Last 8 bytes(Master Key) + First 8 bytes(Master Key);
+r1(16 Characters - 8 bytes) = Encrypted "data" with Triple DES ECB NO_PADDING using "KM0" as a Key;
+r2(16 Characters - 8 bytes) = Encrypted "data" with Triple DES ECB NO_PADDING using "KM1" as a Key.
+
+PSK / TLS Key(32 Characters - 16 bytes) = r1 + r2 </value>
+  </data>
+  <data name="KCVTabPage.HelpString" xml:space="preserve">
+    <value>Based on
+GPC_SPE_034, GlobalPlatform Card Specification 2.3.1 , GlobalPlatform, March 2018, Section B5
+Remote Provisioning Architecture for Embedded UICC 3.1, GSMA, May 2016, Annex F
+
+How KCV (Key Checksum Value) is calculated:
+
+Insert "Key"(Size depends on the Crypto Algorithm);
+Click in "Calculate" button.
+
+block (16 Characters - 8 bytes) = 0000000000000000;
+
+KCV (6 Characters - 3 bytes) = First 3 bytes of encrypted "block" with the chosen Crypto Algorithm ECB NO_PADDING using "Key" as a key.</value>
+  </data>
+  <metadata name="toolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>253, 17</value>
+  </metadata>
+  <metadata name="toolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>253, 17</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="PNNCopyButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -369,37 +406,6 @@ Based On:
 ETSI TS 131.102
 ETSI TS 102.222
 ETSI TS 102.223</value>
-  </data>
-  <data name="PSKTabPage.HelpString" xml:space="preserve">
-    <value>Based on Gemalto TLS Key Derivation - Operation Guide
-
-How PSK / TLS Key is Calculated:
-
-Insert "ICCID"(20 Characters - 10 bytes);
-Insert "Master Key"(32 Characters - 16 bytes);
-Click in "Calculate" button.
-
-data(20 Characters - 10 bytes) = swapped ICCID e.g ABCDEFGHIJ -&gt; BADCFEHGJI;
-KM0(32 Characters - 16 bytes) = First 8 bytes(Master Key) + Last 8 bytes(Master Key);
-KM1(32 Characters - 16 bytes) = Last 8 bytes(Master Key) + First 8 bytes(Master Key);
-r1(16 Characters - 8 bytes) = Encrypted "data" with Triple DES ECB NO_PADDING using "KM0" as a Key;
-r2(16 Characters - 8 bytes) = Encrypted "data" with Triple DES ECB NO_PADDING using "KM1" as a Key.
-
-PSK / TLS Key(32 Characters - 16 bytes) = r1 + r2 </value>
-  </data>
-  <data name="KCVTabPage.HelpString" xml:space="preserve">
-    <value>Based on
-GPC_SPE_034, GlobalPlatform Card Specification 2.3.1 , GlobalPlatform, March 2018, Section B5
-Remote Provisioning Architecture for Embedded UICC 3.1, GSMA, May 2016, Annex F
-
-How KCV (Key Checksum Value) is calculated:
-
-Insert "Key"(Size depends on the Crypto Algorithm);
-Click in "Calculate" button.
-
-block (16 Characters - 8 bytes) = 0000000000000000;
-
-KCV (6 Characters - 3 bytes) = First 3 bytes of encrypted "block" with the chosen Crypto Algorithm ECB NO_PADDING using "Key" as a key.</value>
   </data>
   <metadata name="efGenOpenFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>

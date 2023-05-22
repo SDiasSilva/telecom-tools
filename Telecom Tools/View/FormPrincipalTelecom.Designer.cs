@@ -1214,6 +1214,7 @@
             this.keyGeneratorTabPage.Size = new System.Drawing.Size(431, 637);
             this.keyGeneratorTabPage.TabIndex = 5;
             this.keyGeneratorTabPage.Text = "Key Gen";
+            this.toolTip.SetToolTip(this.keyGeneratorTabPage, "Public key content");
             this.keyGeneratorTabPage.UseVisualStyleBackColor = true;
             // 
             // privateKeyCopyButton
@@ -1228,7 +1229,7 @@
             this.privateKeyCopyButton.Size = new System.Drawing.Size(31, 31);
             this.privateKeyCopyButton.TabIndex = 35;
             this.privateKeyCopyButton.Tag = "";
-            this.toolTip.SetToolTip(this.privateKeyCopyButton, "Copy Key To Clipboard");
+            this.toolTip.SetToolTip(this.privateKeyCopyButton, "Copy Key/Private Key To Clipboard");
             this.privateKeyCopyButton.UseVisualStyleBackColor = true;
             this.privateKeyCopyButton.Click += new System.EventHandler(this.PrivateKeyCopyButton_Click);
             // 
@@ -1250,6 +1251,7 @@
             this.publicKeyTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.publicKeyTextBox.Size = new System.Drawing.Size(416, 105);
             this.publicKeyTextBox.TabIndex = 33;
+            this.toolTip.SetToolTip(this.publicKeyTextBox, "Public Key Content");
             this.publicKeyTextBox.TextChanged += new System.EventHandler(this.PublicKeyTextBox_TextChanged);
             // 
             // generateKeyButton
@@ -1259,6 +1261,7 @@
             this.generateKeyButton.Size = new System.Drawing.Size(137, 34);
             this.generateKeyButton.TabIndex = 32;
             this.generateKeyButton.Text = "Generate Key";
+            this.toolTip.SetToolTip(this.generateKeyButton, "Generate key(s)");
             this.generateKeyButton.UseVisualStyleBackColor = true;
             this.generateKeyButton.Click += new System.EventHandler(this.GenerateKeyButton_Click);
             // 
@@ -1298,7 +1301,7 @@
             this.publicKeyCopyButton.Size = new System.Drawing.Size(31, 31);
             this.publicKeyCopyButton.TabIndex = 29;
             this.publicKeyCopyButton.Tag = "";
-            this.toolTip.SetToolTip(this.publicKeyCopyButton, "Copy Key To Clipboard");
+            this.toolTip.SetToolTip(this.publicKeyCopyButton, "Copy Public Key To Clipboard");
             this.publicKeyCopyButton.UseVisualStyleBackColor = true;
             this.publicKeyCopyButton.Click += new System.EventHandler(this.PublicKeyCopyButton_Click);
             // 
@@ -1335,6 +1338,7 @@
             this.asymmetricRadioButton.TabIndex = 35;
             this.asymmetricRadioButton.TabStop = true;
             this.asymmetricRadioButton.Text = "Asymmetric";
+            this.toolTip.SetToolTip(this.asymmetricRadioButton, "Show asymmetric crypto algorithms");
             this.asymmetricRadioButton.UseVisualStyleBackColor = true;
             this.asymmetricRadioButton.CheckedChanged += new System.EventHandler(this.TypeRadioButton_CheckedChanged);
             // 
@@ -1347,6 +1351,7 @@
             this.symmetricRadioButton.TabIndex = 34;
             this.symmetricRadioButton.TabStop = true;
             this.symmetricRadioButton.Text = "Symmetric";
+            this.toolTip.SetToolTip(this.symmetricRadioButton, "Show symmetric crypto algorithms");
             this.symmetricRadioButton.UseVisualStyleBackColor = true;
             this.symmetricRadioButton.CheckedChanged += new System.EventHandler(this.TypeRadioButton_CheckedChanged);
             // 
@@ -1362,6 +1367,7 @@
             this.algorithmComboBox.Name = "algorithmComboBox";
             this.algorithmComboBox.Size = new System.Drawing.Size(301, 33);
             this.algorithmComboBox.TabIndex = 33;
+            this.toolTip.SetToolTip(this.algorithmComboBox, "Select the crypto algorithm type");
             this.algorithmComboBox.SelectedIndexChanged += new System.EventHandler(this.AlgorithmComboBox_SelectedIndexChanged);
             // 
             // algorithmLabel
@@ -1381,6 +1387,7 @@
             this.keySizeComboBox.Name = "keySizeComboBox";
             this.keySizeComboBox.Size = new System.Drawing.Size(301, 33);
             this.keySizeComboBox.TabIndex = 31;
+            this.toolTip.SetToolTip(this.keySizeComboBox, "Select the generated key size");
             // 
             // keySizeLabel
             // 
@@ -1418,6 +1425,7 @@
             this.privateKeyTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.privateKeyTextBox.Size = new System.Drawing.Size(416, 105);
             this.privateKeyTextBox.TabIndex = 1;
+            this.toolTip.SetToolTip(this.privateKeyTextBox, "Key/Private Key Content");
             this.privateKeyTextBox.TextChanged += new System.EventHandler(this.GeneratedKeyTextBox_TextChanged);
             // 
             // passwordTextBox
@@ -1427,6 +1435,7 @@
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(416, 80);
             this.passwordTextBox.TabIndex = 0;
+            this.toolTip.SetToolTip(this.passwordTextBox, "Insert the password that will be derivated");
             this.passwordTextBox.TextChanged += new System.EventHandler(this.PasswordTextBox_TextChanged);
             // 
             // efGenOpenFileDialog

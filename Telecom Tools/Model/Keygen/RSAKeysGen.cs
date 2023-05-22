@@ -8,6 +8,9 @@ using Org.BouncyCastle.Crypto.Generators;
 using Org.BouncyCastle.Security;
 using Org.BouncyCastle.Crypto.Parameters;
 using Org.BouncyCastle.OpenSsl;
+using Org.BouncyCastle.Asn1.Pkcs;
+using Org.BouncyCastle.Asn1;
+using Org.BouncyCastle.Asn1.X509;
 
 namespace Telecom_Tools.Model.Keygen.Asymmetric
 {
@@ -18,6 +21,7 @@ namespace Telecom_Tools.Model.Keygen.Asymmetric
             algorithmName = "RSA";
             keySizes = new object[] 
             {
+                "512 bits",
                 "1024 bits",
                 "2048 bits",
                 "3072 bits",
@@ -43,14 +47,14 @@ namespace Telecom_Tools.Model.Keygen.Asymmetric
             PemWriter pemWriter = new (writer);
             pemWriter.WriteObject(key);
             pemWriter.Writer.Flush();
-            byte[] bytes = Encoding.ASCII.GetBytes(writer.ToString()
+            /*byte[] bytes = Encoding.ASCII.GetBytes(writer.ToString()
                 .Replace("-----BEGIN RSA PRIVATE KEY-----", "")
                 .Replace("-----END RSA PRIVATE KEY-----", "")
                 .Replace("-----BEGIN PUBLIC KEY-----", "")
                 .Replace("-----END PUBLIC KEY-----", "")
                 .Replace("\n", "")
-                );
-            return BitConverter.ToString(bytes).Replace("-", string.Empty);
+                );*/
+            return writer.ToString();
         }
     }
 }
