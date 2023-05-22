@@ -194,6 +194,7 @@
             this.QRGeneratorTabPage.TabIndex = 0;
             this.QRGeneratorTabPage.Text = "QR Gen";
             this.QRGeneratorTabPage.UseVisualStyleBackColor = true;
+            this.helpProvider.SetHelpString(this.keyGeneratorTabPage, "Symmetric Type Instructions:\n\n- Insert the password;\n- Select Algorithm;\n- Select Key Size;\n- Click on \"Generate Key\".\n\nA Key will be generated derivating the \"password\".\n\n\n\nAsymmetric Type Instructions:\n\n- Select Algorithm;\n- Select Key Size;\n- Click on \"Generate Pair\".\n\nA Private and Public Key will be generated randomly.");
             // 
             // filePathLabel
             // 
