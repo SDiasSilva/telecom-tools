@@ -263,5 +263,15 @@ namespace Telecom_Tools
             publicKeyTextBox.Text = "";
             passwordTextBox.Text = "";
         }
+
+        private void OpenFileTextBox_TextChanged(object sender, EventArgs e)
+        {
+            generateQRCodesButton.Enabled = ViewUtil.IsButtonEnabled(openFileTextBox.Text);
+        }
+
+        private void GenerateQRCodesButton_Click(object sender, EventArgs e)
+        {
+            fileController.Generate(pdfCheckBox, zipCheckBox, pngCheckBox, logoCheckBox);
+        }
     }
 }
