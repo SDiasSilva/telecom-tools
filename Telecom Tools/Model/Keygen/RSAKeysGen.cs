@@ -25,22 +25,11 @@ namespace Telecom_Tools.Model.Keygen.Asymmetric
             };
         }
 
-        public override List<string> GenerateKeyPair(int keySize, string salt)
+        public override List<string> GenerateKeyPair(int keySize)
         {
             RsaKeyPairGenerator generator = new ();
             KeyGenerationParameters keyGenParams;
-            if (salt != null)
-            {
-                byte[] saltBytes = Encoding.UTF8.GetBytes(salt);
-                SecureRandom random = new ();
-                random.SetSeed(saltBytes);
-                keyGenParams = new (random, keySize);
-            }
-            else
-            {
-                keyGenParams = new (new (), keySize);
-            }
-
+            keyGenParams = new (new (), keySize);
             generator.Init(keyGenParams);
             AsymmetricCipherKeyPair ACKeyPair = generator.GenerateKeyPair();
             List<string> keyPair = new ();
@@ -61,7 +50,7 @@ namespace Telecom_Tools.Model.Keygen.Asymmetric
                 .Replace("-----END PUBLIC KEY-----", "")
                 .Replace("\n", "")
                 );
-            return BitConverter.ToString(bytes).Replace("-", " ");
+            return BitConverter.ToString(bytes).Replace("-", string.Empty);
         }
     }
 }

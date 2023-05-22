@@ -17,21 +17,31 @@ namespace Telecom_Tools.Controller.Keygen
         };
         private readonly Dictionary<int, AsymmetricModel> ASYMMETRIC_ALGORITHMS = new ()
         {
-            { 0, new RSAKeysGen() }
+            { 0, new RSAKeysGen() },
+            { 1, new ProfileAKeyGen()},
+            { 2, new ProfileBKeyGen()}
         };
 
-        public List<string> GenerateKeys(string saltTextBoxText, bool symmetricRadioButtonChecked, int algorithmComboBoxSelectedIndex, object keySizeComboBoxSelectedItem)
+        public List<string> GenerateKeys(string passwordTextBoxText, bool symmetricRadioButtonChecked, int algorithmComboBoxSelectedIndex, object keySizeComboBoxSelectedItem)
         {
             List<string> keys = new ();
             int keySize = int.Parse(keySizeComboBoxSelectedItem.ToString().Replace(" bits", ""));
             if (symmetricRadioButtonChecked) 
             {
-                keys.Add(SYMMETRIC_ALGORITHMS[algorithmComboBoxSelectedIndex].GenerateKey(keySize));
-                keys.Add("");
+                if (string.IsNullOrEmpty(passwordTextBoxText))
+                {
+                    MessageBox.Show("Password can not be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    keys.Add(string.Empty);
+                }
+                else
+                {
+                    keys.Add(SYMMETRIC_ALGORITHMS[algorithmComboBoxSelectedIndex].GenerateKey(keySize, passwordTextBoxText));
+                }
+                keys.Add(string.Empty);
             }
             else
             {
-                keys = ASYMMETRIC_ALGORITHMS[algorithmComboBoxSelectedIndex].GenerateKeyPair(keySize, saltTextBoxText);
+                keys = ASYMMETRIC_ALGORITHMS[algorithmComboBoxSelectedIndex].GenerateKeyPair(keySize);
             }
             return keys;
         }
@@ -54,9 +64,11 @@ namespace Telecom_Tools.Controller.Keygen
             bool symmetricRadioButtonChecked,
             ComboBox algorithmComboBox,
             TextBox publicKeyTextBox,
-            Label publicKeyLabel,
+            Label publicKeyLabel, 
             Button publicKeyCopyButton,
-            Button generateKeyButton)
+            Button generateKeyButton,
+            Label passwordLabel,
+            TextBox passwordTextBox)
         {
             algorithmComboBox.Items.Clear();
             if (symmetricRadioButtonChecked)
@@ -72,6 +84,8 @@ namespace Telecom_Tools.Controller.Keygen
             publicKeyTextBox.Visible = !symmetricRadioButtonChecked;
             publicKeyLabel.Visible = !symmetricRadioButtonChecked;
             publicKeyCopyButton.Visible = !symmetricRadioButtonChecked;
+            passwordLabel.Visible = symmetricRadioButtonChecked;
+            passwordTextBox.Visible = symmetricRadioButtonChecked;
             algorithmComboBox.SelectedIndex = 0;
         }
         public static string VerifyKeyLabel(bool symmetricRadioButtonChecked)

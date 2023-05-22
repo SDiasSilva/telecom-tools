@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Org.BouncyCastle.Crypto.Digests;
+using Org.BouncyCastle.Crypto.Generators;
+using Org.BouncyCastle.Crypto.Parameters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
@@ -7,13 +10,8 @@ using System.Threading.Tasks;
 
 namespace Telecom_Tools.Model.Keygen
 {
-    internal abstract class SymmetricModel : AlgorithmModel, ISymmetricModel
+    internal abstract class SymmetricModel : AlgorithmModel
     {
-        public string GenerateKey(int keySize)
-        {
-            byte[] key = new byte[keySize / 8];
-            RandomNumberGenerator.Fill(key);
-            return BitConverter.ToString(key).Replace("-", " ");
-        }
+        public abstract string GenerateKey(int keySize, string password);
     }
 }

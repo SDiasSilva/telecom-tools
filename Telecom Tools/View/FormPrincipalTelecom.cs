@@ -14,7 +14,7 @@ namespace Telecom_Tools
         private readonly VersionController versionController = new();
         private readonly ErrorCorrectionlevelCntroller errorCorrectionLevelController = new();
         private readonly FileController fileController = new();
-        private string keyLabelText = "";
+        private string privateKeyLabelText = "";
         public FormTelecomTools()
         {
             InitializeComponent();
@@ -205,25 +205,28 @@ namespace Telecom_Tools
         }
         private void TypeRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            keyLabelText = KeyGenController.VerifyKeyLabel(symmetricRadioButton.Checked);
+            privateKeyLabelText = KeyGenController.VerifyKeyLabel(symmetricRadioButton.Checked);
+            privateKeyLabel.Text = privateKeyLabelText+ ":";
             new KeyGenController().SetAlgorithmTypeInterface(
             symmetricRadioButton.Checked,
             algorithmComboBox,
             publicKeyTextBox,
             publicKeyLabel,
             publicKeyCopyButton,
-            generateKeyButton);
+            generateKeyButton,
+            passwordLabel,
+            passwordTextBox);
             ClearKeyGenFields(sender, e);
         }
         private void GeneratedKeyTextBox_TextChanged(object sender, EventArgs e)
         {
-            privateKeyLabel.Text = ViewUtil.CountBytes(privateKeyTextBox.Text, keyLabelText);
+            privateKeyLabel.Text = ViewUtil.CountBytes(privateKeyTextBox.Text, privateKeyLabelText);
             privateKeyCopyButton.Enabled = ViewUtil.IsButtonEnabled(privateKeyTextBox.Text);
         }
 
-        private void SaltTextBox_TextChanged(object sender, EventArgs e)
+        private void PasswordTextBox_TextChanged(object sender, EventArgs e)
         {
-            saltLabel.Text = ViewUtil.CountCharacters(saltTextBox.Text, "Salt");
+            passwordLabel.Text = ViewUtil.CountCharacters(passwordTextBox.Text, "Password");
         }
 
         private void PublicKeyTextBox_TextChanged(object sender, EventArgs e)
@@ -239,7 +242,7 @@ namespace Telecom_Tools
 
         private void GenerateKeyButton_Click(object sender, EventArgs e)
         {
-            List<string> keys = new KeyGenController().GenerateKeys(saltTextBox.Text, symmetricRadioButton.Checked, algorithmComboBox.SelectedIndex, keySizeComboBox.SelectedItem);
+            List<string> keys = new KeyGenController().GenerateKeys(passwordTextBox.Text, symmetricRadioButton.Checked, algorithmComboBox.SelectedIndex, keySizeComboBox.SelectedItem);
             privateKeyTextBox.Text = keys[0];
             publicKeyTextBox.Text = keys[1];
         }
@@ -258,7 +261,7 @@ namespace Telecom_Tools
         {
             privateKeyTextBox.Text = "";
             publicKeyTextBox.Text = "";
-            saltTextBox.Text = "";
+            passwordTextBox.Text = "";
         }
     }
 }

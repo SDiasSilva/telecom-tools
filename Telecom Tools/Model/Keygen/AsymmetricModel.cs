@@ -8,6 +8,6 @@ namespace Telecom_Tools.Model.Keygen
 {
     internal abstract class AsymmetricModel : AlgorithmModel
     {
-        public abstract List<string> GenerateKeyPair(int keySize, string salt);
+        public abstract List<string> GenerateKeyPair(int keySize);
     }
 }

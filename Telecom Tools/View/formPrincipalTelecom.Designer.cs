@@ -129,9 +129,9 @@
             this.keySizeComboBox = new System.Windows.Forms.ComboBox();
             this.keySizeLabel = new System.Windows.Forms.Label();
             this.privateKeyLabel = new System.Windows.Forms.Label();
-            this.saltLabel = new System.Windows.Forms.Label();
+            this.passwordLabel = new System.Windows.Forms.Label();
             this.privateKeyTextBox = new System.Windows.Forms.TextBox();
-            this.saltTextBox = new System.Windows.Forms.TextBox();
+            this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.efGenOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.helpProvider = new System.Windows.Forms.HelpProvider();
@@ -1205,9 +1205,9 @@
             this.keyGeneratorTabPage.Controls.Add(this.publicKeyCopyButton);
             this.keyGeneratorTabPage.Controls.Add(this.keySettingsPanel);
             this.keyGeneratorTabPage.Controls.Add(this.privateKeyLabel);
-            this.keyGeneratorTabPage.Controls.Add(this.saltLabel);
+            this.keyGeneratorTabPage.Controls.Add(this.passwordLabel);
             this.keyGeneratorTabPage.Controls.Add(this.privateKeyTextBox);
-            this.keyGeneratorTabPage.Controls.Add(this.saltTextBox);
+            this.keyGeneratorTabPage.Controls.Add(this.passwordTextBox);
             this.keyGeneratorTabPage.Location = new System.Drawing.Point(4, 34);
             this.keyGeneratorTabPage.Name = "keyGeneratorTabPage";
             this.keyGeneratorTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -1396,18 +1396,18 @@
             this.privateKeyLabel.AutoSize = true;
             this.privateKeyLabel.Location = new System.Drawing.Point(7, 304);
             this.privateKeyLabel.Name = "privateKeyLabel";
-            this.privateKeyLabel.Size = new System.Drawing.Size(102, 25);
+            this.privateKeyLabel.Size = new System.Drawing.Size(44, 25);
             this.privateKeyLabel.TabIndex = 21;
-            this.privateKeyLabel.Text = "Private Key:";
+            this.privateKeyLabel.Text = "Key:";
             // 
-            // saltLabel
+            // passwordLabel
             // 
-            this.saltLabel.AutoSize = true;
-            this.saltLabel.Location = new System.Drawing.Point(6, 3);
-            this.saltLabel.Name = "saltLabel";
-            this.saltLabel.Size = new System.Drawing.Size(45, 25);
-            this.saltLabel.TabIndex = 20;
-            this.saltLabel.Text = "Salt:";
+            this.passwordLabel.AutoSize = true;
+            this.passwordLabel.Location = new System.Drawing.Point(6, 3);
+            this.passwordLabel.Name = "passwordLabel";
+            this.passwordLabel.Size = new System.Drawing.Size(91, 25);
+            this.passwordLabel.TabIndex = 20;
+            this.passwordLabel.Text = "Password:";
             // 
             // privateKeyTextBox
             // 
@@ -1420,14 +1420,14 @@
             this.privateKeyTextBox.TabIndex = 1;
             this.privateKeyTextBox.TextChanged += new System.EventHandler(this.GeneratedKeyTextBox_TextChanged);
             // 
-            // saltTextBox
+            // passwordTextBox
             // 
-            this.saltTextBox.Location = new System.Drawing.Point(6, 31);
-            this.saltTextBox.Multiline = true;
-            this.saltTextBox.Name = "saltTextBox";
-            this.saltTextBox.Size = new System.Drawing.Size(416, 80);
-            this.saltTextBox.TabIndex = 0;
-            this.saltTextBox.TextChanged += new System.EventHandler(this.SaltTextBox_TextChanged);
+            this.passwordTextBox.Location = new System.Drawing.Point(6, 31);
+            this.passwordTextBox.Multiline = true;
+            this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.Size = new System.Drawing.Size(416, 80);
+            this.passwordTextBox.TabIndex = 0;
+            this.passwordTextBox.TextChanged += new System.EventHandler(this.PasswordTextBox_TextChanged);
             // 
             // efGenOpenFileDialog
             // 
@@ -1571,9 +1571,9 @@
         private Label filePathLabel;
         private TabPage keyGeneratorTabPage;
         private Label privateKeyLabel;
-        private Label saltLabel;
+        private Label passwordLabel;
         private TextBox privateKeyTextBox;
-        private TextBox saltTextBox;
+        private TextBox passwordTextBox;
         private Panel keySettingsPanel;
         private Label keySizeLabel;
         private Button generateKeyButton;
