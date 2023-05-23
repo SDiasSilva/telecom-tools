@@ -25,7 +25,7 @@ namespace Telecom_Tools.Controller.Keygen
         public List<string> GenerateKeys(string passwordTextBoxText, bool symmetricRadioButtonChecked, int algorithmComboBoxSelectedIndex, object keySizeComboBoxSelectedItem)
         {
             List<string> keys = new ();
-            int keySize = int.Parse(keySizeComboBoxSelectedItem.ToString().Replace(" bits", ""));
+            int keySize = int.Parse(keySizeComboBoxSelectedItem.ToString().Replace(" bits", "").Replace(" bytes", ""));
             if (symmetricRadioButtonChecked) 
             {
                 if (string.IsNullOrEmpty(passwordTextBoxText))

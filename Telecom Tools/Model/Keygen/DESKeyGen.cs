@@ -22,7 +22,7 @@ namespace Telecom_Tools.Model.Keygen
 
         public override string GenerateKey(int keySize, string password)
         {
-            int bytesLength = keySize / 8;
+            int bytesLength = keySize;
             byte[] key = new byte[bytesLength];
             if (!string.IsNullOrEmpty(password))
             {
