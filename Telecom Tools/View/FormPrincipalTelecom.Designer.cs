@@ -166,7 +166,7 @@
             this.TelecomToolsTabControl.Location = new System.Drawing.Point(3, 2);
             this.TelecomToolsTabControl.Name = "TelecomToolsTabControl";
             this.TelecomToolsTabControl.SelectedIndex = 0;
-            this.TelecomToolsTabControl.Size = new System.Drawing.Size(439, 675);
+            this.TelecomToolsTabControl.Size = new System.Drawing.Size(442, 675);
             this.TelecomToolsTabControl.TabIndex = 0;
             // 
             // QRGeneratorTabPage
@@ -190,7 +190,7 @@
             this.QRGeneratorTabPage.Name = "QRGeneratorTabPage";
             this.QRGeneratorTabPage.Padding = new System.Windows.Forms.Padding(3);
             this.helpProvider.SetShowHelp(this.QRGeneratorTabPage, true);
-            this.QRGeneratorTabPage.Size = new System.Drawing.Size(431, 637);
+            this.QRGeneratorTabPage.Size = new System.Drawing.Size(434, 637);
             this.QRGeneratorTabPage.TabIndex = 0;
             this.QRGeneratorTabPage.Text = "QR Gen";
             this.QRGeneratorTabPage.UseVisualStyleBackColor = true;
@@ -369,7 +369,7 @@
             this.EFDataGenTabPage.Location = new System.Drawing.Point(4, 34);
             this.EFDataGenTabPage.Name = "EFDataGenTabPage";
             this.EFDataGenTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.EFDataGenTabPage.Size = new System.Drawing.Size(431, 637);
+            this.EFDataGenTabPage.Size = new System.Drawing.Size(434, 637);
             this.EFDataGenTabPage.TabIndex = 1;
             this.EFDataGenTabPage.Text = "EF Gen";
             this.EFDataGenTabPage.UseVisualStyleBackColor = true;
@@ -827,7 +827,7 @@
             this.PSKTabPage.Name = "PSKTabPage";
             this.PSKTabPage.Padding = new System.Windows.Forms.Padding(3);
             this.helpProvider.SetShowHelp(this.PSKTabPage, true);
-            this.PSKTabPage.Size = new System.Drawing.Size(431, 637);
+            this.PSKTabPage.Size = new System.Drawing.Size(434, 637);
             this.PSKTabPage.TabIndex = 2;
             this.PSKTabPage.Text = "PSK";
             this.PSKTabPage.UseVisualStyleBackColor = true;
@@ -957,7 +957,7 @@
             this.hashTabPage.Name = "hashTabPage";
             this.hashTabPage.Padding = new System.Windows.Forms.Padding(3);
             this.helpProvider.SetShowHelp(this.hashTabPage, true);
-            this.hashTabPage.Size = new System.Drawing.Size(431, 637);
+            this.hashTabPage.Size = new System.Drawing.Size(434, 637);
             this.hashTabPage.TabIndex = 3;
             this.hashTabPage.Text = "Hash";
             this.hashTabPage.UseVisualStyleBackColor = true;
@@ -1085,7 +1085,7 @@
             this.KCVTabPage.Name = "KCVTabPage";
             this.KCVTabPage.Padding = new System.Windows.Forms.Padding(3);
             this.helpProvider.SetShowHelp(this.KCVTabPage, true);
-            this.KCVTabPage.Size = new System.Drawing.Size(431, 637);
+            this.KCVTabPage.Size = new System.Drawing.Size(434, 637);
             this.KCVTabPage.TabIndex = 4;
             this.KCVTabPage.Text = "KCV";
             this.KCVTabPage.UseVisualStyleBackColor = true;
@@ -1215,7 +1215,7 @@
             this.keyGeneratorTabPage.Name = "keyGeneratorTabPage";
             this.keyGeneratorTabPage.Padding = new System.Windows.Forms.Padding(3);
             this.helpProvider.SetShowHelp(this.keyGeneratorTabPage, true);
-            this.keyGeneratorTabPage.Size = new System.Drawing.Size(431, 637);
+            this.keyGeneratorTabPage.Size = new System.Drawing.Size(434, 637);
             this.keyGeneratorTabPage.TabIndex = 5;
             this.keyGeneratorTabPage.Text = "Key Gen";
             this.toolTip.SetToolTip(this.keyGeneratorTabPage, "Public key content");
@@ -1450,7 +1450,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(441, 675);
+            this.ClientSize = new System.Drawing.Size(447, 675);
             this.Controls.Add(this.TelecomToolsTabControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.HelpButton = true;

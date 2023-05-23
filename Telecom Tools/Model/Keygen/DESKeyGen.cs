@@ -14,9 +14,9 @@ namespace Telecom_Tools.Model.Keygen
             algorithmName = "DES";
             keySizes = new object[]
             {
-                "64 bits",
-                "128 bits",
-                "192 bits"
+                "8 bytes",
+                "16 bytes",
+                "24 bytes"
             };
         }
 
