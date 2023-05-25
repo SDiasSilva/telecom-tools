@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Telecom_Tools.Model.Ef
 {
-    // This abstract class defines the default fields for all its child classes.
+    /// <summary>
+    /// This abstract class defines the default fields "Path", "SimpleName" and "Length" in common
+    /// with all EFs.
+    /// </summary> 
     internal abstract class EfModel
     {
         public string Path { get; set; } = "";

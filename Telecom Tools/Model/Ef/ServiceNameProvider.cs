@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace Telecom_Tools.Model.Ef
 {
+    /// <summary>
+    ///  This class inherits from EfModel and stores all information needed to generate the Elementary File 
+    ///  "SPN".
+    /// </summary>
     internal class ServiceNameProvider:EfModel
     {
         public int RegisteredPLMNRequired { get; set; }

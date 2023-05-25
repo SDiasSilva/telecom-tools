@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace Telecom_Tools.Model.Ef
 {
+    /// <summary>
+    ///  This class inherits from EfModel and stores all information needed to generate the Elementary File 
+    ///  "PNN".
+    /// </summary>
     internal class PLMNNetworkName:EfModel
     {
         public PLMNNetworkName()

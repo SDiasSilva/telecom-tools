@@ -1,23 +1,23 @@
 ﻿namespace Telecom_Tools.Controller.Ef
 {
-    /*
-     * This abstract class defines the default methods and reusable methods for all its child classes.
-     */
+    /// <summary>
+    /// This abstract class defines the abstract method "GenerateEf" that will
+    /// be implememented accordingly with its child.
+    /// </summary>
     internal abstract class EfController
     {
-        /*
-         * This method will generate a EF content based on the child class implementation
-         * 
-         * @param input This is the information that will be converted into an EF Content
-         */
+        /// <summary>
+        /// This method will generate a EF content based on the children classes implementation.
+        /// </summary>
+        /// <param name="input">This is the information that will be used to create the EF Content.</param>
+        /// <returns>Returns a hexstring based on this method implementation and the input.</returns>
         public abstract string GenerateEf(string input);
-        
 
-        /*
-         * This method create and fill a byte array with FF
-         * 
-         * @param length The created byte array length
-         */
+        /// <summary>
+        /// This method create and fill a byte array with 0xFF.
+        /// </summary>
+        /// <param name="length">This the length of the byte array that will be returned.</param>
+        /// <returns>Returns a byte array filled with 0xFF with the chosen length.</returns>
         protected static byte[] CreateByteArrayFilledWith0xFF(int length)
         {
             byte[] byteArray = new byte[length];
