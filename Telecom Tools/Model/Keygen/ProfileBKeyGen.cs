@@ -12,8 +12,15 @@ using Org.BouncyCastle.Crypto;
 
 namespace Telecom_Tools.Model.Keygen.Asymmetric
 {
+    /// <summary>
+    /// This abstract class inherits from AsymmetricModel and generates a Profile B key pair. 
+    /// </summary>
     internal class ProfileBKeyGen : AsymmetricModel
     {
+
+        /// <summary>
+        /// this constructor initializes the fields of inherited class AlgorithmModel.
+        /// </summary>
         public ProfileBKeyGen()
         {
             algorithmName = "Profile B (Curve secp256r1)";
@@ -23,6 +30,13 @@ namespace Telecom_Tools.Model.Keygen.Asymmetric
             };
         }
 
+        /// <summary>
+        /// This method that receives parameter "keySize"
+        /// and generates an Profile B (Curve secp256r1) key pair.
+        /// </summary>
+        /// <param name="keySize">This parameter will be defined by the select item of 
+        /// keySizeComboBox.</param>
+        /// <returns>Returns a generated Profile B key pair.</returns>
         public override List<string> GenerateKeyPair(int keySize)
         {
             X9ECParameters curve = CustomNamedCurves.GetByName("secp256r1");
@@ -37,11 +51,24 @@ namespace Telecom_Tools.Model.Keygen.Asymmetric
             keyPair.Add(ExportKeyAsHexString(GetCompressedPublicKey(publicKey)));
             return keyPair;
         }
+
+        /// <summary>
+        /// This method receives a byte array and returns it as a hexstring.
+        /// </summary>
+        /// <param name="encodedBytes">This parameter it is the byte array that will
+        /// be converted in a hexstring.</param>
+        /// <returns>Returns a hexstring.</returns>
         private static string ExportKeyAsHexString(byte[] encodedBytes)
         {
             return BitConverter.ToString(encodedBytes).Replace("-", string.Empty);
         }
 
+        /// <summary>
+        /// This method receives the public Profile B key and compresses its content.
+        /// </summary>
+        /// <param name="publicKey">This parameter it is the public key that will be 
+        /// compressed.</param>
+        /// <returns>Returns the compressed public key.</returns>
         private static byte[] GetCompressedPublicKey(ECPublicKeyParameters publicKey)
         {
             byte[] encoded = publicKey.Q.GetEncoded();

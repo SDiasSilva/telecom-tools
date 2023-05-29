@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace Telecom_Tools.Model.Keygen
 {
+    /// <summary>
+    /// This abstract class defines the fields "algorithmName" and "keySizes" and
+    /// their getters for its children classes.
+    /// </summary>
     internal abstract class AlgorithmModel
     {
         protected object? algorithmName;

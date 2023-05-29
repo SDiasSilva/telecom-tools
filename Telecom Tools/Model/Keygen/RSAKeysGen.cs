@@ -14,8 +14,15 @@ using Org.BouncyCastle.Asn1.X509;
 
 namespace Telecom_Tools.Model.Keygen.Asymmetric
 {
+    /// <summary>
+    /// This abstract class inherits from AsymmetricModel and generates an RSA key pair. 
+    /// </summary>
     internal class RSAKeysGen : AsymmetricModel
     {
+
+        /// <summary>
+        /// this constructor initializes the fields of inherited class AlgorithmModel.
+        /// </summary>
         public RSAKeysGen()
         {
             algorithmName = "RSA";
@@ -29,6 +36,13 @@ namespace Telecom_Tools.Model.Keygen.Asymmetric
             };
         }
 
+        /// <summary>
+        /// This method that receives parameter "keySize"
+        /// and generates an RSA key pair.
+        /// </summary>
+        /// <param name="keySize">This parameter will be defined by the select item of 
+        /// keySizeComboBox.</param>
+        /// <returns>Returns a generated RSA key pair.</returns>
         public override List<string> GenerateKeyPair(int keySize)
         {
             RsaKeyPairGenerator generator = new ();
@@ -41,6 +55,13 @@ namespace Telecom_Tools.Model.Keygen.Asymmetric
             keyPair.Add(ExportKeyAsPemString(ACKeyPair.Public));
             return keyPair;
         }
+
+        /// <summary>
+        /// this method that receives parameter an object of AsymmetricKeyParameter
+        /// and returns its key PEM string.
+        /// </summary>
+        /// <param name="key">This parameter will be a Private or Public Key.</param>
+        /// <returns>Returns a PEM string with key content.</returns>
         private static string ExportKeyAsPemString(AsymmetricKeyParameter key)
         {
             StringWriter writer = new ();
