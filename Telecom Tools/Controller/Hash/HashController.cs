@@ -8,14 +8,22 @@ using Telecom_Tools.Util.Hash;
 
 namespace Telecom_Tools.Controller
 {
+    /// <summary>
+    /// This class defines which Hashing Algorithm will be used.
+    /// </summary> 
     internal class HashController
     {
-        private readonly Dictionary<int, HashType> HASH_TYPE = new()
+        private readonly Dictionary<int, IHashType> HASH_TYPE = new()
         {
             { 0, new SHA1Hash()}
         };
 
-        public HashType SelectHashAlgorithm(int hashtype)
+        /// <summary>
+        /// This method returns the HashType selected by the user.
+        /// </summary>
+        /// <param name="hashtype">This parameter will be defined by the select index of hashTypeComboBox.</param>
+        /// <returns>Returns the selected HashType that will define which hashing algorithm will be used.</returns>
+        public IHashType SelectHashAlgorithm(int hashtype)
         {
             return HASH_TYPE[hashtype];
         }
