@@ -8,8 +8,20 @@ using Telecom_Tools.Util;
 
 namespace Telecom_Tools.Model.KCV
 {
+    /// <summary>
+    /// This class inherits from the abstract class KCV and calculate de KCV using the crypto 
+    /// algorithm AES.
+    /// </summary>
     internal class AESKCV : KCV
     {
+        /// <summary>
+        /// This method calculates the KCV using the parameter "key" to encrypt a byte array with
+        /// the length of 8 filled with 0x00 using the crypto algorithm AES 
+        /// then returns the first 3 encrypted bytes.
+        /// </summary>
+        /// <param name="key">This parameter (Length: 16/24/32 bytes) will be defined by the text of keyTextBox and
+        /// will be used to calculate de AES KCV.</param>
+        /// <returns>Returns the calculated KCV.</returns>
         public override string CalculateKCV(string key)
         {
             try
