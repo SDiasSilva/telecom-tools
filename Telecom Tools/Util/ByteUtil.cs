@@ -7,13 +7,19 @@ using System.Threading.Tasks;
 
 namespace Telecom_Tools.Util
 {
-    // This is a utility class for manipulating byte arrays.
-    internal class ByteUtil
+    /// <summary>
+    /// This is a utility class for manipulating byte arrays.
+    /// </summary>
+    internal static class ByteUtil
     {
-        // This method converts a hexadecimal string to a byte array.
+        /// <summary>
+        /// This method converts a hexadecimal string to a byte array.
+        /// </summary>
+        /// <param name="hexString">This is the parameter that will be converted into a 
+        /// byte array.</param>
+        /// <returns>Returns a byte array</returns>
         public static byte[] HexStringToByteArray(string hexString)
         {
-            // Remove any spaces or dashes in the input string.
             hexString = hexString.Replace(" ", "").Replace("-", "");
             var numberChars = hexString.Length;
             var bytes = new byte[numberChars / 2];
@@ -22,57 +28,75 @@ namespace Telecom_Tools.Util
             return bytes;
         }
 
-        // This method encodes a string using the GSM 7-bit encoding scheme and returns the result as a byte array.
+        /// <summary>
+        /// This method encodes a string using the GSM 7-bit encoding scheme and returns the result as a byte array.
+        /// </summary>
+        /// <param name="plaintext">This is the parameter that will be converted into a 
+        /// byte array using GSM 7-bit encoding scheme.</param>
+        /// <returns>Returns a byte array</returns>
         public static byte[] GetBytes(string plaintext)
         {
-            // Encode the plaintext using GSMEncoder
             string hexStringText = GSMEncoder.Encode(plaintext);
             byte[] encoded = HexStringToByteArray(hexStringText);
             return encoded;
         }
-        // This method packs a block of bytes into a compact format using a 7-bit encoding scheme.
+
+        /// <summary>
+        /// This method packs a block of 1-8 bytes into a compact format using the 7-bit encoding scheme
+        /// to save space.
+        /// </summary>
+        /// <param name="block">This is the byte array that will be packed.</param>
+        /// <returns>Returns a packed block.</returns>
         public static byte[] PackBlock(byte[] block)
         {
             long x = 0;
-            // Pack the bytes using a bitwise OR operation.
             for (int i = 0; i < block.Length; i += 1) x |= ((long)block[i]) << (7 * i);
             byte[] output = new byte[(block.Length * 7 + 7) / 8];
-            // Pack the resulting long into an array of bytes.
             for (int i = 0; i < output.Length; i += 1) output[i] = (byte)(x >> (8 * i));
             return output;
         }
-        // This method packs a byte array into a compact format using a 7-bit encoding scheme.
-        // If the input array is longer than 8 bytes, it is split into two blocks and each block is packed separately.
+
+        /// <summary>
+        /// This method packs a byte array into a compact format using a 7-bit encoding scheme.
+        /// If the input array is longer than 8 bytes, it will split it into two blocks and each block is 
+        /// packed separately.
+        /// </summary>
+        /// <param name="info">This is the info that will be packed.</param>
+        /// <returns>Returns the packed info.</returns>
         public static byte[] PackInfo(byte[] info)
         {
             byte[] firstBlock;
             byte[] lastBlock;
             if (info.Length <= 8)
             {
-                // If the input array is less than or equal to 8 bytes, pack it into a single block using the PackBlock method.
                 firstBlock = PackBlock(info);
                 return firstBlock;
             }
             else
             {
-                // If the input array is longer than 8 bytes, split it into two blocks and pack each block separately.
                 firstBlock = new byte[8];
                 Array.Copy(info, 0, firstBlock, 0, firstBlock.Length);
                 firstBlock = PackBlock(firstBlock);
                 lastBlock = new byte[info.Length - 8];
                 Array.Copy(info, 8, lastBlock, 0, lastBlock.Length);
                 lastBlock = PackBlock(lastBlock);
-                // Concatenate the two packed blocks into a single byte array.
                 byte[] concat = new byte[firstBlock.Length + lastBlock.Length];
                 Array.Copy(firstBlock, 0, concat, 0, firstBlock.Length);
                 Array.Copy(lastBlock, 0, concat, firstBlock.Length, lastBlock.Length);
                 return concat;
             }
         }
-        /* Given a byte array `needle` and a byte array `source`,
-        searches for the first occurrence of `needle` in `source`
-        using the Boyer-Moore algorithm and returns the index
-        of the found item. If `needle` is not found, returns -1.*/
+
+        /// <summary>
+        /// Given a byte array "needle" and a byte array "source",
+        /// searches for the first occurrence of "needle" in "source"
+        /// using the Boyer-Moore algorithm and returns the index
+        /// of the found item. If "needle" is not found, returns -1.
+        /// </summary>
+        /// <param name="needle">This is the block of bytes that needs to be found in a source
+        /// a byte array.</param>
+        /// <param name="source">This is the source byte array that will be searched through.</param>
+        /// <returns>Returns the index of the found needle in the source if found.</returns>
         public static int GetIndexSearchedItem(byte[] needle, byte[] source)
         {
             int itemIndex = -1;

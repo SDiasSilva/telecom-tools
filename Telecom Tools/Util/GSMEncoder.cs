@@ -6,14 +6,20 @@ using System.Threading.Tasks;
 
 namespace Telecom_Tools.Util
 {
+    /// <summary>
+    ///  This class stores the GSM 7-bit Encoder table.
+    /// </summary>
     internal class GSMEncoder
     {
+
+        /// <summary>
+        /// Encodes the given plain text using the GSM 7-bit character set.
+        /// </summary>
+        /// <param name="PlainText">The plain text to encode.</param>
+        /// <returns>The encoded string in hexadecimal representation.</returns>
         public static string Encode(string PlainText)
 
         {
-
-            // ` is not a conversion, just a untranslatable letter
-
             string strGSMTable = "";
 
             strGSMTable += "@£$¥èéùìòÇ`Øø`Åå";
@@ -86,6 +92,12 @@ namespace Telecom_Tools.Util
             return strGSMOutput;
 
         }
+
+        /// <summary>
+        /// Encodes the given plain text using the GSM 11.11 Version 1 encoding scheme.
+        /// </summary>
+        /// <param name="plainText">The plain text to encode.</param>
+        /// <returns>The encoded byte array using GSM 11.11 Version 1 encoding scheme.</returns>
         public static byte[] EncodeGSM1111v1(string plainText)
         {
             byte[] utf32 = System.Text.Encoding.UTF32.GetBytes(plainText);
@@ -104,6 +116,12 @@ namespace Telecom_Tools.Util
             }
             return output;
         }
+
+        /// <summary>
+        /// Encodes the given byte array using the GSM 11.11 Version 2 encoding scheme.
+        /// </summary>
+        /// <param name="input">The byte array to encode.</param>
+        /// <returns>The encoded byte array using GSM 11.11 Version 2 encoding scheme.</returns>
         public static byte[] EncodeGSM1111v2(byte[] input)
         {
             byte[] output = new Byte[input.Length + 3];
@@ -113,6 +131,12 @@ namespace Telecom_Tools.Util
             Array.Copy(input, 0, output, 3, input.Length);
             return output;
         }
+
+        /// <summary>
+        /// Encodes the given byte array using the GSM 11.11 Version 3 encoding scheme.
+        /// </summary>
+        /// <param name="input">The byte array to encode.</param>
+        /// <returns>The encoded byte array using GSM 11.11 Version 3 encoding scheme.</returns>
         public static byte[] EncodeGSM1111v3(byte[] input)
         {
             byte[] output = new Byte[input.Length + 4];

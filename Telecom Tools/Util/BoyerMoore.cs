@@ -6,25 +6,27 @@ using System.Threading.Tasks;
 
 namespace EFDatagen
 {
-    /*
-    The BoyerMoore class provides an implementation of the Boyer-Moore string search algorithm.
-    The algorithm searches for a byte pattern (needle) in a byte array (haystack) and returns the 
-    indices at which the pattern is found. 
-
-    This implementation uses precomputed tables for the bad-character rule and the good-suffix rule.
-    The MakeByteTable and MakeOffsetTable methods compute these tables.
-    */
+    /// <summary>
+    /// The BoyerMoore class provides an implementation of the Boyer-Moore string search algorithm.
+    /// The algorithm searches for a byte pattern(needle) in a byte array(haystack) and returns the
+    /// indices at which the pattern is found.
+    /// This implementation uses precomputed tables for the bad-character rule and the good-suffix rule.
+    /// The MakeByteTable and MakeOffsetTable methods compute these tables.
+    /// </summary>
     internal class BoyerMoore
     {
-        //Fields
+
         readonly byte[] needle;
         readonly int[] charTable;
         readonly int[] offsetTable;
 
-        //Constructor
+        /// <summary>
+        /// This constructor will initialize all this class fields using the parameter 
+        /// "needle".
+        /// </summary>
+        /// <param name="needle">This parameter is the byte pattern that need to be found.</param>
         public BoyerMoore(byte[] needle)
         {
-            //Initialize fields
             this.needle = needle;
             this.charTable = MakeByteTable(needle);
             this.offsetTable = MakeOffsetTable(needle);
@@ -37,19 +39,15 @@ namespace EFDatagen
         /// <returns>An IEnumerable with the indexes where the needle was found.</returns>
         public IEnumerable<int> Search(byte[] haystack)
         {
-            // If the needle is empty, return an empty IEnumerable.
             if (needle.Length == 0)
                 yield break;
 
-            // Start searching from the end of the needle in the haystack.
             for (int i = needle.Length - 1; i < haystack.Length;)
             {
                 int j;
 
-                // Compare the needle to the haystack from right to left.
                 for (j = needle.Length - 1; needle[j] == haystack[i]; --i, --j)
                 {
-                    // If j is 0, the needle was found, return the index and continue searching.
                     if (j != 0)
                         continue;
 
@@ -61,9 +59,13 @@ namespace EFDatagen
                 i += Math.Max(offsetTable[needle.Length - 1 - j], charTable[haystack[i]]);
             }
         }
-      
-        //Helper Methods
-        static int[] MakeByteTable(byte[] needle)
+
+        /// <summary>
+        /// Constructs and returns an integer array representing a byte table for string matching operations.
+        /// </summary>
+        /// <param name="needle">The pattern to be matched.</param>
+        /// <returns>An integer array representing the constructed byte table.</returns>
+        public static int[] MakeByteTable(byte[] needle)
         {
             const int ALPHABET_SIZE = 256;
             int[] table = new int[ALPHABET_SIZE];
@@ -77,7 +79,12 @@ namespace EFDatagen
             return table;
         }
 
-        static int[] MakeOffsetTable(byte[] needle)
+        /// <summary>
+        /// Constructs and returns an integer array representing an offset table for string matching operations.
+        /// </summary>
+        /// <param name="needle">The pattern to be matched.</param>
+        /// <returns>An integer array representing the constructed offset table.</returns>
+        public static int[] MakeOffsetTable(byte[] needle)
         {
             int[] table = new int[needle.Length];
             int lastPrefixPosition = needle.Length;
@@ -99,7 +106,13 @@ namespace EFDatagen
             return table;
         }
 
-        static bool IsPrefix(byte[] needle, int p)
+        /// <summary>
+        /// Checks if the specified position in the byte array is a prefix of the needle.
+        /// </summary>
+        /// <param name="needle">The byte array to check.</param>
+        /// <param name="p">The position to check.</param>
+        /// <returns>True if the position is a prefix, otherwise false.</returns>
+        public static bool IsPrefix(byte[] needle, int p)
         {
             for (int i = p, j = 0; i < needle.Length; ++i, ++j)
                 if (needle[i] != needle[j])
@@ -108,7 +121,13 @@ namespace EFDatagen
             return true;
         }
 
-        static int SuffixLength(byte[] needle, int p)
+        /// <summary>
+        /// Calculates the length of the suffix starting at the specified position in the byte array.
+        /// </summary>
+        /// <param name="needle">The byte array to calculate the suffix length from.</param>
+        /// <param name="p">The starting position of the suffix.</param>
+        /// <returns>The length of the suffix.</returns>
+        public static int SuffixLength(byte[] needle, int p)
         {
             int len = 0;
 

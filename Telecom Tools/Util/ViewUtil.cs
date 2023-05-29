@@ -6,10 +6,17 @@ using System.Threading.Tasks;
 
 namespace Telecom_Tools.Util
 {
-    // This is a utility class for working with this project View.
+    /// <summary>
+    /// This is a utility class for working with the project's view.
+    /// </summary>
     internal class ViewUtil
     {
-        // Returns a string representing the number of characters in a given text box input and a label text.
+        /// <summary>
+        /// Returns a string representing the number of characters in a given text box input and a label text.
+        /// </summary>
+        /// <param name="textBoxText">The text box input.</param>
+        /// <param name="labelText">The label text.</param>
+        /// <returns>A string representing the number of characters.</returns>
         public static string CountCharacters(string textBoxText, string labelText)
         {
             string input = textBoxText;
@@ -19,7 +26,12 @@ namespace Telecom_Tools.Util
             return labelText + ":";
         }
 
-        // Returns a string representing the number of bytes in a given text box input (assuming it is a hex string) and a label text.
+        /// <summary>
+        /// Returns a string representing the number of bytes in a given text box input (assuming it is a hex string) and a label text.
+        /// </summary>
+        /// <param name="textBoxText">The text box input.</param>
+        /// <param name="labelText">The label text.</param>
+        /// <returns>A string representing the number of bytes.</returns>
         public static string CountBytes(string textBoxText, string labelText)
         {
             string input = textBoxText;
@@ -29,6 +41,12 @@ namespace Telecom_Tools.Util
             return labelText + ":";
         }
 
+        /// <summary>
+        /// Returns a string representing the number of characters and bytes in a given text box input and a label text.
+        /// </summary>
+        /// <param name="textBoxText">The text box input.</param>
+        /// <param name="labelText">The label text.</param>
+        /// <returns>A string representing the number of characters and bytes.</returns>
         public static string CountCharactersAndBytes(string textBoxText, string labelText)
         {
             string input = textBoxText;
@@ -38,7 +56,11 @@ namespace Telecom_Tools.Util
             return labelText + ":";
         }
 
-        // Returns a boolean indicating if a button should be enabled based on the length of a text box input.
+        /// <summary>
+        /// Returns a boolean indicating if a button should be enabled based on the length of a text box input.
+        /// </summary>
+        /// <param name="txtBoxText">The text box input.</param>
+        /// <returns>True if the button should be enabled; otherwise, false.</returns>
         public static bool IsButtonEnabled(string txtBoxText)
         {
             if (txtBoxText.Length > 0)
@@ -48,4 +70,5 @@ namespace Telecom_Tools.Util
             return false;
         }
     }
+
 }

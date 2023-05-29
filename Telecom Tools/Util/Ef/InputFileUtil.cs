@@ -6,14 +6,21 @@ using System.Threading.Tasks;
 
 namespace Telecom_Tools.Util
 {
-    // A utility class for handling input files
+    /// <summary>
+    /// A utility class for handling input files.
+    /// </summary>
     internal class InputFileUtil
     {
         // Byte arrays used to identify the start and end of the customer name in the input file
         private static readonly byte[] CUSTOMER_START = { 0x43, 0x75, 0x73, 0x74, 0x6F, 0x6D, 0x65, 0x72, 0x20, 0x20, 0x20, 0x20, 0x20, 0x3A, 0x20, 0x22 };
         private static readonly byte[] CUSTOMER_END = { 0x22, 0x0D, 0x0A };
-        
-        // Method for opening an input file and recovering the customer name from it
+
+        /// <summary>
+        /// Method for opening an input file and recovering the customer name from it.
+        /// </summary>
+        /// <param name="efGenOpenFileDialog">The OpenFileDialog used for selecting the input file.</param>
+        /// <param name="telecomToolsform">The Form where the OpenFileDialog is shown.</param>
+        /// <returns>The recovered customer name from the input file, or an empty string if the operation is canceled or encounters an error.</returns>
         public static string OpenInputFile(OpenFileDialog efGenOpenFileDialog, Form telecomToolsform)
         {
             var result = efGenOpenFileDialog.ShowDialog(telecomToolsform);
@@ -30,7 +37,11 @@ namespace Telecom_Tools.Util
             }
         }
 
-        // Method for recovering the customer name from an input file buffer
+        /// <summary>
+        /// Method for recovering the customer name from an input file buffer.
+        /// </summary>
+        /// <param name="buffer">The byte array representing the input file.</param>
+        /// <returns>The recovered customer name from the input file.</returns>
         private static string RecoverCustomerNameFromInputFile(byte[] buffer)
         {
             // Find the start and end indices of the customer name in the buffer

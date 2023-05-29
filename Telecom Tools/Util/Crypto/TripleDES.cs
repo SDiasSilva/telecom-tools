@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 
 namespace Telecom_Tools.Util.Crypto
 {
+    /// <summary>
+    /// A class that implements the TripleDES encryption algorithm.
+    /// </summary>
     internal class TripleDES
     {
         private readonly DesEngine engine;
@@ -19,6 +22,10 @@ namespace Telecom_Tools.Util.Crypto
         private byte[] Key2 = new byte[8];
         private byte[] Key3 = new byte[8];
 
+        /// <summary>
+        /// Initializes a new instance of the TripleDES class with the specified TripleDES key.
+        /// </summary>
+        /// <param name="tripleDESKey">The TripleDES key.</param>
         public TripleDES(byte[] tripleDESKey)
         {
             engine = new DesEngine();
@@ -28,6 +35,7 @@ namespace Telecom_Tools.Util.Crypto
 
         private void StartKeys(byte[] Key)
         {
+            // Initializes the key based on its length
             switch (Key.Length)
             {
                 case 8:
@@ -50,6 +58,12 @@ namespace Telecom_Tools.Util.Crypto
             }
         }
 
+        /// <summary>
+        /// Encrypts the input byte array using the TripleDES algorithm with the specified key.
+        /// </summary>
+        /// <param name="plainBytes">The byte array to encrypt.</param>
+        /// <param name="key">The encryption key.</param>
+        /// <returns>The encrypted byte array.</returns>
         private byte[] EncryptBytes(byte[] plainBytes, byte[] key)
         {
             byte[] output;
@@ -67,6 +81,13 @@ namespace Telecom_Tools.Util.Crypto
             }
             return output;
         }
+
+        /// <summary>
+        /// Decrypts the input byte array using the TripleDES algorithm with the specified key.
+        /// </summary>
+        /// <param name="encryptedBytes">The byte array to decrypt.</param>
+        /// <param name="key">The decryption key.</param>
+        /// <returns>The decrypted byte array.</returns>
         private byte[] DecryptBytes(byte[] encryptedBytes, byte[] key)
         {
             byte[] output;
@@ -76,12 +97,23 @@ namespace Telecom_Tools.Util.Crypto
             return output;
         }
 
+        /// <summary>
+        /// Encrypts the input byte array using TripleDES encryption.
+        /// </summary>
+        /// <param name="input">The input byte array to encrypt.</param>
+        /// <returns>The encrypted byte array represented as a hexadecimal string.</returns>
         public string Encrypt(byte[] input)
         {
             byte[] cipher = EncryptBytes(DecryptBytes(EncryptBytes(input, Key1), Key2), Key3);
             string output = BitConverter.ToString(cipher);
             return output.Replace("-", "");
         }
+
+        /// <summary>
+        /// Decrypts the input byte array using TripleDES decryption.
+        /// </summary>
+        /// <param name="input">The input byte array to decrypt.</param>
+        /// <returns>The decrypted byte array represented as a hexadecimal string.</returns>
         public string Decrypt(byte[] input)
         {
             byte[] decipher = DecryptBytes(EncryptBytes(DecryptBytes(input, Key3), Key2), Key1);
