@@ -1,5 +1,10 @@
 ﻿namespace Telecom_Tools
 {
+
+    /// <summary>
+    /// This class represents a designer-generated form.
+    /// It is responsible for managing the components and resources used by the form.
+    /// </summary>
     partial class FormTelecomTools
     {
         /// <summary>
@@ -1574,7 +1579,7 @@
         private Button generateQRCodesButton;
         private Label errorCorrectionLabel;
         private Label versionLabel;
-        protected Label moduleWidthLabel;
+        private Label moduleWidthLabel;
         private Button openFile;
         private TextBox openFileTextBox;
         private CheckBox pngCheckBox;

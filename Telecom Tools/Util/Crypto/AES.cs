@@ -18,7 +18,7 @@ namespace Telecom_Tools.Util.Crypto
     {
         private readonly AesEngine engine;
         private BufferedBlockCipher cipher;
-        private byte[] key;
+        private readonly byte[] key;
 
         /// <summary>
         /// Initializes a new instance of the AES class with the specified AES key.
@@ -28,7 +28,7 @@ namespace Telecom_Tools.Util.Crypto
         {
             engine = new AesEngine();
             cipher = new BufferedBlockCipher(engine);
-            key = verifyKey(AESKey);
+            key = VerifyKey(AESKey);
         }
 
         /// <summary>
@@ -37,19 +37,15 @@ namespace Telecom_Tools.Util.Crypto
         /// </summary>
         /// <param name="key">The key to verify.</param>
         /// <returns>The verified key.</returns>
-        private byte[] verifyKey(byte[] key)
+        private static byte[] VerifyKey(byte[] key)
         {
             // Verifies and returns the provided key.
             // Throws an ArgumentException if the key length is invalid.
-            switch (key.Length)
+            return key.Length switch
             {
-                case 16:
-                case 24:
-                case 32:
-                    return key;
-                default:
-                    throw new ArgumentException();
-            }
+                16 or 24 or 32 => key,
+                _ => throw new ArgumentException("Invalid key!"),
+            };
         }
 
         /// <summary>
@@ -83,10 +79,9 @@ namespace Telecom_Tools.Util.Crypto
         /// <returns>The decrypted text as a hexadecimal string.</returns>
         public string Decrypt(byte[] encryptedBytes)
         {
-            byte[] output;
             KeyParameter keyParameter = new (key);
             cipher.Init(false, keyParameter);
-            output = cipher.DoFinal(encryptedBytes);
+            _ = cipher.DoFinal(encryptedBytes);
             string plaintext = BitConverter.ToString(encryptedBytes).Replace("-", "");
             return plaintext;
         }

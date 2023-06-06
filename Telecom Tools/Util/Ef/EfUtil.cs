@@ -39,7 +39,7 @@ namespace Telecom_Tools.Util.Ef
                     SetUpMenuElementsController sumeController = new(iconQualifier: SUMEIconQualifierComboBox.SelectedIndex, SUMEIconNumericUpDown.Value);
                     MenuTitleController menuTitleController = new(MenuTitleEncodingComboBox.SelectedIndex);
                     ServiceNameProviderController spnController = new(SPNRegisteredPLMNRequiredComboBox.SelectedIndex, SPNamePLMNRequiredComboBox.SelectedIndex);
-                    PLMNNetworkNameController pnnController = new PLMNNetworkNameController();
+                    PLMNNetworkNameController pnnController = new ();
                     SUMETextBox.Text = sumeController.GenerateEf(inputTextBox.Text);
                     MenuTitleTextBox.Text = menuTitleController.GenerateEf(inputTextBox.Text);
                     SPNTextBox.Text = spnController.GenerateEf(inputTextBox.Text);
