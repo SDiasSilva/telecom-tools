@@ -3,8 +3,17 @@ using System.Text;
 
 namespace Telecom_Tools.Controller
 {
+
+    /// <summary>
+    /// This class is resposible for managing the version selection in a user interface.
+    /// </summary>
     internal class VersionController
     {
+
+        /// <summary>
+        /// Creates the split buttons for the version selection in the provided ComboBox.
+        /// </summary>
+        /// <param name="comboBox">The ComboBox control to populate with version options.</param>
         public void CriaSplitButtons(ComboBox comboBox)
         {
             StringCollection strings = new()
@@ -34,7 +43,12 @@ namespace Telecom_Tools.Controller
             else { comboBox.SelectedIndex = -1; }
         }
 
-
+        /// <summary>
+        /// Event handler for the SelectedIndexChanged event of the ComboBox.
+        /// Updates the selected version number based on the user's selection.
+        /// </summary>
+        /// <param name="sender">The sender object that triggered the event.</param>
+        /// <param name="e">The event arguments.</param>
         private void ComboBox_SelectedIndexChanged(object? sender, EventArgs e)
         {
             int selectedIndex = ((ComboBox)sender!).SelectedIndex;

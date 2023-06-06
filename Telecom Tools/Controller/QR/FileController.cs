@@ -10,6 +10,10 @@ using Image = iTextSharp.text.Image;
 
 namespace Telecom_Tools.Controller
 {
+    /// <summary>
+    /// This class handles file operations such as opening a file, generating QR codes and PDF files, 
+    /// compressing images, deleting files, and opening the file explorer.
+    /// </summary>
     internal class FileController
     {
         private string? pathFile;
@@ -17,11 +21,20 @@ namespace Telecom_Tools.Controller
         List<string>? lpas;
         private string? directoyGenerated;
 
+        /// <summary>
+        /// Initializes a new instance of the FileController class.
+        /// </summary>
         public FileController()
         {
             pathFile = "";
         }
 
+        /// <summary>
+        /// Opens a file dialog and assigns the selected file path to the pathFile variable.
+        /// Sets the file name in the provided TextBox control.
+        /// </summary>
+        /// <param name="openFileTextBox">The TextBox control to display the selected file name.</param>
+        /// <returns>The path of the opened file.</returns>
         public string OpenFile(TextBox openFileTextBox)
         {
             string opennedFileName;
@@ -45,6 +58,13 @@ namespace Telecom_Tools.Controller
             return pathFile!;
         }
 
+        /// <summary>
+        /// Generates QR codes, PDF files, and compresses images based on the selected options.
+        /// </summary>
+        /// <param name="pdfCheckBox">The CheckBox control indicating whether to generate a PDF file.</param>
+        /// <param name="zipCheckBox">The CheckBox control indicating whether to compress images into a ZIP file.</param>
+        /// <param name="pngCheckBox">The CheckBox control indicating whether to delete the generated PNG files.</param>
+        /// <param name="logoCheckBox">The CheckBox control indicating whether to add a logo to the QR codes.</param>
         public void Generate(CheckBox pdfCheckBox, CheckBox zipCheckBox, CheckBox pngCheckBox, CheckBox logoCheckBox)
         {
             string valueTextBox = Model.File.GetFileName();
@@ -85,6 +105,10 @@ namespace Telecom_Tools.Controller
             finally { }
         }
 
+        /// <summary>
+        /// Generates QR codes based on the contents of the opened file.
+        /// </summary>
+        /// <param name="logoCheckBox">The CheckBox control indicating whether to add a logo to the QR codes.</param>
         private void GenerateQR(CheckBox logoCheckBox)
         {
             string fileName = Path.GetFileNameWithoutExtension(pathFile)!;
@@ -133,6 +157,13 @@ namespace Telecom_Tools.Controller
             }
         }
 
+        /// <summary>
+        /// Generates QR code images based on the specified module width, version number, error correction level, and logo option.
+        /// </summary>
+        /// <param name="moduleWidth">The module width of the QR codes.</param>
+        /// <param name="versionNumber">The version number of the QR codes.</param>
+        /// <param name="errorCorrectionLevel">The error correction level of the QR codes.</param>
+        /// <param name="logoCheckBox">The CheckBox control indicating whether to add a logo to the QR codes.</param>
         private void GenerateQRCodeImages(int moduleWidth, int versionNumber, string errorCorrectionLevel, CheckBox logoCheckBox)
         {
             string imagePath;
@@ -180,6 +211,12 @@ namespace Telecom_Tools.Controller
             }
         }
 
+        /// <summary>
+        /// Generates a PDF file containing the generated QR codes and associated information.
+        /// </summary>
+        /// <param name="directoyGenerated">The directory where the files are generated.</param>
+        /// <param name="fileName">The file name for the generated PDF file.</param>
+        /// <param name="pdfCheckBox">The CheckBox control indicating whether to generate a PDF file.</param>
         private void GeneratePdf(string directoyGenerated, string fileName, CheckBox pdfCheckBox)
         {
             string[] pngFiles = Directory.GetFiles(directoyGenerated, "*.png");
@@ -275,6 +312,12 @@ namespace Telecom_Tools.Controller
             }
         }
 
+        /// <summary>
+        /// Compresses the generated PNG files into a ZIP file.
+        /// </summary>
+        /// <param name="nameZip">The name of the ZIP file.</param>
+        /// <param name="directoyGenerated">The directory where the files are generated.</param>
+        /// <param name="zipCheckBox">The CheckBox control indicating whether to compress images into a ZIP file.</param>
         private void CompressImages(string nameZip, string directoyGenerated, CheckBox zipCheckBox)
         {
             var files = Directory.GetFiles(directoyGenerated);
@@ -294,6 +337,13 @@ namespace Telecom_Tools.Controller
             }
         }
 
+        /// <summary>
+        /// Deletes the generated PNG files based on the selected options.
+        /// </summary>
+        /// <param name="directoyGenerated">The directory where the files are generated.</param>
+        /// <param name="pdfCheckBox">The CheckBox control indicating whether to generate a PDF file.</param>
+        /// <param name="zipCheckBox">The CheckBox control indicating whether to compress images into a ZIP file.</param>
+        /// <param name="pngCheckBox">The CheckBox control indicating whether to delete the generated PNG files.</param>
         private void DeleteAllPng(string directoyGenerated, CheckBox pdfCheckBox, CheckBox zipCheckBox, CheckBox pngCheckBox)
         {
             string[] pngFiles = Directory.GetFiles(directoyGenerated, "*.png");
@@ -309,6 +359,11 @@ namespace Telecom_Tools.Controller
                 }
             }
         }
+
+        /// <summary>
+        /// Opens the file explorer at the specified directory.
+        /// </summary>
+        /// <param name="directoyGenerated">The directory to open in the file explorer.</param>
         private void OpenFileExplorer(string directoyGenerated)
         {
             DialogResult result = MessageBox.Show("Do you wanna to open on the file explorer?", "Open File Explorer", MessageBoxButtons.YesNo);
@@ -318,6 +373,12 @@ namespace Telecom_Tools.Controller
                 System.Diagnostics.Process.Start("explorer.exe", directoyGenerated);
             }
         }
+
+        /// <summary>
+        /// Adds a logo to the QR code image if the logo option is selected.
+        /// </summary>
+        /// <param name="logoCheckBox">The CheckBox control indicating whether to add a logo to the QR codes.</param>
+        /// <param name="qrCodeImage">The QR code image to add the logo to.</param>
         private void PutLogo(CheckBox logoCheckBox, Bitmap qrCodeImage)
         {
             if (logoCheckBox.Checked)
